@@ -1,0 +1,10 @@
+{
+  "project_id" : "rocksdb",
+  "conduit_uri" : "https://reviews.facebook.net/",
+  "copyright_holder" : "facebook",
+  "load" : [
+    "linters"
+  ],
+  "lint.engine" : "facebookfbcodelintengine",
+  "lint.engine.single.linter" : "fbcodecpplinter"
+}

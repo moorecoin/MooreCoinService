@@ -1,0 +1,120 @@
+lz4 format description
+last revised: 2012-02-27
+author : y. collet
+
+
+
+this small specification intents to provide enough information
+to anyone willing to produce lz4-compatible compressed data blocks
+using any programming language.
+
+lz4 is an lz77-type compressor with a fixed, byte-oriented encoding.
+the most important design principle behind lz4 is simplicity.
+it helps to create an easy to read and maintain source code.
+it also helps later on for optimisations, compactness, and speed.
+there is no entropy encoder backend nor framing layer.
+the latter is assumed to be handled by other parts of the system.
+
+this document only describes the format,
+not how the lz4 compressor nor decompressor actually work.
+the correctness of the decompressor should not depend
+on implementation details of the compressor, and vice versa.
+
+
+
+-- compressed block format --
+
+an lz4 compressed block is composed of sequences.
+schematically, a sequence is a suite of literals, followed by a match copy.
+
+each sequence starts with a token.
+the token is a one byte value, separated into two 4-bits fields.
+therefore each field ranges from 0 to 15.
+
+
+the first field uses the 4 high-bits of the token.
+it provides the length of literals to follow.
+(note : a literal is a not-compressed byte).
+if the field value is 0, then there is no literal.
+if it is 15, then we need to add some more bytes to indicate the full length.
+each additionnal byte then represent a value from 0 to 255,
+which is added to the previous value to produce a total length.
+when the byte value is 255, another byte is output.
+there can be any number of bytes following the token. there is no "size limit".
+(sidenote this is why a not-compressible input block is expanded by 0.4%).
+
+example 1 : a length of 48 will be represented as :
+- 15 : value for the 4-bits high field
+- 33 : (=48-15) remaining length to reach 48
+
+example 2 : a length of 280 will be represented as :
+- 15  : value for the 4-bits high field
+- 255 : following byte is maxed, since 280-15 >= 255
+- 10  : (=280 - 15 - 255) ) remaining length to reach 280
+
+example 3 : a length of 15 will be represented as :
+- 15 : value for the 4-bits high field
+- 0  : (=15-15) yes, the zero must be output
+
+following the token and optional length bytes, are the literals themselves.
+they are exactly as numerous as previously decoded (length of literals).
+it's possible that there are zero literal.
+
+
+following the literals is the match copy operation.
+
+it starts by the offset.
+this is a 2 bytes value, in little endian format.
+
+the offset represents the position of the match to be copied from.
+1 means "current position - 1 byte".
+the maximum offset value is 65535, 65536 cannot be coded.
+note that 0 is an invalid value, not used. 
+
+then we need to extract the match length.
+for this, we use the second token field, the low 4-bits.
+value, obviously, ranges from 0 to 15.
+however here, 0 means that the copy operation will be minimal.
+the minimum length of a match, called minmatch, is 4. 
+as a consequence, a 0 value means 4 bytes, and a value of 15 means 19+ bytes.
+similar to literal length, on reaching the highest possible value (15), 
+we output additional bytes, one at a time, with values ranging from 0 to 255.
+they are added to total to provide the final match length.
+a 255 value means there is another byte to read and add.
+there is no limit to the number of optional bytes that can be output this way.
+(this points towards a maximum achievable compression ratio of ~250).
+
+with the offset and the matchlength,
+the decoder can now proceed to copy the data from the already decoded buffer.
+on decoding the matchlength, we reach the end of the compressed sequence,
+and therefore start another one.
+
+
+-- parsing restrictions --
+
+there are specific parsing rules to respect in order to remain compatible
+with assumptions made by the decoder :
+1) the last 5 bytes are always literals
+2) the last match must start at least 12 bytes before end of block
+consequently, a block with less than 13 bytes cannot be compressed.
+these rules are in place to ensure that the decoder
+will never read beyond the input buffer, nor write beyond the output buffer.
+
+note that the last sequence is also incomplete,
+and stops right after literals.
+
+
+-- additional notes --
+
+there is no assumption nor limits to the way the compressor
+searches and selects matches within the source data block.
+it could be a fast scan, a multi-probe, a full search using bst,
+standard hash chains or mmc, well whatever.
+
+advanced parsing strategies can also be implemented, such as lazy match,
+or full optimal parsing.
+
+all these trade-off offer distinctive speed/memory/compression advantages.
+whatever the method used by the compressor, its result will be decodable
+by any lz4 decoder if it follows the format specification described above.
+

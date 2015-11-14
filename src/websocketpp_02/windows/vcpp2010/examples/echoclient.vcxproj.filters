@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project toolsversion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <itemgroup>
+    <filter include="source files">
+      <uniqueidentifier>{4fc737f1-c7a5-4376-a066-2a32d752a2ff}</uniqueidentifier>
+      <extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</extensions>
+    </filter>
+    <filter include="header files">
+      <uniqueidentifier>{93995380-89bd-4b04-88eb-625fbe52ebfb}</uniqueidentifier>
+      <extensions>h;hpp;hxx;hm;inl;inc;xsd</extensions>
+    </filter>
+    <filter include="resource files">
+      <uniqueidentifier>{67da6ab6-f800-4c08-8b7a-83bb121aad01}</uniqueidentifier>
+      <extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</extensions>
+    </filter>
+  </itemgroup>
+  <itemgroup>
+    <clinclude include="..\..\..\examples\echo_client\echo_client_handler.hpp">
+      <filter>header files</filter>
+    </clinclude>
+  </itemgroup>
+  <itemgroup>
+    <clcompile include="..\..\..\examples\echo_client\echo_client.cpp">
+      <filter>source files</filter>
+    </clcompile>
+  </itemgroup>
+</project>

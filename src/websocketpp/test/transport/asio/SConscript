@@ -1,0 +1,28 @@
+## asio transport unit tests
+##
+
+import('env')
+import('env_cpp11')
+import('boostlibs')
+import('platform_libs')
+import('polyfill_libs')
+import('tls_libs')
+
+env = env.clone ()
+env_cpp11 = env_cpp11.clone ()
+
+boost_libs = boostlibs(['unit_test_framework','system','thread'],env) + [platform_libs] + [tls_libs]
+
+objs = env.object('base_boost.o', ["base.cpp"], libs = boost_libs)
+objs += env.object('timers_boost.o', ["timers.cpp"], libs = boost_libs)
+prgs = env.program('test_base_boost', ["base_boost.o"], libs = boost_libs)
+prgs += env.program('test_timers_boost', ["timers_boost.o"], libs = boost_libs)
+
+if env_cpp11.has_key('wspp_cpp11_enabled'):
+   boost_libs_cpp11 = boostlibs(['unit_test_framework','system'],env_cpp11) + [platform_libs] + [polyfill_libs] + [tls_libs]
+   objs += env_cpp11.object('base_stl.o', ["base.cpp"], libs = boost_libs_cpp11)
+   objs += env_cpp11.object('timers_stl.o', ["timers.cpp"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_base_stl', ["base_stl.o"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_timers_stl', ["timers_stl.o"], libs = boost_libs_cpp11)
+
+return('prgs')

@@ -1,0 +1,118 @@
+<!doctype html public "-//w3c//dtd html 4.01 transitional//en" "http://www.w3.org/tr/html4/loose.dtd">
+<html>
+ <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>flot examples</title>
+    <link href="layout.css" rel="stylesheet" type="text/css">
+    <!--[if lte ie 8]><script language="javascript" type="text/javascript" src="../excanvas.min.js"></script><![endif]-->
+    <script language="javascript" type="text/javascript" src="../jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="../jquery.flot.navigate.js"></script>
+    <style type="text/css">
+    #placeholder .button {
+        position: absolute;
+        cursor: pointer;
+    }
+    #placeholder div.button {
+        font-size: smaller;
+        color: #999;
+        background-color: #eee;
+        padding: 2px;
+    }
+    .message {
+        padding-left: 50px;
+        font-size: smaller;
+    }
+    </style>
+ </head>
+ <body>
+    <h1>flot examples</h1>
+
+    <div id="placeholder" style="width:600px;height:300px;"></div>
+
+    <p class="message"></p>
+
+    <p>with the navigate plugin it is easy to add panning and zooming.
+    drag to pan, double click to zoom (or use the mouse scrollwheel).</p>
+
+    <p>the plugin fires events (useful for synchronizing several
+    plots) and adds a couple of public methods so you can easily build
+    a little user interface around it, like the little buttons at the
+    top right in the plot.</p>
+    
+
+<script type="text/javascript">
+$(function () {
+    // generate data set from a parametric function with a fractal
+    // look
+    function sumf(f, t, m) {
+        var res = 0;
+        for (var i = 1; i < m; ++i)
+            res += f(i * i * t) / (i * i);
+        return res;
+    }
+    
+    var d1 = [];
+    for (var t = 0; t <= 2 * math.pi; t += 0.01)
+        d1.push([sumf(math.cos, t, 10), sumf(math.sin, t, 10)]);
+    var data = [ d1 ];
+
+    
+    var placeholder = $("#placeholder");
+    var options = {
+        series: { lines: { show: true }, shadowsize: 0 },
+        xaxis: { zoomrange: [0.1, 10], panrange: [-10, 10] },
+        yaxis: { zoomrange: [0.1, 10], panrange: [-10, 10] },
+        zoom: {
+            interactive: true
+        },
+        pan: {
+            interactive: true
+        }
+    };
+
+    var plot = $.plot(placeholder, data, options);
+
+    // show pan/zoom messages to illustrate events 
+    placeholder.bind('plotpan', function (event, plot) {
+        var axes = plot.getaxes();
+        $(".message").html("panning to x: "  + axes.xaxis.min.tofixed(2)
+                           + " &ndash; " + axes.xaxis.max.tofixed(2)
+                           + " and y: " + axes.yaxis.min.tofixed(2)
+                           + " &ndash; " + axes.yaxis.max.tofixed(2));
+    });
+
+    placeholder.bind('plotzoom', function (event, plot) {
+        var axes = plot.getaxes();
+        $(".message").html("zooming to x: "  + axes.xaxis.min.tofixed(2)
+                           + " &ndash; " + axes.xaxis.max.tofixed(2)
+                           + " and y: " + axes.yaxis.min.tofixed(2)
+                           + " &ndash; " + axes.yaxis.max.tofixed(2));
+    });
+
+    // add zoom out button 
+    $('<div class="button" style="right:20px;top:20px">zoom out</div>').appendto(placeholder).click(function (e) {
+        e.preventdefault();
+        plot.zoomout();
+    });
+
+    // and add panning buttons
+    
+    // little helper for taking the repetitive work out of placing
+    // panning arrows
+    function addarrow(dir, right, top, offset) {
+        $('<img class="button" src="arrow-' + dir + '.gif" style="right:' + right + 'px;top:' + top + 'px">').appendto(placeholder).click(function (e) {
+            e.preventdefault();
+            plot.pan(offset);
+        });
+    }
+
+    addarrow('left', 55, 60, { left: -100 });
+    addarrow('right', 25, 60, { left: 100 });
+    addarrow('up', 40, 45, { top: -100 });
+    addarrow('down', 40, 75, { top: 100 });
+});
+</script>
+
+ </body>
+</html>

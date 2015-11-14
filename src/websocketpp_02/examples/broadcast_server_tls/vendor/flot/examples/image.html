@@ -1,0 +1,45 @@
+<!doctype html public "-//w3c//dtd html 4.01 transitional//en" "http://www.w3.org/tr/html4/loose.dtd">
+<html>
+ <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>flot examples</title>
+    <link href="layout.css" rel="stylesheet" type="text/css">
+    <!--[if lte ie 8]><script language="javascript" type="text/javascript" src="../excanvas.min.js"></script><![endif]-->
+    <script language="javascript" type="text/javascript" src="../jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="../jquery.flot.image.js"></script>
+ </head>
+ <body>
+    <h1>flot examples</h1>
+
+    <div id="placeholder" style="width:400px;height:400px;"></div>
+
+    <p>the cat's eye nebula (<a href="http://hubblesite.org/gallery/album/nebula/pr2004027a/">picture from hubble</a>).</p>
+    
+    <p>with the image plugin, you can plot images. this is for example
+    useful for getting ticks on complex prerendered visualizations.
+    instead of inputting data points, you put in the images and where
+    their two opposite corners are supposed to be in plot space.</p>
+
+    <p>images represent a little further complication because you need
+    to make sure they are loaded before you can use them (flot skips
+    incomplete images). the plugin comes with a couple of helpers
+    for doing that.</p>
+
+<script type="text/javascript">
+$(function () {
+    var data = [ [ ["hs-2004-27-a-large_web.jpg", -10, -10, 10, 10] ] ];
+    var options = {
+            series: { images: { show: true } },
+            xaxis: { min: -8, max: 4 },
+            yaxis: { min: -8, max: 4 }
+    };
+
+    $.plot.image.loaddataimages(data, options, function () {
+        $.plot($("#placeholder"), data, options);
+    });
+});
+</script>
+
+ </body>
+</html>

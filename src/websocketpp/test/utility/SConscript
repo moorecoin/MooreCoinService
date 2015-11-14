@@ -1,0 +1,36 @@
+## utility unit tests
+##
+
+import('env')
+import('env_cpp11')
+import('boostlibs')
+import('platform_libs')
+import('polyfill_libs')
+
+env = env.clone ()
+env_cpp11 = env_cpp11.clone ()
+
+boost_libs = boostlibs(['unit_test_framework','system'],env) + [platform_libs]
+
+objs = env.object('uri_boost.o', ["uri.cpp"], libs = boost_libs)
+objs += env.object('utilities_boost.o', ["utilities.cpp"], libs = boost_libs)
+objs += env.object('close_boost.o', ["close.cpp"], libs = boost_libs)
+objs += env.object('sha1_boost.o', ["sha1.cpp"], libs = boost_libs)
+prgs = env.program('test_uri_boost', ["uri_boost.o"], libs = boost_libs)
+prgs += env.program('test_utility_boost', ["utilities_boost.o"], libs = boost_libs)
+prgs += env.program('test_frame', ["frame.cpp"], libs = boost_libs)
+prgs += env.program('test_close_boost', ["close_boost.o"], libs = boost_libs)
+prgs += env.program('test_sha1_boost', ["sha1_boost.o"], libs = boost_libs)
+
+if env_cpp11.has_key('wspp_cpp11_enabled'):
+   boost_libs_cpp11 = boostlibs(['unit_test_framework'],env_cpp11) + [platform_libs] + [polyfill_libs]
+   objs += env_cpp11.object('utilities_stl.o', ["utilities.cpp"], libs = boost_libs_cpp11)
+   objs += env_cpp11.object('uri_stl.o', ["uri.cpp"], libs = boost_libs_cpp11)
+   objs += env_cpp11.object('close_stl.o', ["close.cpp"], libs = boost_libs_cpp11)
+   objs += env_cpp11.object('sha1_stl.o', ["sha1.cpp"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_utility_stl', ["utilities_stl.o"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_uri_stl', ["uri_stl.o"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_close_stl', ["close_stl.o"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_sha1_stl', ["sha1_stl.o"], libs = boost_libs_cpp11)
+
+return('prgs')

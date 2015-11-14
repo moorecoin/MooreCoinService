@@ -1,0 +1,27 @@
+## role unit tests
+##
+
+import('env')
+import('env_cpp11')
+import('boostlibs')
+import('platform_libs')
+import('polyfill_libs')
+
+env = env.clone ()
+env_cpp11 = env_cpp11.clone ()
+
+boost_libs = boostlibs(['unit_test_framework','system','random'],env) + [platform_libs]
+
+objs = env.object('client_boost.o', ["client.cpp"], libs = boost_libs)
+objs += env.object('server_boost.o', ["server.cpp"], libs = boost_libs)
+prgs = env.program('test_client_boost', ["client_boost.o"], libs = boost_libs)
+prgs += env.program('test_server_boost', ["server_boost.o"], libs = boost_libs)
+
+if env_cpp11.has_key('wspp_cpp11_enabled'):
+   boost_libs_cpp11 = boostlibs(['unit_test_framework'],env_cpp11) + [platform_libs] + [polyfill_libs]
+   objs += env_cpp11.object('client_stl.o', ["client.cpp"], libs = boost_libs_cpp11)
+   objs += env_cpp11.object('server_stl.o', ["server.cpp"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_client_stl', ["client_stl.o"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_server_stl', ["server_stl.o"], libs = boost_libs_cpp11)
+
+return('prgs')

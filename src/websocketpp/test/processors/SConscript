@@ -1,0 +1,47 @@
+## processor unit tests
+##
+
+import('env')
+import('env_cpp11')
+import('boostlibs')
+import('platform_libs')
+import('polyfill_libs')
+
+env = env.clone ()
+env_cpp11 = env_cpp11.clone ()
+
+boost_libs = boostlibs(['unit_test_framework','system'],env) + [platform_libs] + ['z']
+
+objs = env.object('test_processor_boost.o', ["processor.cpp"], libs = boost_libs)
+objs += env.object('test_hybi13_boost.o', ["hybi13.cpp"], libs = boost_libs)
+objs += env.object('test_hybi08_boost.o', ["hybi08.cpp"], libs = boost_libs)
+objs += env.object('test_hybi07_boost.o', ["hybi07.cpp"], libs = boost_libs)
+objs += env.object('test_hybi00_boost.o', ["hybi00.cpp"], libs = boost_libs)
+objs += env.object('test_extension_permessage_compress_boost.o', ["extension_permessage_compress.cpp"], libs = boost_libs)
+
+prgs = env.program('test_processor_boost', ["test_processor_boost.o"], libs = boost_libs)
+prgs += env.program('test_hybi13_boost', ["test_hybi13_boost.o"], libs = boost_libs)
+prgs += env.program('test_hybi08_boost', ["test_hybi08_boost.o"], libs = boost_libs)
+prgs += env.program('test_hybi07_boost', ["test_hybi07_boost.o"], libs = boost_libs)
+prgs += env.program('test_hybi00_boost', ["test_hybi00_boost.o"], libs = boost_libs)
+prgs += env.program('test_extension_permessage_compress_boost', ["test_extension_permessage_compress_boost.o"], libs = boost_libs + ['z'])
+
+if env_cpp11.has_key('wspp_cpp11_enabled'):
+   boost_libs_cpp11 = boostlibs(['unit_test_framework'],env_cpp11) + [platform_libs] + [polyfill_libs] + ['z']
+   # no c++11 features are used in processor so there are no c++11 versions of
+   # these tests.
+   objs += env_cpp11.object('test_processor_stl.o', ["processor.cpp"], libs = boost_libs_cpp11)
+   objs += env_cpp11.object('test_hybi13_stl.o', ["hybi13.cpp"], libs = boost_libs_cpp11)
+   objs += env_cpp11.object('test_hybi08_stl.o', ["hybi08.cpp"], libs = boost_libs_cpp11)
+   objs += env_cpp11.object('test_hybi07_stl.o', ["hybi07.cpp"], libs = boost_libs_cpp11)
+   objs += env_cpp11.object('test_hybi00_stl.o', ["hybi00.cpp"], libs = boost_libs_cpp11)
+   objs += env_cpp11.object('test_extension_permessage_compress_stl.o', ["extension_permessage_compress.cpp"], libs = boost_libs_cpp11 + ['z'])
+
+   prgs += env_cpp11.program('test_processor_stl', ["test_processor_stl.o"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_hybi13_stl', ["test_hybi13_stl.o"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_hybi08_stl', ["test_hybi08_stl.o"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_hybi07_stl', ["test_hybi07_stl.o"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_hybi00_stl', ["test_hybi00_stl.o"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_extension_permessage_compress_stl', ["test_extension_permessage_compress_stl.o"], libs = boost_libs_cpp11 + ['z'])
+
+return('prgs')

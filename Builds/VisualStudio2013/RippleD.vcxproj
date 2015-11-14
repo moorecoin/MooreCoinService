@@ -1,0 +1,4185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project defaulttargets="build" toolsversion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <propertygroup label="globals">
+    <projectguid>{26b7d9ac-1a80-8ef8-6703-d061f1becb75}</projectguid>
+    <keyword>win32proj</keyword>
+    <rootnamespace>rippled</rootnamespace>
+    <ignorewarncompileduplicatedfilename>true</ignorewarncompileduplicatedfilename>
+  </propertygroup>
+  <itemgroup label="projectconfigurations">
+    <projectconfiguration include="debug|x64">
+      <configuration>debug</configuration>
+      <platform>x64</platform>
+    </projectconfiguration>
+    <projectconfiguration include="release|x64">
+      <configuration>release</configuration>
+      <platform>x64</platform>
+    </projectconfiguration>
+  </itemgroup>
+  <import project="$(vctargetspath)\microsoft.cpp.default.props" />
+  <propertygroup condition="'$(configuration)|$(platform)'=='debug|x64'" label="configuration">
+    <characterset>multibyte</characterset>
+    <configurationtype>application</configurationtype>
+    <platformtoolset>v120</platformtoolset>
+    <linkincremental>false</linkincremental>
+    <usedebuglibraries>false</usedebuglibraries>
+    <useofmfc>false</useofmfc>
+    <wholeprogramoptimization>false</wholeprogramoptimization>
+    <intdir>..\..\build\msvc.debug\src\</intdir>
+    <outdir>..\..\build\msvc.debug\</outdir>
+  </propertygroup>
+  <propertygroup condition="'$(configuration)|$(platform)'=='release|x64'" label="configuration">
+    <characterset>multibyte</characterset>
+    <configurationtype>application</configurationtype>
+    <platformtoolset>v120</platformtoolset>
+    <linkincremental>false</linkincremental>
+    <usedebuglibraries>false</usedebuglibraries>
+    <useofmfc>false</useofmfc>
+    <wholeprogramoptimization>false</wholeprogramoptimization>
+    <intdir>..\..\build\msvc.release\src\</intdir>
+    <outdir>..\..\build\msvc.release\</outdir>
+  </propertygroup>
+  <import project="$(vctargetspath)\microsoft.cpp.props" />
+  <importgroup label="extensionsettings" />
+  <importgroup condition="'$(configuration)|$(platform)'=='debug|x64'" label="propertysheets">
+    <import project="$(userrootdir)\microsoft.cpp.$(platform).user.props" condition="exists('$(userrootdir)\microsoft.cpp.$(platform).user.props')" label="localappdataplatform" />
+  </importgroup>
+  <importgroup condition="'$(configuration)|$(platform)'=='release|x64'" label="propertysheets">
+    <import project="$(userrootdir)\microsoft.cpp.$(platform).user.props" condition="exists('$(userrootdir)\microsoft.cpp.$(platform).user.props')" label="localappdataplatform" />
+  </importgroup>
+  <propertygroup label="usermacros" />
+  <itemdefinitiongroup condition="'$(configuration)|$(platform)'=='debug|x64'">
+    <clcompile>
+      <preprocessordefinitions>_win32_winnt=0x6000;debug;deprecated_in_mac_os_x_version_10_7_and_later;openssl_no_ssl2;win32_console;_crtdbg_map_alloc;_crt_secure_no_warnings;_debug;_scl_secure_no_warnings;%(preprocessordefinitions)</preprocessordefinitions>
+      <additionalincludedirectories>..\..\build\proto;..\..\src;..\..\src\beast;..\..\src\protobuf\src;..\..\src\protobuf\vsprojects;%(additionalincludedirectories)</additionalincludedirectories>
+      <disablespecificwarnings>4800;4244;4267;4018</disablespecificwarnings>
+      <exceptionhandling>async</exceptionhandling>
+      <runtimelibrary>multithreadeddebug</runtimelibrary>
+      <floatingpointmodel>precise</floatingpointmodel>
+      <minimalrebuild>false</minimalrebuild>
+      <basicruntimechecks>enablefastchecks</basicruntimechecks>
+      <errorreporting>none</errorreporting>
+      <buffersecuritycheck>true</buffersecuritycheck>
+      <runtimetypeinfo>true</runtimetypeinfo>
+      <multiprocessorcompilation>true</multiprocessorcompilation>
+      <functionlevellinking>false</functionlevellinking>
+      <suppressstartupbanner>true</suppressstartupbanner>
+      <optimization>disabled</optimization>
+      <openmpsupport>false</openmpsupport>
+      <treatwarningaserror>false</treatwarningaserror>
+      <debuginformationformat>programdatabase</debuginformationformat>
+      <callingconvention>cdecl</callingconvention>
+      <forceconformanceinforloopscope>true</forceconformanceinforloopscope>
+      <warninglevel>level3</warninglevel>
+      <additionaloptions>/bigobj /fs %(additionaloptions)</additionaloptions>
+    </clcompile>
+    <link>
+      <additionaldependencies>advapi32.lib;comdlg32.lib;gdi32.lib;kernel32.lib;libeay32mt.lib;odbc32.lib;odbccp32.lib;ole32.lib;oleaut32.lib;shell32.lib;shlwapi.lib;ssleay32mt.lib;user32.lib;uuid.lib;winspool.lib;%(additionaldependencies)</additionaldependencies>
+      <suppressstartupbanner>true</suppressstartupbanner>
+      <errorreporting>noerrorreport</errorreporting>
+      <subsystem>console</subsystem>
+      <randomizedbaseaddress>true</randomizedbaseaddress>
+      <dataexecutionprevention>true</dataexecutionprevention>
+      <generatedebuginformation>true</generatedebuginformation>
+      <targetmachine>machinex64</targetmachine>
+      <additionaloptions>/manifest /tlbid:1 %(additionaloptions)</additionaloptions>
+    </link>
+  </itemdefinitiongroup>
+  <itemdefinitiongroup condition="'$(configuration)|$(platform)'=='release|x64'">
+    <clcompile>
+      <preprocessordefinitions>_win32_winnt=0x6000;deprecated_in_mac_os_x_version_10_7_and_later;ndebug;openssl_no_ssl2;win32_console;_crt_secure_no_warnings;_scl_secure_no_warnings;%(preprocessordefinitions)</preprocessordefinitions>
+      <additionalincludedirectories>..\..\build\proto;..\..\src;..\..\src\beast;..\..\src\protobuf\src;..\..\src\protobuf\vsprojects;%(additionalincludedirectories)</additionalincludedirectories>
+      <disablespecificwarnings>4800;4244;4267;4018</disablespecificwarnings>
+      <exceptionhandling>async</exceptionhandling>
+      <floatingpointmodel>precise</floatingpointmodel>
+      <minimalrebuild>false</minimalrebuild>
+      <errorreporting>none</errorreporting>
+      <runtimetypeinfo>true</runtimetypeinfo>
+      <multiprocessorcompilation>true</multiprocessorcompilation>
+      <runtimelibrary>multithreaded</runtimelibrary>
+      <functionlevellinking>false</functionlevellinking>
+      <suppressstartupbanner>true</suppressstartupbanner>
+      <openmpsupport>false</openmpsupport>
+      <treatwarningaserror>false</treatwarningaserror>
+      <debuginformationformat>programdatabase</debuginformationformat>
+      <callingconvention>cdecl</callingconvention>
+      <forceconformanceinforloopscope>true</forceconformanceinforloopscope>
+      <optimization>full</optimization>
+      <warninglevel>level3</warninglevel>
+      <additionaloptions>/bigobj /fs %(additionaloptions)</additionaloptions>
+    </clcompile>
+    <link>
+      <additionaldependencies>advapi32.lib;comdlg32.lib;gdi32.lib;kernel32.lib;libeay32mt.lib;odbc32.lib;odbccp32.lib;ole32.lib;oleaut32.lib;shell32.lib;shlwapi.lib;ssleay32mt.lib;user32.lib;uuid.lib;winspool.lib;%(additionaldependencies)</additionaldependencies>
+      <suppressstartupbanner>true</suppressstartupbanner>
+      <errorreporting>noerrorreport</errorreporting>
+      <subsystem>console</subsystem>
+      <randomizedbaseaddress>true</randomizedbaseaddress>
+      <dataexecutionprevention>true</dataexecutionprevention>
+      <generatedebuginformation>true</generatedebuginformation>
+      <targetmachine>machinex64</targetmachine>
+      <additionaloptions>/manifest /tlbid:1 %(additionaloptions)</additionaloptions>
+    </link>
+  </itemdefinitiongroup>
+  <itemgroup>
+    <clcompile include="..\..\build\proto\ripple.pb.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\build\proto\ripple.pb.h">
+    </clinclude>
+    <clinclude include="..\..\src\beastconfig.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\arithmetic.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\asio\asio.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\asio\bind_handler.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\asio\impl\ipaddressconversion.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\asio\io_latency_probe.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\asio\ipaddressconversion.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\asio\placeholders.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\asio\ssl.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\asio\ssl_bundle.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\asio\streambuf.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\asio\tests\bind_handler.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\asio\tests\streambuf.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\asio\waitable_executor.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\boost\boost.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\boost\errorcode.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\byteorder.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\chrono\abstract_clock.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\chrono\basic_seconds_clock.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\chrono\chrono.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\chrono\chrono_io.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\chrono\chrono_util.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\chrono\impl\chrono_io.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\chrono\impl\relativetime.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\chrono\manual_clock.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\chrono\ratio_io.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\chrono\relativetime.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\chrono\tests\abstract_clock.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\chrono\tests\basic_seconds_clock.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\config.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\config\compilerconfig.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\config\configcheck.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\config\contractchecks.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\config\platformconfig.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\config\selectcompilerconfig.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\config\selectstdlibconfig.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\config\standardconfig.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\config\suffix.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\aged_container.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\aged_container_utility.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\aged_map.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\aged_multimap.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\aged_multiset.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\aged_set.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\aged_unordered_map.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\aged_unordered_multimap.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\aged_unordered_multiset.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\aged_unordered_set.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\buffer_view.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\const_container.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\container\container.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\container\detail\aged_associative_container.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\detail\aged_container_iterator.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\detail\aged_ordered_container.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\container\detail\aged_unordered_container.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\container\tests\aged_associative_container.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\container\tests\buffer_view.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\crypto\base64.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\crypto\crypto.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\crypto\impl\sha256.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\crypto\impl\sha2\sha2.c">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\crypto\impl\sha2\sha2.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\crypto\sha256.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\crypto\tests\base64.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\cxx14\algorithm.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\cxx14\config.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\cxx14\cxx14.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\cxx14\functional.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\cxx14\iterator.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\cxx14\memory.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\cxx14\tests\integer_sequence.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\cxx14\type_traits.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\cxx14\utility.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\hash\fnv1a.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\hash\hash_append.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\hash\impl\siphash.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\hash\impl\spookyv2.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\hash\impl\spookyv2.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\hash\impl\xxhash.c">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\hash\impl\xxhash.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\hash\siphash.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\hash\spooky.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\hash\tests\hash_append_test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\hash\tests\hash_metrics.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\hash\tests\hash_speed_test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\hash\uhash.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\hash\xxhasher.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\heapblock.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\http\basic_parser.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\http\body.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\http\chunk_encode.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\http\headers.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\http\http.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\http\impl\basic_parser.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\http\impl\http-parser\http_parser.c">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\http\impl\http-parser\http_parser.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\http\impl\joyent_parser.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\http\impl\joyent_parser.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\http\impl\method.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\http\impl\raw_parser.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\http\impl\url.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\http\message.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\http\method.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\http\parser.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\http\raw_parser.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\http\rfc2616.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\http\tests\chunked_encoder.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\http\tests\parser.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\http\tests\rfc2616.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\http\tests\url.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\http\tests\urls_large_data.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\http\tests\urls_large_data.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\http\url.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\base.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\baseimpl.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\collector.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\counter.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\counterimpl.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\event.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\eventimpl.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\gauge.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\gaugeimpl.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\group.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\groups.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\hook.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\hookimpl.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\insight\impl\collector.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\insight\impl\group.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\insight\impl\groups.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\insight\impl\hook.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\insight\impl\metric.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\insight\impl\nullcollector.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\insight\impl\statsdcollector.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\insight\insight.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\insight\meter.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\meterimpl.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\nullcollector.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\insight\statsdcollector.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\intrusive.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\intrusive\list.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\intrusive\lockfreestack.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\memory.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\asio\asio.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\asio\asyncobject.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\asio\httpfield.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\asio\httpfield.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\asio\httpheaders.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\asio\httpheaders.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\asio\httpmessage.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\asio\httpmessage.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\asio\httpparser.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\asio\httpparser.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\asio\httpparserimpl.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\asio\httprequest.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\asio\httprequest.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\asio\httprequestparser.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\asio\httprequestparser.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\asio\httpresponse.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\asio\httpresponse.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\asio\httpresponseparser.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\asio\httpresponseparser.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\asio\httpversion.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\asio\httpversion.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\containers\array.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\containers\arrayallocationbase.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\containers\elementcomparator.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\core.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\core.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\core\diagnostic\fatalerror.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\diagnostic\fatalerror.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\diagnostic\measurefunctioncalltime.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\diagnostic\semanticversion.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\diagnostic\semanticversion.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\diagnostic\unittestutilities.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\diagnostic\unittestutilities.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\files\directoryiterator.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\files\directoryiterator.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\files\file.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\files\file.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\files\fileinputstream.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\files\fileinputstream.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\files\fileoutputstream.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\files\fileoutputstream.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\logging\logger.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\maths\random.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\maths\random.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\memory\memoryblock.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\memory\memoryblock.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\memory\sharedsingleton.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\misc\result.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\misc\result.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\native\basicnativeheaders.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\native\bsd_files.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\core\native\bsd_systemstats.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\core\native\bsd_threads.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\core\native\linux_files.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\core\native\linux_systemstats.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\core\native\linux_threads.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <none include="..\..\src\beast\beast\module\core\native\mac_files.mm">
+    </none>
+    <none include="..\..\src\beast\beast\module\core\native\mac_strings.mm">
+    </none>
+    <none include="..\..\src\beast\beast\module\core\native\mac_systemstats.mm">
+    </none>
+    <none include="..\..\src\beast\beast\module\core\native\mac_threads.mm">
+    </none>
+    <clinclude include="..\..\src\beast\beast\module\core\native\osx_objchelpers.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\native\posix_sharedcode.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\native\win32_files.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\core\native\win32_systemstats.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\core\native\win32_threads.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\core\streams\fileinputsource.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\streams\fileinputsource.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\streams\inputsource.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\streams\inputstream.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\streams\inputstream.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\streams\memoryoutputstream.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\streams\memoryoutputstream.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\streams\outputstream.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\streams\outputstream.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\system\standardincludes.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\system\systemstats.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\system\systemstats.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\text\lexicalcast.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\text\lexicalcast.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\text\stringarray.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\text\stringarray.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\text\stringpairarray.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\text\stringpairarray.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\threads\criticalsection.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\threads\process.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\threads\scopedlock.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\thread\deadlinetimer.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\thread\deadlinetimer.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\core\thread\mutextraits.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\thread\workers.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\thread\workers.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\time\atexithook.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\time\atexithook.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\core\time\time.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\core\time\time.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\api\backend.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\api\blob.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\api\into.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\api\session.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\api\statement.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\api\transaction.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\api\type_conversion_traits.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\api\use.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\detail\error_codes.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\detail\exchange_traits.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\detail\into_type.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\detail\once_temp_type.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\detail\prepare_temp_type.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\detail\ref_counted_prepare_info.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\detail\ref_counted_statement.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\detail\statement_imp.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\detail\type_conversion.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\detail\type_ptr.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\detail\use_type.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\sqdb\source\blob.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\sqdb\source\error_codes.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\sqdb\source\into_type.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\sqdb\source\once_temp_type.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\sqdb\source\prepare_temp_type.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\sqdb\source\ref_counted_prepare_info.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\sqdb\source\ref_counted_statement.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\sqdb\source\session.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\sqdb\source\statement.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\sqdb\source\statement_imp.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\sqdb\source\transaction.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\sqdb\source\use_type.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\sqdb\sqdb.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\sqdb\sqdb.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\sqlite\sqlite.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\module\sqlite\sqlite.unity.c">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\module\sqlite\sqlite\sqlite3.c">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\module\sqlite\sqlite\sqlite3.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\net\detail\parse.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\net\dynamicbuffer.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\net\impl\dynamicbuffer.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\net\impl\ipaddressv4.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\net\impl\ipaddressv6.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\net\impl\ipendpoint.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\net\ipaddress.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\net\ipaddressv4.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\net\ipaddressv6.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\net\ipendpoint.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\net\net.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\net\tests\ipendpoint.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\nudb.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\api.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\common.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\create.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\detail\arena.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\detail\bucket.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\detail\buffer.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\detail\bulkio.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\detail\cache.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\detail\field.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\detail\format.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\detail\gentex.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\detail\pool.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\detail\stream.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\detail\varint.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\file.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\identity_codec.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\nudb\nudb.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\nudb\posix_file.h">
+    </clinclude>
+    <none include="..\..\src\beast\beast\nudb\readme.md">
+    </none>
+    <clinclude include="..\..\src\beast\beast\nudb\recover.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\store.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\nudb\tests\callgrind_test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\nudb\tests\common.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\tests\fail_file.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\nudb\tests\recover_test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\nudb\tests\store_test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\nudb\tests\varint_test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\nudb\tests\verify_test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\nudb\verify.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\visit.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\nudb\win32_file.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\random\rngfill.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\random\xor_shift_engine.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\smartptr.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\smart_ptr\sharedobject.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\smart_ptr\sharedptr.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\streams\abstract_ostream.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\streams\basic_abstract_ostream.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\streams\basic_scoped_ostream.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\streams\basic_std_ostream.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\streams\debug_ostream.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\streams\streams.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\streams\tests\basic_abstract_ostream.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\strings.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\strings\characterfunctions.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\strings\charpointer_ascii.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\strings\charpointer_utf16.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\strings\charpointer_utf32.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\strings\charpointer_utf8.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\strings\impl\characterfunctions.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\strings\impl\string.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\strings\newline.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\strings\string.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\strings\stringcharpointertype.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\strings\stringfromnumber.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\strings\strings.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\threads.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\threads\impl\recursivemutex.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\threads\impl\stoppable.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\threads\impl\stoppable.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\threads\impl\thread.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\threads\impl\waitableevent.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\threads\recursivemutex.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\threads\scopedwrappercontext.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\threads\semaphore.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\threads\shareddata.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\threads\sharedlockguard.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\threads\sharedmutexadapter.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\threads\spinlock.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\threads\stoppable.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\threads\thread.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\threads\threads.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\threads\trylockguard.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\threads\unlockguard.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\threads\waitableevent.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\unity\hash_unity.cpp">
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\unit_test.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\unit_test\amount.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\unit_test\define_print.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\unit_test\global_suites.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\unit_test\match.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\unit_test\print.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\unit_test\recorder.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\unit_test\reporter.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\unit_test\results.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\unit_test\runner.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\unit_test\suite.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\unit_test\suite_info.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\unit_test\suite_list.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\unit_test\thread.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\utility\ci_char_traits.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\utility\debug.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\utility\empty_base_optimization.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\utility\error.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\utility\impl\debug.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\utility\impl\error.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\utility\impl\journal.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\utility\impl\leakchecked.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\utility\impl\propertystream.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\utility\journal.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\utility\leakchecked.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\utility\maybe_const.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\utility\meta.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\utility\noexcept.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\utility\propertystream.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\utility\staticobject.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\utility\static_initializer.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\utility\tagged_integer.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\utility\tests\bassert.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\utility\tests\empty_base_optimization.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\utility\tests\journal.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\utility\tests\static_initializer.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\utility\tests\tagged_integer.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\utility\tests\weak_fn.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\beast\beast\utility\tests\zero.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\utility\type_name.h">
+    </clinclude>
+    <clcompile include="..\..\src\beast\beast\utility\utility.unity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\beast\beast\utility\wrappedsink.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\utility\zero.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\version.h">
+    </clinclude>
+    <clinclude include="..\..\src\beast\beast\weak_fn.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\curve25519-donna-32bit.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\curve25519-donna-64bit.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\curve25519-donna-helpers.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\curve25519-donna-sse2.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-donna-32bit-sse2.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-donna-32bit-tables.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-donna-64bit-sse2.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-donna-64bit-tables.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-donna-64bit-x86-32bit.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-donna-64bit-x86.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-donna-basepoint-table.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-donna-batchverify.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-donna-impl-base.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-donna-impl-sse2.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-donna-portable-identify.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-donna-portable.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-donna.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-hash-custom.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-hash.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-randombytes-custom.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\ed25519-randombytes.h">
+    </clinclude>
+    <clcompile include="..\..\src\ed25519-donna\ed25519.c">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ed25519-donna\ed25519.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\modm-donna-32bit.h">
+    </clinclude>
+    <clinclude include="..\..\src\ed25519-donna\modm-donna-64bit.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\db\builder.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\db\builder.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\db\dbformat.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\db\dbformat.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\db\db_impl.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\db\db_impl.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\db\db_iter.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\db\db_iter.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\db\filename.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\db\filename.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\db\log_format.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\db\log_reader.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\db\log_reader.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\db\log_writer.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\db\log_writer.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\db\memtable.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\db\memtable.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\db\repair.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\hyperleveldb\db\replay_iterator.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\db\replay_iterator.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\db\skiplist.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\db\snapshot.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\db\table_cache.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\db\table_cache.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\db\version_edit.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\db\version_edit.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\db\version_set.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\db\version_set.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\db\write_batch.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\db\write_batch_internal.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\hyperleveldb\cache.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\hyperleveldb\comparator.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\hyperleveldb\db.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\hyperleveldb\env.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\hyperleveldb\filter_policy.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\hyperleveldb\iterator.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\hyperleveldb\options.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\hyperleveldb\replay_iterator.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\hyperleveldb\slice.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\hyperleveldb\status.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\hyperleveldb\table.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\hyperleveldb\table_builder.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\hyperleveldb\write_batch.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\port\atomic_pointer.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\port\port.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\port\port_posix.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\port\port_posix.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\port\thread_annotations.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\table\block.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\table\block.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\table\block_builder.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\table\block_builder.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\table\filter_block.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\table\filter_block.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\table\format.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\table\format.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\table\iterator.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\table\iterator_wrapper.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\table\merger.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\table\merger.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\table\table.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\hyperleveldb\table\table_builder.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\hyperleveldb\table\two_level_iterator.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\table\two_level_iterator.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\util\arena.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\util\arena.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\util\bloom.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\hyperleveldb\util\cache.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\hyperleveldb\util\coding.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\util\coding.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\util\comparator.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\hyperleveldb\util\crc32c.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\util\crc32c.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\util\env.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\hyperleveldb\util\env_posix.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\hyperleveldb\util\filter_policy.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\hyperleveldb\util\hash.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\util\hash.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\util\histogram.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\util\histogram.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\util\logging.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\util\logging.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\util\mutexlock.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\util\options.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\hyperleveldb\util\posix_logger.h">
+    </clinclude>
+    <clinclude include="..\..\src\hyperleveldb\util\random.h">
+    </clinclude>
+    <clcompile include="..\..\src\hyperleveldb\util\status.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\leveldb\db\builder.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\db\builder.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\db\dbformat.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\db\dbformat.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\db\db_impl.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\db\db_impl.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\db\db_iter.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\db\db_iter.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\db\filename.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\db\filename.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\db\log_format.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\db\log_reader.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\db\log_reader.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\db\log_writer.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\db\log_writer.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\db\memtable.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\db\memtable.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\db\repair.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\db\skiplist.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\db\snapshot.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\db\table_cache.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\db\table_cache.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\db\version_edit.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\db\version_edit.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\db\version_set.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\db\version_set.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\db\write_batch.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\db\write_batch_internal.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\include\leveldb\cache.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\include\leveldb\comparator.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\include\leveldb\db.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\include\leveldb\env.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\include\leveldb\filter_policy.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\include\leveldb\iterator.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\include\leveldb\options.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\include\leveldb\slice.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\include\leveldb\status.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\include\leveldb\table.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\include\leveldb\table_builder.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\include\leveldb\write_batch.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\port\atomic_pointer.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\port\port.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\port\port_posix.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\port\port_posix.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\port\port_win.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\port\port_win.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\port\thread_annotations.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\table\block.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\table\block.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\table\block_builder.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\table\block_builder.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\table\filter_block.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\table\filter_block.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\table\format.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\table\format.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\table\iterator.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\table\iterator_wrapper.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\table\merger.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\table\merger.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\table\table.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\leveldb\table\table_builder.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\leveldb\table\two_level_iterator.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\table\two_level_iterator.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\util\arena.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\util\arena.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\util\bloom.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\leveldb\util\cache.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\leveldb\util\coding.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\util\coding.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\util\comparator.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\leveldb\util\crc32c.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\util\crc32c.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\util\env.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\leveldb\util\env_posix.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\leveldb\util\env_win.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\leveldb\util\filter_policy.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\leveldb\util\hash.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\util\hash.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\util\histogram.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\util\histogram.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\util\logging.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\util\logging.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\util\mutexlock.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\util\options.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\leveldb\util\posix_logger.h">
+    </clinclude>
+    <clinclude include="..\..\src\leveldb\util\random.h">
+    </clinclude>
+    <clcompile include="..\..\src\leveldb\util\status.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\lz4\lib\lz4.c">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\lz4\lib\lz4.h">
+    </clinclude>
+    <clcompile include="..\..\src\lz4\lib\xxhash.c">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\lz4\lib\xxhash.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\compiler\importer.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\compiler\importer.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\compiler\parser.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\compiler\parser.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\descriptor.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\descriptor.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\descriptor.pb.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\descriptor.pb.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\descriptor_database.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\descriptor_database.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\dynamic_message.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\dynamic_message.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\extension_set.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\extension_set.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\extension_set_heavy.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\generated_enum_reflection.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\generated_message_reflection.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\generated_message_reflection.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\generated_message_util.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\generated_message_util.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\io\coded_stream.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\io\coded_stream.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\io\coded_stream_inl.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\io\gzip_stream.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\io\gzip_stream.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\io\tokenizer.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\io\tokenizer.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\io\zero_copy_stream.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\io\zero_copy_stream.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\io\zero_copy_stream_impl.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\io\zero_copy_stream_impl.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\io\zero_copy_stream_impl_lite.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\io\zero_copy_stream_impl_lite.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\message.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\message.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\message_lite.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\message_lite.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\reflection_ops.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\reflection_ops.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\repeated_field.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\repeated_field.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\service.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\service.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\atomicops.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\atomicops_internals_arm_gcc.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\atomicops_internals_arm_qnx.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\atomicops_internals_atomicword_compat.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\atomicops_internals_macosx.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\atomicops_internals_mips_gcc.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\atomicops_internals_pnacl.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\atomicops_internals_x86_gcc.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\stubs\atomicops_internals_x86_msvc.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\atomicops_internals_x86_msvc.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\stubs\common.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\common.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\hash.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\map-util.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\stubs\once.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\once.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\platform_macros.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\stl_util.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\stubs\stringprintf.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\stringprintf.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\stubs\structurally_valid.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\stubs\strutil.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\strutil.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\stubs\substitute.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\substitute.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\template_util.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\stubs\type_traits.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\testing\googletest.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\text_format.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\text_format.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\unknown_field_set.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\unknown_field_set.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\wire_format.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\wire_format.h">
+    </clinclude>
+    <clcompile include="..\..\src\protobuf\src\google\protobuf\wire_format_lite.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\wire_format_lite.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\src\google\protobuf\wire_format_lite_inl.h">
+    </clinclude>
+    <clinclude include="..\..\src\protobuf\vsprojects\config.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\book\amount.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\book\amounts.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\book\booktip.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\book\impl\booktip.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\book\impl\offerstream.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\book\impl\quality.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\book\impl\taker.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\book\offer.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\book\offerstream.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\book\quality.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\book\taker.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\book\tests\offerstream.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\book\tests\quality.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\book\types.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\consensus\disputedtx.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\consensus\disputedtx.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\consensus\ledgerconsensus.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\consensus\ledgerconsensus.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\data\database.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\data\database.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\data\databasecon.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\data\databasecon.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\data\dbinit.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\data\dbinit.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\data\sqlitedatabase.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\data\sqlitedatabase.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\impl\basicapp.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\impl\basicapp.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\acceptedledger.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\acceptedledger.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\acceptedledgertx.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\acceptedledgertx.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\accountstatesf.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\accountstatesf.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\booklisteners.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\booklisteners.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\consensustranssetsf.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\consensustranssetsf.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\directoryentryiterator.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\directoryentryiterator.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\inboundledger.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\inboundledger.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\inboundledgers.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\inboundledgers.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\ledger.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\ledger.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\ledger.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\ledger\ledgercleaner.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\ledgercleaner.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\ledgerentryset.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\ledgerentryset.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\ledgerhistory.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\ledgerhistory.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\ledger\ledgerholder.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\ledgermaster.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\ledgermaster.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\ledgerproposal.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\ledgerproposal.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\ledgertiming.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\ledgertiming.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\ledger\ledgertojson.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\orderbookdb.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\orderbookdb.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\orderbookiterator.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\orderbookiterator.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\ledger\transactionstatesf.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\ledger\transactionstatesf.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\main\application.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\main\application.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\main\collectormanager.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\main\collectormanager.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\main\loadmanager.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\main\loadmanager.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\main\localcredentials.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\main\localcredentials.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\main\main.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\main\nodestorescheduler.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\main\nodestorescheduler.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\main\tuning.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\misc\accountstate.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\misc\accountstate.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\misc\amendmenttable.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\misc\amendmenttableimpl.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\misc\canonicaltxset.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\misc\canonicaltxset.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\misc\defaultmissingnodehandler.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\misc\defaultmissingnodehandler.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\misc\feevote.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\misc\feevoteimpl.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\misc\hashrouter.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\misc\ihashrouter.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\misc\networkops.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\misc\networkops.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\misc\orderbook.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\misc\shamapstore.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\misc\shamapstoreimp.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\misc\shamapstoreimp.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\misc\validations.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\misc\validations.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\node\sqlitefactory.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\node\sqlitefactory.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\paths\accountcurrencies.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\paths\accountcurrencies.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\paths\credit.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\paths\credit.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\paths\cursor\advancenode.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\paths\cursor\delivernodeforward.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\paths\cursor\delivernodereverse.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\paths\cursor\forwardliquidity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\paths\cursor\forwardliquidityforaccount.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\paths\cursor\liquidity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\paths\cursor\nextincrement.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\paths\cursor\pathcursor.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\paths\cursor\reverseliquidity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\paths\cursor\reverseliquidityforaccount.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\paths\cursor\rippleliquidity.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\paths\cursor\rippleliquidity.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\paths\findpaths.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\paths\findpaths.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\paths\node.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\paths\node.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\paths\nodedirectory.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\paths\pathfinder.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\paths\pathfinder.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\paths\pathrequest.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\paths\pathrequest.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\paths\pathrequests.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\paths\pathrequests.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\paths\pathstate.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\paths\pathstate.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\paths\ripplecalc.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\paths\ripplecalc.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\paths\ripplelinecache.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\paths\ripplelinecache.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\paths\ripplestate.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\paths\ripplestate.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\paths\tuning.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\paths\types.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\app\peers\clusternodestatus.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\peers\peerset.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\peers\peerset.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\peers\uniquenodelist.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\peers\uniquenodelist.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\transactors\addwallet.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\transactors\canceloffer.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\transactors\cancelticket.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\transactors\change.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\transactors\createoffer.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\transactors\createoffer.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\transactors\createofferbridged.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\transactors\createofferdirect.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\transactors\createticket.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\transactors\payment.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\transactors\setaccount.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\transactors\setregularkey.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\transactors\settrust.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\transactors\transactor.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\transactors\transactor.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\tx\localtxs.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\tx\localtxs.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\tx\transaction.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\tx\transaction.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\tx\transactionacquire.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\tx\transactionacquire.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\tx\transactioncheck.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\app\tx\transactionengine.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\tx\transactionengine.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\tx\transactionmaster.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\tx\transactionmaster.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\tx\transactionmeta.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\tx\transactionmeta.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\websocket\wsconnection.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\websocket\wsconnection.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\websocket\wsdoor.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\websocket\wsdoor.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\app\websocket\wsserverhandler.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\app\websocket\wsserverhandler.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\base_uint.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\basicconfig.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\basictypes.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\blob.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\byteorder.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\byte_view.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\checklibraryversions.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\countedobject.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\decayingsample.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\hardened_hash.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\basics\impl\basicconfig.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\impl\checklibraryversions.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\basics\impl\checklibraryversionsimpl.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\basics\impl\countedobject.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\impl\log.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\impl\make_sslcontext.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\impl\rangeset.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\impl\resolverasio.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\impl\strhex.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\impl\stringutilities.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\impl\sustain.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\impl\testsuite.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\impl\threadname.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\impl\time.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\impl\uptimetimer.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\basics\keycache.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\log.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\loggedtimings.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\make_sslcontext.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\rangeset.h">
+    </clinclude>
+    <none include="..\..\src\ripple\basics\readme.md">
+    </none>
+    <clinclude include="..\..\src\ripple\basics\resolver.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\resolverasio.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\seconds_clock.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\strhex.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\stringutilities.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\sustain.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\syncunorderedmap.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\taggedcache.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\testsuite.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\basics\tests\checklibraryversions.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\tests\hardened_hash_test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\tests\keycache.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\tests\rangeset.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\tests\stringutilities.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\basics\tests\taggedcache.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\basics\threadname.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\time.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\tostring.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\unorderedcontainers.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\basics\uptimetimer.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\core\config.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\core\configsections.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\core\impl\config.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\core\impl\job.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\core\impl\jobqueue.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\core\impl\loadevent.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\core\impl\loadfeetrackimp.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\core\impl\loadfeetrackimp.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\core\impl\loadmonitor.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\core\job.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\core\jobqueue.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\core\jobtypedata.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\core\jobtypeinfo.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\core\jobtypes.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\core\loadevent.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\core\loadfeetrack.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\core\loadmonitor.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\core\tests\loadfeetrack.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\crypto\base58.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\crypto\base58data.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\crypto\cautobn_ctx.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\crypto\cbignum.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\crypto\dhutil.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\crypto\ecdsa.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\crypto\ecdsacanonical.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\crypto\ecies.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\crypto\ec_key.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\crypto\generatedeterministickey.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\crypto\impl\base58.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\crypto\impl\base58data.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\crypto\impl\cbignum.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\crypto\impl\dhutil.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\crypto\impl\ecdsa.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\crypto\impl\ecdsacanonical.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\crypto\impl\ecies.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\crypto\impl\ec_key.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\crypto\impl\generatedeterministickey.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\crypto\impl\randomnumbers.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\crypto\impl\rfc1751.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\crypto\randomnumbers.h">
+    </clinclude>
+    <none include="..\..\src\ripple\crypto\readme.md">
+    </none>
+    <clinclude include="..\..\src\ripple\crypto\rfc1751.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\crypto\tests\ckey.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\crypto\tests\ecdsacanonical.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\json\impl\jsonpropertystream.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\json\impl\json_assert.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\json\impl\json_batchallocator.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\json\impl\json_internalarray.inl">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\json\impl\json_internalmap.inl">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\json\impl\json_reader.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\json\impl\json_value.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\json\impl\json_valueiterator.inl">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\json\impl\json_writer.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\json\impl\to_string.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\json\jsonpropertystream.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\json\json_config.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\json\json_features.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\json\json_forwards.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\json\json_reader.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\json\json_value.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\json\json_writer.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\json\tests\jsoncpp.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\json\to_string.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\net\httpclient.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\net\httprequest.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\net\impl\httpclient.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\net\impl\httprequest.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\net\impl\infosub.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\net\impl\rpccall.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\net\impl\rpcerr.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\net\impl\rpcsub.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\net\impl\sntpclient.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\net\infosub.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\net\rpccall.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\net\rpcerr.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\net\rpcsub.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\net\sntpclient.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\nodestore\backend.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\nodestore\backend\hyperdbfactory.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\nodestore\backend\leveldbfactory.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\nodestore\backend\memoryfactory.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\nodestore\backend\nudbfactory.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\nodestore\backend\nullfactory.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\nodestore\backend\rocksdbfactory.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\nodestore\backend\rocksdbquickfactory.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\nodestore\database.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\nodestore\databaserotating.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\nodestore\dummyscheduler.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\nodestore\factory.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\nodestore\impl\batchwriter.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\nodestore\impl\batchwriter.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\nodestore\impl\codec.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\nodestore\impl\databaseimp.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\nodestore\impl\databaserotatingimp.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\nodestore\impl\databaserotatingimp.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\nodestore\impl\decodedblob.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\nodestore\impl\decodedblob.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\nodestore\impl\dummyscheduler.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\nodestore\impl\encodedblob.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\nodestore\impl\encodedblob.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\nodestore\impl\managerimp.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\nodestore\impl\managerimp.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\nodestore\impl\nodeobject.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\nodestore\impl\tuning.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\nodestore\manager.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\nodestore\nodeobject.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\nodestore\scheduler.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\nodestore\task.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\nodestore\tests\backend.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\nodestore\tests\base.test.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\nodestore\tests\basics.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\nodestore\tests\database.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\nodestore\tests\import_test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\nodestore\tests\timing.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\nodestore\types.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\overlay\impl\connectattempt.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\overlay\impl\connectattempt.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\overlay\impl\message.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\overlay\impl\overlayimpl.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\overlay\impl\overlayimpl.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\overlay\impl\peerimp.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\overlay\impl\peerimp.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\overlay\impl\protocolmessage.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\overlay\impl\tmhello.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\overlay\impl\tmhello.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\overlay\impl\tuning.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\overlay\impl\zerocopystream.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\overlay\make_overlay.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\overlay\message.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\overlay\overlay.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\overlay\peer.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\overlay\predicates.h">
+    </clinclude>
+    <none include="..\..\src\ripple\overlay\readme.md">
+    </none>
+    <clcompile include="..\..\src\ripple\overlay\tests\short_read.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\overlay\tests\tmhello.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\peerfinder\impl\bootcache.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\bootcache.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\checker.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\counts.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\peerfinder\impl\endpoint.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\fixed.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\handouts.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\iosformat.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\livecache.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\logic.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\peerfinder\impl\manager.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\peerfinder\impl\peerfinderconfig.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\reporting.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\peerfinder\impl\slotimp.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\slotimp.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\source.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\peerfinder\impl\sourcestrings.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\sourcestrings.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\store.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\storesqdb.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\impl\tuning.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\make_manager.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\manager.h">
+    </clinclude>
+    <none include="..\..\src\ripple\peerfinder\readme.md">
+    </none>
+    <clinclude include="..\..\src\ripple\peerfinder\sim\functionqueue.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\sim\graphalgorithms.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\sim\message.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\sim\nodesnapshot.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\sim\params.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\sim\predicates.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\peerfinder\sim\tests.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\peerfinder\sim\wrappedsink.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\peerfinder\slot.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\peerfinder\tests\livecache.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\protocol\book.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\buildinfo.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\errorcodes.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\hashprefix.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\protocol\impl\buildinfo.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\byteorder.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\errorcodes.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\hashprefix.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\indexes.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\ledgerformats.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\rippleaddress.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\serializer.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\sfield.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\sotemplate.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\staccount.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\stamount.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\starray.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\stbase.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\stblob.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\stinteger.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\stledgerentry.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\stobject.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\stparsedjson.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\stpathset.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\sttx.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\stvalidation.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\stvector256.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\ter.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\txformats.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\impl\uinttypes.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\protocol\indexes.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\issue.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\jsonfields.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\knownformats.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\ledgerformats.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\protocol.h">
+    </clinclude>
+    <none include="..\..\src\ripple\protocol\readme.md">
+    </none>
+    <clinclude include="..\..\src\ripple\protocol\rippleaddress.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\rippleledgerhash.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\ripplepublickey.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\serializer.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\sfield.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\sotemplate.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\staccount.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\stamount.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\starray.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\stbase.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\stbitstring.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\stblob.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\stinteger.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\stledgerentry.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\stobject.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\stparsedjson.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\stpathset.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\sttx.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\stvalidation.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\stvector256.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\systemparameters.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\ter.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\protocol\tests\buildinfo.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\tests\issue.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\tests\rippleaddress.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\tests\serializer.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\tests\stamount.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\tests\stobject.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\protocol\tests\sttx.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\protocol\txflags.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\txformats.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\uint160.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\protocol\uinttypes.h">
+    </clinclude>
+    <custombuild include="..\..\src\ripple\proto\ripple.proto">
+      <filetype>document</filetype>
+      <command condition="'$(configuration)|$(platform)'=='debug|x64'">protoc --cpp_out=..\..\build\proto --proto_path=%(relativedir) %(identity)</command>
+      <outputs condition="'$(configuration)|$(platform)'=='debug|x64'">..\..\build\proto\ripple.pb.h;..\..\build\proto\ripple.pb.cc</outputs>
+      <message condition="'$(configuration)|$(platform)'=='debug|x64'">protoc --cpp_out=..\..\build\proto --proto_path=%(relativedir) %(identity)</message>
+      <linkobjects condition="'$(configuration)|$(platform)'=='debug|x64'">false</linkobjects>
+      <filetype>document</filetype>
+      <command condition="'$(configuration)|$(platform)'=='release|x64'">protoc --cpp_out=..\..\build\proto --proto_path=%(relativedir) %(identity)</command>
+      <outputs condition="'$(configuration)|$(platform)'=='release|x64'">..\..\build\proto\ripple.pb.h;..\..\build\proto\ripple.pb.cc</outputs>
+      <message condition="'$(configuration)|$(platform)'=='release|x64'">protoc --cpp_out=..\..\build\proto --proto_path=%(relativedir) %(identity)</message>
+      <linkobjects condition="'$(configuration)|$(platform)'=='release|x64'">false</linkobjects>
+    </custombuild>
+    <clinclude include="..\..\src\ripple\resource\charge.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\resource\consumer.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\resource\disposition.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\resource\fees.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\resource\gossip.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\resource\impl\charge.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\resource\impl\consumer.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\resource\impl\entry.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\resource\impl\fees.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\resource\impl\import.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\resource\impl\key.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\resource\impl\kind.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\resource\impl\logic.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\resource\impl\manager.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\resource\impl\tuning.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\resource\manager.h">
+    </clinclude>
+    <none include="..\..\src\ripple\resource\readme.md">
+    </none>
+    <clcompile include="..\..\src\ripple\resource\tests\logic.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\coroutine.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\handlers\accountcurrencies.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\accountinfo.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\accountlines.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\accountoffers.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\accounttx.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\accounttxold.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\accounttxswitch.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\blacklist.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\bookoffers.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\candelete.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\connect.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\consensusinfo.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\feature.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\fetchinfo.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\getcounts.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\handlers\handlers.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\handlers\internal.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\ledger.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\handlers\ledger.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\handlers\ledgeraccept.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\ledgercleaner.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\ledgerclosed.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\ledgercurrent.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\ledgerdata.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\ledgerentry.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\ledgerheader.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\ledgerrequest.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\loglevel.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\logrotate.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\ownerinfo.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\pathfind.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\peers.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\ping.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\print.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\random.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\ripplepathfind.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\serverinfo.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\serverstate.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\sign.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\sms.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\stop.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\submit.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\subscribe.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\transactionentry.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\tx.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\txhistory.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\unladd.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\unldelete.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\unllist.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\unlload.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\unlnetwork.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\unlreset.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\unlscore.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\unsubscribe.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\validationcreate.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\validationseed.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\walletaccounts.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\walletpropose.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\handlers\walletseed.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\impl\accountfromstring.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\impl\accountfromstring.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\impl\accounts.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\impl\accounts.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\rpc\impl\context.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\impl\coroutine.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\impl\doprint.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\impl\getmastergenerator.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\impl\getmastergenerator.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\impl\handler.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\impl\handler.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\impl\jsonobject.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\impl\jsonobject.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\impl\jsonwriter.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\impl\jsonwriter.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\impl\legacypathfind.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\impl\legacypathfind.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\impl\lookupledger.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\impl\lookupledger.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\impl\manager.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\impl\parseaccountids.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\impl\parseaccountids.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\impl\rpchandler.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\impl\status.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\impl\transactionsign.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\impl\transactionsign.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\rpc\impl\tuning.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\impl\utilities.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\impl\writejson.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\impl\writejson.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\impl\yield.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\internalhandler.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\rpc\manager.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\rpc\output.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\rpc\request.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\rpc\rpchandler.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\rpc\status.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\tests\coroutine.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\tests\jsonobject.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\tests\jsonrpc.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\tests\jsonwriter.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\tests\status.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\tests\testoutputsuite.test.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\rpc\tests\writejson.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\rpc\tests\yield.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\rpc\yield.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\server\handler.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\server\handoff.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\server\impl\door.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\server\impl\door.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\server\impl\jsonrpcutil.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\server\impl\jsonrpcutil.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\server\impl\peer.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\server\impl\plainpeer.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\server\impl\role.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\server\impl\serverhandlerimp.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\server\impl\serverhandlerimp.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\server\impl\serverimpl.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\server\impl\serverimpl.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\server\impl\sslpeer.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\server\jsonwriter.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\server\make_server.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\server\make_serverhandler.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\server\port.h">
+    </clinclude>
+    <none include="..\..\src\ripple\server\readme.md">
+    </none>
+    <clinclude include="..\..\src\ripple\server\role.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\server\server.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\server\serverhandler.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\server\session.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\server\tests\server.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\server\writer.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\shamap\fullbelowcache.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\shamap\impl\shamap.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\shamap\impl\shamapdelta.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\shamap\impl\shamapitem.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\shamap\impl\shamapmissingnode.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\shamap\impl\shamapnodeid.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\shamap\impl\shamapsync.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\shamap\impl\shamaptreenode.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\shamap\shamap.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\shamap\shamapaddnode.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\shamap\shamapitem.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\shamap\shamapmissingnode.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\shamap\shamapnodeid.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\shamap\shamapsyncfilter.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\shamap\shamaptreenode.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\shamap\tests\fetchpack.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\shamap\tests\shamap.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\shamap\tests\shamapsync.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\shamap\treenodecache.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\unity\app.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\app1.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\app2.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\app3.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\app4.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\app5.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\app6.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\app7.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\app8.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\app9.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\basics.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\beast.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\beastc.c">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\core.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\crypto.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\ed25519.c">
+      <additionalincludedirectories condition="'$(configuration)|$(platform)'=='debug|x64'">..\..\src\ed25519-donna;%(additionalincludedirectories)</additionalincludedirectories>
+      <additionalincludedirectories condition="'$(configuration)|$(platform)'=='release|x64'">..\..\src\ed25519-donna;%(additionalincludedirectories)</additionalincludedirectories>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\git_id.cpp">
+    </clcompile>
+    <clinclude include="..\..\src\ripple\unity\git_id.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\unity\hyperleveldb.cpp">
+      <additionalincludedirectories condition="'$(configuration)|$(platform)'=='debug|x64'">..\..\src\hyperleveldb;..\..\src\snappy\config;..\..\src\snappy\snappy;%(additionalincludedirectories)</additionalincludedirectories>
+      <additionalincludedirectories condition="'$(configuration)|$(platform)'=='release|x64'">..\..\src\hyperleveldb;..\..\src\snappy\config;..\..\src\snappy\snappy;%(additionalincludedirectories)</additionalincludedirectories>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\unity\hyperleveldb.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\unity\json.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\leveldb.cpp">
+      <additionalincludedirectories condition="'$(configuration)|$(platform)'=='debug|x64'">..\..\src\leveldb;..\..\src\leveldb\include;..\..\src\snappy\config;..\..\src\snappy\snappy;%(additionalincludedirectories)</additionalincludedirectories>
+      <additionalincludedirectories condition="'$(configuration)|$(platform)'=='release|x64'">..\..\src\leveldb;..\..\src\leveldb\include;..\..\src\snappy\config;..\..\src\snappy\snappy;%(additionalincludedirectories)</additionalincludedirectories>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\unity\leveldb.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\unity\lz4.c">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\net.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\nodestore.cpp">
+      <additionalincludedirectories condition="'$(configuration)|$(platform)'=='debug|x64'">..\..\src\leveldb\include;..\..\src\rocksdb2\include;..\..\src\snappy\config;..\..\src\snappy\snappy;%(additionalincludedirectories)</additionalincludedirectories>
+      <additionalincludedirectories condition="'$(configuration)|$(platform)'=='release|x64'">..\..\src\leveldb\include;..\..\src\rocksdb2\include;..\..\src\snappy\config;..\..\src\snappy\snappy;%(additionalincludedirectories)</additionalincludedirectories>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\overlay.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\peerfinder.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\protobuf.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\protocol.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\resource.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\ripple.proto.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\rocksdb.cpp">
+      <additionalincludedirectories condition="'$(configuration)|$(platform)'=='debug|x64'">..\..\src\rocksdb2;..\..\src\rocksdb2\include;..\..\src\snappy\config;..\..\src\snappy\snappy;%(additionalincludedirectories)</additionalincludedirectories>
+      <additionalincludedirectories condition="'$(configuration)|$(platform)'=='release|x64'">..\..\src\rocksdb2;..\..\src\rocksdb2\include;..\..\src\snappy\config;..\..\src\snappy\snappy;%(additionalincludedirectories)</additionalincludedirectories>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\unity\rocksdb.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\unity\rpcx.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\server.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\shamap.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\snappy.cpp">
+      <additionalincludedirectories condition="'$(configuration)|$(platform)'=='debug|x64'">..\..\src\snappy\config;..\..\src\snappy\snappy;%(additionalincludedirectories)</additionalincludedirectories>
+      <additionalincludedirectories condition="'$(configuration)|$(platform)'=='release|x64'">..\..\src\snappy\config;..\..\src\snappy\snappy;%(additionalincludedirectories)</additionalincludedirectories>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\validators.cpp">
+    </clcompile>
+    <clcompile include="..\..\src\ripple\unity\websocket.cpp">
+    </clcompile>
+    <clinclude include="..\..\src\ripple\unity\websocket.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\validators\connection.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\validators\impl\connectionimp.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\validators\impl\connectionimp.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\validators\impl\logic.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\validators\impl\logic.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\validators\impl\manager.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\validators\impl\store.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\validators\impl\storesqdb.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\validators\impl\storesqdb.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\validators\impl\tuning.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\validators\make_manager.h">
+    </clinclude>
+    <clinclude include="..\..\src\ripple\validators\manager.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\validators\tests\validators.test.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\ripple\websocket\autosocket\autosocket.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\ripple\websocket\autosocket\autosocket.h">
+    </clinclude>
+    <clcompile include="..\..\src\ripple\websocket\autosocket\logwebsockets.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\db\builder.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\builder.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\c.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\db\column_family.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\column_family.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\compaction.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\compaction.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\compaction_picker.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\compaction_picker.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\dbformat.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\dbformat.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\db_filesnapshot.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\db\db_impl.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\db_impl.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\db_impl_debug.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\db\db_impl_readonly.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\db_impl_readonly.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\db_iter.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\db_iter.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\filename.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\filename.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\file_indexer.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\file_indexer.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\forward_iterator.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\forward_iterator.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\internal_stats.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\internal_stats.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\db\log_format.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\log_reader.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\log_reader.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\log_writer.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\log_writer.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\memtable.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\memtable.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\memtable_list.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\memtable_list.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\db\merge_context.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\merge_helper.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\merge_helper.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\merge_operator.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\db\repair.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\skiplist.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\db\snapshot.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\table_cache.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\table_cache.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\table_properties_collector.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\table_properties_collector.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\transaction_log_impl.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\transaction_log_impl.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\version_edit.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\version_edit.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\version_set.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\version_set.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\db\write_batch.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\db\write_batch_internal.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\hdfs\env_hdfs.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\c.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\cache.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\compaction_filter.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\comparator.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\db.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\env.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\filter_policy.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\flush_block_policy.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\iostats_context.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\iterator.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\ldb_tool.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\memtablerep.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\merge_operator.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\options.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\perf_context.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\rate_limiter.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\slice.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\slice_transform.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\statistics.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\status.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\table.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\table_properties.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\transaction_log.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\types.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\universal_compaction.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\utilities\backupable_db.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\utilities\db_ttl.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\utilities\document_db.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\utilities\geo_db.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\utilities\json_document.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\utilities\spatial_db.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\utilities\stackable_db.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\utilities\utility_db.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\version.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\include\rocksdb\write_batch.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\port\atomic_pointer.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\port\likely.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\port\port.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\port\port_posix.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\port\port_posix.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\port\stack_trace.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\port\stack_trace.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\adaptive_table_factory.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\adaptive_table_factory.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\block.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\block.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\block_based_table_builder.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\block_based_table_builder.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\block_based_table_factory.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\block_based_table_factory.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\block_based_table_reader.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\block_based_table_reader.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\block_builder.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\block_builder.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\block_hash_index.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\block_hash_index.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\block_prefix_index.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\block_prefix_index.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\bloom_block.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\bloom_block.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\cuckoo_table_builder.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\cuckoo_table_builder.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\cuckoo_table_factory.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\cuckoo_table_factory.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\cuckoo_table_reader.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\cuckoo_table_reader.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\filter_block.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\filter_block.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\flush_block_policy.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\table\format.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\format.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\iterator.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\iterator_wrapper.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\table\iter_heap.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\merger.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\merger.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\meta_blocks.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\meta_blocks.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\plain_table_builder.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\plain_table_builder.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\plain_table_factory.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\plain_table_factory.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\plain_table_index.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\plain_table_index.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\plain_table_key_coding.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\plain_table_key_coding.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\plain_table_reader.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\plain_table_reader.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\table\table_builder.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\table_properties.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\table_reader.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\table\two_level_iterator.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\table\two_level_iterator.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\third-party\rapidjson\internal\pow10.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\third-party\rapidjson\internal\stack.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\third-party\rapidjson\rapidjson.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\third-party\rapidjson\reader.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\utilities\backupable\backupable_db.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\utilities\document\document_db.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\utilities\document\json_document.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\utilities\geodb\geodb_impl.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\utilities\geodb\geodb_impl.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\utilities\merge_operators.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\utilities\merge_operators\put.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\utilities\merge_operators\string_append\stringappend.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\utilities\merge_operators\string_append\stringappend.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\utilities\merge_operators\string_append\stringappend2.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\utilities\merge_operators\string_append\stringappend2.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\utilities\merge_operators\uint64add.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\utilities\redis\redis_lists.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\utilities\redis\redis_lists.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\utilities\redis\redis_list_exception.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\utilities\redis\redis_list_iterator.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\utilities\spatialdb\spatial_db.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\utilities\spatialdb\utils.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\utilities\ttl\db_ttl_impl.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\utilities\ttl\db_ttl_impl.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\arena.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\arena.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\util\autovector.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\auto_roll_logger.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\auto_roll_logger.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\blob_store.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\blob_store.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\bloom.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\build_version.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\cache.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\util\coding.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\coding.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\comparator.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\util\crc32c.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\crc32c.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\db_info_dummper.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\util\dynamic_bloom.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\dynamic_bloom.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\env.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\util\env_hdfs.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\util\env_posix.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\util\filter_policy.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\util\hash.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\hash.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\hash_cuckoo_rep.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\hash_cuckoo_rep.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\hash_linklist_rep.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\hash_linklist_rep.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\hash_skiplist_rep.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\hash_skiplist_rep.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\histogram.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\histogram.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\iostats_context.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\iostats_context_imp.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\ldb_cmd.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\ldb_cmd.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\util\ldb_cmd_execute_result.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\ldb_tool.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\util\logging.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\logging.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\log_buffer.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\log_buffer.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\murmurhash.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\murmurhash.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\util\mutexlock.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\options.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\util\options_builder.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\util\perf_context.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\perf_context_imp.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\util\posix_logger.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\util\random.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\rate_limiter.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\rate_limiter.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\skiplistrep.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\util\slice.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\util\statistics.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\statistics.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\status.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\stl_wrappers.h">
+    </clinclude>
+    <clinclude include="..\..\src\rocksdb2\util\stop_watch.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\string_util.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\string_util.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\sync_point.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\sync_point.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\thread_local.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\thread_local.h">
+    </clinclude>
+    <clcompile include="..\..\src\rocksdb2\util\vectorrep.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clcompile include="..\..\src\rocksdb2\util\xxhash.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\rocksdb2\util\xxhash.h">
+    </clinclude>
+    <clinclude include="..\..\src\snappy\config\snappy-stubs-public.h">
+    </clinclude>
+    <clinclude include="..\..\src\snappy\snappy\snappy-internal.h">
+    </clinclude>
+    <clcompile include="..\..\src\snappy\snappy\snappy-sinksource.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\snappy\snappy\snappy-sinksource.h">
+    </clinclude>
+    <clcompile include="..\..\src\snappy\snappy\snappy-stubs-internal.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\snappy\snappy\snappy-stubs-internal.h">
+    </clinclude>
+    <clcompile include="..\..\src\snappy\snappy\snappy.cc">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\snappy\snappy\snappy.h">
+    </clinclude>
+    <clcompile include="..\..\src\websocketpp_02\src\base64\base64.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\websocketpp_02\src\base64\base64.h">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\common.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\connection.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\endpoint.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\http\constants.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\http\parser.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\logger\logger.hpp">
+    </clinclude>
+    <clcompile include="..\..\src\websocketpp_02\src\md5\md5.c">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\websocketpp_02\src\md5\md5.h">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\md5\md5.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\messages\control.hpp">
+    </clinclude>
+    <clcompile include="..\..\src\websocketpp_02\src\messages\data.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\websocketpp_02\src\messages\data.hpp">
+    </clinclude>
+    <clcompile include="..\..\src\websocketpp_02\src\network_utilities.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\websocketpp_02\src\network_utilities.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\processors\hybi.hpp">
+    </clinclude>
+    <clcompile include="..\..\src\websocketpp_02\src\processors\hybi_header.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\websocketpp_02\src\processors\hybi_header.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\processors\hybi_legacy.hpp">
+    </clinclude>
+    <clcompile include="..\..\src\websocketpp_02\src\processors\hybi_util.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\websocketpp_02\src\processors\hybi_util.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\processors\processor.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\rng\blank_rng.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\roles\server.hpp">
+    </clinclude>
+    <clcompile include="..\..\src\websocketpp_02\src\sha1\sha1.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\websocketpp_02\src\sha1\sha1.h">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\shared_const_buffer.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\sockets\autotls.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\sockets\socket_base.hpp">
+    </clinclude>
+    <clcompile include="..\..\src\websocketpp_02\src\uri.cpp">
+      <excludedfrombuild>true</excludedfrombuild>
+    </clcompile>
+    <clinclude include="..\..\src\websocketpp_02\src\uri.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\utf8_validator\utf8_validator.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\websocketpp.hpp">
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp_02\src\websocket_frame.hpp">
+    </clinclude>
+  </itemgroup>
+  <import project="$(vctargetspath)\microsoft.cpp.targets" />
+  <importgroup label="extensiontargets">
+  </importgroup>
+</project>

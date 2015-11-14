@@ -1,0 +1,20 @@
+## chat_server
+##
+
+import('env')
+import('boostlibs')
+import('wslib')
+import('platform_libs')
+
+localenv = env.clone ()
+
+sources = ["chat_server.cpp","chat.cpp"]
+
+libs = [wslib, platform_libs] + boostlibs(['system',
+                                           'date_time',
+                                           'regex',
+                                           'thread'])
+
+prg = localenv.program('chat_server', sources, libs = libs)
+
+return('prg')

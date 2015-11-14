@@ -1,0 +1,20 @@
+## echo_server
+##
+
+import('env')
+import('boostlibs')
+import('wslib')
+import('platform_libs')
+
+localenv = env.clone ()
+
+sources = ["echo_server.cpp"]
+
+libs = [wslib, platform_libs] + boostlibs(['system',
+                                           'date_time',
+                                           'regex',
+                                           'thread'])
+
+prg = localenv.program('echo_server', sources, libs = libs)
+
+return('prg')

@@ -1,0 +1,330 @@
+package protocol;
+
+enum messagetype
+{
+    mthello                 = 181; // must less then 0xff, @sa peer_protocol_detector::operator()
+    mtping                  = 3;
+    mtproofofwork           = 4;
+    mtcluster               = 5;
+    mtget_peers             = 12;
+    mtpeers                 = 13;
+    mtendpoints             = 15;
+    mttransaction           = 30;
+    mtget_ledger            = 31;
+    mtledger_data           = 32;
+    mtpropose_ledger        = 33;
+    mtstatus_change         = 34;
+    mthave_set              = 35;
+    mtvalidation            = 41;
+    mtget_objects           = 42;
+
+    // <available>          = 2;
+    // <available>          = 10;
+    // <available>          = 11;
+    // <available>          = 14;
+    // <available>          = 20;
+    // <available>          = 21;
+    // <available>          = 22;
+    // <available>          = 40;
+}
+
+// token, iterations, target, challenge = issue demand for proof of work
+// token, response = give solution to proof of work
+// token, result = report result of pow
+
+//------------------------------------------------------------------------------
+
+/*  requests or responds to a proof of work.
+    unimplemented and unused currently.
+*/
+message tmproofwork
+{
+    required string token       = 1;
+    optional uint32 iterations  = 2;
+    optional bytes target       = 3;
+    optional bytes challenge    = 4;
+    optional bytes response     = 5;
+
+    enum powresult
+    {
+        powrok          = 0;
+        powrreused      = 1;
+        powrexpired     = 2;    // you took too long solving
+        powrtooeasy     = 3;    // difficulty went way up, sorry
+        powrinvalid     = 4;
+        powrdisconnect  = 5;    // we are disconnecting
+    }
+    optional powresult result   = 6;
+}
+
+//------------------------------------------------------------------------------
+
+// sent on connect
+message tmhello
+{
+    // vfalco note the major and minor parts of the version number are
+    //             encoded in the high and low order 16 bits of the uint32.
+    //
+    required uint32         protoversion    = 1;
+    required uint32         protoversionmin = 2;
+    required bytes          nodepublic      = 3;
+    required bytes          nodeproof       = 4;
+    optional string         fullversion     = 5;
+    optional uint64         nettime         = 6;
+    optional uint32         ipv4port        = 7;
+    optional uint32         ledgerindex     = 8;
+    optional bytes          ledgerclosed    = 9;  // our last closed ledger
+    optional bytes          ledgerprevious  = 10; // the ledger before the last closed ledger
+    optional bool           nodeprivate     = 11; // request to not forward ip.
+    optional tmproofwork    proofofwork     = 12; // request/provide proof of work
+    optional bool           testnet         = 13; // running as testnet.
+}
+
+// the status of a node in our cluster
+message tmclusternode
+{
+    required string          publickey       = 1;
+    required uint32          reporttime      = 2;
+    required uint32          nodeload        = 3;
+    optional string          nodename        = 4;
+    optional string          address         = 5;
+}
+
+// sources that are placing load on the server
+message tmloadsource
+{
+    required string          name            = 1;
+    required uint32          cost            = 2;
+    optional uint32          count           = 3; // number of connections
+}
+
+// the status of all nodes in the cluster
+message tmcluster
+{
+    repeated tmclusternode   clusternodes    = 1;
+    repeated tmloadsource    loadsources     = 2;
+}
+
+
+// a transaction can have only one input and one output.
+// if you want to send an amount that is greater than any single address of yours
+// you must first combine coins from one address to another.
+
+enum transactionstatus
+{
+    tsnew               = 1;    // origin node did/could not validate
+    tscurrent           = 2;    // scheduled to go in this ledger
+    tscommited          = 3;    // in a closed ledger
+    tsreject_conflict   = 4;
+    tsreject_invalid    = 5;
+    tsreject_funds      = 6;
+    tsheld_seq          = 7;
+    tsheld_ledger       = 8;    // held for future ledger
+}
+
+message tmtransaction
+{
+    required bytes rawtransaction           = 1;
+    required transactionstatus status       = 2;
+    optional uint64 receivetimestamp        = 3;
+    optional bool deferred                  = 4;    // not applied to open ledger
+}
+
+
+enum nodestatus
+{
+    nsconnecting    = 1;        // acquiring connections
+    nsconnected     = 2;        // convinced we are connected to the real network
+    nsmonitoring    = 3;        // we know what the previous ledger is
+    nsvalidating    = 4;        // we have the full ledger contents
+    nsshutting      = 5;        // node is shutting down
+}
+
+enum nodeevent
+{
+    neclosing_ledger    = 1;    // closing a ledger because its close time has come
+    neaccepted_ledger   = 2;    // accepting a closed ledger, we have finished computing it
+    neswitched_ledger   = 3;    // changing due to network consensus
+    nelost_sync         = 4;
+}
+
+message tmstatuschange
+{
+    optional nodestatus newstatus       = 1;
+    optional nodeevent newevent         = 2;
+    optional uint32 ledgerseq           = 3;
+    optional bytes ledgerhash           = 4;
+    optional bytes ledgerhashprevious   = 5;
+    optional uint64 networktime         = 6;
+    optional uint32 firstseq            = 7;
+    optional uint32 lastseq             = 8;
+}
+
+
+// announce to the network our position on a closing ledger
+message tmproposeset
+{
+    required uint32 proposeseq          = 1;
+    required bytes currenttxhash        = 2;    // the hash of the ledger we are proposing
+    required bytes nodepubkey           = 3;
+    required uint32 closetime           = 4;
+    required bytes signature            = 5;    // signature of above fields
+    optional bytes previousledger       = 6;
+    optional bool checkedsignature      = 7;    // node vouches signature is correct
+    repeated bytes addedtransactions    = 10;   // not required if number is large
+    repeated bytes removedtransactions  = 11;   // not required if number is large
+}
+
+enum txsetstatus
+{
+    tshave      = 1;    // we have this set locally
+    tscan_get   = 2;    // we have a peer with this set
+    tsneed      = 3;    // we need this set and can't get it
+}
+
+message tmhavetransactionset
+{
+    required txsetstatus status     = 1;
+    required bytes hash             = 2;
+}
+
+
+// used to sign a final closed ledger after reprocessing
+message tmvalidation
+{
+    required bytes validation       = 1;        // in stvalidation signed form
+    optional bool checkedsignature  = 2;        // node vouches signature is correct
+}
+
+message tmgetpeers
+{
+    required uint32 doweneedthis    = 1;  // yes since you are asserting that the packet size isn't 0 in message
+}
+
+message tmipv4endpoint
+{
+    required uint32 ipv4            = 1;
+
+    // vfalco note there is no uint16 in google protocol buffers,
+    //             so we use a uint32 to represent the port.
+    //
+    required uint32 ipv4port        = 2;
+}
+
+message tmpeers
+{
+    repeated tmipv4endpoint nodes   = 1;
+}
+
+// an endpoint describes a network peer that can accept incoming connections
+message tmendpoint
+{
+    required tmipv4endpoint ipv4    = 1;
+    required uint32         hops    = 2;
+}
+
+// an array of endpoint messages
+message tmendpoints
+{
+    // this field is used to allow the tmendpoints message format to be
+    // modified as necessary in the future. 
+    required uint32         version = 1;
+
+    repeated tmendpoint     endpoints = 2;
+};
+
+message tmindexedobject
+{
+    optional bytes hash         = 1;
+    optional bytes nodeid       = 2;
+    optional bytes index        = 3;
+    optional bytes data         = 4;
+    optional uint32 ledgerseq   = 5;
+}
+
+message tmgetobjectbyhash
+{
+    enum objecttype {
+        otunknown           = 0;
+        otledger            = 1;
+        ottransaction       = 2;
+        ottransaction_node  = 3;
+        otstate_node        = 4;
+        otcas_object        = 5;
+        otfetch_pack        = 6;
+    }
+
+    required objecttype type            = 1;
+    required bool query                 = 2;    // is this a query or a reply?
+    optional uint32 seq                 = 3;    // used to match replies to queries
+    optional bytes ledgerhash           = 4;    // the hash of the ledger these queries are for
+    optional bool fat                   = 5;    // return related nodes
+    repeated tmindexedobject objects    = 6;    // the specific objects requested
+}
+
+
+message tmledgernode
+{
+    required bytes nodedata         = 1;
+    optional bytes nodeid           = 2;    // missing for ledger base data
+}
+
+enum tmledgerinfotype
+{
+    libase          = 0;        // basic ledger info
+    litx_node       = 1;        // transaction node
+    lias_node       = 2;        // account state node
+    lits_candidate  = 3;        // candidate transaction set
+}
+
+enum tmledgertype
+{
+    ltaccepted      = 0;
+    ltcurrent       = 1;
+    ltclosed        = 2;
+}
+
+enum tmquerytype
+{
+    qtindirect      = 0;
+}
+
+message tmgetledger
+{
+    required tmledgerinfotype itype = 1;
+    optional tmledgertype ltype     = 2;
+    optional bytes ledgerhash       = 3;    // can also be the transaction set hash if lits_candidate
+    optional uint32 ledgerseq       = 4;
+    repeated bytes nodeids          = 5;
+    optional uint64 requestcookie   = 6;
+    optional tmquerytype querytype  = 7;
+}
+
+enum tmreplyerror
+{
+    reno_ledger                     = 1;    // we don't have the ledger you are asking about
+    reno_node                       = 2;    // we don't have any of the nodes you are asking for
+}
+
+message tmledgerdata
+{
+    required bytes ledgerhash       = 1;
+    required uint32 ledgerseq       = 2;
+    required tmledgerinfotype type  = 3;
+    repeated tmledgernode nodes     = 4;
+    optional uint32 requestcookie   = 5;
+    optional tmreplyerror error     = 6;
+}
+
+message tmping
+{
+    enum pingtype {
+        ptping = 0; // we want a reply
+        ptpong = 1; // this is a reply
+    }
+    required pingtype type      = 1;
+    optional uint32 seq         = 2; // detect stale replies, ensure other side is reading
+    optional uint64 pingtime    = 3; // know when we think we sent the ping
+    optional uint64 nettime     = 4;
+}
+

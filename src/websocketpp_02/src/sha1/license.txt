@@ -1,0 +1,14 @@
+copyright (c) 1998, 2009
+paul e. jones <paulej@packetizer.com>
+
+freeware public license (fpl)
+
+this software is licensed as "freeware."  permission to distribute
+this software in source and binary forms, including incorporation 
+into other products, is hereby granted without a fee.  this software 
+is provided 'as is' and without any expressed or implied warranties, 
+including, but not limited to, the implied warranties of merchantability 
+and fitness for a particular purpose.  the author shall not be held 
+liable for any damages resulting from the use of this software, either 
+directly or indirectly, including, but not limited to, loss of data 
+or data being rendered inaccurate.

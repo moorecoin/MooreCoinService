@@ -1,0 +1,30 @@
+// see readme.txt for information and build instructions.
+
+package tutorial;
+
+option java_package = "com.example.tutorial";
+option java_outer_classname = "addressbookprotos";
+
+message person {
+  required string name = 1;
+  required int32 id = 2;        // unique id number for this person.
+  optional string email = 3;
+
+  enum phonetype {
+    mobile = 0;
+    home = 1;
+    work = 2;
+  }
+
+  message phonenumber {
+    required string number = 1;
+    optional phonetype type = 2 [default = home];
+  }
+
+  repeated phonenumber phone = 4;
+}
+
+// our address book file is just one of these.
+message addressbook {
+  repeated person person = 1;
+}

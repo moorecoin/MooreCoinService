@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scheme
+   lastupgradeversion = "0610"
+   version = "1.3">
+   <buildaction
+      parallelizebuildables = "yes"
+      buildimplicitdependencies = "yes">
+      <buildactionentries>
+         <buildactionentry
+            buildfortesting = "yes"
+            buildforrunning = "yes"
+            buildforprofiling = "yes"
+            buildforarchiving = "yes"
+            buildforanalyzing = "yes">
+            <buildablereference
+               buildableidentifier = "primary"
+               blueprintidentifier = "842440531a13b2b900a37710"
+               buildablename = "radard"
+               blueprintname = "radard"
+               referencedcontainer = "container:radard.xcodeproj">
+            </buildablereference>
+         </buildactionentry>
+      </buildactionentries>
+   </buildaction>
+   <testaction
+      selecteddebuggeridentifier = "xcode.debuggerfoundation.debugger.lldb"
+      selectedlauncheridentifier = "xcode.debuggerfoundation.launcher.lldb"
+      shoulduselaunchschemeargsenv = "yes"
+      buildconfiguration = "debug">
+      <testables>
+      </testables>
+   </testaction>
+   <launchaction
+      selecteddebuggeridentifier = "xcode.debuggerfoundation.debugger.lldb"
+      selectedlauncheridentifier = "xcode.debuggerfoundation.launcher.lldb"
+      launchstyle = "0"
+      usecustomworkingdirectory = "yes"
+      customworkingdirectory = "$(srcroot)/../../build"
+      buildconfiguration = "debug"
+      ignorespersistentstateonlaunch = "no"
+      debugdocumentversioning = "yes"
+      allowlocationsimulation = "yes">
+      <buildableproductrunnable
+         runnabledebuggingmode = "0">
+         <buildablereference
+            buildableidentifier = "primary"
+            blueprintidentifier = "842440531a13b2b900a37710"
+            buildablename = "radard"
+            blueprintname = "radard"
+            referencedcontainer = "container:radard.xcodeproj">
+         </buildablereference>
+      </buildableproductrunnable>
+      <commandlinearguments>
+         <commandlineargument
+            argument = "--fg"
+            isenabled = "yes">
+         </commandlineargument>
+         <commandlineargument
+            argument = "--load"
+            isenabled = "no">
+         </commandlineargument>
+         <commandlineargument
+            argument = "--net"
+            isenabled = "yes">
+         </commandlineargument>
+         <commandlineargument
+            argument = "--ledger 536113"
+            isenabled = "no">
+         </commandlineargument>
+         <commandlineargument
+            argument = "--standalone"
+            isenabled = "no">
+         </commandlineargument>
+      </commandlinearguments>
+      <additionaloptions>
+      </additionaloptions>
+   </launchaction>
+   <profileaction
+      shoulduselaunchschemeargsenv = "yes"
+      savedtoolidentifier = ""
+      usecustomworkingdirectory = "no"
+      buildconfiguration = "release"
+      debugdocumentversioning = "yes">
+      <macroexpansion>
+         <buildablereference
+            buildableidentifier = "primary"
+            blueprintidentifier = "842440531a13b2b900a37710"
+            buildablename = "radard"
+            blueprintname = "radard"
+            referencedcontainer = "container:radard.xcodeproj">
+         </buildablereference>
+      </macroexpansion>
+   </profileaction>
+   <analyzeaction
+      buildconfiguration = "debug">
+   </analyzeaction>
+   <archiveaction
+      buildconfiguration = "release"
+      revealarchiveinorganizer = "yes">
+   </archiveaction>
+</scheme>

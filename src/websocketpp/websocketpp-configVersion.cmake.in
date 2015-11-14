@@ -1,0 +1,11 @@
+set(package_version "@websocketpp_version@")
+
+# check whether the requested package_find_version is compatible
+if("${package_version}" version_less "${package_find_version}")
+  set(package_version_compatible false)
+else()
+  set(package_version_compatible true)
+  if ("${package_version}" version_equal "${package_find_version}")
+    set(package_version_exact true)
+  endif()
+endif()

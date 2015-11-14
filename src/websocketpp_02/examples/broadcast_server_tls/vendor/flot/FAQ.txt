@@ -1,0 +1,76 @@
+frequently asked questions
+--------------------------
+
+q: how much data can flot cope with?
+
+a: flot will happily draw everything you send to it so the answer
+depends on the browser. the excanvas emulation used for ie (built with
+vml) makes ie by far the slowest browser so be sure to test with that
+if ie users are in your target group.
+
+1000 points is not a problem, but as soon as you start having more
+points than the pixel width, you should probably start thinking about
+downsampling/aggregation as this is near the resolution limit of the
+chart anyway. if you downsample server-side, you also save bandwidth.
+
+
+q: flot isn't working when i'm using json data as source!
+
+a: actually, flot loves json data, you just got the format wrong.
+double check that you're not inputting strings instead of numbers,
+like [["0", "-2.13"], ["5", "4.3"]]. this is most common mistake, and
+the error might not show up immediately because javascript can do some
+conversion automatically.
+
+
+q: can i export the graph?
+
+a: this is a limitation of the canvas technology. there's a hook in
+the canvas object for getting an image out, but you won't get the tick
+labels. and it's not likely to be supported by ie. at this point, your
+best bet is probably taking a screenshot, e.g. with prtscn.
+
+
+q: the bars are all tiny in time mode?
+
+a: it's not really possible to determine the bar width automatically.
+so you have to set the width with the barwidth option which is not in
+pixels, but in the units of the x axis (or the y axis for horizontal
+bars). for time mode that's milliseconds so the default value of 1
+makes the bars 1 millisecond wide.
+
+
+q: can i use flot with libraries like mootools or prototype?
+
+a: yes, flot supports it out of the box and it's easy! just use jquery
+instead of $, e.g. call jquery.plot instead of $.plot and use
+jquery(something) instead of $(something). as a convenience, you can
+put in a dom element for the graph placeholder where the examples and
+the api documentation are using jquery objects.
+
+depending on how you include jquery, you may have to add one line of
+code to prevent jquery from overwriting functions from the other
+libraries, see the documentation in jquery ("using jquery with other
+libraries") for details.
+
+
+q: flot doesn't work with [insert name of javascript ui framework]!
+
+a: the only non-standard thing used by flot is the canvas tag;
+otherwise it is simply a series of absolute positioned divs within the
+placeholder tag you put in. if this is not working, it's probably
+because the framework you're using is doing something weird with the
+dom, or you're using it the wrong way.
+
+a common problem is that there's display:none on a container until the
+user does something. many tab widgets work this way, and there's
+nothing wrong with it - you just can't call flot inside a display:none
+container as explained in the readme so you need to hold off the flot
+call until the container is actually displayed (or use
+visibility:hidden instead of display:none or move the container
+off-screen).
+
+if you find there's a specific thing we can do to flot to help, feel
+free to submit a bug report. otherwise, you're welcome to ask for help
+on the forum/mailing list, but please don't submit a bug report to
+flot.

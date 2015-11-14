@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>websocket++ broadcast admin</title>
+    <!--[if lte ie 8]><script language="javascript" type="text/javascript" src="flot/excanvas.min.js"></script><![endif]-->
+    <script language="javascript" type="text/javascript" src="vendor/flot/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="vendor/flot/jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="vendor/md5.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+var options = {"console_enabled": true};
+
+var ws_client;
+var ws_admin;
+var url;
+
+var data2 = [], total_points = 240;
+var stale_data = null;
+   
+var message_history = [];
+var ack_history = [];
+var client_history = [];
+
+var msgs = {};
+
+function connect() {
+    url = document.getelementbyid("server_url").value;
+    
+    if ("websocket" in window) {
+        ws_client = new websocket(url);
+        ws_admin = new websocket(url+"/admin");
+    } else if ("mozwebsocket" in window) {
+        ws_client = new mozwebsocket(url);
+        ws_admin = new mozwebsocket(url+"/admin");
+    } else {
+        $("#messages").innerhtml += "this browser does not support websockets<br />";
+        return;
+    }
+    
+    ws_client.onopen = function(e) {
+        $("#messages").append("client: a client connection to "+url+" has been opened.<br />");
+        
+        $("#server_url").disabled = true;
+        $("#toggle_connect").html("disconnect");
+    };
+    
+    ws_admin.onopen = function(e) {
+        $("#messages").append("client: an admin connection to "+url+"/admin has been opened.<br />");
+        
+        $("#server_url").disabled = true;
+        $("#toggle_connect").html("disconnect");
+    };
+    
+    ws_client.onerror = function(e) {
+        $("#messages").append("client: an error occured on the client channel, see console log for more details.<br />");
+        console.log(e);
+    };
+    ws_admin.onerror = function(e) {
+        $("#messages").append("client: an error occured on the admin channel, see console log for more details.<br />");
+        console.log(e);
+    };
+    
+    ws_client.onclose = function(e) {
+        $("#messages").append("client: the client connection to "+url+" was closed.<br />");
+        clear_hud();
+    };
+    
+    ws_admin.onclose = function(e) {
+        $("#messages").append("client: the admin connection to "+url+"/admin was closed.<br />");
+        clear_hud();
+    };
+    
+    ws_client.onmessage = function(e) {
+        if (options.console_enabled) {
+            if (e.data.length <= 126) {
+                $("#messages").append("broadcasted message: "+e.data+"<br />");
+            } else {
+                $("#messages").append("broadcasted message: [message of size: "+e.data.length+"]<br />");
+            }
+        }
+        ws_client.send("ack:"+hex_md5(e.data)+"=1;");
+    }
+    
+    ws_admin.onmessage = function(e) {
+        foo = json.parse(e.data);
+        
+        if (foo.type == "message") {
+            if (options.console_enabled) {
+                document.getelementbyid("messages").innerhtml += "broadcasted message: "+foo.value+"<br />";
+            }
+        } else if (foo.type == "error") {
+            if (options.console_enabled) {
+                document.getelementbyid("messages").innerhtml += "command error: "+foo.value+"<br />";
+            }
+        } else if (foo.type == "con") {
+            document.getelementbyid("connected_clients").innerhtml = foo.value;
+        } else if (foo.type == "stats") {
+            var msg_delta = 0;
+            var data_delta = 0;
+            
+            for (var i in foo.messages) {
+                var hash = foo.messages[i].hash;
+                
+                if (hash in msgs) {
+                    msg_delta += foo.messages[i].acked-msgs[hash]["acked"];
+                    data_delta += msg_delta*foo.messages[i].size;
+                    
+                    msgs[hash]["sent"] = foo.messages[i].sent;
+                    msgs[hash]["acked"] = foo.messages[i].acked;
+                    msgs[hash]["time"] = foo.messages[i].time;
+                } else {
+                    msgs[hash] = {"id":foo.messages[i].id,
+                                  "sent":foo.messages[i].sent,
+                                  "acked":foo.messages[i].acked,
+                                  "size":foo.messages[i].size,
+                                  "time":foo.messages[i].time}
+                    msg_delta += foo.messages[i].acked;
+                    data_delta += msg_delta*foo.messages[i].size;
+                }
+            }
+            
+            var o = "";
+            
+            for (i in msgs) {
+                o += "<tr><td>"+msgs[i].id+"</td><td>"+msgs[i].sent+"</td><td>"+msgs[i].acked+"</td><td>"+format_data(msgs[i].size)+"</td><td>"+msgs[i].time+"</td><td>"+(msgs[i].time != 0 ? (msgs[i].acked/(msgs[i].time/1000.0)).tofixed(0)+"/s" : "")+"</td><td>"+(msgs[i].time != 0 ? format_data(msgs[i].acked*msgs[i].size/(msgs[i].time/1000.0))+"/s" : "")+"</td></tr>";
+            }
+            
+            $("#sent_messages").html(o);
+            
+            /*document.getelementbyid("messages_per_sec").innerhtml = foo.messages+"/s";
+            document.getelementbyid("bytes_per_sec").innerhtml = format_data(foo.bytes)+"/s";
+            document.getelementbyid("messages_sent").innerhtml = foo.messages_sent;
+            document.getelementbyid("messages_acked").innerhtml = foo.messages_acked;
+            document.getelementbyid("bytes_sent").innerhtml = format_data(foo.bytes_sent);*/
+            
+            
+            document.getelementbyid("admin_connections").innerhtml = foo.admin_connections;
+            document.getelementbyid("connected_clients").innerhtml = foo.connections;
+            
+            client_history.push([foo.timestamp,foo.connections]);
+            if (client_history.length > total_points) {
+                client_history = client_history.slice(client_history.length-total_points);
+            }
+            
+            
+            data2.push([foo.timestamp,data_delta]);
+            if (data2.length > total_points) {
+                data2 = data2.slice(data2.length-total_points);
+            }
+            
+            message_history.push([foo.timestamp,msg_delta]);
+            if (message_history.length > total_points) {
+                message_history = message_history.slice(message_history.length-total_points);
+            }
+        } else {
+            document.getelementbyid("messages").innerhtml += "unrecognized server command.<br />";
+        }
+    }
+}
+
+function clear_hud() {
+    document.getelementbyid("server_url").disabled = false;
+    document.getelementbyid("toggle_connect").innerhtml = "connect";
+    document.getelementbyid("connected_clients").innerhtml = "n/a";
+    document.getelementbyid("admin_connections").innerhtml = "n/a";
+    document.getelementbyid("messages_per_sec").innerhtml = "n/a";
+    document.getelementbyid("bytes_per_sec").innerhtml = "n/a";
+    document.getelementbyid("messages_sent").innerhtml = "n/a";
+    document.getelementbyid("bytes_sent").innerhtml = "n/a";
+    document.getelementbyid("messages_acked").innerhtml = "n/a";
+}
+    
+function disconnect() {
+    ws_client.close();
+    ws_admin.close();
+}
+
+function toggle_connect() {
+    if (document.getelementbyid("server_url").disabled === false) {
+        connect();
+    } else {
+        disconnect();
+    }
+}
+
+function broadcast() {
+    if (ws_client === undefined || ws_client.readystate != 1) {
+        $("#messages").append("client: client websocket is not avaliable for writing<br />");
+        return;
+    }
+    
+    ws_client.send(document.getelementbyid("msg").value);
+    document.getelementbyid("msg").value = "";
+}
+
+function send_command(command,args) {
+    var cmd = command+":";
+    
+    ws_admin.send(cmd);
+}
+
+function send_test_message(size,type) {
+    ws_client.send((new array(size+1)).join("*"));
+}
+
+function format_data(val) {
+    if (val > 1000000)
+        return (val / 1000000).tofixed(2) + " mb";
+    else if (val > 1000)
+        return (val / 1000).tofixed(2) + " kb";
+    else
+        return val.tofixed(0) + " b";
+}
+
+$(function () {
+    // setup control widget
+    var updateinterval = 500;
+    $("#updateinterval").val(updateinterval).change(function () {
+        var v = $(this).val();
+        if (v && !isnan(+v)) {
+            updateinterval = +v;
+            if (updateinterval < 1)
+                updateinterval = 1;
+            if (updateinterval > 2000)
+                updateinterval = 2000;
+            $(this).val("" + updateinterval);
+        }
+    });
+    
+    function suffixformatter(val, axis) {
+        if (val > 1000000)
+            return (val / 1000000).tofixed(axis.tickdecimals) + " mb";
+        else if (val > 1000)
+            return (val / 1000).tofixed(axis.tickdecimals) + " kb";
+        else
+            return val.tofixed(axis.tickdecimals) + " b";
+    }
+  
+    // setup plot
+    var options = {
+        series: { shadowsize: 0 }, // drawing is faster without shadows
+        xaxis: { mode: "time" }
+    };
+    
+    var options_data = {
+        series: { shadowsize: 0 }, // drawing is faster without shadows
+        yaxis: { tickformatter: suffixformatter},
+        xaxis: { mode: "time" }
+    };
+    
+    var plot_clients = $.plot($("#client_history"), [ client_history ], options);
+    var plot_messages = $.plot($("#message_history"), [ message_history ], options);
+    var plot_bytes = $.plot($("#bytes_history"), [ data2 ], options_data);
+
+    function update() {
+        plot_clients.setdata([ client_history ]);
+        plot_clients.setupgrid();
+        plot_clients.draw();
+        
+        plot_messages.setdata([ message_history ]);
+        plot_messages.setupgrid();
+        plot_messages.draw();
+        
+        plot_bytes.setdata([ data2 ]);
+        plot_bytes.setupgrid();
+        plot_bytes.draw();
+
+        settimeout(update, updateinterval);
+    }
+
+    update();
+});
+
+</script>
+
+<style>
+body,html {
+    margin: 0px;
+    padding: 0px;
+    height:100%; 
+    font-family: sans-serif;
+    font-size: 12px;
+}
+#controls {
+    float:right;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+}
+#controls h2 {
+    font-family: sans-serif;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+#controls h3 {
+    font-family: sans-serif;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+#messages {
+    height: 100%;
+    overflow: scroll;
+}
+
+</style>
+
+<div id="controls">
+    <div id="server">
+    <input type="text" name="server_url" id="server_url" value="ws://localhost:9002" />
+    <button id="toggle_connect" onclick="toggle_connect();">connect</button>
+    </div>
+
+    <div id="message_input"><input type="text" name="msg" id="msg" value="hello world!" />
+    <button onclick="broadcast();">broadcast</button></div>
+    
+    <h2>stats</h2>
+    <h3>server</h3>
+    <div>connected clients: <span id="connected_clients">n/a</span><br /></div>
+    <div>admin clients: <span id="admin_connections">n/a</span><br /></div>
+    <div id="client_history" style="width:320px;height:200px;"></div>
+    <h3>messages</h3>
+    <div>messages sent: <span id="messages_sent">n/a</span><br /></div>
+    <div>messages acked: <span id="messages_acked">n/a</span><br /></div>
+    <div>messages rate: <span id="messages_per_sec">n/a</span><br /></div>
+    <div id="message_history" style="width:320px;height:200px;"></div>
+    
+    <div>
+        <table>
+            <thead>
+                <tr><th>id</th><th>sent</th><th>acked</th><th>size</th><th>time</th><th>message rate</th><th>data rate</th></tr>
+            </thead>
+            <tbody id="sent_messages">
+            </tbody>
+        </table>
+    </div>
+    
+    <h3>data</h3>
+    <div>bytes sent: <span id="bytes_sent">n/a</span><br /></div>
+    <div>data rate: <span id="bytes_per_sec">n/a</span><br /></div>
+    <div id="bytes_history" style="width:320px;height:200px;"></div>
+</div>
+<div id="messages"></div>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+#addoption('--prefix',
+#          dest='prefix',
+#          nargs=1, type='string',
+#          action='store',
+#          metavar='dir',
+#          help='installation prefix')
+#env = environment(prefix = getoption('prefix'))
+
+
+import os, sys
+env = environment(env = os.environ)
+
+#env["cxx"] = "clang++"
+
+## boost
+##
+## note: you need to either set boostroot to the root of a stock boost distribution
+## or set boost_includes and boost_libs if boost comes with your os distro e.g. and
+## needs boost_includes=/usr/include/boost and boost_libs=/usr/lib like ubuntu.
+##
+if os.environ.has_key('boostroot'):
+   env['boost_includes'] = os.environ['boostroot']
+   env['boost_libs'] = os.path.join(os.environ['boostroot'], 'stage', 'lib')
+elif os.environ.has_key('boost_includes') and os.environ.has_key('boost_libs'):
+   env['boost_includes'] = os.environ['boost_includes']
+   env['boost_libs'] = os.environ['boost_libs']
+else:
+   raise scons.errors.usererror, "neither boostroot, nor boost_includes + boost_libs was set!"
+
+env.append(cpppath = [env['boost_includes']])
+env.append(libpath = [env['boost_libs']])
+
+boost_linkshared = false
+
+def boostlibs(libnames):
+   if env['platform'].startswith('win'):
+      # win/vc++ supports autolinking. nothing to do.
+      # http://www.boost.org/doc/libs/1_49_0/more/getting_started/windows.html#auto-linking
+      return []
+   else:
+      libs = []
+      prefix = env['shlibprefix'] if boost_linkshared else env['libprefix']
+      suffix = env['shlibsuffix'] if boost_linkshared else env['libsuffix']
+      for name in libnames:
+         lib = file(os.path.join(env['boost_libs'], '%sboost_%s%s' % (prefix, name, suffix)))
+         libs.append(lib)
+      return libs
+
+if env['platform'].startswith('win'):
+   env.append(cppdefines = ['win32',
+                            'ndebug',
+                            'win32_lean_and_mean',
+                            '_win32_winnt=0x0600',
+                            '_console',
+                            '_websocketpp_cpp11_friend_'])
+   arch_flags  = '/arch:sse2'
+   opt_flags   = '/ox /oi /fp:fast'
+   warn_flags  = '/w3 /wd4996 /wd4995 /wd4355'
+   env['ccflags'] = '%s /ehsc /gr /gs- /md /nologo %s %s' % (warn_flags, arch_flags, opt_flags)
+   env['linkflags'] = '/incremental:no /manifest /nologo /opt:ref /opt:icf /machine:x86'
+elif env['platform'] == 'posix':
+   env.append(cppdefines = ['ndebug'])
+   env.append(ccflags = ['-wall', '-fno-strict-aliasing'])
+   env.append(ccflags = ['-o3', '-fomit-frame-pointer'])
+   #env['linkflags'] = ''
+elif env['platform'] == 'darwin':
+   env.append(cppdefines = ['ndebug'])
+   env.append(ccflags = ['-wall', '-wcast-align'])
+   env.append(ccflags = ['-o3', '-fomit-frame-pointer'])
+   #env['linkflags'] = ''
+
+if env['platform'].startswith('win'):
+   env['libpath'] = env['boost_libs']
+else:
+   env['libpath'] = ['/usr/lib',
+                     '/usr/local/lib',
+                     env['boost_libs']]
+
+platform_libs = []
+tls_libs = []
+tls_build = false
+
+if env['platform'] == 'posix':
+   platform_libs = ['pthread', 'rt']
+   tls_libs = ['ssl', 'crypto']
+   tls_build = true
+elif env['platform'] == 'darwin':
+   tls_libs = ['ssl', 'crypto']
+   tls_build = true
+elif env['platform'].startswith('win'):
+   # win/vc++ supports autolinking. nothing to do.
+   pass
+
+
+releasedir = 'build/release/'
+debugdir = 'build/debug/'
+builddir = releasedir
+
+export('env')
+export('platform_libs')
+export('boostlibs')
+export('tls_libs')
+
+## end of config !!
+
+## targets:
+
+static_lib, shared_lib = sconscript('src/sconscript',
+                                    variant_dir = builddir + 'websocketpp',
+                                    duplicate = 0)
+
+wslib = static_lib
+export('wslib')
+
+wsperf = sconscript('#/examples/wsperf/sconscript',
+                    variant_dir = builddir + 'wsperf',
+                    duplicate = 0)
+
+echo_server = sconscript('#/examples/echo_server/sconscript',
+                         variant_dir = builddir + 'echo_server',
+                         duplicate = 0)
+
+if tls_build:
+   echo_server_tls = sconscript('#/examples/echo_server_tls/sconscript',
+                            variant_dir = builddir + 'echo_server_tls',
+                            duplicate = 0)
+
+echo_client = sconscript('#/examples/echo_client/sconscript',
+                         variant_dir = builddir + 'echo_client',
+                         duplicate = 0)
+
+chat_client = sconscript('#/examples/chat_client/sconscript',
+                         variant_dir = builddir + 'chat_client',
+                         duplicate = 0)
+
+chat_server = sconscript('#/examples/chat_server/sconscript',
+                         variant_dir = builddir + 'chat_server',
+                         duplicate = 0)
+
+concurrent_server = sconscript('#/examples/concurrent_server/sconscript',
+                         variant_dir = builddir + 'concurrent_server',
+                         duplicate = 0)
+
+telemetry_server = sconscript('#/examples/telemetry_server/sconscript',
+                         variant_dir = builddir + 'telemetry_server',
+                         duplicate = 0)

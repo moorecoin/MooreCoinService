@@ -1,0 +1,387 @@
+<!doctype html>
+<html>
+<head>
+    <!--[if lte ie 8]><script language="javascript" type="text/javascript" src="flot/excanvas.min.js"></script><![endif]-->
+    <script language="javascript" type="text/javascript" src="vendor/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="vendor/underscore.js"></script>
+    <script language="javascript" type="text/javascript" src="vendor/backbone.js"></script>
+    <script language="javascript" type="text/javascript" src="vendor/backbone-localstorage.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+var ws;
+var url;
+
+var tests = {"9.1.1":1,"9.1.2":2,"9.1.3":3,"9.1.4":4,"9.1.5":5,"9.1.6":6};
+var d2 = [["9.1.1",6021],["9.1.2",22146]];
+
+var raw = {};
+
+var d = [{data:[[0,6021],[2,22146]], label:"autobahn",bars: { show: true }},{label:"websocket++",bars: { show: true },data:[[1,5243],[3,20042]]}];
+
+var ws;
+
+function connect() {
+    url = wsperf.get('server');
+    
+    if ("websocket" in window) {
+        ws = new websocket(url);
+    } else if ("mozwebsocket" in window) {
+        ws = new mozwebsocket(url);
+    } else {
+        document.getelementbyid("messages").innerhtml += "this browser does not support websockets<br />";
+        return;
+    }
+    ws.onopen = function(e) {
+        console.log("client: a connection to "+ws.url+" has been opened.");
+        
+        wsperf.set('connected',true);
+    };
+    
+    ws.onerror = function(e) {
+        document.getelementbyid("messages").innerhtml += "client: an error occured, see console log for more details.<br />";
+        console.log(e);
+        wsperf.set('connected',false);
+    };
+    
+    ws.onclose = function(e) {
+        console.log("client: the connection to "+url+" was closed.");
+        wsperf.set('connected',false);
+    };
+    
+    ws.onmessage = function(e) {
+        console.log(e.data);
+        
+        data = json.parse(e.data);
+        
+        if (data.type == "message") {
+            console.log("server: "+data.data);
+        } else {
+            if (raw[data.target] === undefined) {
+                raw[data.target] = [data.data];
+            } else {
+                raw[data.target].push(data.data);
+            }
+            process();
+        }
+    };
+}
+
+function disconnect() {
+    ws.close();
+}
+
+function send() {
+    if (ws === undefined || ws.readystate != 1) {
+        document.getelementbyid("messages").innerhtml += "client: websocket is not avaliable for writing<br />";
+        return;
+    }
+    
+    ws.send(document.getelementbyid("msg").value);
+}
+
+function process() {
+    d = [];
+    
+    k = 0;
+    
+    for (i in raw) {
+        o = {};
+        
+        
+        o.label = i;
+        o.bars = {show: true}
+        
+        o.data = [];
+        
+        for (j in raw[i]) {
+            p = [k++,raw[i][j].microseconds];
+            o.data.push(p);
+        }
+        
+        d.push(o);
+    }
+    $.plot($("#placeholder"), d, {xaxis:[{tickformatter: euroformatter}]});
+}
+
+function euroformatter(v, axis) {
+    return tests[v];
+}
+
+$(function () {
+    //$.plot($("#placeholder"), d, {xaxis:[{tickformatter: euroformatter}]});
+    
+    window.wsperf = backbone.model.extend({
+        defaults: function() {
+            return {server:"ws://localhost:9003",connected:false};
+        }
+    });
+    
+    window.server = backbone.model.extend({
+        defaults: function() {
+            return {enabled:true};
+        }
+    });
+  
+    window.serverlist = backbone.collection.extend({
+        model: server,
+        localstorage: new store("wsperf_servers"),
+    });
+    
+    window.servers = new serverlist;
+    window.wsperf = new wsperf;
+    
+    window.serverview = backbone.view.extend({
+        tagname: "tr",
+        
+        template: _.template($('#server-template').html()),
+        
+        events: {
+            "click td.clear" : "clear",
+            "click td.server-enabled input" : "toggle_enabled"
+        },
+        
+        initialize: function() {
+            this.model.bind('change', this.render, this);
+            this.model.bind('destroy', this.remove, this);
+        },
+        
+        render: function() {
+            $(this.el).html(this.template(this.model.tojson()));
+            this.settext();
+            return this;
+        },
+        
+        settext: function() {
+            var ua = this.model.get('ua');
+            var uri = this.model.get('uri');
+            
+            this.$('.server-ua').text(ua);
+            this.$('.server-uri').text(uri);
+        },
+        
+        remove: function() {
+            console.log("remove");
+            $(this.el).remove();
+        },
+        
+        clear: function() {
+            console.log("destroy");
+            this.model.destroy();
+        },
+        
+        toggle_enabled: function() {
+            this.model.set('enabled',!this.model.get('enabled'));
+        }
+    });
+    
+    window.wsperfsettingsview = backbone.view.extend({
+        tagname: "div",
+        
+        template: _.template($('#settings-template').html()),
+        
+        events: {
+            "click #add-target-server": "addtargetserver",
+            "click #target-server-table .clear-all": "clearall",
+            "click #toggle_connect": "toggle_connect"
+        },
+        
+        initialize: function() {
+            //this.model.bind('change', this.render, this);
+            //this.model.bind('destroy', this.remove, this);
+            wsperf.bind('change', this.render, this);
+            
+            servers.bind('add', this.addone, this);
+            servers.bind('reset', this.addall, this);
+            servers.bind('all', this.render, this);
+        },
+        
+        render: function() {
+            $(this.el).html(this.template(wsperf.tojson()));
+            this.inputua = this.$("#add-target-server-ua");
+            this.inputuri = this.$("#add-target-server-uri");
+            this.addall();
+            return this;
+        },
+        
+        addone: function(server) {
+            var view = new serverview({model: server});
+            $("#target-server-list").append(view.render().el);
+        },
+        
+        addall: function() {
+            servers.each(this.addone);
+        },
+        
+        addtargetserver: function() {
+            var ua = this.inputua.val();
+            var uri = this.inputuri.val();
+            
+            console.log("bar "+ua+" "+uri);
+            
+            if (!ua || !uri) {
+                return;
+            }
+            
+            servers.create({ua: ua, uri: uri});
+            
+            this.inputua.val('');
+            this.inputuri.val('');
+        },
+        
+        clearall: function() {
+            console.log("foo");
+            servers.each(function(server) {server.destroy(); });
+            return false;
+        },
+        
+        toggle_connect: function() {
+            if (wsperf.get('connected')) {
+                disconnect();
+            } else {
+                connect();
+            }
+        }
+    });
+    
+    window.wsperfdataview = backbone.view.extend({
+        tagname: "div",
+        
+        template: _.template($('#data-template').html()),
+        
+        events: {
+            //"click td.clear" : "clear"
+        },
+        
+        initialize: function() {
+            //this.model.bind('change', this.render, this);
+            //this.model.bind('destroy', this.remove, this);
+        },
+        
+        render: function() {
+            $(this.el).html(this.template());
+            return this;
+        },
+    });
+    
+    /*window.wsperfcommanderview = backbone.view.extend({
+        el: $("#wsperf-commander"),
+        
+        events: {
+            //"click #add-target-server": "addtargetserver",
+            //"click #target-server-table .clear-all": "clearall",
+            //"click #menu-server-settings": "renderserversettings",
+            //"click #menu-server-settings": "renderserversettings",
+            //"click #menu-server-settings": "renderserversettings",
+        },
+        
+        initialize: function() {
+            servers.fetch();
+        },
+        
+        render: function() {},
+    });*/
+    
+    var wsperfcommanderrouter = backbone.router.extend({
+        initialize: function() {
+            servers.fetch();
+            settingsview = new wsperfsettingsview({el: "#content"});
+            dataview = new wsperfdataview({el: "#content"});
+        },
+        routes: {
+            "/settings": "settings",
+            "/data": "data",
+            "*actions": "defaultroute"
+        },
+        defaultroute: function( actions ) {
+            console.log(actions);
+        },
+        settings: function() {
+            settingsview.render();
+        },
+        data: function() {
+            dataview.render();
+        }
+    });
+    
+    var app_router = new wsperfcommanderrouter;
+    
+    backbone.history.start();
+    
+    //window.app = new wsperfcommanderview;
+});
+
+</script>
+
+<style>
+body,html {
+    margin: 0px;
+    padding: 0px;
+}
+#controls {
+    float:left;
+    width:200px;
+    background-color: #999;
+}
+
+#content {
+    margin-left: 200px;
+}
+
+</style>
+
+<div id="wsperf-commander">
+<div id="controls">
+    <ul>
+        <li id="menu-server-settings"><a href="#/settings">server settings</a></li>
+        <li id="menu-data-table"><a href="#/data">data table</a></li>
+        <li id="menu-charts"><a href="#action">charts</a></li>
+    </ul>
+    
+    <div id="message_input"><input type="text" name="msg" id="msg" value="ws://localhost:9004" />
+    <button onclick="send();">send</button></div>
+</div>
+<div id="content">
+    <div id="placeholder" style="width:600px;height:300px"></div>
+    <div id="messages"></div>
+</div>
+</div>
+
+<!-- templates -->
+
+<script type="text/template" id="server-template">
+    <td class="server-enabled"><input type="checkbox"  <%= (enabled ? "checked" : "") %> /></td>
+    <td class="server-ua"><%= ua %></td>
+    <td class="server-uri"><%= uri %></td>
+    <td class="clear">x</td>
+</script>
+
+<script type="text/template" id="settings-template">
+    <h2>wsperf server</h2>
+    <div id="server">
+    <input type="text" name="server_url" id="server_url" value="<%= server %>" <%= (connected ? "disabled" : "") %> />
+    <button id="toggle_connect"><%= (connected ? "disconnect" : "connect") %></button>
+    </div>
+    
+    <h2>target servers</h2>
+    <table id="target-server-table">
+    <thead>
+    <th>enabled</th><th>user agent</th><th>uri</th><th class="clear-all">remove</th>
+    </thead>
+    <tbody id="target-server-list"></tbody>
+    </table>
+    
+    <div>
+    user agent: <input type="text" id="add-target-server-ua" /><br />
+    uri: <input type="text" id="add-target-server-uri" /><br />
+    <button id="add-target-server">add target server</button>
+    </div>
+</script>
+
+<script type="text/template" id="data-template">
+    <div>data</div>
+</script>
+
+</body>
+</html>

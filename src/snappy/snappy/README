@@ -1,0 +1,135 @@
+snappy, a fast compressor/decompressor.
+
+
+introduction
+============
+
+snappy is a compression/decompression library. it does not aim for maximum
+compression, or compatibility with any other compression library; instead,
+it aims for very high speeds and reasonable compression. for instance,
+compared to the fastest mode of zlib, snappy is an order of magnitude faster
+for most inputs, but the resulting compressed files are anywhere from 20% to
+100% bigger. (for more information, see "performance", below.)
+
+snappy has the following properties:
+
+ * fast: compression speeds at 250 mb/sec and beyond, with no assembler code.
+   see "performance" below.
+ * stable: over the last few years, snappy has compressed and decompressed
+   petabytes of data in google's production environment. the snappy bitstream
+   format is stable and will not change between versions.
+ * robust: the snappy decompressor is designed not to crash in the face of
+   corrupted or malicious input.
+ * free and open source software: snappy is licensed under a bsd-type license.
+   for more information, see the included copying file.
+
+snappy has previously been called "zippy" in some google presentations
+and the like.
+
+
+performance
+===========
+ 
+snappy is intended to be fast. on a single core of a core i7 processor
+in 64-bit mode, it compresses at about 250 mb/sec or more and decompresses at
+about 500 mb/sec or more. (these numbers are for the slowest inputs in our
+benchmark suite; others are much faster.) in our tests, snappy usually
+is faster than algorithms in the same class (e.g. lzo, lzf, fastlz, quicklz,
+etc.) while achieving comparable compression ratios.
+
+typical compression ratios (based on the benchmark suite) are about 1.5-1.7x
+for plain text, about 2-4x for html, and of course 1.0x for jpegs, pngs and
+other already-compressed data. similar numbers for zlib in its fastest mode
+are 2.6-2.8x, 3-7x and 1.0x, respectively. more sophisticated algorithms are
+capable of achieving yet higher compression rates, although usually at the
+expense of speed. of course, compression ratio will vary significantly with
+the input.
+
+although snappy should be fairly portable, it is primarily optimized
+for 64-bit x86-compatible processors, and may run slower in other environments.
+in particular:
+
+ - snappy uses 64-bit operations in several places to process more data at
+   once than would otherwise be possible.
+ - snappy assumes unaligned 32- and 64-bit loads and stores are cheap.
+   on some platforms, these must be emulated with single-byte loads 
+   and stores, which is much slower.
+ - snappy assumes little-endian throughout, and needs to byte-swap data in
+   several places if running on a big-endian platform.
+
+experience has shown that even heavily tuned code can be improved.
+performance optimizations, whether for 64-bit x86 or other platforms,
+are of course most welcome; see "contact", below.
+
+
+usage
+=====
+
+note that snappy, both the implementation and the main interface,
+is written in c++. however, several third-party bindings to other languages
+are available; see the google code page at http://code.google.com/p/snappy/
+for more information. also, if you want to use snappy from c code, you can
+use the included c bindings in snappy-c.h.
+
+to use snappy from your own c++ program, include the file "snappy.h" from
+your calling file, and link against the compiled library.
+
+there are many ways to call snappy, but the simplest possible is
+
+  snappy::compress(input.data(), input.size(), &output);
+
+and similarly
+
+  snappy::uncompress(input.data(), input.size(), &output);
+
+where "input" and "output" are both instances of std::string.
+
+there are other interfaces that are more flexible in various ways, including
+support for custom (non-array) input sources. see the header file for more
+information.
+
+
+tests and benchmarks
+====================
+
+when you compile snappy, snappy_unittest is compiled in addition to the
+library itself. you do not need it to use the compressor from your own library,
+but it contains several useful components for snappy development.
+
+first of all, it contains unit tests, verifying correctness on your machine in
+various scenarios. if you want to change or optimize snappy, please run the
+tests to verify you have not broken anything. note that if you have the
+google test library installed, unit test behavior (especially failures) will be
+significantly more user-friendly. you can find google test at
+
+  http://code.google.com/p/googletest/
+
+you probably also want the gflags library for handling of command-line flags;
+you can find it at
+
+  http://code.google.com/p/google-gflags/
+
+in addition to the unit tests, snappy contains microbenchmarks used to
+tune compression and decompression performance. these are automatically run
+before the unit tests, but you can disable them using the flag
+--run_microbenchmarks=false if you have gflags installed (otherwise you will
+need to edit the source).
+
+finally, snappy can benchmark snappy against a few other compression libraries
+(zlib, lzo, lzf, fastlz and quicklz), if they were detected at configure time.
+to benchmark using a given file, give the compression algorithm you want to test
+snappy against (e.g. --zlib) and then a list of one or more file names on the
+command line. the testdata/ directory contains the files used by the
+microbenchmark, which should provide a reasonably balanced starting point for
+benchmarking. (note that baddata[1-3].snappy are not intended as benchmarks; they
+are used to verify correctness in the presence of corrupted data in the unit
+test.)
+
+
+contact
+=======
+
+snappy is distributed through google code. for the latest version, a bug tracker,
+and other information, see
+
+  http://code.google.com/p/snappy/

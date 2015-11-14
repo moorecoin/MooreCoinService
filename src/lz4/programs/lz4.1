@@ -1,0 +1,88 @@
+\"
+\" lz4.1: this is a manual page for 'lz4' program. this file is part of the
+\" lz4 <https://code.google.com/p/lz4/> project.
+\"
+
+\" no hyphenation
+.hy 0
+.nr hy 0
+
+.th lz4 "1" "2014-02-27" "lz4" "user commands"
+.sh name
+\fblz4\fr - extremely fast compression algorithm
+
+.sh synopsis
+.tp 5
+\fblz4\fr [\fboptions\fr] [-|input-file] <output-file>
+
+.sh description
+.pp
+\fblz4\fr is an extremely fast lossless compression algorithm. it is based on
+the \fblz77\fr family of compression scheme. at the compression speed of 400
+mb/s per core, \fblz4\fr is also scalable with multi-core cpus. it features
+an extremely fast decoder, with speed in multiple gb/s per core, typically
+reaching the ram speed limits on multi-core systems. \fblz4\fr supports
+following options
+
+.sh options
+.tp
+.b \-1
+ fast compression (default)
+.tp
+.b \-9
+ high compression
+.tp
+.b \-d
+ decompression
+.tp
+.b \-f
+ overwrite output without prompting
+.tp
+.b \-h/\-h
+ display help/long help and exit
+.tp
+.b \-v
+ display version number and exit
+.tp
+.b \-v
+ verbose mode
+.tp
+.b \-q
+ suppress warnings; specify twice to suppress errors too
+.tp
+.b \-c
+ force write to standard output, even if it is the console
+.tp
+.b \-t
+ test compressed file integrity
+.tp
+.b \-z
+ force compression
+.tp
+.b \-l
+ use legacy format (useful for linux kernel compression)
+.tp
+.b \-b#
+ block size [4-7](default : 7)
+ b4= 64kb ; b5= 256kb ; b6= 1mb ; b7= 4mb
+.tp
+.b \-bd
+ block dependency (improve compression ratio)
+.tp
+.b \-bx
+ enable block checksum (default:disabled)
+.tp
+.b \-sx
+ disable stream checksum (default:enabled)
+.tp
+.b \-b
+ benchmark file(s)
+.tp
+.b \-i#
+ iteration loops [1-9](default : 3), benchmark mode only
+
+.sh bugs
+report bugs at:- https://code.google.com/p/lz4/
+
+.sh author
+yann collet

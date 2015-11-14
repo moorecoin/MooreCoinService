@@ -1,0 +1,139 @@
+from __future__ import absolute_import, division, print_function, unicode_literals
+
+import copy
+import itertools
+import ntpath
+import os
+import random
+import sys
+
+def add_beast_to_path():
+    python_home = os.path.join(os.getcwd(), 'python')
+    if python_home not in sys.path:
+        sys.path.append(python_home)
+
+add_beast_to_path()
+
+from beast.env.addcommonflags import add_common_flags
+from beast.env.adduserenv import add_user_env
+from beast.env import print
+from beast.platform import getenvironment
+from beast.util import boost
+from beast.util import file
+from beast.util import tests
+
+variant_directories = {
+    'beast': ('bin', 'beast'),
+    'modules': ('bin', 'modules'),
+}
+
+boost_libraries = '' #boost_system'
+main_program_file = 'beast/unit_test/tests/main.cpp'
+dotfile = '~/.scons'
+
+def main():
+    file.validate_libraries(boost.libpath, boost_libraries)
+    defaults = getenvironment.get_environment(arguments)
+    working = copy.deepcopy(defaults)
+    add_common_flags(defaults)
+
+    add_user_env(working, dotfile)
+    add_common_flags(working)
+    print.print_build_config(working, defaults)
+
+    env = environment(**working)
+
+    for name, path in variant_directories.items():
+        env.variantdir(os.path.join(*path), name, duplicate=0)
+    env.replace(print_cmd_line_func=print.print_cmd_line)
+    #tests.run_tests(env, main_program_file, '.', '.test.cpp')
+
+#main()
+
+#-------------------------------------------------------------------------------
+
+def is_unity(path):
+    b, e = os.path.splitext(path)
+    return os.path.splitext(b)[1] == '.unity' and e in ['.c', '.cpp']
+
+def files(base):
+    for parent, _, files in os.walk(base):
+        for path in files:
+            path = os.path.join(parent, path)
+            yield os.path.normpath(path)
+
+#-------------------------------------------------------------------------------
+
+'''
+/mp /gs /w3 /wd"4018" /wd"4244" /wd"4267" /gy- /zc:wchar_t
+/i"d:\lib\openssl-win64\include" /i"d:\lib\boost_1_55_0"
+/i"..\..\src\protobuf\src" /i"..\..\src\protobuf\vsprojects"
+/i"..\..\src\leveldb" /i"..\..\src\leveldb\include" /i"..\..\build\proto"
+/zi /gm- /od /fd"..\..\build\obj\visualstudio2013\debug.x64\vc120.pdb"
+/fp:precise /d "_crtdbg_map_alloc" /d "win32" /d "_debug" /d "_console"
+/d "_variadic_max=10" /d "_win32_winnt=0x0600" /d "_scl_secure_no_warnings"
+/d "_crt_secure_no_warnings" /d "_mbcs" /errorreport:prompt /wx- /zc:forscope
+/rtc1 /gr /gd /mtd /openmp- /fa"..\..\build\obj\visualstudio2013\debug.x64\"
+/eha /nologo /fo"..\..\build\obj\visualstudio2013\debug.x64\"
+/fp"..\..\build\obj\visualstudio2013\debug.x64\rippled.pch" 
+'''
+
+# path to this sconstruct file
+base_dir = dir('#').srcnode().get_abspath()
+
+base_env = environment(
+    tools = ['default', 'vsproject'],
+    cccomstr = '',
+    cmdline_quiet = 1,
+    cpppath = [
+        os.environ['boost_root'],
+        os.environ['openssl_root']
+        ],
+    cppdefines = [
+        '_win32_winnt=0x6000']
+        )
+
+#base_env.replace(print_cmd_line_func=print.print_cmd_line)
+
+env = base_env
+
+bin_dir = os.path.join(base_dir, 'bin')
+
+srcs = filter(is_unity, list(files('beast')) + list(files('modules')))
+for variant in ['debug']: #, 'release']:
+    for platform in ['win32']:
+        #env = base_env.clone()
+        #env.replace(print_cmd_line_func=print.print_cmd_line)
+        variant_dir = os.path.join(bin_dir, variant + '.' + platform)
+        env.variantdir(os.path.join(variant_dir, 'beast'), 'beast', duplicate=0)
+        env.variantdir(os.path.join(variant_dir, 'modules'), 'modules', duplicate=0)
+        env.append(ccflags=[
+            '/ehsc',
+            '/bigobj',
+            '/fd${target}.pdb'
+            ])
+        if variant == 'debug':
+            env.append(ccflags=[
+                '/mtd',
+                '/od',
+                '/zi'
+                ])
+        else:
+            env.append(ccflags=[
+                '/mt',
+                '/ox'
+                ])
+        variant_srcs = [os.path.join(variant_dir, os.path.relpath(f, base_dir)) for f in srcs]
+
+        beast = env.staticlibrary(
+            target = os.path.join(variant_dir, 'beast.lib'),
+            source = variant_srcs)
+
+env.vsproject (
+    'out',
+    buildtarget = beast,
+    source = filter(is_unity, list(files('beast')) + list(files('modules'))))
+
+env.default ('out.vcxproj')
+#env.default (os.path.join(bin_dir,'debug.win32', 'beast.lib'))
+

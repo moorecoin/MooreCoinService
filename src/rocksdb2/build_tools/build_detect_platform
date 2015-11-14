@@ -1,0 +1,343 @@
+#!/bin/sh
+#
+# detects os we're compiling on and outputs a file specified by the first
+# argument, which in turn gets read while processing makefile.
+#
+# the output will set the following variables:
+#   cc                          c compiler path
+#   cxx                         c++ compiler path
+#   platform_ldflags            linker flags
+#   java_ldflags                linker flags for rocksdbjava
+#   platform_shared_ext         extension for shared libraries
+#   platform_shared_ldflags     flags for building shared library
+#   platform_shared_cflags      flags for compiling objects for shared library
+#   platform_ccflags            c compiler flags
+#   platform_cxxflags           c++ compiler flags.  will contain:
+#   platform_shared_versioned   set to 'true' if platform supports versioned
+#                               shared libraries, empty otherwise.
+#
+# the platform_ccflags and platform_cxxflags might include the following:
+#
+#       -dleveldb_platform_posix if cstdatomic is present
+#       -dleveldb_platform_noatomic if it is not
+#       -dsnappy                    if the snappy library is present
+#       -dlz4                       if the lz4 library is present
+#       -dnuma                      if the numa library is present
+#
+# using gflags in rocksdb:
+# our project depends on gflags, which requires users to take some extra steps
+# before they can compile the whole repository:
+#   1. install gflags. you may download it from here:
+#      https://code.google.com/p/gflags/
+#   2. once install, add the include path/lib path for gflags to cpath and
+#      library_path respectively. if installed with default mode, the
+#      lib and include path will be /usr/local/lib and /usr/local/include
+# mac user can do this by running build_tools/mac-install-gflags.sh
+
+output=$1
+if test -z "$output"; then
+  echo "usage: $0 <output-filename>" >&2
+  exit 1
+fi
+
+# we depend on c++11
+platform_cxxflags="-std=c++11"
+# we currently depend on posix platform
+common_flags="-drocksdb_platform_posix"
+
+# default to fbcode gcc on internal fb machines
+if [ -d /mnt/gvfs/third-party -a -z "$cxx" ]; then
+    fbcode_build="true"
+    if [ -z "$use_clang" ]; then
+        centos_version=`rpm -q --qf "%{version}" \
+          $(rpm -q --whatprovides redhat-release)`
+        if [ "$centos_version" = "6" ]; then
+          source "$pwd/build_tools/fbcode.gcc481.sh"
+        else
+          source "$pwd/build_tools/fbcode.gcc471.sh"
+        fi
+    else
+        source "$pwd/build_tools/fbcode.clang31.sh"
+    fi
+fi
+
+# delete existing output, if it exists
+rm -f "$output"
+touch "$output"
+
+if test -z "$cc"; then
+   cc=cc
+fi
+
+if test -z "$cxx"; then
+    cxx=g++
+fi
+
+# detect os
+if test -z "$target_os"; then
+    target_os=`uname -s`
+fi
+
+common_flags="$common_flags ${cflags}"
+cross_compile=
+platform_ccflags=
+platform_cxxflags="$platform_cxxflags ${cxxflags}"
+platform_ldflags="$platform_ldflags"
+platform_shared_ext="so"
+platform_shared_ldflags="-shared -wl,-soname -wl,"
+platform_shared_cflags="-fpic"
+platform_shared_versioned=false
+
+# generic port files (working on all platform by #ifdef) go directly in /port
+generic_port_files=`cd "$rocksdb_root"; find port -name '*.cc' | tr "\n" " "`
+
+# on gcc, we pick libc's memcmp over gcc's memcmp via -fno-builtin-memcmp
+case "$target_os" in
+    darwin)
+        platform=os_macosx
+        common_flags="$common_flags -dos_macosx"
+        platform_shared_ext=dylib
+        platform_shared_ldflags="-dynamiclib -install_name "
+        # port_files=port/darwin/darwin_specific.cc
+        ;;
+    ios)
+        platform=ios
+        common_flags="$common_flags -dos_macosx -dios_cross_compile -drocksdb_lite"
+        platform_shared_ext=dylib
+        platform_shared_ldflags="-dynamiclib -install_name "
+        cross_compile=true
+        ;;
+    linux)
+        platform=os_linux
+        common_flags="$common_flags -dos_linux"
+        if [ -z "$use_clang" ]; then
+            common_flags="$common_flags -fno-builtin-memcmp"
+        fi
+        platform_ldflags="$platform_ldflags -lpthread -lrt"
+        # port_files=port/linux/linux_specific.cc
+        ;;
+    sunos)
+        platform=os_solaris
+        common_flags="$common_flags -fno-builtin-memcmp -d_reentrant -dos_solaris"
+        platform_ldflags="$platform_ldflags -lpthread -lrt"
+        # port_files=port/sunos/sunos_specific.cc
+        ;;
+    freebsd)
+        platform=os_freebsd
+        common_flags="$common_flags -fno-builtin-memcmp -d_reentrant -dos_freebsd"
+        platform_ldflags="$platform_ldflags -lpthread"
+        # port_files=port/freebsd/freebsd_specific.cc
+        ;;
+    netbsd)
+        platform=os_netbsd
+        common_flags="$common_flags -fno-builtin-memcmp -d_reentrant -dos_netbsd"
+        platform_ldflags="$platform_ldflags -lpthread -lgcc_s"
+        # port_files=port/netbsd/netbsd_specific.cc
+        ;;
+    openbsd)
+        platform=os_openbsd
+        common_flags="$common_flags -fno-builtin-memcmp -d_reentrant -dos_openbsd"
+        platform_ldflags="$platform_ldflags -pthread"
+        # port_files=port/openbsd/openbsd_specific.cc
+        ;;
+    dragonfly)
+        platform=os_dragonflybsd
+        common_flags="$common_flags -fno-builtin-memcmp -d_reentrant -dos_dragonflybsd"
+        platform_ldflags="$platform_ldflags -lpthread"
+        # port_files=port/dragonfly/dragonfly_specific.cc
+        ;;
+    os_android_crosscompile)
+        platform=os_android
+	common_flags="$common_flags -fno-builtin-memcmp -d_reentrant -dos_android -dleveldb_platform_posix"
+	platform_ldflags="$platform_ldflags "  # all pthread features are in the android c library
+        # port_files=port/android/android.cc
+        cross_compile=true
+        ;;
+    *)
+        echo "unknown platform!" >&2
+        exit 1
+esac
+
+java_ldflags="$platform_ldflags"
+
+if test -z "$do_not_run_build_detect_version"; then
+  "$pwd/build_tools/build_detect_version"
+fi
+
+# we want to make a list of all cc files within util, db, table, and helpers
+# except for the test and benchmark files. by default, find will output a list
+# of all files matching either rule, so we need to append -print to make the
+# prune take effect.
+dirs="util db table utilities"
+
+set -f # temporarily disable globbing so that our patterns arent expanded
+prune_test="-name *test*.cc -prune"
+prune_bench="-name *bench*.cc -prune"
+portable_files=`cd "$rocksdb_root"; find $dirs $prune_test -o $prune_bench -o -name '*.cc' -print | sort | tr "\n" " "`
+portable_cpp=`cd "$rocksdb_root"; find $dirs $prune_test -o $prune_bench -o -name '*.cpp' -print | sort | tr "\n" " "`
+set +f # re-enable globbing
+
+# the sources consist of the portable files, plus the platform-specific port
+# file.
+echo "sources=$portable_files $generic_port_files $port_files" >> "$output"
+echo "sourcescpp=$portable_cpp" >> "$output"
+echo "memenv_sources=helpers/memenv/memenv.cc" >> "$output"
+
+if [ "$cross_compile" = "true" -o "$fbcode_build" = "true" ]; then
+    # cross-compiling; do not try any compilation tests.
+    # also don't need any compilation tests if compiling on fbcode
+    true
+else
+    # if -std=c++0x works, use <atomic>.  otherwise use port_posix.h.
+    $cxx $cflags -std=c++0x -x c++ - -o /dev/null 2>/dev/null  <<eof
+      #include <atomic>
+      int main() {}
+eof
+    if [ "$?" = 0 ]; then
+        common_flags="$common_flags -drocksdb_atomic_present"
+    fi
+
+    # test whether fallocate is available
+    $cxx $cflags -x c++ - -o /dev/null 2>/dev/null  <<eof
+      #include <fcntl.h>
+      int main() {
+	int fd = open("/dev/null", 0);
+	fallocate(fd, 0, 0, 1024);
+      }
+eof
+    if [ "$?" = 0 ]; then
+        common_flags="$common_flags -drocksdb_fallocate_present"
+    fi
+
+    # test whether snappy library is installed
+    # http://code.google.com/p/snappy/
+    $cxx $cflags -x c++ - -o /dev/null 2>/dev/null  <<eof
+      #include <snappy.h>
+      int main() {}
+eof
+    if [ "$?" = 0 ]; then
+        common_flags="$common_flags -dsnappy"
+        platform_ldflags="$platform_ldflags -lsnappy"
+        java_ldflags="$java_ldflags -lsnappy"
+    fi
+
+
+    # test whether gflags library is installed
+    # http://code.google.com/p/gflags/
+    # check if the namespace is gflags
+    $cxx $cflags -x c++ - -o /dev/null 2>/dev/null  <<eof
+      #include <gflags/gflags.h>
+      using namespace gflags;
+      int main() {}
+eof
+    if [ "$?" = 0 ]; then
+        common_flags="$common_flags -dgflags=gflags"
+        platform_ldflags="$platform_ldflags -lgflags"
+    fi
+
+    # check if namespace is google
+    $cxx $cflags -x c++ - -o /dev/null 2>/dev/null  <<eof
+      #include <gflags/gflags.h>
+      using namespace google;
+      int main() {}
+eof
+    if [ "$?" = 0 ]; then
+        common_flags="$common_flags -dgflags=google"
+        platform_ldflags="$platform_ldflags -lgflags"
+    fi
+
+    # test whether zlib library is installed
+    $cxx $cflags $common_flags -x c++ - -o /dev/null 2>/dev/null  <<eof
+      #include <zlib.h>
+      int main() {}
+eof
+    if [ "$?" = 0 ]; then
+        common_flags="$common_flags -dzlib"
+        platform_ldflags="$platform_ldflags -lz"
+        java_ldflags="$java_ldflags -lz"
+    fi
+
+    # test whether bzip library is installed
+    $cxx $cflags $common_flags -x c++ - -o /dev/null 2>/dev/null  <<eof
+      #include <bzlib.h>
+      int main() {}
+eof
+    if [ "$?" = 0 ]; then
+        common_flags="$common_flags -dbzip2"
+        platform_ldflags="$platform_ldflags -lbz2"
+        java_ldflags="$java_ldflags -lbz2"
+    fi
+
+    # test whether lz4 library is installed
+    $cxx $cflags $common_flags -x c++ - -o /dev/null 2>/dev/null  <<eof
+      #include <lz4.h>
+      #include <lz4hc.h>
+      int main() {}
+eof
+    if [ "$?" = 0 ]; then
+        common_flags="$common_flags -dlz4"
+        platform_ldflags="$platform_ldflags -llz4"
+        java_ldflags="$java_ldflags -llz4"
+    fi
+
+    # test whether numa is available
+    $cxx $cflags -x c++ - -o /dev/null -lnuma 2>/dev/null  <<eof
+      #include <numa.h>
+      #inlcude <numaif.h>
+      int main() {}
+eof
+    if [ "$?" = 0 ]; then
+        common_flags="$common_flags -dnuma"
+        platform_ldflags="$platform_ldflags -lnuma"
+        java_ldflags="$java_ldflags -lnuma"
+    fi
+
+    # test whether tcmalloc is available
+    $cxx $cflags -x c++ - -o /dev/null -ltcmalloc 2>/dev/null  <<eof
+      int main() {}
+eof
+    if [ "$?" = 0 ]; then
+        platform_ldflags="$platform_ldflags -ltcmalloc"
+        java_ldflags="$java_ldflags -ltcmalloc"
+    fi
+fi
+
+# shall we use hdfs?
+
+if test "$use_hdfs"; then
+  if test -z "$java_home"; then
+    echo "java_home has to be set for hdfs usage."
+    exit 1
+  fi
+  hdfs_ccflags="$hdfs_ccflags -i$java_home/include -i$java_home/include/linux -duse_hdfs"
+  hdfs_ldflags="$hdfs_ldflags -wl,--no-whole-archive -lhdfs -l$java_home/jre/lib/amd64"
+  hdfs_ldflags="$hdfs_ldflags -l$java_home/jre/lib/amd64/server -l$glibc_runtime_path/lib"
+  hdfs_ldflags="$hdfs_ldflags -ldl -lverify -ljava -ljvm"
+  common_flags="$common_flags $hdfs_ccflags"
+  platform_ldflags="$platform_ldflags $hdfs_ldflags"
+  java_ldflags="$java_ldflags $hdfs_ldflags"
+fi
+
+# if intel sse instruction set is supported, set use_sse=" -msse -msse4.2 "
+common_flags="$common_flags $use_sse"
+
+platform_ccflags="$platform_ccflags $common_flags"
+platform_cxxflags="$platform_cxxflags $common_flags"
+
+valgrind_ver="$valgrind_ver"
+
+echo "cc=$cc" >> "$output"
+echo "cxx=$cxx" >> "$output"
+echo "platform=$platform" >> "$output"
+echo "platform_ldflags=$platform_ldflags" >> "$output"
+echo "java_ldflags=$java_ldflags" >> "$output"
+echo "valgrind_ver=$valgrind_ver" >> "$output"
+echo "platform_ccflags=$platform_ccflags" >> "$output"
+echo "platform_cxxflags=$platform_cxxflags" >> "$output"
+echo "platform_shared_cflags=$platform_shared_cflags" >> "$output"
+echo "platform_shared_ext=$platform_shared_ext" >> "$output"
+echo "platform_shared_ldflags=$platform_shared_ldflags" >> "$output"
+echo "platform_shared_versioned=$platform_shared_versioned" >> "$output"
+echo "exec_ldflags=$exec_ldflags" >> "$output"
+echo "jemalloc_include=$jemalloc_include" >> "$output"
+echo "jemalloc_lib=$jemalloc_lib" >> "$output"

@@ -1,0 +1,128 @@
+snappy v1.1.2, february 28th 2014:
+
+this is a maintenance release with no changes to the actual library
+source code.
+
+  * stop distributing benchmark data files that have unclear
+    or unsuitable licensing.
+
+  * add support for padding chunks in the framing format.
+
+
+snappy v1.1.1, october 15th 2013:
+
+  * add support for uncompressing to iovecs (scatter i/o).
+    the bulk of this patch was contributed by mohit aron.
+
+  * speed up decompression by ~2%; much more so (~13-20%) on
+    a few benchmarks on given compilers and cpus.
+
+  * fix a few issues with msvc compilation.
+
+  * support truncated test data in the benchmark.
+
+
+snappy v1.1.0, january 18th 2013:
+
+  * snappy now uses 64 kb block size instead of 32 kb. on average,
+    this means it compresses about 3% denser (more so for some
+    inputs), at the same or better speeds.
+
+  * libsnappy no longer depends on iostream.
+
+  * some small performance improvements in compression on x86
+    (0.5鈥?%).
+
+  * various portability fixes for arm-based platforms, for msvc,
+    and for gnu/hurd.
+
+
+snappy v1.0.5, february 24th 2012:
+
+  * more speed improvements. exactly how big will depend on
+    the architecture:
+
+    - 3鈥?0% faster decompression for the base case (x86-64).
+
+    - armv7 and higher can now use unaligned accesses,
+      and will see about 30% faster decompression and
+      20鈥?0% faster compression.
+
+    - 32-bit platforms (arm and 32-bit x86) will see 2鈥?%
+      faster compression.
+
+    these are all cumulative (e.g., arm gets all three speedups).
+
+  * fixed an issue where the unit test would crash on system
+    with less than 256 mb address space available,
+    e.g. some embedded platforms.
+
+  * added a framing format description, for use over e.g. http,
+    or for a command-line compressor. we do not have any
+    implementations of this at the current point, but there seems
+    to be enough of a general interest in the topic.
+    also make the format description slightly clearer.
+
+  * remove some compile-time warnings in -wall
+    (mostly signed/unsigned comparisons), for easier embedding
+    into projects that use -wall -werror.
+
+
+snappy v1.0.4, september 15th 2011:
+
+  * speeded up the decompressor somewhat; typically about 2鈥?%
+    for core i7, in 64-bit mode (comparable for opteron).
+    somewhat more for some tests, almost no gain for others.
+  
+  * make snappy compile on certain platforms it didn't before
+    (solaris with sunpro c++, hp-ux, aix).
+
+  * correct some minor errors in the format description.
+
+
+snappy v1.0.3, june 2nd 2011:
+
+  * speeded up the decompressor somewhat; about 3-6% for core 2,
+    6-13% for core i7, and 5-12% for opteron (all in 64-bit mode).
+
+  * added compressed format documentation. this text is new,
+    but an earlier version from zeev tarantov was used as reference.
+
+  * only link snappy_unittest against -lz and other autodetected
+    libraries, not libsnappy.so (which doesn't need any such dependency).
+
+  * fixed some display issues in the microbenchmarks, one of which would
+    frequently make the test crash on gnu/hurd.
+
+
+snappy v1.0.2, april 29th 2011:
+
+  * relicense to a bsd-type license.
+
+  * added c bindings, contributed by martin gieseking.
+
+  * more win32 fixes, in particular for msvc.
+
+  * replace geo.protodata with a newer version.
+
+  * fix timing inaccuracies in the unit test when comparing snappy
+    to other algorithms.
+
+
+snappy v1.0.1, march 25th 2011:
+
+this is a maintenance release, mostly containing minor fixes.
+there is no new functionality. the most important fixes include:
+
+  * the copying file and all licensing headers now correctly state that
+    snappy is licensed under the apache 2.0 license.
+
+  * snappy_unittest should now compile natively under windows,
+    as well as on embedded systems with no mmap().
+
+  * various autotools nits have been fixed.
+
+
+snappy v1.0, march 17th 2011:
+
+  * initial version.

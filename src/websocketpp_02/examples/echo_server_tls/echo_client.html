@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+
+<script type="text/javascript">
+var ws;
+var url;
+
+function connect() {
+    url = document.getelementbyid("server_url").value;
+    console.log(url);
+    
+    if ("websocket" in window) {
+        ws = new websocket(url);
+    } else if ("mozwebsocket" in window) {
+        ws = new mozwebsocket(url);
+    } else {
+        document.getelementbyid("messages").innerhtml += "this browser does not support websockets<br />";
+        return;
+    }
+    ws.onopen = function(e) {
+        document.getelementbyid("messages").innerhtml += "client: a connection to "+ws.url+" has been opened.<br />";
+        
+        document.getelementbyid("server_url").disabled = true;
+        document.getelementbyid("toggle_connect").innerhtml = "disconnect";
+    };
+    
+    ws.onerror = function(e) {
+        document.getelementbyid("messages").innerhtml += "client: an error occured, see console log for more details.<br />";
+        console.log(e);
+    };
+    
+    ws.onclose = function(e) {
+        document.getelementbyid("messages").innerhtml += "client: the connection to "+url+" was closed.<br />";
+    };
+    
+    ws.onmessage = function(e) {
+        document.getelementbyid("messages").innerhtml += "server: "+e.data+"<br />";
+    };
+}
+
+function disconnect() {
+    ws.close();
+    document.getelementbyid("server_url").disabled = false;
+    document.getelementbyid("toggle_connect").innerhtml = "connect";
+}
+
+function toggle_connect() {
+    if (document.getelementbyid("server_url").disabled === false) {
+        connect();
+    } else {
+        disconnect();
+    }
+}
+
+function send() {
+    if (ws === undefined || ws.readystate != 1) {
+        document.getelementbyid("messages").innerhtml += "client: websocket is not avaliable for writing<br />";
+        return;
+    }
+    
+    ws.send(document.getelementbyid("msg").value);
+    document.getelementbyid("msg").value = "";
+}
+
+</script>
+
+<style>
+body,html {
+    margin: 0px;
+    padding: 0px;
+}
+#controls {
+    float:right;
+    background-color: #999;
+}
+
+</style>
+
+<div id="controls">
+    <div id="server">
+    <input type="text" name="server_url" id="server_url" value="ws://localhost:5000" />
+    <button id="toggle_connect" onclick="toggle_connect();">connect</button>
+    </div>
+
+    <div id="message_input"><input type="text" name="msg" id="msg" value="hello world!" />
+    <button onclick="send();">send</button></div>
+</div>
+<div id="messages"></div>
+
+</body>
+</html>

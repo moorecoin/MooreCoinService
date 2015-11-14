@@ -1,0 +1,133 @@
+r126:
+new : lz4frame api is now integrated into liblz4
+fixed : gcc 4.9 bug on highest performance settings, reported by greg slazinski
+fixed : bug within lz4 hc streaming mode, reported by james boyle
+fixed : older compiler don't like nameless unions, reported by cheyi lin
+changed : lz4 is c90 compatible
+changed : added -pedantic option, fixed a few mminor warnings
+
+r125:
+changed : endian and alignment code
+changed : directory structure : new "lib" directory
+updated : lz4io, now uses lz4frame
+improved: slightly improved decoding speed
+fixed : lz4_compress_limitedoutput(); special thanks to christopher speller !
+fixed : some alignment warnings under clang
+fixed : deprecated function lz4_slideinputbufferhc()
+
+r124:
+new : lz4 hc streaming mode
+fixed : lz4f_compressbound() using null preferencesptr
+updated : xxhash to r38
+updated library number, to 1.4.0
+
+r123:
+added : experimental lz4frame api, thanks to takayuki matsuoka and christopher jackson for testings
+fix : s390x support, thanks to nobuhiro iwamatsu
+fix : test mode (-t) no longer requires confirmation, thanks to thary nguyen
+
+r122:
+fix : aix & aix64 support (samg)
+fix : mips 64-bits support (lew van)
+added : examples directory, using code examples from takayuki matsuoka
+updated : framing specification, to v1.4.1
+updated : xxhash, to r36
+
+r121:
+added : makefile : install for kfreebsd and hurd (nobuhiro iwamatsu)
+fix : makefile : install for os-x and bsd, thanks to takayuki matsuoka
+
+r120:
+modified : streaming api, using strong types
+added : lz4_versionnumber(), thanks to takayuki matsuoka
+fix : os-x : library install name, thanks to clemens lang
+updated : makefile : synchronize library version number with lz4.h, thanks to takayuki matsuoka
+updated : makefile : stricter compilation flags
+added : pkg-config, thanks to zbigniew j臋drzejewski-szmek (issue 135)
+makefile : lz4-test only test native binaries, as suggested by micha艂 g贸rny (issue 136)
+updated : xxhash to r35
+
+r119:
+fix : issue 134 : extended malicious address space overflow in 32-bits mode for some specific configurations
+
+r118:
+new : lz4 streaming api (fast version), special thanks to takayuki matsuoka
+new : datagen : parametrable synthetic data generator for tests
+improved : fuzzer, support more test cases, more parameters, ability to jump to specific test
+fix : support ppc64le platform (issue 131)
+fix : issue 52 (malicious address space overflow in 32-bits mode when using large custom format)
+fix : makefile : minor issue 130 : header files permissions
+
+r117:
+added : man pages for lz4c and lz4cat
+added : automated tests on travis, thanks to takayuki matsuoka !
+fix : block-dependency command line (issue 127)
+fix : lz4fullbench (issue 128)
+
+r116:
+hotfix (issue 124 & 125)
+
+r115:
+added : lz4cat utility, installed on posx systems (issue 118)
+os-x compatible compilation of dynamic library (issue 115)
+
+r114:
+makefile : library correctly compiled with -o3 switch (issue 114)
+makefile : library compilation compatible with clang
+makefile : library is versioned and linked (issue 119)
+lz4.h : no more static inline prototypes (issue 116)
+man : improved header/footer (issue 111)
+makefile : use system default $(cc) & $(make) variables (issue 112)
+xxhash : updated to r34
+
+r113:
+large decompression speed improvement for gcc 32-bits. thanks to valery croizier !
+lz4hc : compression level is now a programmable parameter (cli from 4 to 9)
+separated io routines from command line (lz4io.c)
+version number into lz4.h (suggested by francesc alted)
+
+r112:
+quickfix
+
+r111 :
+makefile : added capability to install libraries
+modified directory tree, to better separate libraries from programs.
+
+r110 :
+lz4 & lz4hc : added capability to allocate state & stream state with custom allocator (issue 99)
+fuzzer & fullbench : updated to test new functions
+man : documented -l command (legacy format, for linux kernel compression) (issue 102)
+cmake : improved version by mika attila, building programs and libraries (issue 100)
+xxhash : updated to r33
+makefile : clean also delete local package .tar.gz
+
+r109 :
+lz4.c : corrected issue 98 (lz4_compress_limitedoutput())
+makefile : can specify version number from makefile
+
+r108 :
+lz4.c : corrected compression efficiency issue 97 in 64-bits chained mode (-bd) for streams > 4 gb (thanks roman strashkin for reporting)
+
+r107 :
+makefile : support destdir for staged installs. thanks jorge aparicio.
+makefile : make install installs both lz4 and lz4c (jorge aparicio)
+makefile : removed -wno-implicit-declaration compilation switch
+lz4cli.c : include <stduni.h> for isatty() (luca barbato)
+lz4.h : introduced lz4_max_input_size constant (shay green)
+lz4.h : lz4_compressbound() : unified macro and inline definitions (shay green)
+lz4.h : lz4_decompresssafe_partial() : clarify comments (shay green)
+lz4.c : lz4_compress() verify input size condition (shay green)
+bench.c : corrected a bug in free memory size evaluation
+cmake : install into bin/ directory (richard yao)
+cmake : check for just c compiler (elan ruusamae)
+
+r106 :
+makefile : make dist modify text files in the package to respect unix eol convention
+lz4cli.c : corrected small display bug in hc mode
+
+r105 :
+makefile : new install script and man page, contributed by prasad pandit
+lz4cli.c : minor modifications, for easier extensibility
+copying  : added license file
+lz4_streaming_format.odt : modified file name to remove white space characters
+makefile : .exe suffix now properly added only for windows target

@@ -1,0 +1,620 @@
+// protocol buffers - google's data interchange format
+// copyright 2008 google inc.  all rights reserved.
+// http://code.google.com/p/protobuf/
+//
+// redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are
+// met:
+//
+//     * redistributions of source code must retain the above copyright
+// notice, this list of conditions and the following disclaimer.
+//     * redistributions in binary form must reproduce the above
+// copyright notice, this list of conditions and the following disclaimer
+// in the documentation and/or other materials provided with the
+// distribution.
+//     * neither the name of google inc. nor the names of its
+// contributors may be used to endorse or promote products derived from
+// this software without specific prior written permission.
+//
+// this software is provided by the copyright holders and contributors
+// "as is" and any express or implied warranties, including, but not
+// limited to, the implied warranties of merchantability and fitness for
+// a particular purpose are disclaimed. in no event shall the copyright
+// owner or contributors be liable for any direct, indirect, incidental,
+// special, exemplary, or consequential damages (including, but not
+// limited to, procurement of substitute goods or services; loss of use,
+// data, or profits; or business interruption) however caused and on any
+// theory of liability, whether in contract, strict liability, or tort
+// (including negligence or otherwise) arising in any way out of the use
+// of this software, even if advised of the possibility of such damage.
+
+// author: kenton@google.com (kenton varda)
+//  based on original protocol buffers design by
+//  sanjay ghemawat, jeff dean, and others.
+//
+// the messages in this file describe the definitions found in .proto files.
+// a valid .proto file can be translated directly to a filedescriptorproto
+// without any other information (e.g. without reading its imports).
+
+
+
+package google.protobuf;
+option java_package = "com.google.protobuf";
+option java_outer_classname = "descriptorprotos";
+
+// descriptor.proto must be optimized for speed because reflection-based
+// algorithms don't work during bootstrapping.
+option optimize_for = speed;
+
+// the protocol compiler can output a filedescriptorset containing the .proto
+// files it parses.
+message filedescriptorset {
+  repeated filedescriptorproto file = 1;
+}
+
+// describes a complete .proto file.
+message filedescriptorproto {
+  optional string name = 1;       // file name, relative to root of source tree
+  optional string package = 2;    // e.g. "foo", "foo.bar", etc.
+
+  // names of files imported by this file.
+  repeated string dependency = 3;
+  // indexes of the public imported files in the dependency list above.
+  repeated int32 public_dependency = 10;
+  // indexes of the weak imported files in the dependency list.
+  // for google-internal migration only. do not use.
+  repeated int32 weak_dependency = 11;
+
+  // all top-level definitions in this file.
+  repeated descriptorproto message_type = 4;
+  repeated enumdescriptorproto enum_type = 5;
+  repeated servicedescriptorproto service = 6;
+  repeated fielddescriptorproto extension = 7;
+
+  optional fileoptions options = 8;
+
+  // this field contains optional information about the original source code.
+  // you may safely remove this entire field whithout harming runtime
+  // functionality of the descriptors -- the information is needed only by
+  // development tools.
+  optional sourcecodeinfo source_code_info = 9;
+}
+
+// describes a message type.
+message descriptorproto {
+  optional string name = 1;
+
+  repeated fielddescriptorproto field = 2;
+  repeated fielddescriptorproto extension = 6;
+
+  repeated descriptorproto nested_type = 3;
+  repeated enumdescriptorproto enum_type = 4;
+
+  message extensionrange {
+    optional int32 start = 1;
+    optional int32 end = 2;
+  }
+  repeated extensionrange extension_range = 5;
+
+  optional messageoptions options = 7;
+}
+
+// describes a field within a message.
+message fielddescriptorproto {
+  enum type {
+    // 0 is reserved for errors.
+    // order is weird for historical reasons.
+    type_double         = 1;
+    type_float          = 2;
+    // not zigzag encoded.  negative numbers take 10 bytes.  use type_sint64 if
+    // negative values are likely.
+    type_int64          = 3;
+    type_uint64         = 4;
+    // not zigzag encoded.  negative numbers take 10 bytes.  use type_sint32 if
+    // negative values are likely.
+    type_int32          = 5;
+    type_fixed64        = 6;
+    type_fixed32        = 7;
+    type_bool           = 8;
+    type_string         = 9;
+    type_group          = 10;  // tag-delimited aggregate.
+    type_message        = 11;  // length-delimited aggregate.
+
+    // new in version 2.
+    type_bytes          = 12;
+    type_uint32         = 13;
+    type_enum           = 14;
+    type_sfixed32       = 15;
+    type_sfixed64       = 16;
+    type_sint32         = 17;  // uses zigzag encoding.
+    type_sint64         = 18;  // uses zigzag encoding.
+  };
+
+  enum label {
+    // 0 is reserved for errors
+    label_optional      = 1;
+    label_required      = 2;
+    label_repeated      = 3;
+    // todo(sanjay): should we add label_map?
+  };
+
+  optional string name = 1;
+  optional int32 number = 3;
+  optional label label = 4;
+
+  // if type_name is set, this need not be set.  if both this and type_name
+  // are set, this must be either type_enum or type_message.
+  optional type type = 5;
+
+  // for message and enum types, this is the name of the type.  if the name
+  // starts with a '.', it is fully-qualified.  otherwise, c++-like scoping
+  // rules are used to find the type (i.e. first the nested types within this
+  // message are searched, then within the parent, on up to the root
+  // namespace).
+  optional string type_name = 6;
+
+  // for extensions, this is the name of the type being extended.  it is
+  // resolved in the same manner as type_name.
+  optional string extendee = 2;
+
+  // for numeric types, contains the original text representation of the value.
+  // for booleans, "true" or "false".
+  // for strings, contains the default text contents (not escaped in any way).
+  // for bytes, contains the c escaped value.  all bytes >= 128 are escaped.
+  // todo(kenton):  base-64 encode?
+  optional string default_value = 7;
+
+  optional fieldoptions options = 8;
+}
+
+// describes an enum type.
+message enumdescriptorproto {
+  optional string name = 1;
+
+  repeated enumvaluedescriptorproto value = 2;
+
+  optional enumoptions options = 3;
+}
+
+// describes a value within an enum.
+message enumvaluedescriptorproto {
+  optional string name = 1;
+  optional int32 number = 2;
+
+  optional enumvalueoptions options = 3;
+}
+
+// describes a service.
+message servicedescriptorproto {
+  optional string name = 1;
+  repeated methoddescriptorproto method = 2;
+
+  optional serviceoptions options = 3;
+}
+
+// describes a method of a service.
+message methoddescriptorproto {
+  optional string name = 1;
+
+  // input and output type names.  these are resolved in the same way as
+  // fielddescriptorproto.type_name, but must refer to a message type.
+  optional string input_type = 2;
+  optional string output_type = 3;
+
+  optional methodoptions options = 4;
+}
+
+
+// ===================================================================
+// options
+
+// each of the definitions above may have "options" attached.  these are
+// just annotations which may cause code to be generated slightly differently
+// or may contain hints for code that manipulates protocol messages.
+//
+// clients may define custom options as extensions of the *options messages.
+// these extensions may not yet be known at parsing time, so the parser cannot
+// store the values in them.  instead it stores them in a field in the *options
+// message called uninterpreted_option. this field must have the same name
+// across all *options messages. we then use this field to populate the
+// extensions when we build a descriptor, at which point all protos have been
+// parsed and so all extensions are known.
+//
+// extension numbers for custom options may be chosen as follows:
+// * for options which will only be used within a single application or
+//   organization, or for experimental options, use field numbers 50000
+//   through 99999.  it is up to you to ensure that you do not use the
+//   same number for multiple options.
+// * for options which will be published and used publicly by multiple
+//   independent entities, e-mail protobuf-global-extension-registry@google.com
+//   to reserve extension numbers. simply provide your project name (e.g.
+//   object-c plugin) and your porject website (if available) -- there's no need
+//   to explain how you intend to use them. usually you only need one extension
+//   number. you can declare multiple options with only one extension number by
+//   putting them in a sub-message. see the custom options section of the docs
+//   for examples:
+//   http://code.google.com/apis/protocolbuffers/docs/proto.html#options
+//   if this turns out to be popular, a web service will be set up
+//   to automatically assign option numbers.
+
+
+message fileoptions {
+
+  // sets the java package where classes generated from this .proto will be
+  // placed.  by default, the proto package is used, but this is often
+  // inappropriate because proto packages do not normally start with backwards
+  // domain names.
+  optional string java_package = 1;
+
+
+  // if set, all the classes from the .proto file are wrapped in a single
+  // outer class with the given name.  this applies to both proto1
+  // (equivalent to the old "--one_java_file" option) and proto2 (where
+  // a .proto always translates to a single class, but you may want to
+  // explicitly choose the class name).
+  optional string java_outer_classname = 8;
+
+  // if set true, then the java code generator will generate a separate .java
+  // file for each top-level message, enum, and service defined in the .proto
+  // file.  thus, these types will *not* be nested inside the outer class
+  // named by java_outer_classname.  however, the outer class will still be
+  // generated to contain the file's getdescriptor() method as well as any
+  // top-level extensions defined in the file.
+  optional bool java_multiple_files = 10 [default=false];
+
+  // if set true, then the java code generator will generate equals() and
+  // hashcode() methods for all messages defined in the .proto file. this is
+  // purely a speed optimization, as the abstractmessage base class includes
+  // reflection-based implementations of these methods.
+  optional bool java_generate_equals_and_hash = 20 [default=false];
+
+  // generated classes can be optimized for speed or code size.
+  enum optimizemode {
+    speed = 1;        // generate complete code for parsing, serialization,
+                      // etc.
+    code_size = 2;    // use reflectionops to implement these methods.
+    lite_runtime = 3; // generate code using messagelite and the lite runtime.
+  }
+  optional optimizemode optimize_for = 9 [default=speed];
+
+  // sets the go package where structs generated from this .proto will be
+  // placed.  there is no default.
+  optional string go_package = 11;
+
+
+
+  // should generic services be generated in each language?  "generic" services
+  // are not specific to any particular rpc system.  they are generated by the
+  // main code generators in each language (without additional plugins).
+  // generic services were the only kind of service generation supported by
+  // early versions of proto2.
+  //
+  // generic services are now considered deprecated in favor of using plugins
+  // that generate code specific to your particular rpc system.  therefore,
+  // these default to false.  old code which depends on generic services should
+  // explicitly set them to true.
+  optional bool cc_generic_services = 16 [default=false];
+  optional bool java_generic_services = 17 [default=false];
+  optional bool py_generic_services = 18 [default=false];
+
+  // the parser stores options it doesn't recognize here. see above.
+  repeated uninterpretedoption uninterpreted_option = 999;
+
+  // clients can define custom options in extensions of this message. see above.
+  extensions 1000 to max;
+}
+
+message messageoptions {
+  // set true to use the old proto1 messageset wire format for extensions.
+  // this is provided for backwards-compatibility with the messageset wire
+  // format.  you should not use this for any other reason:  it's less
+  // efficient, has fewer features, and is more complicated.
+  //
+  // the message must be defined exactly as follows:
+  //   message foo {
+  //     option message_set_wire_format = true;
+  //     extensions 4 to max;
+  //   }
+  // note that the message cannot have any defined fields; messagesets only
+  // have extensions.
+  //
+  // all extensions of your type must be singular messages; e.g. they cannot
+  // be int32s, enums, or repeated messages.
+  //
+  // because this is an option, the above two restrictions are not enforced by
+  // the protocol compiler.
+  optional bool message_set_wire_format = 1 [default=false];
+
+  // disables the generation of the standard "descriptor()" accessor, which can
+  // conflict with a field of the same name.  this is meant to make migration
+  // from proto1 easier; new code should avoid fields named "descriptor".
+  optional bool no_standard_descriptor_accessor = 2 [default=false];
+
+  // the parser stores options it doesn't recognize here. see above.
+  repeated uninterpretedoption uninterpreted_option = 999;
+
+  // clients can define custom options in extensions of this message. see above.
+  extensions 1000 to max;
+}
+
+message fieldoptions {
+  // the ctype option instructs the c++ code generator to use a different
+  // representation of the field than it normally would.  see the specific
+  // options below.  this option is not yet implemented in the open source
+  // release -- sorry, we'll try to include it in a future version!
+  optional ctype ctype = 1 [default = string];
+  enum ctype {
+    // default mode.
+    string = 0;
+
+    cord = 1;
+
+    string_piece = 2;
+  }
+  // the packed option can be enabled for repeated primitive fields to enable
+  // a more efficient representation on the wire. rather than repeatedly
+  // writing the tag and type for each element, the entire array is encoded as
+  // a single length-delimited blob.
+  optional bool packed = 2;
+
+
+
+  // should this field be parsed lazily?  lazy applies only to message-type
+  // fields.  it means that when the outer message is initially parsed, the
+  // inner message's contents will not be parsed but instead stored in encoded
+  // form.  the inner message will actually be parsed when it is first accessed.
+  //
+  // this is only a hint.  implementations are free to choose whether to use
+  // eager or lazy parsing regardless of the value of this option.  however,
+  // setting this option true suggests that the protocol author believes that
+  // using lazy parsing on this field is worth the additional bookkeeping
+  // overhead typically needed to implement it.
+  //
+  // this option does not affect the public interface of any generated code;
+  // all method signatures remain the same.  furthermore, thread-safety of the
+  // interface is not affected by this option; const methods remain safe to
+  // call from multiple threads concurrently, while non-const methods continue
+  // to require exclusive access.
+  //
+  //
+  // note that implementations may choose not to check required fields within
+  // a lazy sub-message.  that is, calling isinitialized() on the outher message
+  // may return true even if the inner message has missing required fields.
+  // this is necessary because otherwise the inner message would have to be
+  // parsed in order to perform the check, defeating the purpose of lazy
+  // parsing.  an implementation which chooses not to check required fields
+  // must be consistent about it.  that is, for any particular sub-message, the
+  // implementation must either *always* check its required fields, or *never*
+  // check its required fields, regardless of whether or not the message has
+  // been parsed.
+  optional bool lazy = 5 [default=false];
+
+  // is this field deprecated?
+  // depending on the target platform, this can emit deprecated annotations
+  // for accessors, or it will be completely ignored; in the very least, this
+  // is a formalization for deprecating fields.
+  optional bool deprecated = 3 [default=false];
+
+  // experimental.  do not use.
+  // for "map" fields, the name of the field in the enclosed type that
+  // is the key for this map.  for example, suppose we have:
+  //   message item {
+  //     required string name = 1;
+  //     required string value = 2;
+  //   }
+  //   message config {
+  //     repeated item items = 1 [experimental_map_key="name"];
+  //   }
+  // in this situation, the map key for item will be set to "name".
+  // todo: fully-implement this, then remove the "experimental_" prefix.
+  optional string experimental_map_key = 9;
+
+  // for google-internal migration only. do not use.
+  optional bool weak = 10 [default=false];
+
+  // the parser stores options it doesn't recognize here. see above.
+  repeated uninterpretedoption uninterpreted_option = 999;
+
+  // clients can define custom options in extensions of this message. see above.
+  extensions 1000 to max;
+}
+
+message enumoptions {
+
+  // set this option to false to disallow mapping different tag names to a same
+  // value.
+  optional bool allow_alias = 2 [default=true];
+
+  // the parser stores options it doesn't recognize here. see above.
+  repeated uninterpretedoption uninterpreted_option = 999;
+
+  // clients can define custom options in extensions of this message. see above.
+  extensions 1000 to max;
+}
+
+message enumvalueoptions {
+  // the parser stores options it doesn't recognize here. see above.
+  repeated uninterpretedoption uninterpreted_option = 999;
+
+  // clients can define custom options in extensions of this message. see above.
+  extensions 1000 to max;
+}
+
+message serviceoptions {
+
+  // note:  field numbers 1 through 32 are reserved for google's internal rpc
+  //   framework.  we apologize for hoarding these numbers to ourselves, but
+  //   we were already using them long before we decided to release protocol
+  //   buffers.
+
+  // the parser stores options it doesn't recognize here. see above.
+  repeated uninterpretedoption uninterpreted_option = 999;
+
+  // clients can define custom options in extensions of this message. see above.
+  extensions 1000 to max;
+}
+
+message methodoptions {
+
+  // note:  field numbers 1 through 32 are reserved for google's internal rpc
+  //   framework.  we apologize for hoarding these numbers to ourselves, but
+  //   we were already using them long before we decided to release protocol
+  //   buffers.
+
+  // the parser stores options it doesn't recognize here. see above.
+  repeated uninterpretedoption uninterpreted_option = 999;
+
+  // clients can define custom options in extensions of this message. see above.
+  extensions 1000 to max;
+}
+
+
+// a message representing a option the parser does not recognize. this only
+// appears in options protos created by the compiler::parser class.
+// descriptorpool resolves these when building descriptor objects. therefore,
+// options protos in descriptor objects (e.g. returned by descriptor::options(),
+// or produced by descriptor::copyto()) will never have uninterpretedoptions
+// in them.
+message uninterpretedoption {
+  // the name of the uninterpreted option.  each string represents a segment in
+  // a dot-separated name.  is_extension is true iff a segment represents an
+  // extension (denoted with parentheses in options specs in .proto files).
+  // e.g.,{ ["foo", false], ["bar.baz", true], ["qux", false] } represents
+  // "foo.(bar.baz).qux".
+  message namepart {
+    required string name_part = 1;
+    required bool is_extension = 2;
+  }
+  repeated namepart name = 2;
+
+  // the value of the uninterpreted option, in whatever type the tokenizer
+  // identified it as during parsing. exactly one of these should be set.
+  optional string identifier_value = 3;
+  optional uint64 positive_int_value = 4;
+  optional int64 negative_int_value = 5;
+  optional double double_value = 6;
+  optional bytes string_value = 7;
+  optional string aggregate_value = 8;
+}
+
+// ===================================================================
+// optional source code info
+
+// encapsulates information about the original source file from which a
+// filedescriptorproto was generated.
+message sourcecodeinfo {
+  // a location identifies a piece of source code in a .proto file which
+  // corresponds to a particular definition.  this information is intended
+  // to be useful to ides, code indexers, documentation generators, and similar
+  // tools.
+  //
+  // for example, say we have a file like:
+  //   message foo {
+  //     optional string foo = 1;
+  //   }
+  // let's look at just the field definition:
+  //   optional string foo = 1;
+  //   ^       ^^     ^^  ^  ^^^
+  //   a       bc     de  f  ghi
+  // we have the following locations:
+  //   span   path               represents
+  //   [a,i)  [ 4, 0, 2, 0 ]     the whole field definition.
+  //   [a,b)  [ 4, 0, 2, 0, 4 ]  the label (optional).
+  //   [c,d)  [ 4, 0, 2, 0, 5 ]  the type (string).
+  //   [e,f)  [ 4, 0, 2, 0, 1 ]  the name (foo).
+  //   [g,h)  [ 4, 0, 2, 0, 3 ]  the number (1).
+  //
+  // notes:
+  // - a location may refer to a repeated field itself (i.e. not to any
+  //   particular index within it).  this is used whenever a set of elements are
+  //   logically enclosed in a single code segment.  for example, an entire
+  //   extend block (possibly containing multiple extension definitions) will
+  //   have an outer location whose path refers to the "extensions" repeated
+  //   field without an index.
+  // - multiple locations may have the same path.  this happens when a single
+  //   logical declaration is spread out across multiple places.  the most
+  //   obvious example is the "extend" block again -- there may be multiple
+  //   extend blocks in the same scope, each of which will have the same path.
+  // - a location's span is not always a subset of its parent's span.  for
+  //   example, the "extendee" of an extension declaration appears at the
+  //   beginning of the "extend" block and is shared by all extensions within
+  //   the block.
+  // - just because a location's span is a subset of some other location's span
+  //   does not mean that it is a descendent.  for example, a "group" defines
+  //   both a type and a field in a single declaration.  thus, the locations
+  //   corresponding to the type and field and their components will overlap.
+  // - code which tries to interpret locations should probably be designed to
+  //   ignore those that it doesn't understand, as more types of locations could
+  //   be recorded in the future.
+  repeated location location = 1;
+  message location {
+    // identifies which part of the filedescriptorproto was defined at this
+    // location.
+    //
+    // each element is a field number or an index.  they form a path from
+    // the root filedescriptorproto to the place where the definition.  for
+    // example, this path:
+    //   [ 4, 3, 2, 7, 1 ]
+    // refers to:
+    //   file.message_type(3)  // 4, 3
+    //       .field(7)         // 2, 7
+    //       .name()           // 1
+    // this is because filedescriptorproto.message_type has field number 4:
+    //   repeated descriptorproto message_type = 4;
+    // and descriptorproto.field has field number 2:
+    //   repeated fielddescriptorproto field = 2;
+    // and fielddescriptorproto.name has field number 1:
+    //   optional string name = 1;
+    //
+    // thus, the above path gives the location of a field name.  if we removed
+    // the last element:
+    //   [ 4, 3, 2, 7 ]
+    // this path refers to the whole field declaration (from the beginning
+    // of the label to the terminating semicolon).
+    repeated int32 path = 1 [packed=true];
+
+    // always has exactly three or four elements: start line, start column,
+    // end line (optional, otherwise assumed same as start line), end column.
+    // these are packed into a single field for efficiency.  note that line
+    // and column numbers are zero-based -- typically you will want to add
+    // 1 to each before displaying to a user.
+    repeated int32 span = 2 [packed=true];
+
+    // if this sourcecodeinfo represents a complete declaration, these are any
+    // comments appearing before and after the declaration which appear to be
+    // attached to the declaration.
+    //
+    // a series of line comments appearing on consecutive lines, with no other
+    // tokens appearing on those lines, will be treated as a single comment.
+    //
+    // only the comment content is provided; comment markers (e.g. //) are
+    // stripped out.  for block comments, leading whitespace and an asterisk
+    // will be stripped from the beginning of each line other than the first.
+    // newlines are included in the output.
+    //
+    // examples:
+    //
+    //   optional int32 foo = 1;  // comment attached to foo.
+    //   // comment attached to bar.
+    //   optional int32 bar = 2;
+    //
+    //   optional string baz = 3;
+    //   // comment attached to baz.
+    //   // another line attached to baz.
+    //
+    //   // comment attached to qux.
+    //   //
+    //   // another line attached to qux.
+    //   optional double qux = 4;
+    //
+    //   optional string corge = 5;
+    //   /* block comment attached
+    //    * to corge.  leading asterisks
+    //    * will be removed. */
+    //   /* block comment attached to
+    //    * grault. */
+    //   optional int32 grault = 6;
+    optional string leading_comments = 3;
+    optional string trailing_comments = 4;
+  }
+}

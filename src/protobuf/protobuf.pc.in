@@ -1,0 +1,14 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+name: protocol buffers
+description: google's data interchange format
+version: @version@
+libs: -l${libdir} -lprotobuf @pthread_cflags@ @pthread_libs@
+libs.private: @libs@
+cflags: -i${includedir} @pthread_cflags@
+# commented out because it crashes pkg-config *sigh*:
+#   http://bugs.freedesktop.org/show_bug.cgi?id=13265
+# conflicts: protobuf-lite

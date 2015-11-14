@@ -1,0 +1,54 @@
+copyright 2011, google inc.
+all rights reserved.
+
+redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+    * redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+    * redistributions in binary form must reproduce the above
+copyright notice, this list of conditions and the following disclaimer
+in the documentation and/or other materials provided with the
+distribution.
+    * neither the name of google inc. nor the names of its
+contributors may be used to endorse or promote products derived from
+this software without specific prior written permission.
+
+this software is provided by the copyright holders and contributors
+"as is" and any express or implied warranties, including, but not
+limited to, the implied warranties of merchantability and fitness for
+a particular purpose are disclaimed. in no event shall the copyright
+owner or contributors be liable for any direct, indirect, incidental,
+special, exemplary, or consequential damages (including, but not
+limited to, procurement of substitute goods or services; loss of use,
+data, or profits; or business interruption) however caused and on any
+theory of liability, whether in contract, strict liability, or tort
+(including negligence or otherwise) arising in any way out of the use
+of this software, even if advised of the possibility of such damage.
+
+===
+
+some of the benchmark data in util/zippy/testdata is licensed differently:
+
+ - fireworks.jpeg is copyright 2013 steinar h. gunderson, and
+   is licensed under the creative commons attribution 3.0 license
+   (cc-by-3.0). see https://creativecommons.org/licenses/by/3.0/
+   for more information.
+
+ - kppkn.gtb is taken from the gaviota chess tablebase set, and
+   is licensed under the mit license. see
+   https://sites.google.com/site/gaviotachessengine/home/endgame-tablebases-1
+   for more information.
+
+ - paper-100k.pdf is an excerpt (bytes 92160 to 194560) from the paper
+   鈥淐ombinatorial modeling of chromatin features quantitatively predicts dna
+   replication timing in _drosophila_鈥?by federico comoglio and renato paro,
+   which is licensed under the cc-by license. see
+   http://www.ploscompbiol.org/static/license for more ifnormation.
+
+ - alice29.txt, asyoulik.txt, plrabn12.txt and lcet10.txt are from project
+   gutenberg. the first three have expired copyrights and are in the public
+   domain; the latter does not have expired copyright, but is still in the
+   public domain according to the license information
+   (http://www.gutenberg.org/ebooks/53).

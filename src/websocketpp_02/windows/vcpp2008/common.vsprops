@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<visualstudiopropertysheet
+	projecttype="visual c++"
+	version="8.00"
+	name="common"
+	>
+	<tool
+		name="vcclcompilertool"
+		additionalincludedirectories="..\..\..\..\boost_1_47_0"
+	/>
+	<tool
+		name="vclinkertool"
+		additionallibrarydirectories="..\..\..\..\boost_1_47_0\stage\lib"
+	/>
+</visualstudiopropertysheet>

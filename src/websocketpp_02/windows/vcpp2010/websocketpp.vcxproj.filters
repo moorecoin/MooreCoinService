@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project toolsversion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <itemgroup>
+    <filter include="source files">
+      <uniqueidentifier>{4fc737f1-c7a5-4376-a066-2a32d752a2ff}</uniqueidentifier>
+      <extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</extensions>
+    </filter>
+    <filter include="header files">
+      <uniqueidentifier>{93995380-89bd-4b04-88eb-625fbe52ebfb}</uniqueidentifier>
+      <extensions>h;hpp;hxx;hm;inl;inc;xsd</extensions>
+    </filter>
+    <filter include="header files\base64">
+      <uniqueidentifier>{d7e1c798-4217-4c1e-a897-90bfc59d83ad}</uniqueidentifier>
+    </filter>
+    <filter include="header files\sha">
+      <uniqueidentifier>{84b75a09-d8c9-4327-806d-c4f54698e4c5}</uniqueidentifier>
+    </filter>
+    <filter include="header files\utf8_validator">
+      <uniqueidentifier>{c849b58d-df43-4574-ae85-92ac66333899}</uniqueidentifier>
+    </filter>
+  </itemgroup>
+  <itemgroup>
+    <clcompile include="..\..\src\network_utilities.cpp">
+      <filter>source files</filter>
+    </clcompile>
+    <clcompile include="..\..\src\uri.cpp">
+      <filter>source files</filter>
+    </clcompile>
+    <clcompile include="..\..\src\base64\base64.cpp">
+      <filter>source files</filter>
+    </clcompile>
+    <clcompile include="..\..\src\messages\data.cpp">
+      <filter>source files</filter>
+    </clcompile>
+    <clcompile include="..\..\src\processors\hybi_header.cpp">
+      <filter>source files</filter>
+    </clcompile>
+    <clcompile include="..\..\src\sha1\sha1.cpp">
+      <filter>source files</filter>
+    </clcompile>
+    <clcompile include="..\..\src\md5\md5.c">
+      <filter>source files</filter>
+    </clcompile>
+    <clcompile include="..\..\src\processors\hybi_util.cpp">
+      <filter>source files</filter>
+    </clcompile>
+  </itemgroup>
+  <itemgroup>
+    <clinclude include="..\..\src\network_utilities.hpp">
+      <filter>header files</filter>
+    </clinclude>
+    <clinclude include="..\..\src\websocket_client.hpp">
+      <filter>header files</filter>
+    </clinclude>
+    <clinclude include="..\..\src\websocket_client_session.hpp">
+      <filter>header files</filter>
+    </clinclude>
+    <clinclude include="..\..\src\websocket_connection_handler.hpp">
+      <filter>header files</filter>
+    </clinclude>
+    <clinclude include="..\..\src\websocket_frame.hpp">
+      <filter>header files</filter>
+    </clinclude>
+    <clinclude include="..\..\src\websocket_server.hpp">
+      <filter>header files</filter>
+    </clinclude>
+    <clinclude include="..\..\src\websocket_server_session.hpp">
+      <filter>header files</filter>
+    </clinclude>
+    <clinclude include="..\..\src\websocket_session.hpp">
+      <filter>header files</filter>
+    </clinclude>
+    <clinclude include="..\..\src\websocketpp.hpp">
+      <filter>header files</filter>
+    </clinclude>
+    <clinclude include="..\..\src\base64\base64.h">
+      <filter>header files\base64</filter>
+    </clinclude>
+    <clinclude include="..\..\src\sha1\sha1.h">
+      <filter>header files\sha</filter>
+    </clinclude>
+    <clinclude include="..\..\src\utf8_validator\utf8_validator.hpp">
+      <filter>header files\utf8_validator</filter>
+    </clinclude>
+    <clinclude include="..\..\src\endpoint.hpp">
+      <filter>header files</filter>
+    </clinclude>
+    <clinclude include="..\..\src\logger\logger.hpp">
+      <filter>header files</filter>
+    </clinclude>
+  </itemgroup>
+</project>

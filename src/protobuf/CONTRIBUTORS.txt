@@ -1,0 +1,90 @@
+this file contains a list of people who have made large contributions
+to the public version of protocol buffers.
+
+original protocol buffers design and implementation:
+  sanjay ghemawat <sanjay@google.com>
+  jeff dean <jeff@google.com>
+  daniel dulitz <daniel@google.com>
+  craig silverstein
+  paul haahr <haahr@google.com>
+  corey anderson <corin@google.com>
+  (and many others)
+
+proto2 c++ and java primary author:
+  kenton varda <kenton@google.com>
+
+proto2 python primary authors:
+  will robinson <robinson@google.com>
+  petar petrov <petar@google.com>
+
+large code contributions:
+  jason hsueh <jasonh@google.com>
+  joseph schorr <jschorr@google.com>
+  wenbo zhu <wenboz@google.com>
+
+large quantity of code reviews:
+  scott bruce <sbruce@google.com>
+  frank yellin
+  neal norwitz <nnorwitz@google.com>
+  jeffrey yasskin <jyasskin@google.com>
+  ambrose feinstein <ambrose@google.com>
+
+documentation:
+  lisa carey <lcarey@google.com>
+
+maven packaging:
+  gregory kick <gak@google.com>
+
+patch contributors:
+  kevin ko <kevin.s.ko@gmail.com>
+    * small patch to handle trailing slashes in --proto_path flag.
+  johan euphrosine <proppy@aminche.com>
+    * small patch to fix python callmethod().
+  ulrich kunitz <kune@deine-taler.de>
+    * small optimizations to python serialization.
+  leandro lucarella <llucax@gmail.com>
+    * vi syntax highlighting tweaks.
+    * fix compiler to not make output executable.
+  dilip joseph <dilip.antony.joseph@gmail.com>
+    * heuristic detection of sub-messages when printing unknown fields in
+      text format.
+  brian atkinson <nairb774@gmail.com>
+    * added @override annotation to generated java code where appropriate.
+  vincent choini鑢e <choiniere.vincent@hydro.qc.ca>
+    * tru64 support.
+  monty taylor <monty.taylor@gmail.com>
+    * solaris 10 + sun studio fixes.
+  alek storm <alek.storm@gmail.com>
+    * slicing support for repeated scalar fields for the python api.
+  oleg smolsky <oleg.smolsky@gmail.com>
+    * ms visual studio error format option.
+    * detect unordered_map in stl_hash.m4.
+  brian olson <brianolson@google.com>
+    * gzip/zlib i/o support.
+  michael poole <mdpoole@troilus.org>
+    * fixed warnings about generated constructors not explicitly initializing
+      all fields (only present with certain compiler settings).
+    * added generation of field number constants.
+  wink saville <wink@google.com>
+    * fixed initialization ordering problem in logging code.
+  will pierce <willp@nuclei.com>
+    * small patch improving performance of in python serialization.
+  alexandre vassalotti <alexandre@peadrop.com>
+    * emacs mode for protocol buffers (editors/protobuf-mode.el).
+  scott stafford <scott.stafford@gmail.com>
+    * added swap(), swapelements(), and removelast() to reflection interface.
+  alexander melnikov <alm@sibmail.ru>
+    * hpux support.
+  oliver jowett <oliver.jowett@gmail.com>
+    * detect whether zlib is new enough in configure script.
+    * fixes for solaris 10 32/64-bit confusion.
+  evan jones <evanj@mit.edu>
+    * optimize java serialization code when writing a small message to a stream.
+    * optimize java serialization of strings so that utf-8 encoding happens only
+      once per string per serialization call.
+    * clean up some java warnings.
+    * fix bug with permanent callbacks that delete themselves when run.
+  michael kucharski <m.kucharski@gmail.com>
+    * added codedinputstream.gettotalbytesread().
+  kacper kowalik <xarthisius.kk@gmail.com>
+    * fixed m4/acx_pthread.m4 problem for some linux distributions.

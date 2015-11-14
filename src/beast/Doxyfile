@@ -1,0 +1,302 @@
+# doxyfile 1.8.3.1
+
+#---------------------------------------------------------------------------
+# project related configuration options
+#---------------------------------------------------------------------------
+doxyfile_encoding      = utf-8
+project_name           = "beast"
+project_number         =
+project_brief          =
+project_logo           =
+output_directory       = docs
+create_subdirs         = no
+output_language        = english
+brief_member_desc      = yes
+repeat_brief           = yes
+abbreviate_brief       =
+always_detailed_sec    = no
+inline_inherited_memb  = no
+full_path_names        = yes
+strip_from_path        =
+strip_from_inc_path    =
+short_names            = no
+javadoc_autobrief      = no
+qt_autobrief           = no
+multiline_cpp_is_brief = no
+inherit_docs           = yes
+separate_member_pages  = no
+tab_size               = 4
+aliases                =
+tcl_subst              =
+optimize_output_for_c  = no
+optimize_output_java   = no
+optimize_for_fortran   = no
+optimize_output_vhdl   = no
+extension_mapping      =
+markdown_support       = yes
+autolink_support       = yes
+builtin_stl_support    = no
+cpp_cli_support        = no
+sip_support            = no
+idl_property_support   = yes
+distribute_group_doc   = no
+subgrouping            = yes
+inline_grouped_classes = no
+inline_simple_structs  = no
+typedef_hides_struct   = no
+symbol_cache_size      = 0
+lookup_cache_size      = 0
+#---------------------------------------------------------------------------
+# build related configuration options
+#---------------------------------------------------------------------------
+extract_all            = no
+extract_private        = no
+extract_package        = no
+extract_static         = no
+extract_local_classes  = yes
+extract_local_methods  = no
+extract_anon_nspaces   = no
+hide_undoc_members     = no
+hide_undoc_classes     = no
+hide_friend_compounds  = no
+hide_in_body_docs      = no
+internal_docs          = no
+case_sense_names       = no
+hide_scope_names       = no
+show_include_files     = yes
+force_local_includes   = no
+inline_info            = yes
+sort_member_docs       = yes
+sort_brief_docs        = no
+sort_members_ctors_1st = no
+sort_group_names       = no
+sort_by_scope_name     = no
+strict_proto_matching  = no
+generate_todolist      = yes
+generate_testlist      = yes
+generate_buglist       = yes
+generate_deprecatedlist= yes
+enabled_sections       =
+max_initializer_lines  = 30
+show_used_files        = yes
+show_files             = yes
+show_namespaces        = yes
+file_version_filter    =
+layout_file            =
+cite_bib_files         =
+#---------------------------------------------------------------------------
+# configuration options related to warning and progress messages
+#---------------------------------------------------------------------------
+quiet                  = no
+warnings               = yes
+warn_if_undocumented   = yes
+warn_if_doc_error      = yes
+warn_no_paramdoc       = no
+warn_format            = "$file:$line: $text"
+warn_logfile           =
+#---------------------------------------------------------------------------
+# configuration options related to the input files
+#---------------------------------------------------------------------------
+input                  = modules
+input_encoding         = utf-8
+file_patterns          =
+recursive              = yes
+exclude                = modules/beast_core/beast_core.h \
+                         modules/beast_core/beast_core.unity.cpp \
+                         modules/beast_basics/beast_basics.cpp \
+                         modules/beast_basics/native \
+                         modules/beast_basics/zip/zlib
+exclude_symlinks       = no
+exclude_patterns       =
+exclude_symbols        =
+example_path           =
+example_patterns       =
+example_recursive      = no
+image_path             =
+input_filter           =
+filter_patterns        =
+filter_source_files    = no
+filter_source_patterns =
+use_mdfile_as_mainpage =
+#---------------------------------------------------------------------------
+# configuration options related to source browsing
+#---------------------------------------------------------------------------
+source_browser         = no
+inline_sources         = no
+strip_code_comments    = yes
+referenced_by_relation = no
+references_relation    = no
+references_link_source = yes
+use_htags              = no
+verbatim_headers       = yes
+#---------------------------------------------------------------------------
+# configuration options related to the alphabetical class index
+#---------------------------------------------------------------------------
+alphabetical_index     = yes
+cols_in_alpha_index    = 5
+ignore_prefix          =
+#---------------------------------------------------------------------------
+# configuration options related to the html output
+#---------------------------------------------------------------------------
+generate_html          = yes
+html_output            = .
+html_file_extension    = .html
+html_header            =
+html_footer            =
+html_stylesheet        =
+html_extra_stylesheet  =
+html_extra_files       =
+html_colorstyle_hue    = 220
+html_colorstyle_sat    = 100
+html_colorstyle_gamma  = 80
+html_timestamp         = yes
+html_dynamic_sections  = no
+html_index_num_entries = 100
+generate_docset        = no
+docset_feedname        = "doxygen generated docs"
+docset_bundle_id       = org.doxygen.project
+docset_publisher_id    = org.doxygen.publisher
+docset_publisher_name  = publisher
+generate_htmlhelp      = no
+chm_file               =
+hhc_location           =
+generate_chi           = no
+chm_index_encoding     =
+binary_toc             = no
+toc_expand             = no
+generate_qhp           = no
+qch_file               =
+qhp_namespace          = org.doxygen.project
+qhp_virtual_folder     = doc
+qhp_cust_filter_name   =
+qhp_cust_filter_attrs  =
+qhp_sect_filter_attrs  =
+qhg_location           =
+generate_eclipsehelp   = no
+eclipse_doc_id         = org.doxygen.project
+disable_index          = no
+generate_treeview      = no
+enum_values_per_line   = 4
+treeview_width         = 250
+ext_links_in_window    = no
+formula_fontsize       = 10
+formula_transparent    = yes
+use_mathjax            = no
+mathjax_format         = html-css
+mathjax_relpath        = http://cdn.mathjax.org/mathjax/latest
+mathjax_extensions     =
+searchengine           = yes
+server_based_search    = no
+external_search        = no
+searchengine_url       =
+searchdata_file        = searchdata.xml
+external_search_id     =
+extra_search_mappings  =
+#---------------------------------------------------------------------------
+# configuration options related to the latex output
+#---------------------------------------------------------------------------
+generate_latex         = no
+latex_output           = latex
+latex_cmd_name         = latex
+makeindex_cmd_name     = makeindex
+compact_latex          = no
+paper_type             = a4
+extra_packages         =
+latex_header           =
+latex_footer           =
+pdf_hyperlinks         = yes
+use_pdflatex           = yes
+latex_batchmode        = no
+latex_hide_indices     = no
+latex_source_code      = no
+latex_bib_style        = plain
+#---------------------------------------------------------------------------
+# configuration options related to the rtf output
+#---------------------------------------------------------------------------
+generate_rtf           = no
+rtf_output             = rtf
+compact_rtf            = no
+rtf_hyperlinks         = no
+rtf_stylesheet_file    =
+rtf_extensions_file    =
+#---------------------------------------------------------------------------
+# configuration options related to the man page output
+#---------------------------------------------------------------------------
+generate_man           = no
+man_output             = man
+man_extension          = .3
+man_links              = no
+#---------------------------------------------------------------------------
+# configuration options related to the xml output
+#---------------------------------------------------------------------------
+generate_xml           = no
+xml_output             = xml
+xml_schema             =
+xml_dtd                =
+xml_programlisting     = yes
+#---------------------------------------------------------------------------
+# configuration options for the autogen definitions output
+#---------------------------------------------------------------------------
+generate_autogen_def   = no
+#---------------------------------------------------------------------------
+# configuration options related to the perl module output
+#---------------------------------------------------------------------------
+generate_perlmod       = no
+perlmod_latex          = no
+perlmod_pretty         = yes
+perlmod_makevar_prefix =
+#---------------------------------------------------------------------------
+# configuration options related to the preprocessor
+#---------------------------------------------------------------------------
+enable_preprocessing   = yes
+macro_expansion        = no
+expand_only_predef     = no
+search_includes        = yes
+include_path           =
+include_file_patterns  =
+predefined             =
+expand_as_defined      =
+skip_function_macros   = yes
+#---------------------------------------------------------------------------
+# configuration::additions related to external references
+#---------------------------------------------------------------------------
+tagfiles               =
+generate_tagfile       =
+allexternals           = no
+external_groups        = yes
+perl_path              = /usr/bin/perl
+#---------------------------------------------------------------------------
+# configuration options related to the dot tool
+#---------------------------------------------------------------------------
+class_diagrams         = yes
+mscgen_path            =
+hide_undoc_relations   = yes
+have_dot               = yes
+dot_num_threads        = 0
+dot_fontname           = helvetica
+dot_fontsize           = 10
+dot_fontpath           =
+class_graph            = yes
+collaboration_graph    = yes
+group_graphs           = yes
+uml_look               = no
+uml_limit_num_fields   = 10
+template_relations     = no
+include_graph          = yes
+included_by_graph      = yes
+call_graph             = no
+caller_graph           = no
+graphical_hierarchy    = yes
+directory_graph        = yes
+dot_image_format       = png
+interactive_svg        = no
+dot_path               =
+dotfile_dirs           =
+mscfile_dirs           =
+dot_graph_max_nodes    = 50
+max_dot_graph_depth    = 0
+dot_transparent        = no
+dot_multi_targets      = no
+generate_legend        = yes
+dot_cleanup            = yes
+

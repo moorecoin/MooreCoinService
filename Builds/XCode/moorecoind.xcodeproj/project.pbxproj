@@ -1,0 +1,742 @@
+// !$*utf8*$!
+{
+	archiveversion = 1;
+	classes = {
+	};
+	objectversion = 46;
+	objects = {
+
+/* begin pbxbuildfile section */
+		3414533f1a19d8390005fd6d /* ripple.proto in sources */ = {isa = pbxbuildfile; fileref = 8424474f1a13b30200a37710 /* ripple.proto */; };
+		34373c561a7b767a00487ce0 /* ripple.proto in sources */ = {isa = pbxbuildfile; fileref = 8424474f1a13b30200a37710 /* ripple.proto */; };
+		34373c571a7b767a00487ce0 /* app.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424480e1a13b30300a37710 /* app.cpp */; };
+		34373c581a7b767a00487ce0 /* app1.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448101a13b30300a37710 /* app1.cpp */; };
+		34373c591a7b767a00487ce0 /* app2.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448111a13b30300a37710 /* app2.cpp */; };
+		34373c5a1a7b767a00487ce0 /* app3.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448121a13b30300a37710 /* app3.cpp */; };
+		34373c5b1a7b767a00487ce0 /* app4.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448131a13b30300a37710 /* app4.cpp */; };
+		34373c5c1a7b767a00487ce0 /* app5.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448141a13b30300a37710 /* app5.cpp */; };
+		34373c5d1a7b767a00487ce0 /* app6.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448151a13b30300a37710 /* app6.cpp */; };
+		34373c5e1a7b767a00487ce0 /* app7.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448161a13b30300a37710 /* app7.cpp */; };
+		34373c5f1a7b767a00487ce0 /* app8.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448171a13b30300a37710 /* app8.cpp */; };
+		34373c601a7b767a00487ce0 /* app9.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448181a13b30300a37710 /* app9.cpp */; };
+		34373c611a7b767a00487ce0 /* basics.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448191a13b30300a37710 /* basics.cpp */; };
+		34373c621a7b767a00487ce0 /* beast.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424481a1a13b30300a37710 /* beast.cpp */; };
+		34373c631a7b767a00487ce0 /* beastc.c in sources */ = {isa = pbxbuildfile; fileref = 8424481b1a13b30300a37710 /* beastc.c */; };
+		34373c641a7b767a00487ce0 /* beastobjc.mm in sources */ = {isa = pbxbuildfile; fileref = 8424481c1a13b30300a37710 /* beastobjc.mm */; settings = {compiler_flags = "-dobjc_old_dispatch_prototypes"; }; };
+		34373c661a7b767a00487ce0 /* core.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424481e1a13b30300a37710 /* core.cpp */; };
+		34373c691a7b767a00487ce0 /* hyperleveldb.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448231a13b30300a37710 /* hyperleveldb.cpp */; settings = {compiler_flags = "-i../../src/hyperleveldb -i../../src/snappy/snappy -i../../src/snappy/config"; }; };
+		34373c6a1a7b767a00487ce0 /* json.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448251a13b30300a37710 /* json.cpp */; };
+		34373c6b1a7b767a00487ce0 /* leveldb.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448271a13b30300a37710 /* leveldb.cpp */; settings = {compiler_flags = "-i../../src/leveldb -i../../src/leveldb/include -i../../src/snappy/snappy -i../../src/snappy/config"; }; };
+		34373c6c1a7b767a00487ce0 /* net.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448291a13b30300a37710 /* net.cpp */; };
+		34373c6d1a7b767a00487ce0 /* nodestore.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424482b1a13b30300a37710 /* nodestore.cpp */; settings = {compiler_flags = "-i../../src/leveldb/include -i../../src/rocksdb2/include -i../../src/snappy/snappy -i../../src/snappy/config"; }; };
+		34373c6e1a7b767a00487ce0 /* overlay.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424482c1a13b30300a37710 /* overlay.cpp */; };
+		34373c6f1a7b767a00487ce0 /* peerfinder.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424482d1a13b30300a37710 /* peerfinder.cpp */; };
+		34373c701a7b767a00487ce0 /* protobuf.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424482e1a13b30300a37710 /* protobuf.cpp */; };
+		34373c711a7b767a00487ce0 /* resource.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424482f1a13b30300a37710 /* resource.cpp */; };
+		34373c721a7b767a00487ce0 /* ripple.proto.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448311a13b30300a37710 /* ripple.proto.cpp */; };
+		34373c731a7b767a00487ce0 /* rocksdb.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448321a13b30300a37710 /* rocksdb.cpp */; settings = {compiler_flags = "-i../../src/rocksdb2 -i../../src/rocksdb2/include -i../../src/snappy/snappy -i../../src/snappy/config"; }; };
+		34373c741a7b767a00487ce0 /* rpcx.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448341a13b30300a37710 /* rpcx.cpp */; };
+		34373c761a7b767a00487ce0 /* snappy.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448371a13b30300a37710 /* snappy.cpp */; settings = {compiler_flags = " -i../../src/snappy/snappy -i../../src/snappy/config"; }; };
+		34373c791a7b767a00487ce0 /* validators.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424483c1a13b30300a37710 /* validators.cpp */; };
+		34373c7a1a7b767a00487ce0 /* websocket.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424483d1a13b30300a37710 /* websocket.cpp */; };
+		34dd1f851a89c1cf00f3f599 /* ed25519.c in sources */ = {isa = pbxbuildfile; fileref = 52a240b31a7b8a9e009bb3f0 /* ed25519.c */; settings = {compiler_flags = "-i../../src/ed25519-donna"; }; };
+		34dd1f861a89c1d500f3f599 /* git_id.cpp in sources */ = {isa = pbxbuildfile; fileref = 52a240611a7b7e8d009bb3f0 /* git_id.cpp */; };
+		34dd1f871a89c1db00f3f599 /* shamap.cpp in sources */ = {isa = pbxbuildfile; fileref = 52a240631a7b7e8d009bb3f0 /* shamap.cpp */; };
+		34dd1f881a89c22000f3f599 /* crypto.cpp in sources */ = {isa = pbxbuildfile; fileref = 52a23fd51a7a4501009bb3f0 /* crypto.cpp */; };
+		34dd1f891a89c23400f3f599 /* protocol.cpp in sources */ = {isa = pbxbuildfile; fileref = 52a23fe21a7a4501009bb3f0 /* protocol.cpp */; };
+		34dd1f8a1a89c23a00f3f599 /* server.cpp in sources */ = {isa = pbxbuildfile; fileref = 52a23fe91a7a4501009bb3f0 /* server.cpp */; };
+		34dd1f8b1a89c2ea00f3f599 /* hash_unity.cpp in sources */ = {isa = pbxbuildfile; fileref = 529087bb1a7f1be8008cb1b9 /* hash_unity.cpp */; };
+		525a39b51a9dc46e00847815 /* lz4.c in sources */ = {isa = pbxbuildfile; fileref = 525a39b41a9dc46e00847815 /* lz4.c */; };
+		525a39b61a9dc46e00847815 /* lz4.c in sources */ = {isa = pbxbuildfile; fileref = 525a39b41a9dc46e00847815 /* lz4.c */; };
+		529087bc1a7f1be8008cb1b9 /* hash_unity.cpp in sources */ = {isa = pbxbuildfile; fileref = 529087bb1a7f1be8008cb1b9 /* hash_unity.cpp */; };
+		52a23ff11a7a4543009bb3f0 /* protocol.cpp in sources */ = {isa = pbxbuildfile; fileref = 52a23fe21a7a4501009bb3f0 /* protocol.cpp */; };
+		52a23ff21a7a4543009bb3f0 /* server.cpp in sources */ = {isa = pbxbuildfile; fileref = 52a23fe91a7a4501009bb3f0 /* server.cpp */; };
+		52a23ff31a7a4587009bb3f0 /* crypto.cpp in sources */ = {isa = pbxbuildfile; fileref = 52a23fd51a7a4501009bb3f0 /* crypto.cpp */; };
+		52a240641a7b7e8d009bb3f0 /* git_id.cpp in sources */ = {isa = pbxbuildfile; fileref = 52a240611a7b7e8d009bb3f0 /* git_id.cpp */; };
+		52a240651a7b7e8d009bb3f0 /* shamap.cpp in sources */ = {isa = pbxbuildfile; fileref = 52a240631a7b7e8d009bb3f0 /* shamap.cpp */; };
+		52a240b41a7b8a9e009bb3f0 /* ed25519.c in sources */ = {isa = pbxbuildfile; fileref = 52a240b31a7b8a9e009bb3f0 /* ed25519.c */; settings = {compiler_flags = "-i../../src/ed25519-donna"; }; };
+		84244bb21a13b36c00a37710 /* app.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424480e1a13b30300a37710 /* app.cpp */; };
+		84244bb31a13b36c00a37710 /* app1.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448101a13b30300a37710 /* app1.cpp */; };
+		84244bb41a13b36c00a37710 /* app2.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448111a13b30300a37710 /* app2.cpp */; };
+		84244bb51a13b36c00a37710 /* app3.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448121a13b30300a37710 /* app3.cpp */; };
+		84244bb61a13b36c00a37710 /* app4.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448131a13b30300a37710 /* app4.cpp */; };
+		84244bb71a13b36c00a37710 /* app5.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448141a13b30300a37710 /* app5.cpp */; };
+		84244bb81a13b36c00a37710 /* app6.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448151a13b30300a37710 /* app6.cpp */; };
+		84244bb91a13b36c00a37710 /* app7.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448161a13b30300a37710 /* app7.cpp */; };
+		84244bba1a13b36c00a37710 /* app8.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448171a13b30300a37710 /* app8.cpp */; };
+		84244bbb1a13b36c00a37710 /* app9.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448181a13b30300a37710 /* app9.cpp */; };
+		84244bbc1a13b36c00a37710 /* basics.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448191a13b30300a37710 /* basics.cpp */; };
+		84244bbd1a13b36c00a37710 /* beast.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424481a1a13b30300a37710 /* beast.cpp */; };
+		84244bbe1a13b36c00a37710 /* beastc.c in sources */ = {isa = pbxbuildfile; fileref = 8424481b1a13b30300a37710 /* beastc.c */; };
+		84244bbf1a13b36c00a37710 /* beastobjc.mm in sources */ = {isa = pbxbuildfile; fileref = 8424481c1a13b30300a37710 /* beastobjc.mm */; settings = {compiler_flags = "-dobjc_old_dispatch_prototypes"; }; };
+		84244bc11a13b36c00a37710 /* core.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424481e1a13b30300a37710 /* core.cpp */; };
+		84244bc41a13b36c00a37710 /* hyperleveldb.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448231a13b30300a37710 /* hyperleveldb.cpp */; settings = {compiler_flags = "-i../../src/hyperleveldb -i../../src/snappy/snappy -i../../src/snappy/config"; }; };
+		84244bc51a13b36c00a37710 /* json.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448251a13b30300a37710 /* json.cpp */; };
+		84244bc61a13b36c00a37710 /* leveldb.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448271a13b30300a37710 /* leveldb.cpp */; settings = {compiler_flags = "-i../../src/leveldb -i../../src/leveldb/include -i../../src/snappy/snappy -i../../src/snappy/config"; }; };
+		84244bc71a13b36c00a37710 /* net.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448291a13b30300a37710 /* net.cpp */; };
+		84244bc81a13b36c00a37710 /* nodestore.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424482b1a13b30300a37710 /* nodestore.cpp */; settings = {compiler_flags = "-i../../src/leveldb/include -i../../src/rocksdb2/include -i../../src/snappy/snappy -i../../src/snappy/config"; }; };
+		84244bc91a13b36c00a37710 /* overlay.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424482c1a13b30300a37710 /* overlay.cpp */; };
+		84244bca1a13b36c00a37710 /* peerfinder.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424482d1a13b30300a37710 /* peerfinder.cpp */; };
+		84244bcb1a13b36c00a37710 /* protobuf.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424482e1a13b30300a37710 /* protobuf.cpp */; };
+		84244bcc1a13b36c00a37710 /* resource.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424482f1a13b30300a37710 /* resource.cpp */; };
+		84244bcd1a13b36c00a37710 /* ripple.proto.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448311a13b30300a37710 /* ripple.proto.cpp */; };
+		84244bce1a13b36c00a37710 /* rocksdb.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448321a13b30300a37710 /* rocksdb.cpp */; settings = {compiler_flags = "-i../../src/rocksdb2 -i../../src/rocksdb2/include -i../../src/snappy/snappy -i../../src/snappy/config"; }; };
+		84244bcf1a13b36c00a37710 /* rpcx.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448341a13b30300a37710 /* rpcx.cpp */; };
+		84244bd11a13b36c00a37710 /* snappy.cpp in sources */ = {isa = pbxbuildfile; fileref = 842448371a13b30300a37710 /* snappy.cpp */; settings = {compiler_flags = " -i../../src/snappy/snappy -i../../src/snappy/config"; }; };
+		84244bd41a13b36c00a37710 /* validators.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424483c1a13b30300a37710 /* validators.cpp */; };
+		84244bd51a13b36c00a37710 /* websocket.cpp in sources */ = {isa = pbxbuildfile; fileref = 8424483d1a13b30300a37710 /* websocket.cpp */; };
+/* end pbxbuildfile section */
+
+/* begin pbxbuildrule section */
+		3414534e1a19d8b50005fd6d /* pbxbuildrule */ = {
+			isa = pbxbuildrule;
+			compilerspec = com.apple.compilers.proxy.script;
+			filepatterns = "*.proto";
+			filetype = pattern.proxy;
+			iseditable = 1;
+			outputfiles = (
+				"$(derived_file_dir)/$(input_file_base).pb.h",
+			);
+			script = "path=${path}:/usr/local/bin\nprotoc -i${input_file_dir} ${input_file_path} --cpp_out=${derived_file_dir}";
+		};
+		34373c7d1a7b767a00487ce0 /* pbxbuildrule */ = {
+			isa = pbxbuildrule;
+			compilerspec = com.apple.compilers.proxy.script;
+			filepatterns = "*.proto";
+			filetype = pattern.proxy;
+			iseditable = 1;
+			outputfiles = (
+				"$(derived_file_dir)/$(input_file_base).pb.h",
+			);
+			script = "path=${path}:/usr/local/bin\nprotoc -i${input_file_dir} ${input_file_path} --cpp_out=${derived_file_dir}";
+		};
+/* end pbxbuildrule section */
+
+/* begin pbxcopyfilesbuildphase section */
+		34373c7c1a7b767a00487ce0 /* copyfiles */ = {
+			isa = pbxcopyfilesbuildphase;
+			buildactionmask = 2147483647;
+			dstpath = /usr/share/man/man1/;
+			dstsubfolderspec = 0;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 1;
+		};
+		842440521a13b2b900a37710 /* copyfiles */ = {
+			isa = pbxcopyfilesbuildphase;
+			buildactionmask = 2147483647;
+			dstpath = /usr/share/man/man1/;
+			dstsubfolderspec = 0;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 1;
+		};
+/* end pbxcopyfilesbuildphase section */
+
+/* begin pbxfilereference section */
+		34373c811a7b767a00487ce0 /* radard-mysql */ = {isa = pbxfilereference; explicitfiletype = "compiled.mach-o.executable"; includeinindex = 0; path = "radard-mysql"; sourcetree = built_products_dir; };
+		3493343d1a3fe05000418c3f /* beast */ = {isa = pbxfilereference; lastknownfiletype = folder; name = beast; path = ../../src/beast; sourcetree = "<group>"; };
+		3493343f1a3fe05000418c3f /* ripple */ = {isa = pbxfilereference; lastknownfiletype = folder; name = ripple; path = ../../src/ripple; sourcetree = "<group>"; };
+		525a39b41a9dc46e00847815 /* lz4.c */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.c.c; name = lz4.c; path = ../../src/ripple/unity/lz4.c; sourcetree = "<group>"; };
+		529087bb1a7f1be8008cb1b9 /* hash_unity.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = hash_unity.cpp; path = ../../src/beast/beast/unity/hash_unity.cpp; sourcetree = "<group>"; };
+		52a23fd51a7a4501009bb3f0 /* crypto.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = crypto.cpp; path = ../../src/ripple/unity/crypto.cpp; sourcetree = "<group>"; };
+		52a23fe21a7a4501009bb3f0 /* protocol.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = protocol.cpp; path = ../../src/ripple/unity/protocol.cpp; sourcetree = "<group>"; };
+		52a23fe91a7a4501009bb3f0 /* server.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = server.cpp; path = ../../src/ripple/unity/server.cpp; sourcetree = "<group>"; };
+		52a240611a7b7e8d009bb3f0 /* git_id.cpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.cpp; name = git_id.cpp; path = ../../src/ripple/unity/git_id.cpp; sourcetree = "<group>"; };
+		52a240631a7b7e8d009bb3f0 /* shamap.cpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.cpp; name = shamap.cpp; path = ../../src/ripple/unity/shamap.cpp; sourcetree = "<group>"; };
+		52a240b31a7b8a9e009bb3f0 /* ed25519.c */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.c.c; name = ed25519.c; path = ../../src/ripple/unity/ed25519.c; sourcetree = "<group>"; };
+		842440541a13b2b900a37710 /* radard */ = {isa = pbxfilereference; explicitfiletype = "compiled.mach-o.executable"; includeinindex = 0; path = radard; sourcetree = built_products_dir; };
+		8424474f1a13b30200a37710 /* ripple.proto */ = {isa = pbxfilereference; lastknownfiletype = text; name = ripple.proto; path = ../../src/ripple/proto/ripple.proto; sourcetree = "<group>"; };
+		8424480e1a13b30300a37710 /* app.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = app.cpp; path = ../../src/ripple/unity/app.cpp; sourcetree = "<group>"; };
+		842448101a13b30300a37710 /* app1.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = app1.cpp; path = ../../src/ripple/unity/app1.cpp; sourcetree = "<group>"; };
+		842448111a13b30300a37710 /* app2.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = app2.cpp; path = ../../src/ripple/unity/app2.cpp; sourcetree = "<group>"; };
+		842448121a13b30300a37710 /* app3.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = app3.cpp; path = ../../src/ripple/unity/app3.cpp; sourcetree = "<group>"; };
+		842448131a13b30300a37710 /* app4.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = app4.cpp; path = ../../src/ripple/unity/app4.cpp; sourcetree = "<group>"; };
+		842448141a13b30300a37710 /* app5.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = app5.cpp; path = ../../src/ripple/unity/app5.cpp; sourcetree = "<group>"; };
+		842448151a13b30300a37710 /* app6.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = app6.cpp; path = ../../src/ripple/unity/app6.cpp; sourcetree = "<group>"; };
+		842448161a13b30300a37710 /* app7.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = app7.cpp; path = ../../src/ripple/unity/app7.cpp; sourcetree = "<group>"; };
+		842448171a13b30300a37710 /* app8.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = app8.cpp; path = ../../src/ripple/unity/app8.cpp; sourcetree = "<group>"; };
+		842448181a13b30300a37710 /* app9.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = app9.cpp; path = ../../src/ripple/unity/app9.cpp; sourcetree = "<group>"; };
+		842448191a13b30300a37710 /* basics.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = basics.cpp; path = ../../src/ripple/unity/basics.cpp; sourcetree = "<group>"; };
+		8424481a1a13b30300a37710 /* beast.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = beast.cpp; path = ../../src/ripple/unity/beast.cpp; sourcetree = "<group>"; };
+		8424481b1a13b30300a37710 /* beastc.c */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.c.c; name = beastc.c; path = ../../src/ripple/unity/beastc.c; sourcetree = "<group>"; };
+		8424481c1a13b30300a37710 /* beastobjc.mm */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.objcpp; name = beastobjc.mm; path = ../../src/ripple/unity/beastobjc.mm; sourcetree = "<group>"; };
+		8424481e1a13b30300a37710 /* core.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = core.cpp; path = ../../src/ripple/unity/core.cpp; sourcetree = "<group>"; };
+		842448231a13b30300a37710 /* hyperleveldb.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = hyperleveldb.cpp; path = ../../src/ripple/unity/hyperleveldb.cpp; sourcetree = "<group>"; };
+		842448251a13b30300a37710 /* json.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = json.cpp; path = ../../src/ripple/unity/json.cpp; sourcetree = "<group>"; };
+		842448271a13b30300a37710 /* leveldb.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = leveldb.cpp; path = ../../src/ripple/unity/leveldb.cpp; sourcetree = "<group>"; };
+		842448291a13b30300a37710 /* net.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = net.cpp; path = ../../src/ripple/unity/net.cpp; sourcetree = "<group>"; };
+		8424482b1a13b30300a37710 /* nodestore.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = nodestore.cpp; path = ../../src/ripple/unity/nodestore.cpp; sourcetree = "<group>"; };
+		8424482c1a13b30300a37710 /* overlay.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = overlay.cpp; path = ../../src/ripple/unity/overlay.cpp; sourcetree = "<group>"; };
+		8424482d1a13b30300a37710 /* peerfinder.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = peerfinder.cpp; path = ../../src/ripple/unity/peerfinder.cpp; sourcetree = "<group>"; };
+		8424482e1a13b30300a37710 /* protobuf.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = protobuf.cpp; path = ../../src/ripple/unity/protobuf.cpp; sourcetree = "<group>"; };
+		8424482f1a13b30300a37710 /* resource.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = resource.cpp; path = ../../src/ripple/unity/resource.cpp; sourcetree = "<group>"; };
+		842448311a13b30300a37710 /* ripple.proto.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = ripple.proto.cpp; path = ../../src/ripple/unity/ripple.proto.cpp; sourcetree = "<group>"; };
+		842448321a13b30300a37710 /* rocksdb.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = rocksdb.cpp; path = ../../src/ripple/unity/rocksdb.cpp; sourcetree = "<group>"; };
+		842448341a13b30300a37710 /* rpcx.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = rpcx.cpp; path = ../../src/ripple/unity/rpcx.cpp; sourcetree = "<group>"; };
+		842448371a13b30300a37710 /* snappy.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = snappy.cpp; path = ../../src/ripple/unity/snappy.cpp; sourcetree = "<group>"; };
+		8424483c1a13b30300a37710 /* validators.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = validators.cpp; path = ../../src/ripple/unity/validators.cpp; sourcetree = "<group>"; };
+		8424483d1a13b30300a37710 /* websocket.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = websocket.cpp; path = ../../src/ripple/unity/websocket.cpp; sourcetree = "<group>"; };
+/* end pbxfilereference section */
+
+/* begin pbxframeworksbuildphase section */
+		34373c7b1a7b767a00487ce0 /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		842440511a13b2b900a37710 /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+/* end pbxframeworksbuildphase section */
+
+/* begin pbxgroup section */
+		3493343c1a3fdff900418c3f /* build */ = {
+			isa = pbxgroup;
+			children = (
+				525a39b41a9dc46e00847815 /* lz4.c */,
+				8424480e1a13b30300a37710 /* app.cpp */,
+				842448101a13b30300a37710 /* app1.cpp */,
+				842448111a13b30300a37710 /* app2.cpp */,
+				842448121a13b30300a37710 /* app3.cpp */,
+				842448131a13b30300a37710 /* app4.cpp */,
+				842448141a13b30300a37710 /* app5.cpp */,
+				842448151a13b30300a37710 /* app6.cpp */,
+				842448161a13b30300a37710 /* app7.cpp */,
+				842448171a13b30300a37710 /* app8.cpp */,
+				842448181a13b30300a37710 /* app9.cpp */,
+				842448191a13b30300a37710 /* basics.cpp */,
+				8424481a1a13b30300a37710 /* beast.cpp */,
+				8424481b1a13b30300a37710 /* beastc.c */,
+				8424481c1a13b30300a37710 /* beastobjc.mm */,
+				8424481e1a13b30300a37710 /* core.cpp */,
+				52a23fd51a7a4501009bb3f0 /* crypto.cpp */,
+				52a240b31a7b8a9e009bb3f0 /* ed25519.c */,
+				52a240611a7b7e8d009bb3f0 /* git_id.cpp */,
+				529087bb1a7f1be8008cb1b9 /* hash_unity.cpp */,
+				842448231a13b30300a37710 /* hyperleveldb.cpp */,
+				842448251a13b30300a37710 /* json.cpp */,
+				842448271a13b30300a37710 /* leveldb.cpp */,
+				842448291a13b30300a37710 /* net.cpp */,
+				8424482b1a13b30300a37710 /* nodestore.cpp */,
+				8424482c1a13b30300a37710 /* overlay.cpp */,
+				8424482d1a13b30300a37710 /* peerfinder.cpp */,
+				8424482e1a13b30300a37710 /* protobuf.cpp */,
+				52a23fe21a7a4501009bb3f0 /* protocol.cpp */,
+				8424482f1a13b30300a37710 /* resource.cpp */,
+				8424474f1a13b30200a37710 /* ripple.proto */,
+				842448311a13b30300a37710 /* ripple.proto.cpp */,
+				842448321a13b30300a37710 /* rocksdb.cpp */,
+				842448341a13b30300a37710 /* rpcx.cpp */,
+				52a23fe91a7a4501009bb3f0 /* server.cpp */,
+				52a240631a7b7e8d009bb3f0 /* shamap.cpp */,
+				842448371a13b30300a37710 /* snappy.cpp */,
+				8424483c1a13b30300a37710 /* validators.cpp */,
+				8424483d1a13b30300a37710 /* websocket.cpp */,
+			);
+			name = build;
+			sourcetree = "<group>";
+		};
+		8424404b1a13b2b900a37710 = {
+			isa = pbxgroup;
+			children = (
+				3493343c1a3fdff900418c3f /* build */,
+				3493343d1a3fe05000418c3f /* beast */,
+				3493343f1a3fe05000418c3f /* ripple */,
+				842440551a13b2b900a37710 /* products */,
+			);
+			sourcetree = "<group>";
+		};
+		842440551a13b2b900a37710 /* products */ = {
+			isa = pbxgroup;
+			children = (
+				842440541a13b2b900a37710 /* radard */,
+				34373c811a7b767a00487ce0 /* radard-mysql */,
+			);
+			name = products;
+			sourcetree = "<group>";
+		};
+/* end pbxgroup section */
+
+/* begin pbxnativetarget section */
+		34373c541a7b767a00487ce0 /* radard-mysql */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = 34373c7e1a7b767a00487ce0 /* build configuration list for pbxnativetarget "radard-mysql" */;
+			buildphases = (
+				34373c551a7b767a00487ce0 /* sources */,
+				34373c7b1a7b767a00487ce0 /* frameworks */,
+				34373c7c1a7b767a00487ce0 /* copyfiles */,
+			);
+			buildrules = (
+				34373c7d1a7b767a00487ce0 /* pbxbuildrule */,
+			);
+			dependencies = (
+			);
+			name = "radard-mysql";
+			productname = rippled;
+			productreference = 34373c811a7b767a00487ce0 /* radard-mysql */;
+			producttype = "com.apple.product-type.tool";
+		};
+		842440531a13b2b900a37710 /* radard */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = 8424405b1a13b2b900a37710 /* build configuration list for pbxnativetarget "radard" */;
+			buildphases = (
+				842440501a13b2b900a37710 /* sources */,
+				842440511a13b2b900a37710 /* frameworks */,
+				842440521a13b2b900a37710 /* copyfiles */,
+			);
+			buildrules = (
+				3414534e1a19d8b50005fd6d /* pbxbuildrule */,
+			);
+			dependencies = (
+			);
+			name = radard;
+			productname = rippled;
+			productreference = 842440541a13b2b900a37710 /* radard */;
+			producttype = "com.apple.product-type.tool";
+		};
+/* end pbxnativetarget section */
+
+/* begin pbxproject section */
+		8424404c1a13b2b900a37710 /* project object */ = {
+			isa = pbxproject;
+			attributes = {
+				lastupgradecheck = 0610;
+				organizationname = "";
+				targetattributes = {
+					842440531a13b2b900a37710 = {
+						createdontoolsversion = 6.1;
+					};
+				};
+			};
+			buildconfigurationlist = 8424404f1a13b2b900a37710 /* build configuration list for pbxproject "radard" */;
+			compatibilityversion = "xcode 3.2";
+			developmentregion = english;
+			hasscannedforencodings = 0;
+			knownregions = (
+				en,
+			);
+			maingroup = 8424404b1a13b2b900a37710;
+			productrefgroup = 842440551a13b2b900a37710 /* products */;
+			projectdirpath = "";
+			projectroot = "";
+			targets = (
+				842440531a13b2b900a37710 /* radard */,
+				34373c541a7b767a00487ce0 /* radard-mysql */,
+			);
+		};
+/* end pbxproject section */
+
+/* begin pbxsourcesbuildphase section */
+		34373c551a7b767a00487ce0 /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				34373c561a7b767a00487ce0 /* ripple.proto in sources */,
+				34373c571a7b767a00487ce0 /* app.cpp in sources */,
+				34373c581a7b767a00487ce0 /* app1.cpp in sources */,
+				525a39b61a9dc46e00847815 /* lz4.c in sources */,
+				34373c591a7b767a00487ce0 /* app2.cpp in sources */,
+				34373c5a1a7b767a00487ce0 /* app3.cpp in sources */,
+				34373c5b1a7b767a00487ce0 /* app4.cpp in sources */,
+				34373c5c1a7b767a00487ce0 /* app5.cpp in sources */,
+				34373c5d1a7b767a00487ce0 /* app6.cpp in sources */,
+				34373c5e1a7b767a00487ce0 /* app7.cpp in sources */,
+				34373c5f1a7b767a00487ce0 /* app8.cpp in sources */,
+				34373c601a7b767a00487ce0 /* app9.cpp in sources */,
+				34373c661a7b767a00487ce0 /* core.cpp in sources */,
+				34373c611a7b767a00487ce0 /* basics.cpp in sources */,
+				34dd1f881a89c22000f3f599 /* crypto.cpp in sources */,
+				34373c6c1a7b767a00487ce0 /* net.cpp in sources */,
+				34373c6e1a7b767a00487ce0 /* overlay.cpp in sources */,
+				34373c6f1a7b767a00487ce0 /* peerfinder.cpp in sources */,
+				34373c6a1a7b767a00487ce0 /* json.cpp in sources */,
+				34dd1f871a89c1db00f3f599 /* shamap.cpp in sources */,
+				34373c6d1a7b767a00487ce0 /* nodestore.cpp in sources */,
+				34dd1f861a89c1d500f3f599 /* git_id.cpp in sources */,
+				34dd1f891a89c23400f3f599 /* protocol.cpp in sources */,
+				34dd1f8b1a89c2ea00f3f599 /* hash_unity.cpp in sources */,
+				34373c621a7b767a00487ce0 /* beast.cpp in sources */,
+				34373c701a7b767a00487ce0 /* protobuf.cpp in sources */,
+				34373c721a7b767a00487ce0 /* ripple.proto.cpp in sources */,
+				34373c711a7b767a00487ce0 /* resource.cpp in sources */,
+				34373c741a7b767a00487ce0 /* rpcx.cpp in sources */,
+				34dd1f8a1a89c23a00f3f599 /* server.cpp in sources */,
+				34373c791a7b767a00487ce0 /* validators.cpp in sources */,
+				34373c7a1a7b767a00487ce0 /* websocket.cpp in sources */,
+				34373c631a7b767a00487ce0 /* beastc.c in sources */,
+				34dd1f851a89c1cf00f3f599 /* ed25519.c in sources */,
+				34373c6b1a7b767a00487ce0 /* leveldb.cpp in sources */,
+				34373c691a7b767a00487ce0 /* hyperleveldb.cpp in sources */,
+				34373c731a7b767a00487ce0 /* rocksdb.cpp in sources */,
+				34373c761a7b767a00487ce0 /* snappy.cpp in sources */,
+				34373c641a7b767a00487ce0 /* beastobjc.mm in sources */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		842440501a13b2b900a37710 /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				3414533f1a19d8390005fd6d /* ripple.proto in sources */,
+				84244bb21a13b36c00a37710 /* app.cpp in sources */,
+				84244bb31a13b36c00a37710 /* app1.cpp in sources */,
+				525a39b51a9dc46e00847815 /* lz4.c in sources */,
+				84244bb41a13b36c00a37710 /* app2.cpp in sources */,
+				84244bb51a13b36c00a37710 /* app3.cpp in sources */,
+				84244bb61a13b36c00a37710 /* app4.cpp in sources */,
+				84244bb71a13b36c00a37710 /* app5.cpp in sources */,
+				84244bb81a13b36c00a37710 /* app6.cpp in sources */,
+				84244bb91a13b36c00a37710 /* app7.cpp in sources */,
+				84244bba1a13b36c00a37710 /* app8.cpp in sources */,
+				84244bbb1a13b36c00a37710 /* app9.cpp in sources */,
+				84244bc11a13b36c00a37710 /* core.cpp in sources */,
+				84244bbc1a13b36c00a37710 /* basics.cpp in sources */,
+				52a23ff31a7a4587009bb3f0 /* crypto.cpp in sources */,
+				84244bc71a13b36c00a37710 /* net.cpp in sources */,
+				84244bc91a13b36c00a37710 /* overlay.cpp in sources */,
+				84244bca1a13b36c00a37710 /* peerfinder.cpp in sources */,
+				84244bc51a13b36c00a37710 /* json.cpp in sources */,
+				52a240651a7b7e8d009bb3f0 /* shamap.cpp in sources */,
+				84244bc81a13b36c00a37710 /* nodestore.cpp in sources */,
+				52a240641a7b7e8d009bb3f0 /* git_id.cpp in sources */,
+				52a23ff11a7a4543009bb3f0 /* protocol.cpp in sources */,
+				529087bc1a7f1be8008cb1b9 /* hash_unity.cpp in sources */,
+				84244bbd1a13b36c00a37710 /* beast.cpp in sources */,
+				84244bcb1a13b36c00a37710 /* protobuf.cpp in sources */,
+				84244bcd1a13b36c00a37710 /* ripple.proto.cpp in sources */,
+				84244bcc1a13b36c00a37710 /* resource.cpp in sources */,
+				84244bcf1a13b36c00a37710 /* rpcx.cpp in sources */,
+				52a23ff21a7a4543009bb3f0 /* server.cpp in sources */,
+				84244bd41a13b36c00a37710 /* validators.cpp in sources */,
+				84244bd51a13b36c00a37710 /* websocket.cpp in sources */,
+				84244bbe1a13b36c00a37710 /* beastc.c in sources */,
+				52a240b41a7b8a9e009bb3f0 /* ed25519.c in sources */,
+				84244bc61a13b36c00a37710 /* leveldb.cpp in sources */,
+				84244bc41a13b36c00a37710 /* hyperleveldb.cpp in sources */,
+				84244bce1a13b36c00a37710 /* rocksdb.cpp in sources */,
+				84244bd11a13b36c00a37710 /* snappy.cpp in sources */,
+				84244bbf1a13b36c00a37710 /* beastobjc.mm in sources */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+/* end pbxsourcesbuildphase section */
+
+/* begin xcbuildconfiguration section */
+		34373c7f1a7b767a00487ce0 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				gcc_preprocessor_definitions = (
+					"use_mysql=1",
+					"${inherited}",
+				);
+				header_search_paths = (
+					"$(inherited)",
+					/usr/include/mysql,
+				);
+				other_cplusplusflags = (
+					"$(other_cflags)",
+					"-wall",
+					"-frtti",
+					"-std=c++11",
+					"-wno-invalid-offsetof",
+					"-wno-mismatched-tags",
+					"-wno-deprecated-register",
+					"-wno-sign-compare",
+					"-wno-char-subscripts",
+					"-wno-format",
+					"-g",
+					"-wno-redeclared-class-member",
+					"-wno-deprecated",
+					"-wno-deprecated-declarations",
+					"-wno-unused-variable",
+					"-wno-unused-function",
+					"-o3",
+					"-fno-strict-aliasing",
+					"-dopenssl_no_ssl2",
+					"-dndebug",
+					"-dbeast_compile_objective_cpp=1",
+					"-dradar_async_dividend",
+				);
+				other_ldflags = (
+					"${inherited}",
+					"-lmysqlclient",
+				);
+				product_name = "radard-mysql";
+			};
+			name = debug;
+		};
+		34373c801a7b767a00487ce0 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				gcc_preprocessor_definitions = (
+					"use_mysql=1",
+					"${inherited}",
+				);
+				header_search_paths = (
+					"$(inherited)",
+					/usr/include/mysql,
+				);
+				other_cplusplusflags = (
+					"$(other_cflags)",
+					"-wall",
+					"-frtti",
+					"-std=c++11",
+					"-wno-invalid-offsetof",
+					"-wno-mismatched-tags",
+					"-wno-deprecated-register",
+					"-wno-sign-compare",
+					"-wno-char-subscripts",
+					"-wno-format",
+					"-g",
+					"-wno-redeclared-class-member",
+					"-wno-deprecated",
+					"-wno-deprecated-declarations",
+					"-wno-unused-variable",
+					"-wno-unused-function",
+					"-o3",
+					"-fno-strict-aliasing",
+					"-dopenssl_no_ssl2",
+					"-dndebug",
+					"-dbeast_compile_objective_cpp=1",
+					"-dradar_async_dividend",
+				);
+				other_ldflags = (
+					"${inherited}",
+					"-lmysqlclient",
+				);
+				product_name = "radard-mysql";
+			};
+			name = release;
+		};
+		842440591a13b2b900a37710 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				clang_cxx_language_standard = "c++0x";
+				clang_cxx_library = "libc++";
+				clang_enable_modules = yes;
+				clang_enable_objc_arc = no;
+				clang_warn_bool_conversion = yes;
+				clang_warn_constant_conversion = yes;
+				clang_warn_direct_objc_isa_usage = yes_error;
+				clang_warn_empty_body = yes;
+				clang_warn_enum_conversion = yes;
+				clang_warn_int_conversion = yes;
+				clang_warn_objc_root_class = yes_error;
+				clang_warn_unreachable_code = yes;
+				clang_warn__duplicate_method_match = yes;
+				copy_phase_strip = no;
+				enable_strict_objc_msgsend = yes;
+				gcc_c_language_standard = gnu99;
+				gcc_dynamic_no_pic = no;
+				gcc_optimization_level = 0;
+				gcc_preprocessor_definitions = (
+					"debug=1",
+					"$(inherited)",
+				);
+				gcc_symbols_private_extern = no;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_return_type = yes_error;
+				gcc_warn_undeclared_selector = yes;
+				gcc_warn_uninitialized_autos = yes_aggressive;
+				gcc_warn_unused_function = yes;
+				gcc_warn_unused_variable = yes;
+				header_search_paths = (
+					"$(inherited)",
+					/applications/xcode.app/contents/developer/toolchains/xcodedefault.xctoolchain/usr/include,
+					/usr/local/include,
+					../../src,
+					../../src/beast,
+					../../build/proto,
+				);
+				library_search_paths = /usr/local/lib;
+				macosx_deployment_target = 10.10;
+				mtl_enable_debug_info = yes;
+				only_active_arch = yes;
+				other_cplusplusflags = "$(other_cflags)";
+				other_ldflags = (
+					"-lboost_coroutine",
+					"-lboost_context-mt",
+					"-lboost_date_time",
+					"-lboost_filesystem",
+					"-lboost_program_options",
+					"-lboost_regex",
+					"-lboost_system",
+					"-lboost_thread-mt",
+					"-ldl",
+					"-lcrypto",
+					"-lprotobuf",
+					"-lssl",
+					"-v",
+					"-framework",
+					appkit,
+					"-framework",
+					foundation,
+				);
+				sdkroot = macosx;
+			};
+			name = debug;
+		};
+		8424405a1a13b2b900a37710 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				clang_cxx_language_standard = "c++0x";
+				clang_cxx_library = "libc++";
+				clang_enable_modules = yes;
+				clang_enable_objc_arc = no;
+				clang_warn_bool_conversion = yes;
+				clang_warn_constant_conversion = yes;
+				clang_warn_direct_objc_isa_usage = yes_error;
+				clang_warn_empty_body = yes;
+				clang_warn_enum_conversion = yes;
+				clang_warn_int_conversion = yes;
+				clang_warn_objc_root_class = yes_error;
+				clang_warn_unreachable_code = yes;
+				clang_warn__duplicate_method_match = yes;
+				copy_phase_strip = yes;
+				debug_information_format = "dwarf-with-dsym";
+				enable_ns_assertions = no;
+				enable_strict_objc_msgsend = yes;
+				gcc_c_language_standard = gnu99;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_return_type = yes_error;
+				gcc_warn_undeclared_selector = yes;
+				gcc_warn_uninitialized_autos = yes_aggressive;
+				gcc_warn_unused_function = yes;
+				gcc_warn_unused_variable = yes;
+				header_search_paths = (
+					"$(inherited)",
+					/applications/xcode.app/contents/developer/toolchains/xcodedefault.xctoolchain/usr/include,
+					/usr/local/include,
+					../../src,
+					../../src/beast,
+					../../build/proto,
+				);
+				library_search_paths = /usr/local/lib;
+				macosx_deployment_target = 10.10;
+				mtl_enable_debug_info = no;
+				other_ldflags = (
+					"-lboost_coroutine",
+					"-lboost_context-mt",
+					"-lboost_date_time",
+					"-lboost_filesystem",
+					"-lboost_program_options",
+					"-lboost_regex",
+					"-lboost_system",
+					"-lboost_thread-mt",
+					"-ldl",
+					"-lcrypto",
+					"-lprotobuf",
+					"-lssl",
+					"-v",
+					"-framework",
+					appkit,
+					"-framework",
+					foundation,
+				);
+				sdkroot = macosx;
+			};
+			name = release;
+		};
+		8424405c1a13b2b900a37710 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				other_cplusplusflags = (
+					"$(other_cflags)",
+					"-wall",
+					"-frtti",
+					"-std=c++11",
+					"-wno-invalid-offsetof",
+					"-wno-mismatched-tags",
+					"-wno-deprecated-register",
+					"-wno-sign-compare",
+					"-wno-char-subscripts",
+					"-wno-format",
+					"-g",
+					"-wno-redeclared-class-member",
+					"-wno-deprecated",
+					"-wno-deprecated-declarations",
+					"-wno-unused-variable",
+					"-wno-unused-function",
+					"-fno-strict-aliasing",
+					"-dopenssl_no_ssl2",
+					"-dndebug",
+					"-dbeast_compile_objective_cpp=1",
+					"-dradar_async_dividend",
+				);
+				product_name = radard;
+			};
+			name = debug;
+		};
+		8424405d1a13b2b900a37710 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				other_cplusplusflags = (
+					"$(other_cflags)",
+					"-wall",
+					"-frtti",
+					"-std=c++11",
+					"-wno-invalid-offsetof",
+					"-wno-mismatched-tags",
+					"-wno-deprecated-register",
+					"-wno-sign-compare",
+					"-wno-char-subscripts",
+					"-wno-format",
+					"-g",
+					"-wno-redeclared-class-member",
+					"-wno-deprecated",
+					"-wno-deprecated-declarations",
+					"-wno-unused-variable",
+					"-wno-unused-function",
+					"-fno-strict-aliasing",
+					"-dopenssl_no_ssl2",
+					"-dndebug",
+					"-dbeast_compile_objective_cpp=1",
+					"-dradar_async_dividend",
+				);
+				product_name = radard;
+			};
+			name = release;
+		};
+/* end xcbuildconfiguration section */
+
+/* begin xcconfigurationlist section */
+		34373c7e1a7b767a00487ce0 /* build configuration list for pbxnativetarget "radard-mysql" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				34373c7f1a7b767a00487ce0 /* debug */,
+				34373c801a7b767a00487ce0 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		8424404f1a13b2b900a37710 /* build configuration list for pbxproject "radard" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				842440591a13b2b900a37710 /* debug */,
+				8424405a1a13b2b900a37710 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		8424405b1a13b2b900a37710 /* build configuration list for pbxnativetarget "radard" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				8424405c1a13b2b900a37710 /* debug */,
+				8424405d1a13b2b900a37710 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+/* end xcconfigurationlist section */
+	};
+	rootobject = 8424404c1a13b2b900a37710 /* project object */;
+}

@@ -1,0 +1,123 @@
+// protocol buffers - google's data interchange format
+// copyright 2008 google inc.  all rights reserved.
+// http://code.google.com/p/protobuf/
+//
+// redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are
+// met:
+//
+//     * redistributions of source code must retain the above copyright
+// notice, this list of conditions and the following disclaimer.
+//     * redistributions in binary form must reproduce the above
+// copyright notice, this list of conditions and the following disclaimer
+// in the documentation and/or other materials provided with the
+// distribution.
+//     * neither the name of google inc. nor the names of its
+// contributors may be used to endorse or promote products derived from
+// this software without specific prior written permission.
+//
+// this software is provided by the copyright holders and contributors
+// "as is" and any express or implied warranties, including, but not
+// limited to, the implied warranties of merchantability and fitness for
+// a particular purpose are disclaimed. in no event shall the copyright
+// owner or contributors be liable for any direct, indirect, incidental,
+// special, exemplary, or consequential damages (including, but not
+// limited to, procurement of substitute goods or services; loss of use,
+// data, or profits; or business interruption) however caused and on any
+// theory of liability, whether in contract, strict liability, or tort
+// (including negligence or otherwise) arising in any way out of the use
+// of this software, even if advised of the possibility of such damage.
+
+// author: kenton@google.com (kenton varda)
+//  based on original protocol buffers design by
+//  sanjay ghemawat, jeff dean, and others.
+//
+// this file tests that various identifiers work as field and type names even
+// though the same identifiers are used internally by the c++ code generator.
+
+
+// some generic_services option(s) added automatically.
+// see:  http://go/proto2-generic-services-default
+option cc_generic_services = true;     // auto-added
+
+// we don't put this in a package within proto2 because we need to make sure
+// that the generated code doesn't depend on being in the proto2 namespace.
+package protobuf_unittest;
+
+// test that fields can have names like "input" and "i" which are also used
+// internally by the code generator for local variables.
+message testconflictingsymbolnames {
+  message builddescriptors {}
+  message typetraits {}
+
+  optional int32 input = 1;
+  optional int32 output = 2;
+  optional string length = 3;
+  repeated int32 i = 4;
+  repeated string new_element = 5 [ctype=string_piece];
+  optional int32 total_size = 6;
+  optional int32 tag = 7;
+
+  enum testenum { foo = 1; }
+  message data1 { repeated int32 data = 1; }
+  message data2 { repeated testenum data = 1; }
+  message data3 { repeated string data = 1; }
+  message data4 { repeated data4 data = 1; }
+  message data5 { repeated string data = 1 [ctype=string_piece]; }
+  message data6 { repeated string data = 1 [ctype=cord]; }
+
+  optional int32 source = 8;
+  optional int32 value = 9;
+  optional int32 file = 10;
+  optional int32 from = 11;
+  optional int32 handle_uninterpreted = 12;
+  repeated int32 index = 13;
+  optional int32 controller = 14;
+  optional int32 already_here = 15;
+
+  optional uint32 uint32 = 16;
+  optional uint64 uint64 = 17;
+  optional string string = 18;
+  optional int32 memset = 19;
+  optional int32 int32 = 20;
+  optional int64 int64 = 21;
+
+  optional uint32 cached_size = 22;
+  optional uint32 extensions = 23;
+  optional uint32 bit = 24;
+  optional uint32 bits = 25;
+  optional uint32 offsets = 26;
+  optional uint32 reflection = 27;
+
+  message cord {}
+  optional string some_cord = 28 [ctype=cord];
+
+  message stringpiece {}
+  optional string some_string_piece = 29 [ctype=string_piece];
+
+  // some keywords.
+  optional uint32 int = 30;
+  optional uint32 friend = 31;
+
+  // the generator used to #define a macro called "do" inside the .cc file.
+  message do {}
+  optional do do = 32;
+
+  // some template parameter names for extensions.
+  optional int32 field_type = 33;
+  optional bool is_packed = 34;
+
+  extensions 1000 to max;
+}
+
+message testconflictingsymbolnamesextension {
+  extend testconflictingsymbolnames {
+    repeated int32 repeated_int32_ext = 20423638 [packed=true];
+  }
+}
+
+message dummymessage {}
+
+service testconflictingmethodnames {
+  rpc closure(dummymessage) returns (dummymessage);
+}

@@ -1,0 +1,20 @@
+## concurrent_server.cpp
+##
+
+import('env')
+import('boostlibs')
+import('wslib')
+import('platform_libs')
+
+localenv = env.clone ()
+
+sources = ["concurrent_server.cpp"]
+
+libs = [wslib, platform_libs] + boostlibs(['system',
+                                           'date_time',
+                                           'regex',
+                                           'thread'])
+
+prg = localenv.program('concurrent_server', sources, libs = libs)
+
+return('prg')

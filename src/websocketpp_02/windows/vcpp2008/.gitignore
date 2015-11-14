@@ -1,0 +1,9 @@
+*.user
+*.ncb
+*.suo
+debug
+release
+examples/*.user
+examples/*.ncb
+examples/debug
+examples/release

@@ -1,0 +1,78 @@
+# .gitignore
+
+# ignore vim swap files.
+*.swp
+
+# ignore scons support files.
+.sconsign.dblite
+
+# ignore python compiled files.
+*.pyc
+
+# ignore macintosh desktop services store files.
+.ds_store
+
+# ignore backup/temps
+*~
+
+# ignore object files.
+*.o
+build
+tags
+tags
+bin/rippled
+debug/*.*
+release/*.*
+
+# ignore locally installed node_modules
+/node_modules
+
+# ignore tmp directory.
+tmp
+
+# ignore database directory.
+db/*.db
+db/*.db-*
+
+# ignore debug logs
+debug_log.txt
+
+# ignore customized configs
+rippled.cfg
+validators.txt
+test/config.js
+
+# doxygen generated documentation output
+htmldocumentation
+
+# xcode user-specific project settings
+# xcode
+.ds_store
+*/build/*
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+profile
+*.moved-aside
+deriveddata
+.idea/
+*.hmap
+
+# intel parallel studio 2013 xe
+my amplifier xe results - rippled
+
+# keyvadb files
+*.key
+*.val
+
+# compiler intermediate output
+/out.txt
+
+# build log
+rippled-build.log

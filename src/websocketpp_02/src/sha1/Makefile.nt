@@ -1,0 +1,48 @@
+#
+#  makefile.nt
+#  
+#  copyright (c) 1998, 2009
+#  paul e. jones <paulej@packetizer.com>
+#  all rights reserved.
+#
+#############################################################################
+#  $id: makefile.nt 13 2009-06-22 20:20:32z paulej $
+#############################################################################
+#
+#  description:
+#	this is a makefile for win32 to build the programs sha, shacmp, and
+#	shatest
+#
+#  portability issues:
+#	designed to work with visual c++
+#
+#
+
+.silent:
+
+!include <win32.mak>
+
+rm	= del /q
+
+libs	= $(conlibs) setargv.obj
+
+cflags	= -d _crt_secure_no_warnings /ehsc /o2 /w3
+
+objs	= sha1.obj
+
+all: sha.exe shacmp.exe shatest.exe
+
+sha.exe: sha.obj $(objs)
+	$(link) $(conflags) -out:$@ sha.obj $(objs) $(libs)
+
+shacmp.exe: shacmp.obj $(objs)
+	$(link) $(conflags) -out:$@ shacmp.obj $(objs) $(libs)
+
+shatest.exe: shatest.obj $(objs)
+	$(link) $(conflags) -out:$@ shatest.obj $(objs) $(libs)
+
+.cpp.obj:
+	$(cc) $(cflags) $(cflags) $(cvars) $<
+
+clean:
+	$(rm) *.obj sha.exe shacmp.exe shatest.exe

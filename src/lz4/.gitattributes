@@ -1,0 +1,10 @@
+# set the default behavior
+* text eol=lf
+
+# explicitly declare source files
+*.c text eol=lf
+*.h text eol=lf
+
+# denote files that should not be modified.
+*.odt binary
+*.png binary

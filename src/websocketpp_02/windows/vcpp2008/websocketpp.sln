@@ -1,0 +1,64 @@
+
+microsoft visual studio solution file, format version 10.00
+# visual studio 2008
+project("{8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942}") = "websocketpp", "websocketpp.vcproj", "{1c0fd04e-5aca-4031-b3d1-320a5360c9d0}"
+endproject
+project("{2150e333-8fdc-42a3-9474-1a3956d46de8}") = "examples", "examples", "{14e490fc-930e-40ee-b14a-84e2d98dec9f}"
+endproject
+project("{8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942}") = "echoserver", "examples\echoserver.vcproj", "{b569a272-d7d3-404b-b5fb-9187c0eb9f48}"
+	projectsection(projectdependencies) = postproject
+		{1c0fd04e-5aca-4031-b3d1-320a5360c9d0} = {1c0fd04e-5aca-4031-b3d1-320a5360c9d0}
+	endprojectsection
+endproject
+project("{8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942}") = "chatserver", "examples\chatserver.vcproj", "{2afece48-86de-47d0-9263-dc0d203aa62d}"
+	projectsection(projectdependencies) = postproject
+		{1c0fd04e-5aca-4031-b3d1-320a5360c9d0} = {1c0fd04e-5aca-4031-b3d1-320a5360c9d0}
+	endprojectsection
+endproject
+project("{8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942}") = "chatclient", "examples\chatclient.vcproj", "{116bfeda-af8e-4b3f-8508-acc5ee89f905}"
+	projectsection(projectdependencies) = postproject
+		{1c0fd04e-5aca-4031-b3d1-320a5360c9d0} = {1c0fd04e-5aca-4031-b3d1-320a5360c9d0}
+	endprojectsection
+endproject
+project("{8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942}") = "concurrent_server", "examples\concurrent_server.vcproj", "{f633a1f7-8fe5-408b-924f-4a3caef172c1}"
+	projectsection(projectdependencies) = postproject
+		{1c0fd04e-5aca-4031-b3d1-320a5360c9d0} = {1c0fd04e-5aca-4031-b3d1-320a5360c9d0}
+	endprojectsection
+endproject
+global
+	globalsection(solutionconfigurationplatforms) = presolution
+		debug|win32 = debug|win32
+		release|win32 = release|win32
+	endglobalsection
+	globalsection(projectconfigurationplatforms) = postsolution
+		{1c0fd04e-5aca-4031-b3d1-320a5360c9d0}.debug|win32.activecfg = debug|win32
+		{1c0fd04e-5aca-4031-b3d1-320a5360c9d0}.debug|win32.build.0 = debug|win32
+		{1c0fd04e-5aca-4031-b3d1-320a5360c9d0}.release|win32.activecfg = release|win32
+		{1c0fd04e-5aca-4031-b3d1-320a5360c9d0}.release|win32.build.0 = release|win32
+		{b569a272-d7d3-404b-b5fb-9187c0eb9f48}.debug|win32.activecfg = debug|win32
+		{b569a272-d7d3-404b-b5fb-9187c0eb9f48}.debug|win32.build.0 = debug|win32
+		{b569a272-d7d3-404b-b5fb-9187c0eb9f48}.release|win32.activecfg = release|win32
+		{b569a272-d7d3-404b-b5fb-9187c0eb9f48}.release|win32.build.0 = release|win32
+		{2afece48-86de-47d0-9263-dc0d203aa62d}.debug|win32.activecfg = debug|win32
+		{2afece48-86de-47d0-9263-dc0d203aa62d}.debug|win32.build.0 = debug|win32
+		{2afece48-86de-47d0-9263-dc0d203aa62d}.release|win32.activecfg = release|win32
+		{2afece48-86de-47d0-9263-dc0d203aa62d}.release|win32.build.0 = release|win32
+		{116bfeda-af8e-4b3f-8508-acc5ee89f905}.debug|win32.activecfg = debug|win32
+		{116bfeda-af8e-4b3f-8508-acc5ee89f905}.debug|win32.build.0 = debug|win32
+		{116bfeda-af8e-4b3f-8508-acc5ee89f905}.release|win32.activecfg = release|win32
+		{116bfeda-af8e-4b3f-8508-acc5ee89f905}.release|win32.build.0 = release|win32
+		{f633a1f7-8fe5-408b-924f-4a3caef172c1}.debug|win32.activecfg = debug|win32
+		{f633a1f7-8fe5-408b-924f-4a3caef172c1}.debug|win32.build.0 = debug|win32
+		{f633a1f7-8fe5-408b-924f-4a3caef172c1}.release|win32.activecfg = release|win32
+		{f633a1f7-8fe5-408b-924f-4a3caef172c1}.release|win32.build.0 = release|win32
+	endglobalsection
+	globalsection(solutionproperties) = presolution
+		hidesolutionnode = false
+	endglobalsection
+	globalsection(nestedprojects) = presolution
+		{b569a272-d7d3-404b-b5fb-9187c0eb9f48} = {14e490fc-930e-40ee-b14a-84e2d98dec9f}
+		{2afece48-86de-47d0-9263-dc0d203aa62d} = {14e490fc-930e-40ee-b14a-84e2d98dec9f}
+		{116bfeda-af8e-4b3f-8508-acc5ee89f905} = {14e490fc-930e-40ee-b14a-84e2d98dec9f}
+		{f633a1f7-8fe5-408b-924f-4a3caef172c1} = {14e490fc-930e-40ee-b14a-84e2d98dec9f}
+	endglobalsection
+endglobal

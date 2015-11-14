@@ -1,0 +1,25 @@
+## connection unit tests
+##
+
+import('env')
+import('env_cpp11')
+import('boostlibs')
+import('platform_libs')
+import('polyfill_libs')
+
+env = env.clone ()
+env_cpp11 = env_cpp11.clone ()
+
+boost_libs = boostlibs(['unit_test_framework','system'],env) + [platform_libs]
+
+objs = env.object('connection_boost.o', ["connection.cpp"], libs = boost_libs)
+objs = env.object('connection_tu2_boost.o', ["connection_tu2.cpp"], libs = boost_libs)
+prgs = env.program('test_connection_boost', ["connection_boost.o","connection_tu2_boost.o"], libs = boost_libs)
+
+if env_cpp11.has_key('wspp_cpp11_enabled'):
+   boost_libs_cpp11 = boostlibs(['unit_test_framework','system'],env_cpp11) + [platform_libs] + [polyfill_libs]
+   objs += env_cpp11.object('connection_stl.o', ["connection.cpp"], libs = boost_libs_cpp11)
+   objs += env_cpp11.object('connection_tu2_stl.o', ["connection_tu2.cpp"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_connection_stl', ["connection_stl.o","connection_tu2_stl.o"], libs = boost_libs_cpp11)
+
+return('prgs')

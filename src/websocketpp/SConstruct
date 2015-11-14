@@ -1,0 +1,250 @@
+import os, sys, commands
+env = environment(env = os.environ)
+
+# figure out a better way to configure this
+if os.environ.has_key('cxx'):
+    env['cxx'] = os.environ['cxx']
+
+if os.environ.has_key('debug'):
+    env['debug'] = os.environ['debug']
+
+if os.environ.has_key('cxxflags'):
+    #env['cxxflags'] = os.environ['cxxflags']
+    env.append(cxxflags = os.environ['cxxflags'])
+
+if os.environ.has_key('linkflags'):
+    #env['ldflags'] = os.environ['ldflags']
+    env.append(linkflags = os.environ['linkflags'])
+
+## boost
+##
+## note: you need to either set boostroot to the root of a stock boost distribution
+## or set boost_includes and boost_libs if boost comes with your os distro e.g. and
+## needs boost_includes=/usr/include/boost and boost_libs=/usr/lib like ubuntu.
+##
+if os.environ.has_key('boostroot'):
+    os.environ['boost_root'] = os.environ['boostroot']
+
+if os.environ.has_key('boost_root'):
+   env['boost_includes'] = os.environ['boost_root']
+   env['boost_libs'] = os.path.join(os.environ['boost_root'], 'stage', 'lib')
+elif os.environ.has_key('boost_includes') and os.environ.has_key('boost_libs'):
+   env['boost_includes'] = os.environ['boost_includes']
+   env['boost_libs'] = os.environ['boost_libs']
+else:
+   raise scons.errors.usererror, "neither boost_root, nor boost_includes + boost_libs was set!"
+
+if os.environ.has_key('wspp_enable_cpp11'):
+   env['wspp_enable_cpp11'] = true
+else:
+   env['wspp_enable_cpp11'] = false
+
+boost_linkshared = false
+
+def boostlibs(libnames,localenv):
+   if localenv['platform'].startswith('win'):
+      # win/vc++ supports autolinking. nothing to do.
+      # http://www.boost.org/doc/libs/1_49_0/more/getting_started/windows.html#auto-linking
+      return []
+   else:
+      libs = []
+      prefix = localenv['shlibprefix'] if boost_linkshared else localenv['libprefix']
+      suffix = localenv['shlibsuffix'] if boost_linkshared else localenv['libsuffix']
+      for name in libnames:
+         lib = file(os.path.join(localenv['boost_libs'], '%sboost_%s%s' % (prefix, name, suffix)))
+         libs.append(lib)
+      return libs
+
+if env['platform'].startswith('win'):
+   env.append(cppdefines = ['win32',
+                            'ndebug',
+                            'win32_lean_and_mean',
+                            '_win32_winnt=0x0600',
+                            '_console',
+                            'boost_test_dyn_link',
+                            'nominmax',
+                            '_websocketpp_cpp11_memory_',
+                            '_websocketpp_cpp11_functional_'])
+   arch_flags  = '/arch:sse2'
+   opt_flags   = '/ox /oi /fp:fast'
+   warn_flags  = '/w3 /wd4996 /wd4995 /wd4355'
+   env['ccflags'] = '%s /ehsc /gr /gs- /md /nologo %s %s' % (warn_flags, arch_flags, opt_flags)
+   env['linkflags'] = '/incremental:no /manifest /nologo /opt:ref /opt:icf /machine:x86'
+elif env['platform'] == 'posix':
+   if env.has_key('debug'):
+      env.append(ccflags = ['-g', '-o0'])
+   else:
+      env.append(cppdefines = ['ndebug'])
+      env.append(ccflags = ['-o1', '-fomit-frame-pointer'])
+   env.append(ccflags = ['-wall'])
+   #env['linkflags'] = ''
+elif env['platform'] == 'darwin':
+   if not os.environ.has_key('cxx'):
+      env['cxx'] = "clang++"
+   if env.has_key('debug'):
+      env.append(ccflags = ['-g', '-o0'])
+   else:
+      env.append(cppdefines = ['ndebug'])
+      env.append(ccflags = ['-o1', '-fomit-frame-pointer'])
+   env.append(ccflags = ['-wall'])
+   #env['linkflags'] = ''
+
+if env['platform'].startswith('win'):
+   #env['libpath'] = env['boost_libs']
+   pass
+else:
+   env['libpath'] = ['/usr/lib',
+                     '/usr/local/lib'] #, env['boost_libs']
+
+# compiler specific warning flags
+if env['cxx'].startswith('g++'):
+   #env.append(ccflags = ['-wconversion'])
+   env.append(ccflags = ['-wcast-align'])
+   env.append(ccflags = ['-wshadow'])
+   env.append(ccflags = ['-wunused-parameter'])
+elif env['cxx'].startswith('clang++'):
+   #env.append(ccflags = ['-wcast-align'])
+   #env.append(ccflags = ['-wglobal-constructors'])
+   #env.append(ccflags = ['-wconversion'])
+   env.append(ccflags = ['-wno-padded'])
+   env.append(ccflags = ['-wshadow'])
+   env.append(ccflags = ['-wunused-parameter'])
+
+   # wpadded
+   # wsign-conversion
+
+platform_libs = []
+tls_libs = []
+
+tls_build = false
+
+if env['platform'] == 'posix':
+   platform_libs = ['pthread', 'rt']
+   tls_libs = ['ssl', 'crypto']
+   tls_build = true
+elif env['platform'] == 'darwin':
+   tls_libs = ['ssl', 'crypto']
+   tls_build = true
+elif env['platform'].startswith('win'):
+   # win/vc++ supports autolinking. nothing to do.
+   pass
+
+## append websocket++ path
+env.append(cpppath = ['#'])
+
+##### set up c++11 environment
+polyfill_libs = [] # boost libraries used as drop in replacements for incomplete
+                   # c++11 stl implementations
+env_cpp11 = env.clone ()
+
+if env_cpp11['cxx'].startswith('g++'):
+   # todo: check g++ version
+   gcc_version = commands.getoutput(env_cpp11['cxx'] + ' -dumpversion')
+
+   if gcc_version > "4.4.0":
+      print "c++11 build environment partially enabled"
+      env_cpp11.append(wspp_cpp11_enabled = "true",cxxflags = ['-std=c++0x'],toolset = ['g++'],cppdefines = ['_websocketpp_cpp11_stl_'])
+   else:
+      print "c++11 build environment is not supported on this version of g++"
+elif env_cpp11['cxx'].startswith('clang++'):
+   print "c++11 build environment enabled"
+   env.append(cxxflangs = ['-stdlib=libc++'],linkflags=['-stdlib=libc++'])
+   env_cpp11.append(wspp_cpp11_enabled = "true",cxxflags = ['-std=c++0x','-stdlib=libc++'],linkflags = ['-stdlib=libc++'],toolset = ['clang++'],cppdefines = ['_websocketpp_cpp11_stl_'])
+
+   # look for optional second boostroot compiled with clang's libc++ stl library
+   # this prevents warnings/errors when linking code built with two different
+   # incompatible stl libraries.
+   if os.environ.has_key('boost_root_cpp11'):
+      env_cpp11['boost_includes'] = os.environ['boost_root_cpp11']
+      env_cpp11['boost_libs'] = os.path.join(os.environ['boost_root_cpp11'], 'stage', 'lib')
+   elif os.environ.has_key('boost_includes_cpp11') and os.environ.has_key('boost_libs_cpp11'):
+      env_cpp11['boost_includes'] = os.environ['boost_includes_cpp11']
+      env_cpp11['boost_libs'] = os.environ['boost_libs_cpp11']
+else:
+   print "c++11 build environment disabled"
+
+# if the build system is known to allow the isystem modifier for library include
+# values then use it for the boost libraries. otherwise just add them to the
+# regular cpppath values.
+if env['cxx'].startswith('g++') or env['cxx'].startswith('clang'):
+    env.append(cppflags = '-isystem ' + env['boost_includes'])
+else:
+    env.append(cpppath = [env['boost_includes']])
+env.append(libpath = [env['boost_libs']])
+
+# if the build system is known to allow the isystem modifier for library include
+# values then use it for the boost libraries. otherwise just add them to the
+# regular cpppath values.
+if env_cpp11['cxx'].startswith('g++') or env_cpp11['cxx'].startswith('clang'):
+    env_cpp11.append(cppflags = '-isystem ' + env_cpp11['boost_includes'])
+else:
+    env_cpp11.append(cpppath = [env_cpp11['boost_includes']])
+env_cpp11.append(libpath = [env_cpp11['boost_libs']])
+
+releasedir = 'build/release/'
+debugdir = 'build/debug/'
+testdir = 'build/test/'
+builddir = releasedir
+
+export('env')
+export('env_cpp11')
+export('platform_libs')
+export('boostlibs')
+export('tls_libs')
+export('polyfill_libs')
+
+## end of config !!
+
+## targets:
+
+if not env['platform'].startswith('win'):
+    # unit tests, add test folders with sconscript files to to_test list.
+    to_test = ['utility','http','logger','random','processors','message_buffer','extension','transport/iostream','transport/asio','roles','endpoint','connection','transport'] #,'http','processors','connection'
+
+    for t in to_test:
+       new_tests = sconscript('#/test/'+t+'/sconscript',variant_dir = testdir + t, duplicate = 0)
+       for a in new_tests:
+          new_alias = alias('test', [a], a.abspath)
+          alwaysbuild(new_alias)
+
+# main test application
+#main = sconscript('#/examples/dev/sconscript',variant_dir = builddir + 'dev',duplicate = 0)
+
+# echo_server
+echo_server = sconscript('#/examples/echo_server/sconscript',variant_dir = builddir + 'echo_server',duplicate = 0)
+
+# echo_server_tls
+if tls_build:
+    echo_server_tls = sconscript('#/examples/echo_server_tls/sconscript',variant_dir = builddir + 'echo_server_tls',duplicate = 0)
+    echo_server_both = sconscript('#/examples/echo_server_both/sconscript',variant_dir = builddir + 'echo_server_both',duplicate = 0)
+
+# broadcast_server
+broadcast_server = sconscript('#/examples/broadcast_server/sconscript',variant_dir = builddir + 'broadcast_server',duplicate = 0)
+
+# testee_server
+testee_server = sconscript('#/examples/testee_server/sconscript',variant_dir = builddir + 'testee_server',duplicate = 0)
+
+# testee_client
+testee_client = sconscript('#/examples/testee_client/sconscript',variant_dir = builddir + 'testee_client',duplicate = 0)
+
+# utility_client
+utility_client = sconscript('#/examples/utility_client/sconscript',variant_dir = builddir + 'utility_client',duplicate = 0)
+
+# debug_client
+debug_client = sconscript('#/examples/debug_client/sconscript',variant_dir = builddir + 'debug_client',duplicate = 0)
+
+# debug_server
+debug_server = sconscript('#/examples/debug_server/sconscript',variant_dir = builddir + 'debug_server',duplicate = 0)
+
+# subprotocol_server
+subprotocol_server = sconscript('#/examples/subprotocol_server/sconscript',variant_dir = builddir + 'subprotocol_server',duplicate = 0)
+
+if not env['platform'].startswith('win'):
+    # iostream_server
+    iostream_server = sconscript('#/examples/iostream_server/sconscript',variant_dir = builddir + 'iostream_server',duplicate = 0)
+
+    # telemetry_client
+    telemetry_client = sconscript('#/examples/telemetry_client/sconscript',variant_dir = builddir + 'telemetry_client',duplicate = 0)
+
+    # print_server
+    print_server = sconscript('#/examples/print_server/sconscript',variant_dir = builddir + 'print_server',duplicate = 0)

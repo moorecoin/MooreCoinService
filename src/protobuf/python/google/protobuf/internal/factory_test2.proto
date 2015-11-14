@@ -1,0 +1,77 @@
+// protocol buffers - google's data interchange format
+// copyright 2008 google inc.  all rights reserved.
+// http://code.google.com/p/protobuf/
+//
+// redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are
+// met:
+//
+//     * redistributions of source code must retain the above copyright
+// notice, this list of conditions and the following disclaimer.
+//     * redistributions in binary form must reproduce the above
+// copyright notice, this list of conditions and the following disclaimer
+// in the documentation and/or other materials provided with the
+// distribution.
+//     * neither the name of google inc. nor the names of its
+// contributors may be used to endorse or promote products derived from
+// this software without specific prior written permission.
+//
+// this software is provided by the copyright holders and contributors
+// "as is" and any express or implied warranties, including, but not
+// limited to, the implied warranties of merchantability and fitness for
+// a particular purpose are disclaimed. in no event shall the copyright
+// owner or contributors be liable for any direct, indirect, incidental,
+// special, exemplary, or consequential damages (including, but not
+// limited to, procurement of substitute goods or services; loss of use,
+// data, or profits; or business interruption) however caused and on any
+// theory of liability, whether in contract, strict liability, or tort
+// (including negligence or otherwise) arising in any way out of the use
+// of this software, even if advised of the possibility of such damage.
+
+// author: matthewtoia@google.com (matt toia)
+
+
+package google.protobuf.python.internal;
+
+import "google/protobuf/internal/factory_test1.proto";
+
+
+enum factory2enum {
+  factory_2_value_0 = 0;
+  factory_2_value_1 = 1;
+}
+
+message factory2message {
+  required int32 mandatory = 1;
+  optional factory2enum factory_2_enum = 2;
+  enum nestedfactory2enum {
+    nested_factory_2_value_0 = 0;
+    nested_factory_2_value_1 = 1;
+  }
+  optional nestedfactory2enum nested_factory_2_enum = 3;
+  message nestedfactory2message {
+    optional string value = 1;
+  }
+  optional nestedfactory2message nested_factory_2_message = 4;
+  optional factory1message factory_1_message = 5;
+  optional factory1enum factory_1_enum = 6;
+  optional factory1message.nestedfactory1enum nested_factory_1_enum = 7;
+  optional factory1message.nestedfactory1message nested_factory_1_message = 8;
+  optional factory2message circular_message = 9;
+  optional string scalar_value = 10;
+  repeated string list_value = 11;
+  repeated group grouped = 12 {
+    optional string part_1 = 13;
+    optional string part_2 = 14;
+  }
+  optional loopmessage loop = 15;
+  optional int32 int_with_default = 16 [default = 1776];
+  optional double double_with_default = 17 [default = 9.99];
+  optional string string_with_default = 18 [default = "hello world"];
+  optional bool bool_with_default = 19 [default = false];
+  optional factory2enum enum_with_default = 20 [default = factory_2_value_1];
+}
+
+message loopmessage {
+  optional factory2message loop = 1;
+}

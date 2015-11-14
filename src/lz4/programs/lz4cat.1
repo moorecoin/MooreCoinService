@@ -1,0 +1,32 @@
+\"
+\" lz4cat.1: this is a manual page for 'lz4cat' program. this file is part of
+\" the lz4 <https://code.google.com/p/lz4/> project.
+\"
+
+\" no hyphenation
+.hy 0
+.nr hy 0
+
+.th lz4cat "1" "2014-06-20" "lz4cat" "user commands"
+.sh name
+\fblz4cat\fr - utility based on lz4
+
+.sh synopsis
+.tp 5
+\fblz4cat\fr [\fboptions\fr] [-|input-file]
+
+.sh description
+.pp
+\fblz4cat\fr is an utility based on \fblz4\fr, an extremely fast lossless compression algorithm.
+
+\fblz4cat\fr decompress input file or stream, redirecting its output to the console.
+it is equivalent to \fblz4 -cd\fr,
+
+available options are the same as \fblz4\fr ones (man lz4).
+
+
+.sh bugs
+report bugs at:- https://code.google.com/p/lz4/
+
+.sh author
+yann collet

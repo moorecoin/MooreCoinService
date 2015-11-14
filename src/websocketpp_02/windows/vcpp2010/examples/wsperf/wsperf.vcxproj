@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project defaulttargets="build" toolsversion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <itemgroup label="projectconfigurations">
+    <projectconfiguration include="debug|win32">
+      <configuration>debug</configuration>
+      <platform>win32</platform>
+    </projectconfiguration>
+    <projectconfiguration include="debug|x64">
+      <configuration>debug</configuration>
+      <platform>x64</platform>
+    </projectconfiguration>
+    <projectconfiguration include="release|win32">
+      <configuration>release</configuration>
+      <platform>win32</platform>
+    </projectconfiguration>
+    <projectconfiguration include="release|x64">
+      <configuration>release</configuration>
+      <platform>x64</platform>
+    </projectconfiguration>
+  </itemgroup>
+  <itemgroup>
+    <clcompile include="..\..\..\..\examples\wsperf\wsperf.cpp" />
+  </itemgroup>
+  <propertygroup label="globals">
+    <projectguid>{7fff2cba-7b06-48fd-817a-e666d80a53db}</projectguid>
+    <keyword>win32proj</keyword>
+    <rootnamespace>wsperf</rootnamespace>
+  </propertygroup>
+  <import project="$(vctargetspath)\microsoft.cpp.default.props" />
+  <propertygroup condition="'$(configuration)|$(platform)'=='debug|win32'" label="configuration">
+    <configurationtype>application</configurationtype>
+    <usedebuglibraries>true</usedebuglibraries>
+    <characterset>unicode</characterset>
+  </propertygroup>
+  <propertygroup condition="'$(configuration)|$(platform)'=='debug|x64'" label="configuration">
+    <configurationtype>application</configurationtype>
+    <usedebuglibraries>true</usedebuglibraries>
+    <characterset>unicode</characterset>
+  </propertygroup>
+  <propertygroup condition="'$(configuration)|$(platform)'=='release|win32'" label="configuration">
+    <configurationtype>application</configurationtype>
+    <usedebuglibraries>false</usedebuglibraries>
+    <wholeprogramoptimization>true</wholeprogramoptimization>
+    <characterset>unicode</characterset>
+  </propertygroup>
+  <propertygroup condition="'$(configuration)|$(platform)'=='release|x64'" label="configuration">
+    <configurationtype>application</configurationtype>
+    <usedebuglibraries>false</usedebuglibraries>
+    <wholeprogramoptimization>true</wholeprogramoptimization>
+    <characterset>unicode</characterset>
+  </propertygroup>
+  <import project="$(vctargetspath)\microsoft.cpp.props" />
+  <importgroup label="extensionsettings">
+  </importgroup>
+  <importgroup label="propertysheets" condition="'$(configuration)|$(platform)'=='debug|win32'">
+    <import project="$(userrootdir)\microsoft.cpp.$(platform).user.props" condition="exists('$(userrootdir)\microsoft.cpp.$(platform).user.props')" label="localappdataplatform" />
+  </importgroup>
+  <importgroup condition="'$(configuration)|$(platform)'=='debug|x64'" label="propertysheets">
+    <import project="$(userrootdir)\microsoft.cpp.$(platform).user.props" condition="exists('$(userrootdir)\microsoft.cpp.$(platform).user.props')" label="localappdataplatform" />
+  </importgroup>
+  <importgroup label="propertysheets" condition="'$(configuration)|$(platform)'=='release|win32'">
+    <import project="$(userrootdir)\microsoft.cpp.$(platform).user.props" condition="exists('$(userrootdir)\microsoft.cpp.$(platform).user.props')" label="localappdataplatform" />
+  </importgroup>
+  <importgroup condition="'$(configuration)|$(platform)'=='release|x64'" label="propertysheets">
+    <import project="$(userrootdir)\microsoft.cpp.$(platform).user.props" condition="exists('$(userrootdir)\microsoft.cpp.$(platform).user.props')" label="localappdataplatform" />
+  </importgroup>
+  <propertygroup label="usermacros" />
+  <propertygroup condition="'$(configuration)|$(platform)'=='debug|win32'">
+    <linkincremental>true</linkincremental>
+  </propertygroup>
+  <propertygroup condition="'$(configuration)|$(platform)'=='debug|x64'">
+    <linkincremental>true</linkincremental>
+  </propertygroup>
+  <propertygroup condition="'$(configuration)|$(platform)'=='release|win32'">
+    <linkincremental>false</linkincremental>
+  </propertygroup>
+  <propertygroup condition="'$(configuration)|$(platform)'=='release|x64'">
+    <linkincremental>false</linkincremental>
+  </propertygroup>
+  <itemdefinitiongroup condition="'$(configuration)|$(platform)'=='debug|win32'">
+    <clcompile>
+      <precompiledheader>use</precompiledheader>
+      <warninglevel>level3</warninglevel>
+      <optimization>disabled</optimization>
+      <preprocessordefinitions>win32;_debug;_console;%(preprocessordefinitions)</preprocessordefinitions>
+      <additionalincludedirectories>$(boostroot);%(additionalincludedirectories)</additionalincludedirectories>
+    </clcompile>
+    <link>
+      <subsystem>console</subsystem>
+      <generatedebuginformation>true</generatedebuginformation>
+    </link>
+  </itemdefinitiongroup>
+  <itemdefinitiongroup condition="'$(configuration)|$(platform)'=='debug|x64'">
+    <clcompile>
+      <precompiledheader>use</precompiledheader>
+      <warninglevel>level3</warninglevel>
+      <optimization>disabled</optimization>
+      <preprocessordefinitions>win32;_debug;_console;%(preprocessordefinitions)</preprocessordefinitions>
+      <additionalincludedirectories>$(boostroot);%(additionalincludedirectories)</additionalincludedirectories>
+    </clcompile>
+    <link>
+      <subsystem>console</subsystem>
+      <generatedebuginformation>true</generatedebuginformation>
+    </link>
+  </itemdefinitiongroup>
+  <itemdefinitiongroup condition="'$(configuration)|$(platform)'=='release|win32'">
+    <clcompile>
+      <warninglevel>level3</warninglevel>
+      <precompiledheader>notusing</precompiledheader>
+      <optimization>maxspeed</optimization>
+      <functionlevellinking>true</functionlevellinking>
+      <intrinsicfunctions>true</intrinsicfunctions>
+      <preprocessordefinitions>_websocketpp_cpp11_friend_;win32;ndebug;_console;%(preprocessordefinitions)</preprocessordefinitions>
+      <additionalincludedirectories>$(boostroot);..;%(additionalincludedirectories)</additionalincludedirectories>
+      <runtimelibrary>multithreaded</runtimelibrary>
+      <buffersecuritycheck>false</buffersecuritycheck>
+    </clcompile>
+    <link>
+      <subsystem>console</subsystem>
+      <generatedebuginformation>true</generatedebuginformation>
+      <enablecomdatfolding>true</enablecomdatfolding>
+      <optimizereferences>true</optimizereferences>
+      <additionallibrarydirectories>$(boostroot)\stage\lib</additionallibrarydirectories>
+      <additionaldependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;websocketpp.lib;%(additionaldependencies)</additionaldependencies>
+    </link>
+  </itemdefinitiongroup>
+  <itemdefinitiongroup condition="'$(configuration)|$(platform)'=='release|x64'">
+    <clcompile>
+      <warninglevel>level3</warninglevel>
+      <precompiledheader>notusing</precompiledheader>
+      <optimization>maxspeed</optimization>
+      <functionlevellinking>true</functionlevellinking>
+      <intrinsicfunctions>true</intrinsicfunctions>
+      <preprocessordefinitions>_websocketpp_cpp11_friend_;win32;ndebug;_console;%(preprocessordefinitions)</preprocessordefinitions>
+      <additionalincludedirectories>$(boostroot);..;%(additionalincludedirectories)</additionalincludedirectories>
+      <runtimelibrary>multithreaded</runtimelibrary>
+      <buffersecuritycheck>false</buffersecuritycheck>
+    </clcompile>
+    <link>
+      <subsystem>console</subsystem>
+      <generatedebuginformation>true</generatedebuginformation>
+      <enablecomdatfolding>true</enablecomdatfolding>
+      <optimizereferences>true</optimizereferences>
+      <additionallibrarydirectories>$(boostroot)\stage\lib</additionallibrarydirectories>
+      <additionaldependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;websocketpp.lib;%(additionaldependencies)</additionaldependencies>
+    </link>
+  </itemdefinitiongroup>
+  <import project="$(vctargetspath)\microsoft.cpp.targets" />
+  <importgroup label="extensiontargets">
+  </importgroup>
+</project>

@@ -1,0 +1,2050 @@
+// !$*utf8*$!
+{
+	archiveversion = 1;
+	classes = {
+	};
+	objectversion = 46;
+	objects = {
+
+/* begin pbxbuildfile section */
+		b613878f145ca61300ed9b19 /* libboost_date_time.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbe1434af6a0029a1b1 /* libboost_date_time.dylib */; };
+		b61a51c914dc273f00456432 /* concurrent_server.cpp in sources */ = {isa = pbxbuildfile; fileref = b61a51b814dc207600456432 /* concurrent_server.cpp */; };
+		b61a51ca14dc274f00456432 /* libwebsocketpp.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1c721434a8280029a1b1 /* libwebsocketpp.dylib */; };
+		b61a51cb14dc276300456432 /* libboost_date_time.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbe1434af6a0029a1b1 /* libboost_date_time.dylib */; };
+		b61a51cc14dc276300456432 /* libboost_program_options.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6fe8ceb145a0f1900b32547 /* libboost_program_options.dylib */; };
+		b61a51cd14dc276300456432 /* libboost_random.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b682888c1437464a002ba48b /* libboost_random.dylib */; };
+		b61a51ce14dc276300456432 /* libboost_regex.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbf1434af6a0029a1b1 /* libboost_regex.dylib */; };
+		b61a51cf14dc276300456432 /* libboost_system.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbc1434ae070029a1b1 /* libboost_system.dylib */; };
+		b61a51d014dc276300456432 /* libboost_thread.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b682888e14374689002ba48b /* libboost_thread.dylib */; };
+		b62a5a7214775ecf005f9eb0 /* libwebsocketpp.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1c721434a8280029a1b1 /* libwebsocketpp.dylib */; };
+		b649759e150bf6c700be17d1 /* wscmd.cpp in sources */ = {isa = pbxbuildfile; fileref = b649759d150ba96100be17d1 /* wscmd.cpp */; };
+		b649759f150bf6d200be17d1 /* libboost_program_options.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6fe8ceb145a0f1900b32547 /* libboost_program_options.dylib */; };
+		b653a715148a607d004d7bd9 /* hybi_header.hpp in headers */ = {isa = pbxbuildfile; fileref = b653a714148a607d004d7bd9 /* hybi_header.hpp */; };
+		b653a716148a607d004d7bd9 /* hybi_header.hpp in headers */ = {isa = pbxbuildfile; fileref = b653a714148a607d004d7bd9 /* hybi_header.hpp */; };
+		b653a719148ab555004d7bd9 /* hybi_header.cpp in sources */ = {isa = pbxbuildfile; fileref = b653a718148ab555004d7bd9 /* hybi_header.cpp */; };
+		b653a71a148ab555004d7bd9 /* hybi_header.cpp in sources */ = {isa = pbxbuildfile; fileref = b653a718148ab555004d7bd9 /* hybi_header.cpp */; };
+		b66388551487d74d00ddae13 /* echo_server_tls.cpp in sources */ = {isa = pbxbuildfile; fileref = b66388451487d71800ddae13 /* echo_server_tls.cpp */; };
+		b66388561487d76000ddae13 /* libwebsocketpp.a in frameworks */ = {isa = pbxbuildfile; fileref = b6df1c691434a7a30029a1b1 /* libwebsocketpp.a */; };
+		b66388571487d76e00ddae13 /* libboost_date_time.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbe1434af6a0029a1b1 /* libboost_date_time.dylib */; };
+		b66388581487d76e00ddae13 /* libboost_regex.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbf1434af6a0029a1b1 /* libboost_regex.dylib */; };
+		b66388591487d76e00ddae13 /* libboost_system.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbc1434ae070029a1b1 /* libboost_system.dylib */; };
+		b663885a1487d77800ddae13 /* libssl.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6fe8d5d14730b2200b32547 /* libssl.dylib */; };
+		b663885b1487d78800ddae13 /* libcrypto.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6fe8d5b14730b1a00b32547 /* libcrypto.dylib */; };
+		b663885c1487d7aa00ddae13 /* libboost_regex.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbf1434af6a0029a1b1 /* libboost_regex.dylib */; };
+		b66388641487fe6c00ddae13 /* data.hpp in headers */ = {isa = pbxbuildfile; fileref = b663885f1487fe6c00ddae13 /* data.hpp */; };
+		b66388651487fe6c00ddae13 /* data.hpp in headers */ = {isa = pbxbuildfile; fileref = b663885f1487fe6c00ddae13 /* data.hpp */; };
+		b66388661487fe6c00ddae13 /* control.hpp in headers */ = {isa = pbxbuildfile; fileref = b66388601487fe6c00ddae13 /* control.hpp */; };
+		b66388671487fe6c00ddae13 /* control.hpp in headers */ = {isa = pbxbuildfile; fileref = b66388601487fe6c00ddae13 /* control.hpp */; };
+		b663887b148edbf700ddae13 /* libboost_date_time.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbe1434af6a0029a1b1 /* libboost_date_time.dylib */; };
+		b663887c148edbf700ddae13 /* libboost_random.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b682888c1437464a002ba48b /* libboost_random.dylib */; };
+		b663887d148edbf700ddae13 /* libboost_regex.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbf1434af6a0029a1b1 /* libboost_regex.dylib */; };
+		b6727429148517180029cf3e /* uri.cpp in sources */ = {isa = pbxbuildfile; fileref = b6727428148517180029cf3e /* uri.cpp */; };
+		b672742a148517180029cf3e /* uri.cpp in sources */ = {isa = pbxbuildfile; fileref = b6727428148517180029cf3e /* uri.cpp */; };
+		b672742d148531250029cf3e /* libboost_regex.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbf1434af6a0029a1b1 /* libboost_regex.dylib */; };
+		b6732462148faf0000fc2b04 /* fuzzing_server_tls.cpp in sources */ = {isa = pbxbuildfile; fileref = b6732451148f973d00fc2b04 /* fuzzing_server_tls.cpp */; };
+		b6732463148faf0a00fc2b04 /* libwebsocketpp.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1c721434a8280029a1b1 /* libwebsocketpp.dylib */; };
+		b6732464148faf1900fc2b04 /* libboost_date_time.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbe1434af6a0029a1b1 /* libboost_date_time.dylib */; };
+		b6732465148faf1900fc2b04 /* libboost_regex.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbf1434af6a0029a1b1 /* libboost_regex.dylib */; };
+		b6732466148faf1900fc2b04 /* libboost_system.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbc1434ae070029a1b1 /* libboost_system.dylib */; };
+		b6732467148faf2c00fc2b04 /* libssl.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6fe8d5d14730b2200b32547 /* libssl.dylib */; };
+		b6732468148faf3500fc2b04 /* libcrypto.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6fe8d5b14730b1a00b32547 /* libcrypto.dylib */; };
+		b673247b148fb12400fc2b04 /* fuzzing_client.cpp in sources */ = {isa = pbxbuildfile; fileref = b673246c148fb0f000fc2b04 /* fuzzing_client.cpp */; };
+		b673247c148fb12c00fc2b04 /* libwebsocketpp.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1c721434a8280029a1b1 /* libwebsocketpp.dylib */; };
+		b673247d148fb13900fc2b04 /* libboost_date_time.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbe1434af6a0029a1b1 /* libboost_date_time.dylib */; };
+		b673247e148fb13900fc2b04 /* libboost_random.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b682888c1437464a002ba48b /* libboost_random.dylib */; };
+		b673247f148fb13900fc2b04 /* libboost_regex.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbf1434af6a0029a1b1 /* libboost_regex.dylib */; };
+		b6732480148fb13900fc2b04 /* libboost_system.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbc1434ae070029a1b1 /* libboost_system.dylib */; };
+		b67324931491a18100fc2b04 /* broadcast_server_tls.cpp in sources */ = {isa = pbxbuildfile; fileref = b673248314919d6600fc2b04 /* broadcast_server_tls.cpp */; };
+		b67324941491a18500fc2b04 /* libwebsocketpp.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1c721434a8280029a1b1 /* libwebsocketpp.dylib */; };
+		b67324951491a19700fc2b04 /* libboost_date_time.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbe1434af6a0029a1b1 /* libboost_date_time.dylib */; };
+		b67324961491a19700fc2b04 /* libboost_regex.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbf1434af6a0029a1b1 /* libboost_regex.dylib */; };
+		b67324971491a19700fc2b04 /* libboost_system.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbc1434ae070029a1b1 /* libboost_system.dylib */; };
+		b67324981491a1a700fc2b04 /* libcrypto.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6fe8d5b14730b1a00b32547 /* libcrypto.dylib */; };
+		b67324991491a1ae00fc2b04 /* libssl.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6fe8d5d14730b2200b32547 /* libssl.dylib */; };
+		b67324ac1491a80400fc2b04 /* stress_client.cpp in sources */ = {isa = pbxbuildfile; fileref = b673249d1491a51e00fc2b04 /* stress_client.cpp */; };
+		b67324ad1491a80800fc2b04 /* libwebsocketpp.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1c721434a8280029a1b1 /* libwebsocketpp.dylib */; };
+		b67324ae1491a81600fc2b04 /* libboost_date_time.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbe1434af6a0029a1b1 /* libboost_date_time.dylib */; };
+		b67324af1491a81600fc2b04 /* libboost_random.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b682888c1437464a002ba48b /* libboost_random.dylib */; };
+		b67324b01491a81600fc2b04 /* libboost_regex.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbf1434af6a0029a1b1 /* libboost_regex.dylib */; };
+		b67324b11491a81600fc2b04 /* libboost_system.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbc1434ae070029a1b1 /* libboost_system.dylib */; };
+		b67324b21491a84000fc2b04 /* libboost_thread.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b682888e14374689002ba48b /* libboost_thread.dylib */; };
+		b6826cbc14a0d75a006dd3f3 /* data.cpp in sources */ = {isa = pbxbuildfile; fileref = b6826cbb14a0d75a006dd3f3 /* data.cpp */; };
+		b6826cbd14a0d75a006dd3f3 /* data.cpp in sources */ = {isa = pbxbuildfile; fileref = b6826cbb14a0d75a006dd3f3 /* data.cpp */; };
+		b68288871437460e002ba48b /* chat_client_handler.cpp in sources */ = {isa = pbxbuildfile; fileref = b6828875143745da002ba48b /* chat_client_handler.cpp */; };
+		b68288881437460e002ba48b /* chat_client.cpp in sources */ = {isa = pbxbuildfile; fileref = b6828877143745da002ba48b /* chat_client.cpp */; };
+		b682888914374617002ba48b /* libwebsocketpp.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1c721434a8280029a1b1 /* libwebsocketpp.dylib */; };
+		b682888b14374623002ba48b /* libboost_system.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b682888a14374623002ba48b /* libboost_system.dylib */; };
+		b682888f14374689002ba48b /* libboost_thread.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b682888e14374689002ba48b /* libboost_thread.dylib */; };
+		b69ba1b61530f1a700e36526 /* stress_handler.cpp in sources */ = {isa = pbxbuildfile; fileref = b69ba1b41530f1a600e36526 /* stress_handler.cpp */; };
+		b69ba1b91530f55500e36526 /* stress_aggregate.cpp in sources */ = {isa = pbxbuildfile; fileref = b69ba1b71530f55400e36526 /* stress_aggregate.cpp */; };
+		b69ba1bc15322f1c00e36526 /* hybi_util.cpp in sources */ = {isa = pbxbuildfile; fileref = b69ba1ba15322f1c00e36526 /* hybi_util.cpp */; };
+		b69ba1bd15322f1c00e36526 /* hybi_util.cpp in sources */ = {isa = pbxbuildfile; fileref = b69ba1ba15322f1c00e36526 /* hybi_util.cpp */; };
+		b69ba1be15322f1c00e36526 /* hybi_util.hpp in headers */ = {isa = pbxbuildfile; fileref = b69ba1bb15322f1c00e36526 /* hybi_util.hpp */; };
+		b69ba1bf15322f1c00e36526 /* hybi_util.hpp in headers */ = {isa = pbxbuildfile; fileref = b69ba1bb15322f1c00e36526 /* hybi_util.hpp */; };
+		b6cf18281437c3b1009295be /* echo_client.cpp in sources */ = {isa = pbxbuildfile; fileref = b6cf18131437c370009295be /* echo_client.cpp */; };
+		b6cf182a1437c3bd009295be /* libwebsocketpp.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1c721434a8280029a1b1 /* libwebsocketpp.dylib */; };
+		b6cf182c1437c3ca009295be /* libboost_system.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6cf182b1437c3ca009295be /* libboost_system.dylib */; };
+		b6df1c7a1434ab740029a1b1 /* network_utilities.cpp in sources */ = {isa = pbxbuildfile; fileref = b6df1c791434ab740029a1b1 /* network_utilities.cpp */; };
+		b6df1c7d1434ab920029a1b1 /* network_utilities.hpp in headers */ = {isa = pbxbuildfile; fileref = b6df1c7b1434ab920029a1b1 /* network_utilities.hpp */; };
+		b6df1c7e1434ab9e0029a1b1 /* network_utilities.hpp in headers */ = {isa = pbxbuildfile; fileref = b6df1c7b1434ab920029a1b1 /* network_utilities.hpp */; };
+		b6df1c831434abe20029a1b1 /* base64.cpp in sources */ = {isa = pbxbuildfile; fileref = b6df1c811434abe20029a1b1 /* base64.cpp */; };
+		b6df1c841434abe20029a1b1 /* base64.cpp in sources */ = {isa = pbxbuildfile; fileref = b6df1c811434abe20029a1b1 /* base64.cpp */; };
+		b6df1c851434abe20029a1b1 /* base64.h in headers */ = {isa = pbxbuildfile; fileref = b6df1c821434abe20029a1b1 /* base64.h */; };
+		b6df1c861434abe20029a1b1 /* base64.h in headers */ = {isa = pbxbuildfile; fileref = b6df1c821434abe20029a1b1 /* base64.h */; };
+		b6df1c8a1434ac330029a1b1 /* sha1.cpp in sources */ = {isa = pbxbuildfile; fileref = b6df1c881434ac330029a1b1 /* sha1.cpp */; };
+		b6df1c8b1434ac330029a1b1 /* sha1.cpp in sources */ = {isa = pbxbuildfile; fileref = b6df1c881434ac330029a1b1 /* sha1.cpp */; };
+		b6df1c8c1434ac330029a1b1 /* sha1.h in headers */ = {isa = pbxbuildfile; fileref = b6df1c891434ac330029a1b1 /* sha1.h */; };
+		b6df1c8d1434ac330029a1b1 /* sha1.h in headers */ = {isa = pbxbuildfile; fileref = b6df1c891434ac330029a1b1 /* sha1.h */; };
+		b6df1c901434ac3e0029a1b1 /* utf8_validator.hpp in headers */ = {isa = pbxbuildfile; fileref = b6df1c8f1434ac3e0029a1b1 /* utf8_validator.hpp */; };
+		b6df1c911434ac3e0029a1b1 /* utf8_validator.hpp in headers */ = {isa = pbxbuildfile; fileref = b6df1c8f1434ac3e0029a1b1 /* utf8_validator.hpp */; };
+		b6df1cac1434ac470029a1b1 /* websocket_frame.hpp in headers */ = {isa = pbxbuildfile; fileref = b6df1c981434ac470029a1b1 /* websocket_frame.hpp */; };
+		b6df1cad1434ac470029a1b1 /* websocket_frame.hpp in headers */ = {isa = pbxbuildfile; fileref = b6df1c981434ac470029a1b1 /* websocket_frame.hpp */; };
+		b6df1cba1434ac470029a1b1 /* websocketpp.hpp in headers */ = {isa = pbxbuildfile; fileref = b6df1c9f1434ac470029a1b1 /* websocketpp.hpp */; settings = {attributes = (public, ); }; };
+		b6df1cbb1434ac470029a1b1 /* websocketpp.hpp in headers */ = {isa = pbxbuildfile; fileref = b6df1c9f1434ac470029a1b1 /* websocketpp.hpp */; settings = {attributes = (public, ); }; };
+		b6df1cc41434af9e0029a1b1 /* network_utilities.cpp in sources */ = {isa = pbxbuildfile; fileref = b6df1c791434ab740029a1b1 /* network_utilities.cpp */; };
+		b6df1cdb1435edce0029a1b1 /* echo_server.cpp in sources */ = {isa = pbxbuildfile; fileref = b6df1cca1435ed760029a1b1 /* echo_server.cpp */; };
+		b6df1cde1435edf00029a1b1 /* libwebsocketpp.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1c721434a8280029a1b1 /* libwebsocketpp.dylib */; };
+		b6df1ce21435f1860029a1b1 /* libboost_system.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1ce11435f1860029a1b1 /* libboost_system.dylib */; };
+		b6e56d80150644a3007e1707 /* request.cpp in sources */ = {isa = pbxbuildfile; fileref = b6e56d7e150644a3007e1707 /* request.cpp */; };
+		b6e7e77e1505536500394909 /* wsperf.cpp in sources */ = {isa = pbxbuildfile; fileref = b6e56d6814fefc54007e1707 /* wsperf.cpp */; };
+		b6e7e7801505536500394909 /* case.cpp in sources */ = {isa = pbxbuildfile; fileref = b6e56d6914fefe95007e1707 /* case.cpp */; };
+		b6e7e7811505536500394909 /* generic.cpp in sources */ = {isa = pbxbuildfile; fileref = b6e56d6d1503df2c007e1707 /* generic.cpp */; };
+		b6e7e7821505537200394909 /* libwebsocketpp.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1c721434a8280029a1b1 /* libwebsocketpp.dylib */; };
+		b6e7e7831505538c00394909 /* libboost_date_time.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbe1434af6a0029a1b1 /* libboost_date_time.dylib */; };
+		b6e7e7841505538c00394909 /* libboost_random.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b682888c1437464a002ba48b /* libboost_random.dylib */; };
+		b6e7e7851505538c00394909 /* libboost_regex.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbf1434af6a0029a1b1 /* libboost_regex.dylib */; };
+		b6e7e7861505538c00394909 /* libboost_system.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbc1434ae070029a1b1 /* libboost_system.dylib */; };
+		b6e7e7871505538c00394909 /* libboost_thread.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b682888e14374689002ba48b /* libboost_thread.dylib */; };
+		b6e7e7881505539e00394909 /* libssl.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6fe8d5d14730b2200b32547 /* libssl.dylib */; };
+		b6e7e789150553a500394909 /* libcrypto.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6fe8d5b14730b1a00b32547 /* libcrypto.dylib */; };
+		b6e7e78b150553d000394909 /* libboost_chrono.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6e7e78a150553d000394909 /* libboost_chrono.dylib */; };
+		b6f8e527152697e800be7a4c /* libboost_thread.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b682888e14374689002ba48b /* libboost_thread.dylib */; };
+		b6fe8d181468707200b32547 /* md5.c in sources */ = {isa = pbxbuildfile; fileref = b6fe8d1614686a8500b32547 /* md5.c */; };
+		b6fe8d191468708200b32547 /* md5.h in headers */ = {isa = pbxbuildfile; fileref = b6fe8d1714686a8500b32547 /* md5.h */; };
+		b6fe8d1a1468709300b32547 /* md5.c in sources */ = {isa = pbxbuildfile; fileref = b6fe8d1614686a8500b32547 /* md5.c */; };
+		b6fe8d1b1468709a00b32547 /* md5.h in headers */ = {isa = pbxbuildfile; fileref = b6fe8d1714686a8500b32547 /* md5.h */; };
+		b6fe8d5a14730b1200b32547 /* libboost_system.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbc1434ae070029a1b1 /* libboost_system.dylib */; };
+		b6fe8d5c14730b1a00b32547 /* libcrypto.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6fe8d5b14730b1a00b32547 /* libcrypto.dylib */; };
+		b6fe8d5e14730b2200b32547 /* libssl.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6fe8d5d14730b2200b32547 /* libssl.dylib */; };
+		b6fe8d6614757d6400b32547 /* libboost_date_time.dylib in frameworks */ = {isa = pbxbuildfile; fileref = b6df1cbe1434af6a0029a1b1 /* libboost_date_time.dylib */; };
+/* end pbxbuildfile section */
+
+/* begin pbxcontaineritemproxy section */
+		b682889014374b77002ba48b /* pbxcontaineritemproxy */ = {
+			isa = pbxcontaineritemproxy;
+			containerportal = b6df1c471434a5940029a1b1 /* project object */;
+			proxytype = 1;
+			remoteglobalidstring = b6df1c711434a8280029a1b1;
+			remoteinfo = "websocket++ dynamic library";
+		};
+		b6cf18261437c3a9009295be /* pbxcontaineritemproxy */ = {
+			isa = pbxcontaineritemproxy;
+			containerportal = b6df1c471434a5940029a1b1 /* project object */;
+			proxytype = 1;
+			remoteglobalidstring = b6df1c711434a8280029a1b1;
+			remoteinfo = "websocket++ dynamic library";
+		};
+/* end pbxcontaineritemproxy section */
+
+/* begin pbxcopyfilesbuildphase section */
+		b61a51bd14dc271900456432 /* copyfiles */ = {
+			isa = pbxcopyfilesbuildphase;
+			buildactionmask = 2147483647;
+			dstpath = /usr/share/man/man1/;
+			dstsubfolderspec = 0;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 1;
+		};
+		b66388491487d73200ddae13 /* copyfiles */ = {
+			isa = pbxcopyfilesbuildphase;
+			buildactionmask = 2147483647;
+			dstpath = /usr/share/man/man1/;
+			dstsubfolderspec = 0;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 1;
+		};
+		b6732456148faeeb00fc2b04 /* copyfiles */ = {
+			isa = pbxcopyfilesbuildphase;
+			buildactionmask = 2147483647;
+			dstpath = /usr/share/man/man1/;
+			dstsubfolderspec = 0;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 1;
+		};
+		b673246f148fb0fc00fc2b04 /* copyfiles */ = {
+			isa = pbxcopyfilesbuildphase;
+			buildactionmask = 2147483647;
+			dstpath = /usr/share/man/man1/;
+			dstsubfolderspec = 0;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 1;
+		};
+		b67324871491a16500fc2b04 /* copyfiles */ = {
+			isa = pbxcopyfilesbuildphase;
+			buildactionmask = 2147483647;
+			dstpath = /usr/share/man/man1/;
+			dstsubfolderspec = 0;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 1;
+		};
+		b67324a01491a7f100fc2b04 /* copyfiles */ = {
+			isa = pbxcopyfilesbuildphase;
+			buildactionmask = 2147483647;
+			dstpath = /usr/share/man/man1/;
+			dstsubfolderspec = 0;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 1;
+		};
+		b682887b143745f2002ba48b /* copyfiles */ = {
+			isa = pbxcopyfilesbuildphase;
+			buildactionmask = 2147483647;
+			dstpath = /usr/share/man/man1/;
+			dstsubfolderspec = 0;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 1;
+		};
+		b6cf181a1437c397009295be /* copyfiles */ = {
+			isa = pbxcopyfilesbuildphase;
+			buildactionmask = 2147483647;
+			dstpath = /usr/share/man/man1/;
+			dstsubfolderspec = 0;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 1;
+		};
+		b6df1ccf1435ed910029a1b1 /* copyfiles */ = {
+			isa = pbxcopyfilesbuildphase;
+			buildactionmask = 2147483647;
+			dstpath = /usr/share/man/man1/;
+			dstsubfolderspec = 0;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 1;
+		};
+		b6e7e7711505532e00394909 /* copyfiles */ = {
+			isa = pbxcopyfilesbuildphase;
+			buildactionmask = 2147483647;
+			dstpath = /usr/share/man/man1/;
+			dstsubfolderspec = 0;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 1;
+		};
+		b6fe8d4d14730ae900b32547 /* copyfiles */ = {
+			isa = pbxcopyfilesbuildphase;
+			buildactionmask = 2147483647;
+			dstpath = /usr/share/man/man1/;
+			dstsubfolderspec = 0;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 1;
+		};
+/* end pbxcopyfilesbuildphase section */
+
+/* begin pbxfilereference section */
+		b6138760145ad09700ed9b19 /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; name = makefile; path = examples/echo_server/makefile; sourcetree = "<group>"; };
+		b6138763145ad1f700ed9b19 /* chat_client.html */ = {isa = pbxfilereference; lastknownfiletype = text.html; name = chat_client.html; path = examples/chat_server/chat_client.html; sourcetree = "<group>"; };
+		b6138764145ad1f700ed9b19 /* chat_server.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = chat_server.cpp; path = examples/chat_server/chat_server.cpp; sourcetree = "<group>"; };
+		b6138765145ad1f700ed9b19 /* chat.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = chat.cpp; path = examples/chat_server/chat.cpp; sourcetree = "<group>"; };
+		b6138766145ad1f700ed9b19 /* chat.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = chat.hpp; path = examples/chat_server/chat.hpp; sourcetree = "<group>"; };
+		b6138767145ad1f700ed9b19 /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; name = makefile; path = examples/chat_server/makefile; sourcetree = "<group>"; };
+		b6138791145ca6f700ed9b19 /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; path = makefile; sourcetree = "<group>"; };
+		b61387a0145d846400ed9b19 /* blank_rng.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = blank_rng.cpp; path = src/rng/blank_rng.cpp; sourcetree = "<group>"; };
+		b61387a1145d846400ed9b19 /* blank_rng.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = blank_rng.hpp; path = src/rng/blank_rng.hpp; sourcetree = "<group>"; };
+		b61387a2145d846400ed9b19 /* boost_rng.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = boost_rng.cpp; path = src/rng/boost_rng.cpp; sourcetree = "<group>"; };
+		b61387a3145d846400ed9b19 /* boost_rng.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = boost_rng.hpp; path = src/rng/boost_rng.hpp; sourcetree = "<group>"; };
+		b61387a5145d849e00ed9b19 /* constants.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = constants.hpp; path = src/http/constants.hpp; sourcetree = "<group>"; };
+		b61387a6145d849e00ed9b19 /* parser.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = parser.hpp; path = src/http/parser.hpp; sourcetree = "<group>"; };
+		b61387b61462b35700ed9b19 /* logger.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = logger.hpp; path = src/logger/logger.hpp; sourcetree = "<group>"; };
+		b61a51b714dc207600456432 /* concurrent_client.html */ = {isa = pbxfilereference; lastknownfiletype = text.html; path = concurrent_client.html; sourcetree = "<group>"; };
+		b61a51b814dc207600456432 /* concurrent_server.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; path = concurrent_server.cpp; sourcetree = "<group>"; };
+		b61a51b914dc207600456432 /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; path = makefile; sourcetree = "<group>"; };
+		b61a51bf14dc271900456432 /* concurrent_server */ = {isa = pbxfilereference; explicitfiletype = "compiled.mach-o.executable"; includeinindex = 0; path = concurrent_server; sourcetree = built_products_dir; };
+		b62a5a511473ebb0005f9eb0 /* connection.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = connection.hpp; path = src/connection.hpp; sourcetree = "<group>"; };
+		b62a5a521473ebb0005f9eb0 /* endpoint.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = endpoint.hpp; path = src/endpoint.hpp; sourcetree = "<group>"; };
+		b62a5a561473ebe8005f9eb0 /* client.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = client.hpp; path = src/roles/client.hpp; sourcetree = "<group>"; };
+		b62a5a571473ebe8005f9eb0 /* server.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = server.hpp; path = src/roles/server.hpp; sourcetree = "<group>"; };
+		b62a5a581473ebf1005f9eb0 /* plain.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = plain.hpp; path = src/sockets/plain.hpp; sourcetree = "<group>"; };
+		b62a5a6114755443005f9eb0 /* socket_base.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = socket_base.hpp; path = src/sockets/socket_base.hpp; sourcetree = "<group>"; };
+		b62a5a6b147748b2005f9eb0 /* hybi.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; path = hybi.hpp; sourcetree = "<group>"; };
+		b62a5a6c147748b2005f9eb0 /* hybi_legacy.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; path = hybi_legacy.hpp; sourcetree = "<group>"; };
+		b62a5a6d147748b2005f9eb0 /* processor.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; path = processor.hpp; sourcetree = "<group>"; };
+		b62a5a6f14774cd5005f9eb0 /* uri.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = uri.hpp; path = src/uri.hpp; sourcetree = "<group>"; };
+		b62a5a7014774f08005f9eb0 /* md5.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = md5.hpp; path = src/md5/md5.hpp; sourcetree = "<group>"; };
+		b62a5a71147759ea005f9eb0 /* common.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = common.hpp; path = src/common.hpp; sourcetree = "<group>"; };
+		b63e51a814c9a5790006bf9a /* shared_const_buffer.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = shared_const_buffer.hpp; path = src/shared_const_buffer.hpp; sourcetree = "<group>"; };
+		b649759d150ba96100be17d1 /* wscmd.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = wscmd.cpp; path = examples/wsperf/wscmd.cpp; sourcetree = "<group>"; };
+		b64975a01510b3fd00be17d1 /* sconscript */ = {isa = pbxfilereference; lastknownfiletype = text; name = sconscript; path = examples/echo_server/sconscript; sourcetree = "<group>"; };
+		b64975a11510b41400be17d1 /* sconscript */ = {isa = pbxfilereference; lastknownfiletype = text; path = sconscript; sourcetree = "<group>"; };
+		b64975a21510b54900be17d1 /* sconscript */ = {isa = pbxfilereference; lastknownfiletype = text; name = sconscript; path = examples/chat_server/sconscript; sourcetree = "<group>"; };
+		b64975a31510b55600be17d1 /* sconscript */ = {isa = pbxfilereference; lastknownfiletype = text; name = sconscript; path = examples/chat_client/sconscript; sourcetree = "<group>"; };
+		b64975a41510b62700be17d1 /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; name = makefile; path = examples/chat_client/makefile; sourcetree = "<group>"; };
+		b64975a51510b86b00be17d1 /* sconscript */ = {isa = pbxfilereference; lastknownfiletype = text; path = sconscript; sourcetree = "<group>"; };
+		b64975a61510b8d900be17d1 /* sconscript */ = {isa = pbxfilereference; lastknownfiletype = text; name = sconscript; path = examples/echo_server_tls/sconscript; sourcetree = "<group>"; };
+		b64975a71510c69600be17d1 /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; name = makefile; path = examples/makefile; sourcetree = "<group>"; };
+		b64975a81510c6ea00be17d1 /* common.mk */ = {isa = pbxfilereference; lastknownfiletype = text; name = common.mk; path = examples/common.mk; sourcetree = "<group>"; };
+		b64e12d214bde132006f20f0 /* logging.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; path = logging.cpp; sourcetree = "<group>"; };
+		b64e12d314bde132006f20f0 /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; path = makefile; sourcetree = "<group>"; };
+		b64e12d414bde132006f20f0 /* parsing.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; path = parsing.cpp; sourcetree = "<group>"; };
+		b64e12d514bde132006f20f0 /* tests */ = {isa = pbxfilereference; lastknownfiletype = "compiled.mach-o.executable"; path = tests; sourcetree = "<group>"; };
+		b653a714148a607d004d7bd9 /* hybi_header.hpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.h; path = hybi_header.hpp; sourcetree = "<group>"; };
+		b653a718148ab555004d7bd9 /* hybi_header.cpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.cpp; path = hybi_header.cpp; sourcetree = "<group>"; };
+		b66388451487d71800ddae13 /* echo_server_tls.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = echo_server_tls.cpp; path = examples/echo_server_tls/echo_server_tls.cpp; sourcetree = "<group>"; };
+		b66388461487d71800ddae13 /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; name = makefile; path = examples/echo_server_tls/makefile; sourcetree = "<group>"; };
+		b663884b1487d73200ddae13 /* echo_server_tls */ = {isa = pbxfilereference; explicitfiletype = "compiled.mach-o.executable"; includeinindex = 0; path = echo_server_tls; sourcetree = built_products_dir; };
+		b663885f1487fe6c00ddae13 /* data.hpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.h; name = data.hpp; path = src/messages/data.hpp; sourcetree = "<group>"; };
+		b66388601487fe6c00ddae13 /* control.hpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.h; name = control.hpp; path = src/messages/control.hpp; sourcetree = "<group>"; };
+		b66de75a14ab5c71004312ec /* md5.js */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.javascript; path = md5.js; sourcetree = "<group>"; };
+		b6727428148517180029cf3e /* uri.cpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.cpp; name = uri.cpp; path = src/uri.cpp; sourcetree = "<group>"; };
+		b6732450148f973d00fc2b04 /* echo_client.html */ = {isa = pbxfilereference; lastknownfiletype = text.html; path = echo_client.html; sourcetree = "<group>"; };
+		b6732451148f973d00fc2b04 /* fuzzing_server_tls.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; path = fuzzing_server_tls.cpp; sourcetree = "<group>"; };
+		b6732452148f973d00fc2b04 /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; path = makefile; sourcetree = "<group>"; };
+		b6732458148faeeb00fc2b04 /* fuzzing_server */ = {isa = pbxfilereference; explicitfiletype = "compiled.mach-o.executable"; includeinindex = 0; path = fuzzing_server; sourcetree = built_products_dir; };
+		b673246b148fb0c400fc2b04 /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; path = makefile; sourcetree = "<group>"; };
+		b673246c148fb0f000fc2b04 /* fuzzing_client.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; path = fuzzing_client.cpp; sourcetree = "<group>"; };
+		b6732471148fb0fc00fc2b04 /* fuzzing_client */ = {isa = pbxfilereference; explicitfiletype = "compiled.mach-o.executable"; includeinindex = 0; path = fuzzing_client; sourcetree = built_products_dir; };
+		b673248214919d6600fc2b04 /* broadcast_admin.html */ = {isa = pbxfilereference; lastknownfiletype = text.html; path = broadcast_admin.html; sourcetree = "<group>"; };
+		b673248314919d6600fc2b04 /* broadcast_server_tls.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; path = broadcast_server_tls.cpp; sourcetree = "<group>"; };
+		b673248414919d6600fc2b04 /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; path = makefile; sourcetree = "<group>"; };
+		b67324891491a16500fc2b04 /* broadcast_server */ = {isa = pbxfilereference; explicitfiletype = "compiled.mach-o.executable"; includeinindex = 0; path = broadcast_server; sourcetree = built_products_dir; };
+		b673249c1491a50000fc2b04 /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; path = makefile; sourcetree = "<group>"; };
+		b673249d1491a51e00fc2b04 /* stress_client.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; path = stress_client.cpp; sourcetree = "<group>"; };
+		b67324a21491a7f100fc2b04 /* stress_client */ = {isa = pbxfilereference; explicitfiletype = "compiled.mach-o.executable"; includeinindex = 0; path = stress_client; sourcetree = built_products_dir; };
+		b6826cb6149f7037006dd3f3 /* broadcast_server_handler.hpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.h; path = broadcast_server_handler.hpp; sourcetree = "<group>"; };
+		b6826cb814a0c483006dd3f3 /* broadcast_admin_handler.hpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.h; path = broadcast_admin_handler.hpp; sourcetree = "<group>"; };
+		b6826cb914a0c483006dd3f3 /* broadcast_handler.hpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.h; path = broadcast_handler.hpp; sourcetree = "<group>"; };
+		b6826cba14a0c49b006dd3f3 /* wscmd.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; path = wscmd.hpp; sourcetree = "<group>"; };
+		b6826cbb14a0d75a006dd3f3 /* data.cpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.cpp; name = data.cpp; path = src/messages/data.cpp; sourcetree = "<group>"; };
+		b6828875143745da002ba48b /* chat_client_handler.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = chat_client_handler.cpp; path = examples/chat_client/chat_client_handler.cpp; sourcetree = "<group>"; };
+		b6828876143745da002ba48b /* chat_client_handler.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = chat_client_handler.hpp; path = examples/chat_client/chat_client_handler.hpp; sourcetree = "<group>"; };
+		b6828877143745da002ba48b /* chat_client.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = chat_client.cpp; path = examples/chat_client/chat_client.cpp; sourcetree = "<group>"; };
+		b682887d143745f2002ba48b /* chat_client */ = {isa = pbxfilereference; explicitfiletype = "compiled.mach-o.executable"; includeinindex = 0; path = chat_client; sourcetree = built_products_dir; };
+		b682888a14374623002ba48b /* libboost_system.dylib */ = {isa = pbxfilereference; lastknownfiletype = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = usr/local/lib/libboost_system.dylib; sourcetree = sdkroot; };
+		b682888c1437464a002ba48b /* libboost_random.dylib */ = {isa = pbxfilereference; lastknownfiletype = "compiled.mach-o.dylib"; name = libboost_random.dylib; path = usr/local/lib/libboost_random.dylib; sourcetree = sdkroot; };
+		b682888e14374689002ba48b /* libboost_thread.dylib */ = {isa = pbxfilereference; lastknownfiletype = "compiled.mach-o.dylib"; name = libboost_thread.dylib; path = usr/local/lib/libboost_thread.dylib; sourcetree = sdkroot; };
+		b68772181533c0b50060aaf6 /* hybi_util.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; path = hybi_util.cpp; sourcetree = "<group>"; };
+		b69ba1b41530f1a600e36526 /* stress_handler.cpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.cpp; name = stress_handler.cpp; path = examples/wsperf/stress_handler.cpp; sourcetree = "<group>"; };
+		b69ba1b51530f1a600e36526 /* stress_handler.hpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.h; name = stress_handler.hpp; path = examples/wsperf/stress_handler.hpp; sourcetree = "<group>"; };
+		b69ba1b71530f55400e36526 /* stress_aggregate.cpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.cpp; name = stress_aggregate.cpp; path = examples/wsperf/stress_aggregate.cpp; sourcetree = "<group>"; };
+		b69ba1b81530f55500e36526 /* stress_aggregate.hpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.h; name = stress_aggregate.hpp; path = examples/wsperf/stress_aggregate.hpp; sourcetree = "<group>"; };
+		b69ba1ba15322f1c00e36526 /* hybi_util.cpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.cpp; path = hybi_util.cpp; sourcetree = "<group>"; };
+		b69ba1bb15322f1c00e36526 /* hybi_util.hpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.h; path = hybi_util.hpp; sourcetree = "<group>"; };
+		b69ba1c0153241ea00e36526 /* sconscript */ = {isa = pbxfilereference; lastknownfiletype = text; name = sconscript; path = src/sconscript; sourcetree = "<group>"; };
+		b6cf18131437c370009295be /* echo_client.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; path = echo_client.cpp; sourcetree = "<group>"; };
+		b6cf18161437c370009295be /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; path = makefile; sourcetree = "<group>"; };
+		b6cf181c1437c397009295be /* echo_client */ = {isa = pbxfilereference; explicitfiletype = "compiled.mach-o.executable"; includeinindex = 0; path = echo_client; sourcetree = built_products_dir; };
+		b6cf182b1437c3ca009295be /* libboost_system.dylib */ = {isa = pbxfilereference; lastknownfiletype = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = usr/local/lib/libboost_system.dylib; sourcetree = sdkroot; };
+		b6de901314c4d875009a1591 /* readme.txt */ = {isa = pbxfilereference; lastknownfiletype = text; path = readme.txt; sourcetree = "<group>"; };
+		b6de901514c5bed0009a1591 /* tls.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = tls.hpp; path = src/sockets/tls.hpp; sourcetree = "<group>"; };
+		b6df1c691434a7a30029a1b1 /* libwebsocketpp.a */ = {isa = pbxfilereference; explicitfiletype = archive.ar; includeinindex = 0; path = libwebsocketpp.a; sourcetree = built_products_dir; };
+		b6df1c721434a8280029a1b1 /* libwebsocketpp.dylib */ = {isa = pbxfilereference; explicitfiletype = "compiled.mach-o.dylib"; includeinindex = 0; path = libwebsocketpp.dylib; sourcetree = built_products_dir; };
+		b6df1c791434ab740029a1b1 /* network_utilities.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = network_utilities.cpp; path = src/network_utilities.cpp; sourcetree = "<group>"; };
+		b6df1c7b1434ab920029a1b1 /* network_utilities.hpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.h; name = network_utilities.hpp; path = src/network_utilities.hpp; sourcetree = "<group>"; };
+		b6df1c811434abe20029a1b1 /* base64.cpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.cpp; path = base64.cpp; sourcetree = "<group>"; };
+		b6df1c821434abe20029a1b1 /* base64.h */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.c.h; path = base64.h; sourcetree = "<group>"; };
+		b6df1c881434ac330029a1b1 /* sha1.cpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.cpp; name = sha1.cpp; path = src/sha1/sha1.cpp; sourcetree = "<group>"; };
+		b6df1c891434ac330029a1b1 /* sha1.h */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.c.h; name = sha1.h; path = src/sha1/sha1.h; sourcetree = "<group>"; };
+		b6df1c8f1434ac3e0029a1b1 /* utf8_validator.hpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.h; path = utf8_validator.hpp; sourcetree = "<group>"; };
+		b6df1c981434ac470029a1b1 /* websocket_frame.hpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.h; name = websocket_frame.hpp; path = src/websocket_frame.hpp; sourcetree = "<group>"; };
+		b6df1c9f1434ac470029a1b1 /* websocketpp.hpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.h; name = websocketpp.hpp; path = src/websocketpp.hpp; sourcetree = "<group>"; };
+		b6df1cbc1434ae070029a1b1 /* libboost_system.dylib */ = {isa = pbxfilereference; lastknownfiletype = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = usr/local/lib/libboost_system.dylib; sourcetree = sdkroot; };
+		b6df1cbe1434af6a0029a1b1 /* libboost_date_time.dylib */ = {isa = pbxfilereference; lastknownfiletype = "compiled.mach-o.dylib"; name = libboost_date_time.dylib; path = usr/local/lib/libboost_date_time.dylib; sourcetree = sdkroot; };
+		b6df1cbf1434af6a0029a1b1 /* libboost_regex.dylib */ = {isa = pbxfilereference; lastknownfiletype = "compiled.mach-o.dylib"; name = libboost_regex.dylib; path = usr/local/lib/libboost_regex.dylib; sourcetree = sdkroot; };
+		b6df1cc01434af6a0029a1b1 /* libboost_system.dylib */ = {isa = pbxfilereference; lastknownfiletype = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = usr/local/lib/libboost_system.dylib; sourcetree = sdkroot; };
+		b6df1cca1435ed760029a1b1 /* echo_server.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = echo_server.cpp; path = examples/echo_server/echo_server.cpp; sourcetree = "<group>"; };
+		b6df1cd11435ed910029a1b1 /* echo_server */ = {isa = pbxfilereference; explicitfiletype = "compiled.mach-o.executable"; includeinindex = 0; path = echo_server; sourcetree = built_products_dir; };
+		b6df1ce11435f1860029a1b1 /* libboost_system.dylib */ = {isa = pbxfilereference; lastknownfiletype = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = usr/local/lib/libboost_system.dylib; sourcetree = sdkroot; };
+		b6df1ce31435f8250029a1b1 /* foundation.framework */ = {isa = pbxfilereference; lastknownfiletype = wrapper.framework; name = foundation.framework; path = system/library/frameworks/foundation.framework; sourcetree = sdkroot; };
+		b6e56d6614fefc54007e1707 /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; name = makefile; path = examples/wsperf/makefile; sourcetree = "<group>"; };
+		b6e56d6714fefc54007e1707 /* wsperf_commander.html */ = {isa = pbxfilereference; lastknownfiletype = text.html; name = wsperf_commander.html; path = examples/wsperf/wsperf_commander.html; sourcetree = "<group>"; };
+		b6e56d6814fefc54007e1707 /* wsperf.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = wsperf.cpp; path = examples/wsperf/wsperf.cpp; sourcetree = "<group>"; };
+		b6e56d6914fefe95007e1707 /* case.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = case.cpp; path = examples/wsperf/case.cpp; sourcetree = "<group>"; };
+		b6e56d6a14fefe95007e1707 /* case.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = case.hpp; path = examples/wsperf/case.hpp; sourcetree = "<group>"; };
+		b6e56d6d1503df2c007e1707 /* generic.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; name = generic.cpp; path = examples/wsperf/generic.cpp; sourcetree = "<group>"; };
+		b6e56d6e1503df2c007e1707 /* generic.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = generic.hpp; path = examples/wsperf/generic.hpp; sourcetree = "<group>"; };
+		b6e56d6f150457b8007e1707 /* wscmd.hpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.h; name = wscmd.hpp; path = examples/wsperf/wscmd.hpp; sourcetree = "<group>"; };
+		b6e56d7e150644a3007e1707 /* request.cpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.cpp; name = request.cpp; path = examples/wsperf/request.cpp; sourcetree = "<group>"; };
+		b6e56d7f150644a3007e1707 /* request.hpp */ = {isa = pbxfilereference; fileencoding = 4; lastknownfiletype = sourcecode.cpp.h; name = request.hpp; path = examples/wsperf/request.hpp; sourcetree = "<group>"; };
+		b6e56d821508eaca007e1707 /* sconstruct */ = {isa = pbxfilereference; lastknownfiletype = text; path = sconstruct; sourcetree = "<group>"; };
+		b6e56d84150b887a007e1707 /* sconscript */ = {isa = pbxfilereference; lastknownfiletype = text; name = sconscript; path = examples/wsperf/sconscript; sourcetree = "<group>"; };
+		b6e56d85150b9021007e1707 /* wsperf.cfg */ = {isa = pbxfilereference; lastknownfiletype = text; name = wsperf.cfg; path = examples/wsperf/wsperf.cfg; sourcetree = "<group>"; };
+		b6e608c815ad9e700050a1cc /* makefile */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.make; path = makefile; sourcetree = "<group>"; };
+		b6e608c915ad9e700050a1cc /* sconscript */ = {isa = pbxfilereference; lastknownfiletype = text; path = sconscript; sourcetree = "<group>"; };
+		b6e608ca15ad9e700050a1cc /* telemetry_server.cpp */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.cpp.cpp; path = telemetry_server.cpp; sourcetree = "<group>"; };
+		b6e7e7731505532e00394909 /* wsperf */ = {isa = pbxfilereference; explicitfiletype = "compiled.mach-o.executable"; includeinindex = 0; path = wsperf; sourcetree = built_products_dir; };
+		b6e7e78a150553d000394909 /* libboost_chrono.dylib */ = {isa = pbxfilereference; lastknownfiletype = "compiled.mach-o.dylib"; name = libboost_chrono.dylib; path = usr/local/lib/libboost_chrono.dylib; sourcetree = sdkroot; };
+		b6fe8ce2144de17f00b32547 /* readme.txt */ = {isa = pbxfilereference; lastknownfiletype = text; path = readme.txt; sourcetree = "<group>"; };
+		b6fe8ceb145a0f1900b32547 /* libboost_program_options.dylib */ = {isa = pbxfilereference; lastknownfiletype = "compiled.mach-o.dylib"; name = libboost_program_options.dylib; path = usr/local/lib/libboost_program_options.dylib; sourcetree = sdkroot; };
+		b6fe8d1614686a8500b32547 /* md5.c */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.c.c; name = md5.c; path = src/md5/md5.c; sourcetree = "<group>"; };
+		b6fe8d1714686a8500b32547 /* md5.h */ = {isa = pbxfilereference; lastknownfiletype = sourcecode.c.h; name = md5.h; path = src/md5/md5.h; sourcetree = "<group>"; };
+		b6fe8d4f14730ae900b32547 /* policy test */ = {isa = pbxfilereference; explicitfiletype = "compiled.mach-o.executable"; includeinindex = 0; name = "policy test"; path = policy_test; sourcetree = built_products_dir; };
+		b6fe8d5b14730b1a00b32547 /* libcrypto.dylib */ = {isa = pbxfilereference; lastknownfiletype = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourcetree = sdkroot; };
+		b6fe8d5d14730b2200b32547 /* libssl.dylib */ = {isa = pbxfilereference; lastknownfiletype = "compiled.mach-o.dylib"; name = libssl.dylib; path = usr/lib/libssl.dylib; sourcetree = sdkroot; };
+/* end pbxfilereference section */
+
+/* begin pbxframeworksbuildphase section */
+		b61a51bc14dc271900456432 /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b61a51cb14dc276300456432 /* libboost_date_time.dylib in frameworks */,
+				b61a51cc14dc276300456432 /* libboost_program_options.dylib in frameworks */,
+				b61a51cd14dc276300456432 /* libboost_random.dylib in frameworks */,
+				b61a51ce14dc276300456432 /* libboost_regex.dylib in frameworks */,
+				b61a51cf14dc276300456432 /* libboost_system.dylib in frameworks */,
+				b61a51d014dc276300456432 /* libboost_thread.dylib in frameworks */,
+				b61a51ca14dc274f00456432 /* libwebsocketpp.dylib in frameworks */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b66388481487d73200ddae13 /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b663885b1487d78800ddae13 /* libcrypto.dylib in frameworks */,
+				b663885a1487d77800ddae13 /* libssl.dylib in frameworks */,
+				b66388571487d76e00ddae13 /* libboost_date_time.dylib in frameworks */,
+				b66388581487d76e00ddae13 /* libboost_regex.dylib in frameworks */,
+				b66388591487d76e00ddae13 /* libboost_system.dylib in frameworks */,
+				b66388561487d76000ddae13 /* libwebsocketpp.a in frameworks */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6732455148faeeb00fc2b04 /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b6732468148faf3500fc2b04 /* libcrypto.dylib in frameworks */,
+				b6732467148faf2c00fc2b04 /* libssl.dylib in frameworks */,
+				b6732464148faf1900fc2b04 /* libboost_date_time.dylib in frameworks */,
+				b6732465148faf1900fc2b04 /* libboost_regex.dylib in frameworks */,
+				b6732466148faf1900fc2b04 /* libboost_system.dylib in frameworks */,
+				b6732463148faf0a00fc2b04 /* libwebsocketpp.dylib in frameworks */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b673246e148fb0fc00fc2b04 /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b673247d148fb13900fc2b04 /* libboost_date_time.dylib in frameworks */,
+				b673247e148fb13900fc2b04 /* libboost_random.dylib in frameworks */,
+				b673247f148fb13900fc2b04 /* libboost_regex.dylib in frameworks */,
+				b6732480148fb13900fc2b04 /* libboost_system.dylib in frameworks */,
+				b673247c148fb12c00fc2b04 /* libwebsocketpp.dylib in frameworks */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b67324861491a16500fc2b04 /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b67324991491a1ae00fc2b04 /* libssl.dylib in frameworks */,
+				b67324981491a1a700fc2b04 /* libcrypto.dylib in frameworks */,
+				b67324951491a19700fc2b04 /* libboost_date_time.dylib in frameworks */,
+				b67324961491a19700fc2b04 /* libboost_regex.dylib in frameworks */,
+				b67324971491a19700fc2b04 /* libboost_system.dylib in frameworks */,
+				b67324941491a18500fc2b04 /* libwebsocketpp.dylib in frameworks */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b673249f1491a7f100fc2b04 /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b67324b21491a84000fc2b04 /* libboost_thread.dylib in frameworks */,
+				b67324ae1491a81600fc2b04 /* libboost_date_time.dylib in frameworks */,
+				b67324af1491a81600fc2b04 /* libboost_random.dylib in frameworks */,
+				b67324b01491a81600fc2b04 /* libboost_regex.dylib in frameworks */,
+				b67324b11491a81600fc2b04 /* libboost_system.dylib in frameworks */,
+				b67324ad1491a80800fc2b04 /* libwebsocketpp.dylib in frameworks */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b682887a143745f2002ba48b /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b682888f14374689002ba48b /* libboost_thread.dylib in frameworks */,
+				b682888b14374623002ba48b /* libboost_system.dylib in frameworks */,
+				b682888914374617002ba48b /* libwebsocketpp.dylib in frameworks */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6cf18191437c397009295be /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b663887b148edbf700ddae13 /* libboost_date_time.dylib in frameworks */,
+				b663887c148edbf700ddae13 /* libboost_random.dylib in frameworks */,
+				b663887d148edbf700ddae13 /* libboost_regex.dylib in frameworks */,
+				b6cf182c1437c3ca009295be /* libboost_system.dylib in frameworks */,
+				b6cf182a1437c3bd009295be /* libwebsocketpp.dylib in frameworks */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6df1c661434a7a30029a1b1 /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6df1c6f1434a8280029a1b1 /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b672742d148531250029cf3e /* libboost_regex.dylib in frameworks */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6df1cce1435ed910029a1b1 /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b6f8e527152697e800be7a4c /* libboost_thread.dylib in frameworks */,
+				b663885c1487d7aa00ddae13 /* libboost_regex.dylib in frameworks */,
+				b613878f145ca61300ed9b19 /* libboost_date_time.dylib in frameworks */,
+				b6df1ce21435f1860029a1b1 /* libboost_system.dylib in frameworks */,
+				b6df1cde1435edf00029a1b1 /* libwebsocketpp.dylib in frameworks */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6e7e7701505532e00394909 /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b649759f150bf6d200be17d1 /* libboost_program_options.dylib in frameworks */,
+				b6e7e78b150553d000394909 /* libboost_chrono.dylib in frameworks */,
+				b6e7e789150553a500394909 /* libcrypto.dylib in frameworks */,
+				b6e7e7881505539e00394909 /* libssl.dylib in frameworks */,
+				b6e7e7831505538c00394909 /* libboost_date_time.dylib in frameworks */,
+				b6e7e7841505538c00394909 /* libboost_random.dylib in frameworks */,
+				b6e7e7851505538c00394909 /* libboost_regex.dylib in frameworks */,
+				b6e7e7861505538c00394909 /* libboost_system.dylib in frameworks */,
+				b6e7e7871505538c00394909 /* libboost_thread.dylib in frameworks */,
+				b6e7e7821505537200394909 /* libwebsocketpp.dylib in frameworks */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6fe8d4c14730ae900b32547 /* frameworks */ = {
+			isa = pbxframeworksbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b62a5a7214775ecf005f9eb0 /* libwebsocketpp.dylib in frameworks */,
+				b6fe8d6614757d6400b32547 /* libboost_date_time.dylib in frameworks */,
+				b6fe8d5e14730b2200b32547 /* libssl.dylib in frameworks */,
+				b6fe8d5c14730b1a00b32547 /* libcrypto.dylib in frameworks */,
+				b6fe8d5a14730b1200b32547 /* libboost_system.dylib in frameworks */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+/* end pbxframeworksbuildphase section */
+
+/* begin pbxgroup section */
+		b61387a4145d847a00ed9b19 /* http */ = {
+			isa = pbxgroup;
+			children = (
+				b61387a5145d849e00ed9b19 /* constants.hpp */,
+				b61387a6145d849e00ed9b19 /* parser.hpp */,
+			);
+			name = http;
+			sourcetree = "<group>";
+		};
+		b61387b51462b34400ed9b19 /* logger */ = {
+			isa = pbxgroup;
+			children = (
+				b61387b61462b35700ed9b19 /* logger.hpp */,
+			);
+			name = logger;
+			sourcetree = "<group>";
+		};
+		b61a51b614dc207600456432 /* concurrent_server */ = {
+			isa = pbxgroup;
+			children = (
+				b61a51b714dc207600456432 /* concurrent_client.html */,
+				b61a51b814dc207600456432 /* concurrent_server.cpp */,
+				b61a51b914dc207600456432 /* makefile */,
+				b64975a51510b86b00be17d1 /* sconscript */,
+			);
+			name = concurrent_server;
+			path = examples/concurrent_server;
+			sourcetree = "<group>";
+		};
+		b62a5a541473ebb9005f9eb0 /* roles */ = {
+			isa = pbxgroup;
+			children = (
+				b62a5a561473ebe8005f9eb0 /* client.hpp */,
+				b62a5a571473ebe8005f9eb0 /* server.hpp */,
+			);
+			name = roles;
+			sourcetree = "<group>";
+		};
+		b62a5a551473ebc4005f9eb0 /* sockets */ = {
+			isa = pbxgroup;
+			children = (
+				b62a5a6114755443005f9eb0 /* socket_base.hpp */,
+				b62a5a581473ebf1005f9eb0 /* plain.hpp */,
+				b6de901514c5bed0009a1591 /* tls.hpp */,
+			);
+			name = sockets;
+			sourcetree = "<group>";
+		};
+		b62a5a6a147748b2005f9eb0 /* processors */ = {
+			isa = pbxgroup;
+			children = (
+				b653a714148a607d004d7bd9 /* hybi_header.hpp */,
+				b653a718148ab555004d7bd9 /* hybi_header.cpp */,
+				b69ba1ba15322f1c00e36526 /* hybi_util.cpp */,
+				b69ba1bb15322f1c00e36526 /* hybi_util.hpp */,
+				b62a5a6b147748b2005f9eb0 /* hybi.hpp */,
+				b62a5a6c147748b2005f9eb0 /* hybi_legacy.hpp */,
+				b62a5a6d147748b2005f9eb0 /* processor.hpp */,
+			);
+			name = processors;
+			path = src/processors;
+			sourcetree = "<group>";
+		};
+		b64e12d014bde132006f20f0 /* test */ = {
+			isa = pbxgroup;
+			children = (
+				b64e12d114bde132006f20f0 /* basic */,
+			);
+			path = test;
+			sourcetree = "<group>";
+		};
+		b64e12d114bde132006f20f0 /* basic */ = {
+			isa = pbxgroup;
+			children = (
+				b64e12d214bde132006f20f0 /* logging.cpp */,
+				b64e12d314bde132006f20f0 /* makefile */,
+				b64e12d414bde132006f20f0 /* parsing.cpp */,
+				b68772181533c0b50060aaf6 /* hybi_util.cpp */,
+				b64e12d514bde132006f20f0 /* tests */,
+			);
+			path = basic;
+			sourcetree = "<group>";
+		};
+		b66388431487d70000ddae13 /* echo_server_tls */ = {
+			isa = pbxgroup;
+			children = (
+				b66388451487d71800ddae13 /* echo_server_tls.cpp */,
+				b66388461487d71800ddae13 /* makefile */,
+				b64975a61510b8d900be17d1 /* sconscript */,
+			);
+			name = echo_server_tls;
+			sourcetree = "<group>";
+		};
+		b663885d1487fdaa00ddae13 /* messages */ = {
+			isa = pbxgroup;
+			children = (
+				b663885f1487fe6c00ddae13 /* data.hpp */,
+				b6826cbb14a0d75a006dd3f3 /* data.cpp */,
+				b66388601487fe6c00ddae13 /* control.hpp */,
+			);
+			name = messages;
+			sourcetree = "<group>";
+		};
+		b673244f148f973d00fc2b04 /* fuzzing_server_tls */ = {
+			isa = pbxgroup;
+			children = (
+				b6732450148f973d00fc2b04 /* echo_client.html */,
+				b6732451148f973d00fc2b04 /* fuzzing_server_tls.cpp */,
+				b6732452148f973d00fc2b04 /* makefile */,
+			);
+			name = fuzzing_server_tls;
+			path = examples/fuzzing_server_tls;
+			sourcetree = "<group>";
+		};
+		b6732469148fb0c400fc2b04 /* fuzzing_client */ = {
+			isa = pbxgroup;
+			children = (
+				b673246c148fb0f000fc2b04 /* fuzzing_client.cpp */,
+				b673246b148fb0c400fc2b04 /* makefile */,
+			);
+			name = fuzzing_client;
+			path = examples/fuzzing_client;
+			sourcetree = "<group>";
+		};
+		b673248114919d6600fc2b04 /* broadcast_server_tls */ = {
+			isa = pbxgroup;
+			children = (
+				b673248214919d6600fc2b04 /* broadcast_admin.html */,
+				b66de75a14ab5c71004312ec /* md5.js */,
+				b6826cba14a0c49b006dd3f3 /* wscmd.hpp */,
+				b673248314919d6600fc2b04 /* broadcast_server_tls.cpp */,
+				b6826cb814a0c483006dd3f3 /* broadcast_admin_handler.hpp */,
+				b6826cb914a0c483006dd3f3 /* broadcast_handler.hpp */,
+				b6826cb6149f7037006dd3f3 /* broadcast_server_handler.hpp */,
+				b673248414919d6600fc2b04 /* makefile */,
+			);
+			name = broadcast_server_tls;
+			path = examples/broadcast_server_tls;
+			sourcetree = "<group>";
+		};
+		b673249a1491a50000fc2b04 /* stress_client */ = {
+			isa = pbxgroup;
+			children = (
+				b673249d1491a51e00fc2b04 /* stress_client.cpp */,
+				b673249c1491a50000fc2b04 /* makefile */,
+			);
+			name = stress_client;
+			path = examples/stress_client;
+			sourcetree = "<group>";
+		};
+		b6cf18121437c370009295be /* echo_client */ = {
+			isa = pbxgroup;
+			children = (
+				b64975a11510b41400be17d1 /* sconscript */,
+				b6cf18131437c370009295be /* echo_client.cpp */,
+				b6cf18161437c370009295be /* makefile */,
+			);
+			name = echo_client;
+			path = examples/echo_client;
+			sourcetree = "<group>";
+		};
+		b6df1c451434a5940029a1b1 = {
+			isa = pbxgroup;
+			children = (
+				b6e7e78a150553d000394909 /* libboost_chrono.dylib */,
+				b6fe8d5d14730b2200b32547 /* libssl.dylib */,
+				b6fe8d5b14730b1a00b32547 /* libcrypto.dylib */,
+				b6fe8ceb145a0f1900b32547 /* libboost_program_options.dylib */,
+				b6cf182b1437c3ca009295be /* libboost_system.dylib */,
+				b682888e14374689002ba48b /* libboost_thread.dylib */,
+				b682888c1437464a002ba48b /* libboost_random.dylib */,
+				b682888a14374623002ba48b /* libboost_system.dylib */,
+				b6df1ce31435f8250029a1b1 /* foundation.framework */,
+				b6fe8ce4144de18900b32547 /* documentation */,
+				b6df1cc61435ed380029a1b1 /* examples */,
+				b6df1cc51435ece40029a1b1 /* libraries */,
+				b6138791145ca6f700ed9b19 /* makefile */,
+				b6de901314c4d875009a1591 /* readme.txt */,
+				b6e56d821508eaca007e1707 /* sconstruct */,
+				b64e12d014bde132006f20f0 /* test */,
+				b6df1c7f1434abb70029a1b1 /* src */,
+				b6df1c6a1434a7a30029a1b1 /* products */,
+			);
+			sourcetree = "<group>";
+		};
+		b6df1c6a1434a7a30029a1b1 /* products */ = {
+			isa = pbxgroup;
+			children = (
+				b6df1c691434a7a30029a1b1 /* libwebsocketpp.a */,
+				b6df1c721434a8280029a1b1 /* libwebsocketpp.dylib */,
+				b6df1cd11435ed910029a1b1 /* echo_server */,
+				b682887d143745f2002ba48b /* chat_client */,
+				b6cf181c1437c397009295be /* echo_client */,
+				b6fe8d4f14730ae900b32547 /* policy test */,
+				b663884b1487d73200ddae13 /* echo_server_tls */,
+				b6732458148faeeb00fc2b04 /* fuzzing_server */,
+				b6732471148fb0fc00fc2b04 /* fuzzing_client */,
+				b67324891491a16500fc2b04 /* broadcast_server */,
+				b67324a21491a7f100fc2b04 /* stress_client */,
+				b61a51bf14dc271900456432 /* concurrent_server */,
+				b6e7e7731505532e00394909 /* wsperf */,
+			);
+			name = products;
+			sourcetree = "<group>";
+		};
+		b6df1c7f1434abb70029a1b1 /* src */ = {
+			isa = pbxgroup;
+			children = (
+				b69ba1c0153241ea00e36526 /* sconscript */,
+				b62a5a541473ebb9005f9eb0 /* roles */,
+				b62a5a551473ebc4005f9eb0 /* sockets */,
+				b61387b51462b34400ed9b19 /* logger */,
+				b663885d1487fdaa00ddae13 /* messages */,
+				b61387a4145d847a00ed9b19 /* http */,
+				b6fe8d09145b0f7400b32547 /* rng */,
+				b62a5a6a147748b2005f9eb0 /* processors */,
+				b62a5a71147759ea005f9eb0 /* common.hpp */,
+				b62a5a511473ebb0005f9eb0 /* connection.hpp */,
+				b62a5a521473ebb0005f9eb0 /* endpoint.hpp */,
+				b6df1c7b1434ab920029a1b1 /* network_utilities.hpp */,
+				b6df1c791434ab740029a1b1 /* network_utilities.cpp */,
+				b63e51a814c9a5790006bf9a /* shared_const_buffer.hpp */,
+				b62a5a6f14774cd5005f9eb0 /* uri.hpp */,
+				b6727428148517180029cf3e /* uri.cpp */,
+				b6df1c981434ac470029a1b1 /* websocket_frame.hpp */,
+				b6df1c9f1434ac470029a1b1 /* websocketpp.hpp */,
+				b6fe8d1414686a6d00b32547 /* md5 */,
+				b6df1c8e1434ac3e0029a1b1 /* utf8_validator */,
+				b6df1c871434abf30029a1b1 /* sha1 */,
+				b6df1c801434abe20029a1b1 /* base64 */,
+			);
+			name = src;
+			sourcetree = "<group>";
+		};
+		b6df1c801434abe20029a1b1 /* base64 */ = {
+			isa = pbxgroup;
+			children = (
+				b6df1c811434abe20029a1b1 /* base64.cpp */,
+				b6df1c821434abe20029a1b1 /* base64.h */,
+			);
+			name = base64;
+			path = src/base64;
+			sourcetree = "<group>";
+		};
+		b6df1c871434abf30029a1b1 /* sha1 */ = {
+			isa = pbxgroup;
+			children = (
+				b6df1c881434ac330029a1b1 /* sha1.cpp */,
+				b6df1c891434ac330029a1b1 /* sha1.h */,
+			);
+			name = sha1;
+			sourcetree = "<group>";
+		};
+		b6df1c8e1434ac3e0029a1b1 /* utf8_validator */ = {
+			isa = pbxgroup;
+			children = (
+				b6df1c8f1434ac3e0029a1b1 /* utf8_validator.hpp */,
+			);
+			name = utf8_validator;
+			path = src/utf8_validator;
+			sourcetree = "<group>";
+		};
+		b6df1cc51435ece40029a1b1 /* libraries */ = {
+			isa = pbxgroup;
+			children = (
+				b6df1ce11435f1860029a1b1 /* libboost_system.dylib */,
+				b6df1cbe1434af6a0029a1b1 /* libboost_date_time.dylib */,
+				b6df1cbf1434af6a0029a1b1 /* libboost_regex.dylib */,
+				b6df1cc01434af6a0029a1b1 /* libboost_system.dylib */,
+				b6df1cbc1434ae070029a1b1 /* libboost_system.dylib */,
+			);
+			name = libraries;
+			sourcetree = "<group>";
+		};
+		b6df1cc61435ed380029a1b1 /* examples */ = {
+			isa = pbxgroup;
+			children = (
+				b64975a71510c69600be17d1 /* makefile */,
+				b64975a81510c6ea00be17d1 /* common.mk */,
+				b6e56d6414fefc43007e1707 /* wsperf */,
+				b61a51b614dc207600456432 /* concurrent_server */,
+				b673249a1491a50000fc2b04 /* stress_client */,
+				b673248114919d6600fc2b04 /* broadcast_server_tls */,
+				b6732469148fb0c400fc2b04 /* fuzzing_client */,
+				b673244f148f973d00fc2b04 /* fuzzing_server_tls */,
+				b6cf18121437c370009295be /* echo_client */,
+				b6df1cc91435ed460029a1b1 /* chat_server */,
+				b6df1cc81435ed440029a1b1 /* chat_client */,
+				b6df1cc71435ed420029a1b1 /* echo_server */,
+				b66388431487d70000ddae13 /* echo_server_tls */,
+				b6e608c715ad9e700050a1cc /* telemetry_server */,
+			);
+			name = examples;
+			sourcetree = "<group>";
+		};
+		b6df1cc71435ed420029a1b1 /* echo_server */ = {
+			isa = pbxgroup;
+			children = (
+				b64975a01510b3fd00be17d1 /* sconscript */,
+				b6df1cca1435ed760029a1b1 /* echo_server.cpp */,
+				b6138760145ad09700ed9b19 /* makefile */,
+			);
+			name = echo_server;
+			sourcetree = "<group>";
+		};
+		b6df1cc81435ed440029a1b1 /* chat_client */ = {
+			isa = pbxgroup;
+			children = (
+				b6828875143745da002ba48b /* chat_client_handler.cpp */,
+				b6828876143745da002ba48b /* chat_client_handler.hpp */,
+				b6828877143745da002ba48b /* chat_client.cpp */,
+				b64975a31510b55600be17d1 /* sconscript */,
+				b64975a41510b62700be17d1 /* makefile */,
+			);
+			name = chat_client;
+			sourcetree = "<group>";
+		};
+		b6df1cc91435ed460029a1b1 /* chat_server */ = {
+			isa = pbxgroup;
+			children = (
+				b6138763145ad1f700ed9b19 /* chat_client.html */,
+				b6138764145ad1f700ed9b19 /* chat_server.cpp */,
+				b6138765145ad1f700ed9b19 /* chat.cpp */,
+				b6138766145ad1f700ed9b19 /* chat.hpp */,
+				b64975a21510b54900be17d1 /* sconscript */,
+				b6138767145ad1f700ed9b19 /* makefile */,
+			);
+			name = chat_server;
+			sourcetree = "<group>";
+		};
+		b6e56d6414fefc43007e1707 /* wsperf */ = {
+			isa = pbxgroup;
+			children = (
+				b6e56d84150b887a007e1707 /* sconscript */,
+				b6e56d6614fefc54007e1707 /* makefile */,
+				b6e56d85150b9021007e1707 /* wsperf.cfg */,
+				b6e56d6714fefc54007e1707 /* wsperf_commander.html */,
+				b6e56d6814fefc54007e1707 /* wsperf.cpp */,
+				b6e56d7e150644a3007e1707 /* request.cpp */,
+				b6e56d7f150644a3007e1707 /* request.hpp */,
+				b69ba1b71530f55400e36526 /* stress_aggregate.cpp */,
+				b69ba1b81530f55500e36526 /* stress_aggregate.hpp */,
+				b69ba1b41530f1a600e36526 /* stress_handler.cpp */,
+				b69ba1b51530f1a600e36526 /* stress_handler.hpp */,
+				b6e56d6914fefe95007e1707 /* case.cpp */,
+				b6e56d6a14fefe95007e1707 /* case.hpp */,
+				b6e56d6d1503df2c007e1707 /* generic.cpp */,
+				b6e56d6e1503df2c007e1707 /* generic.hpp */,
+				b649759d150ba96100be17d1 /* wscmd.cpp */,
+				b6e56d6f150457b8007e1707 /* wscmd.hpp */,
+			);
+			name = wsperf;
+			sourcetree = "<group>";
+		};
+		b6e608c715ad9e700050a1cc /* telemetry_server */ = {
+			isa = pbxgroup;
+			children = (
+				b6e608c815ad9e700050a1cc /* makefile */,
+				b6e608c915ad9e700050a1cc /* sconscript */,
+				b6e608ca15ad9e700050a1cc /* telemetry_server.cpp */,
+			);
+			name = telemetry_server;
+			path = examples/telemetry_server;
+			sourcetree = "<group>";
+		};
+		b6fe8ce4144de18900b32547 /* documentation */ = {
+			isa = pbxgroup;
+			children = (
+				b6fe8ce2144de17f00b32547 /* readme.txt */,
+			);
+			name = documentation;
+			sourcetree = "<group>";
+		};
+		b6fe8d09145b0f7400b32547 /* rng */ = {
+			isa = pbxgroup;
+			children = (
+				b61387a0145d846400ed9b19 /* blank_rng.cpp */,
+				b61387a1145d846400ed9b19 /* blank_rng.hpp */,
+				b61387a2145d846400ed9b19 /* boost_rng.cpp */,
+				b61387a3145d846400ed9b19 /* boost_rng.hpp */,
+			);
+			name = rng;
+			sourcetree = "<group>";
+		};
+		b6fe8d1414686a6d00b32547 /* md5 */ = {
+			isa = pbxgroup;
+			children = (
+				b6fe8d1614686a8500b32547 /* md5.c */,
+				b6fe8d1714686a8500b32547 /* md5.h */,
+				b62a5a7014774f08005f9eb0 /* md5.hpp */,
+			);
+			name = md5;
+			sourcetree = "<group>";
+		};
+/* end pbxgroup section */
+
+/* begin pbxheadersbuildphase section */
+		b6df1c671434a7a30029a1b1 /* headers */ = {
+			isa = pbxheadersbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b6df1cba1434ac470029a1b1 /* websocketpp.hpp in headers */,
+				b6fe8d1b1468709a00b32547 /* md5.h in headers */,
+				b6df1c7e1434ab9e0029a1b1 /* network_utilities.hpp in headers */,
+				b6df1c851434abe20029a1b1 /* base64.h in headers */,
+				b6df1c8c1434ac330029a1b1 /* sha1.h in headers */,
+				b6df1c901434ac3e0029a1b1 /* utf8_validator.hpp in headers */,
+				b6df1cac1434ac470029a1b1 /* websocket_frame.hpp in headers */,
+				b66388641487fe6c00ddae13 /* data.hpp in headers */,
+				b66388661487fe6c00ddae13 /* control.hpp in headers */,
+				b653a715148a607d004d7bd9 /* hybi_header.hpp in headers */,
+				b69ba1be15322f1c00e36526 /* hybi_util.hpp in headers */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6df1c701434a8280029a1b1 /* headers */ = {
+			isa = pbxheadersbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b6df1cbb1434ac470029a1b1 /* websocketpp.hpp in headers */,
+				b6fe8d191468708200b32547 /* md5.h in headers */,
+				b6df1c7d1434ab920029a1b1 /* network_utilities.hpp in headers */,
+				b6df1c861434abe20029a1b1 /* base64.h in headers */,
+				b6df1c8d1434ac330029a1b1 /* sha1.h in headers */,
+				b6df1c911434ac3e0029a1b1 /* utf8_validator.hpp in headers */,
+				b6df1cad1434ac470029a1b1 /* websocket_frame.hpp in headers */,
+				b66388651487fe6c00ddae13 /* data.hpp in headers */,
+				b66388671487fe6c00ddae13 /* control.hpp in headers */,
+				b653a716148a607d004d7bd9 /* hybi_header.hpp in headers */,
+				b69ba1bf15322f1c00e36526 /* hybi_util.hpp in headers */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+/* end pbxheadersbuildphase section */
+
+/* begin pbxnativetarget section */
+		b61a51be14dc271900456432 /* concurrent_server */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = b61a51c614dc271900456432 /* build configuration list for pbxnativetarget "concurrent_server" */;
+			buildphases = (
+				b61a51bb14dc271900456432 /* sources */,
+				b61a51bc14dc271900456432 /* frameworks */,
+				b61a51bd14dc271900456432 /* copyfiles */,
+			);
+			buildrules = (
+			);
+			dependencies = (
+			);
+			name = concurrent_server;
+			productname = concurrent_server;
+			productreference = b61a51bf14dc271900456432 /* concurrent_server */;
+			producttype = "com.apple.product-type.tool";
+		};
+		b663884a1487d73200ddae13 /* echo_server_tls */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = b66388521487d73300ddae13 /* build configuration list for pbxnativetarget "echo_server_tls" */;
+			buildphases = (
+				b66388471487d73200ddae13 /* sources */,
+				b66388481487d73200ddae13 /* frameworks */,
+				b66388491487d73200ddae13 /* copyfiles */,
+			);
+			buildrules = (
+			);
+			dependencies = (
+			);
+			name = echo_server_tls;
+			productname = echo_server_tls;
+			productreference = b663884b1487d73200ddae13 /* echo_server_tls */;
+			producttype = "com.apple.product-type.tool";
+		};
+		b6732457148faeeb00fc2b04 /* fuzzing_server */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = b673245f148faeec00fc2b04 /* build configuration list for pbxnativetarget "fuzzing_server" */;
+			buildphases = (
+				b6732454148faeeb00fc2b04 /* sources */,
+				b6732455148faeeb00fc2b04 /* frameworks */,
+				b6732456148faeeb00fc2b04 /* copyfiles */,
+			);
+			buildrules = (
+			);
+			dependencies = (
+			);
+			name = fuzzing_server;
+			productname = fuzzing_server;
+			productreference = b6732458148faeeb00fc2b04 /* fuzzing_server */;
+			producttype = "com.apple.product-type.tool";
+		};
+		b6732470148fb0fc00fc2b04 /* fuzzing_client */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = b6732478148fb0fc00fc2b04 /* build configuration list for pbxnativetarget "fuzzing_client" */;
+			buildphases = (
+				b673246d148fb0fc00fc2b04 /* sources */,
+				b673246e148fb0fc00fc2b04 /* frameworks */,
+				b673246f148fb0fc00fc2b04 /* copyfiles */,
+			);
+			buildrules = (
+			);
+			dependencies = (
+			);
+			name = fuzzing_client;
+			productname = fuzzing_client;
+			productreference = b6732471148fb0fc00fc2b04 /* fuzzing_client */;
+			producttype = "com.apple.product-type.tool";
+		};
+		b67324881491a16500fc2b04 /* broadcast_server */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = b67324901491a16500fc2b04 /* build configuration list for pbxnativetarget "broadcast_server" */;
+			buildphases = (
+				b67324851491a16500fc2b04 /* sources */,
+				b67324861491a16500fc2b04 /* frameworks */,
+				b67324871491a16500fc2b04 /* copyfiles */,
+			);
+			buildrules = (
+			);
+			dependencies = (
+			);
+			name = broadcast_server;
+			productname = broadcast_server;
+			productreference = b67324891491a16500fc2b04 /* broadcast_server */;
+			producttype = "com.apple.product-type.tool";
+		};
+		b67324a11491a7f100fc2b04 /* stress_client */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = b67324a91491a7f200fc2b04 /* build configuration list for pbxnativetarget "stress_client" */;
+			buildphases = (
+				b673249e1491a7f100fc2b04 /* sources */,
+				b673249f1491a7f100fc2b04 /* frameworks */,
+				b67324a01491a7f100fc2b04 /* copyfiles */,
+			);
+			buildrules = (
+			);
+			dependencies = (
+			);
+			name = stress_client;
+			productname = stress_client;
+			productreference = b67324a21491a7f100fc2b04 /* stress_client */;
+			producttype = "com.apple.product-type.tool";
+		};
+		b682887c143745f2002ba48b /* chat_client */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = b6828884143745f2002ba48b /* build configuration list for pbxnativetarget "chat_client" */;
+			buildphases = (
+				b6828879143745f2002ba48b /* sources */,
+				b682887a143745f2002ba48b /* frameworks */,
+				b682887b143745f2002ba48b /* copyfiles */,
+			);
+			buildrules = (
+			);
+			dependencies = (
+				b682889114374b77002ba48b /* pbxtargetdependency */,
+			);
+			name = chat_client;
+			productname = chat_client;
+			productreference = b682887d143745f2002ba48b /* chat_client */;
+			producttype = "com.apple.product-type.tool";
+		};
+		b6cf181b1437c397009295be /* echo_client */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = b6cf18231437c397009295be /* build configuration list for pbxnativetarget "echo_client" */;
+			buildphases = (
+				b6cf18181437c397009295be /* sources */,
+				b6cf18191437c397009295be /* frameworks */,
+				b6cf181a1437c397009295be /* copyfiles */,
+			);
+			buildrules = (
+			);
+			dependencies = (
+				b6cf18271437c3a9009295be /* pbxtargetdependency */,
+			);
+			name = echo_client;
+			productname = echo_client;
+			productreference = b6cf181c1437c397009295be /* echo_client */;
+			producttype = "com.apple.product-type.tool";
+		};
+		b6df1c681434a7a30029a1b1 /* websocket++ static library */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = b6df1c6b1434a7a30029a1b1 /* build configuration list for pbxnativetarget "websocket++ static library" */;
+			buildphases = (
+				b6df1c651434a7a30029a1b1 /* sources */,
+				b6df1c661434a7a30029a1b1 /* frameworks */,
+				b6df1c671434a7a30029a1b1 /* headers */,
+			);
+			buildrules = (
+			);
+			dependencies = (
+			);
+			name = "websocket++ static library";
+			productname = websocketpp.a;
+			productreference = b6df1c691434a7a30029a1b1 /* libwebsocketpp.a */;
+			producttype = "com.apple.product-type.library.static";
+		};
+		b6df1c711434a8280029a1b1 /* websocket++ dynamic library */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = b6df1c731434a8280029a1b1 /* build configuration list for pbxnativetarget "websocket++ dynamic library" */;
+			buildphases = (
+				b6df1c6e1434a8280029a1b1 /* sources */,
+				b6df1c6f1434a8280029a1b1 /* frameworks */,
+				b6df1c701434a8280029a1b1 /* headers */,
+			);
+			buildrules = (
+			);
+			dependencies = (
+			);
+			name = "websocket++ dynamic library";
+			productname = websocketpp.dylib;
+			productreference = b6df1c721434a8280029a1b1 /* libwebsocketpp.dylib */;
+			producttype = "com.apple.product-type.library.dynamic";
+		};
+		b6df1cd01435ed910029a1b1 /* echo_server */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = b6df1cd81435ed910029a1b1 /* build configuration list for pbxnativetarget "echo_server" */;
+			buildphases = (
+				b6df1ccd1435ed910029a1b1 /* sources */,
+				b6df1cce1435ed910029a1b1 /* frameworks */,
+				b6df1ccf1435ed910029a1b1 /* copyfiles */,
+			);
+			buildrules = (
+			);
+			dependencies = (
+			);
+			name = echo_server;
+			productname = echo_server;
+			productreference = b6df1cd11435ed910029a1b1 /* echo_server */;
+			producttype = "com.apple.product-type.tool";
+		};
+		b6e7e7721505532e00394909 /* wsperf */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = b6e7e77c1505532e00394909 /* build configuration list for pbxnativetarget "wsperf" */;
+			buildphases = (
+				b6e7e76f1505532e00394909 /* sources */,
+				b6e7e7701505532e00394909 /* frameworks */,
+				b6e7e7711505532e00394909 /* copyfiles */,
+			);
+			buildrules = (
+			);
+			dependencies = (
+			);
+			name = wsperf;
+			productname = wsperf;
+			productreference = b6e7e7731505532e00394909 /* wsperf */;
+			producttype = "com.apple.product-type.tool";
+		};
+		b6fe8d4e14730ae900b32547 /* policy_test */ = {
+			isa = pbxnativetarget;
+			buildconfigurationlist = b6fe8d5614730aea00b32547 /* build configuration list for pbxnativetarget "policy_test" */;
+			buildphases = (
+				b6fe8d4b14730ae900b32547 /* sources */,
+				b6fe8d4c14730ae900b32547 /* frameworks */,
+				b6fe8d4d14730ae900b32547 /* copyfiles */,
+			);
+			buildrules = (
+			);
+			dependencies = (
+			);
+			name = policy_test;
+			productname = "policy test";
+			productreference = b6fe8d4f14730ae900b32547 /* policy test */;
+			producttype = "com.apple.product-type.tool";
+		};
+/* end pbxnativetarget section */
+
+/* begin pbxproject section */
+		b6df1c471434a5940029a1b1 /* project object */ = {
+			isa = pbxproject;
+			attributes = {
+				lastupgradecheck = 0430;
+			};
+			buildconfigurationlist = b6df1c4a1434a5940029a1b1 /* build configuration list for pbxproject "websocketpp" */;
+			compatibilityversion = "xcode 3.2";
+			developmentregion = english;
+			hasscannedforencodings = 0;
+			knownregions = (
+				en,
+			);
+			maingroup = b6df1c451434a5940029a1b1;
+			productrefgroup = b6df1c6a1434a7a30029a1b1 /* products */;
+			projectdirpath = "";
+			projectroot = "";
+			targets = (
+				b6df1c681434a7a30029a1b1 /* websocket++ static library */,
+				b6df1c711434a8280029a1b1 /* websocket++ dynamic library */,
+				b6df1cd01435ed910029a1b1 /* echo_server */,
+				b682887c143745f2002ba48b /* chat_client */,
+				b6cf181b1437c397009295be /* echo_client */,
+				b6fe8d4e14730ae900b32547 /* policy_test */,
+				b663884a1487d73200ddae13 /* echo_server_tls */,
+				b6732457148faeeb00fc2b04 /* fuzzing_server */,
+				b6732470148fb0fc00fc2b04 /* fuzzing_client */,
+				b67324881491a16500fc2b04 /* broadcast_server */,
+				b67324a11491a7f100fc2b04 /* stress_client */,
+				b61a51be14dc271900456432 /* concurrent_server */,
+				b6e7e7721505532e00394909 /* wsperf */,
+			);
+		};
+/* end pbxproject section */
+
+/* begin pbxsourcesbuildphase section */
+		b61a51bb14dc271900456432 /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b61a51c914dc273f00456432 /* concurrent_server.cpp in sources */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b66388471487d73200ddae13 /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b66388551487d74d00ddae13 /* echo_server_tls.cpp in sources */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6732454148faeeb00fc2b04 /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b6732462148faf0000fc2b04 /* fuzzing_server_tls.cpp in sources */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b673246d148fb0fc00fc2b04 /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b673247b148fb12400fc2b04 /* fuzzing_client.cpp in sources */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b67324851491a16500fc2b04 /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b67324931491a18100fc2b04 /* broadcast_server_tls.cpp in sources */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b673249e1491a7f100fc2b04 /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b67324ac1491a80400fc2b04 /* stress_client.cpp in sources */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6828879143745f2002ba48b /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b68288871437460e002ba48b /* chat_client_handler.cpp in sources */,
+				b68288881437460e002ba48b /* chat_client.cpp in sources */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6cf18181437c397009295be /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b6cf18281437c3b1009295be /* echo_client.cpp in sources */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6df1c651434a7a30029a1b1 /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b6fe8d1a1468709300b32547 /* md5.c in sources */,
+				b6df1c7a1434ab740029a1b1 /* network_utilities.cpp in sources */,
+				b6df1c831434abe20029a1b1 /* base64.cpp in sources */,
+				b6df1c8a1434ac330029a1b1 /* sha1.cpp in sources */,
+				b6727429148517180029cf3e /* uri.cpp in sources */,
+				b653a719148ab555004d7bd9 /* hybi_header.cpp in sources */,
+				b6826cbc14a0d75a006dd3f3 /* data.cpp in sources */,
+				b69ba1bc15322f1c00e36526 /* hybi_util.cpp in sources */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6df1c6e1434a8280029a1b1 /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b6fe8d181468707200b32547 /* md5.c in sources */,
+				b6df1cc41434af9e0029a1b1 /* network_utilities.cpp in sources */,
+				b6df1c841434abe20029a1b1 /* base64.cpp in sources */,
+				b6df1c8b1434ac330029a1b1 /* sha1.cpp in sources */,
+				b672742a148517180029cf3e /* uri.cpp in sources */,
+				b653a71a148ab555004d7bd9 /* hybi_header.cpp in sources */,
+				b6826cbd14a0d75a006dd3f3 /* data.cpp in sources */,
+				b69ba1bd15322f1c00e36526 /* hybi_util.cpp in sources */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6df1ccd1435ed910029a1b1 /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b6df1cdb1435edce0029a1b1 /* echo_server.cpp in sources */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6e7e76f1505532e00394909 /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+				b649759e150bf6c700be17d1 /* wscmd.cpp in sources */,
+				b6e7e77e1505536500394909 /* wsperf.cpp in sources */,
+				b6e7e7801505536500394909 /* case.cpp in sources */,
+				b6e7e7811505536500394909 /* generic.cpp in sources */,
+				b6e56d80150644a3007e1707 /* request.cpp in sources */,
+				b69ba1b61530f1a700e36526 /* stress_handler.cpp in sources */,
+				b69ba1b91530f55500e36526 /* stress_aggregate.cpp in sources */,
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+		b6fe8d4b14730ae900b32547 /* sources */ = {
+			isa = pbxsourcesbuildphase;
+			buildactionmask = 2147483647;
+			files = (
+			);
+			runonlyfordeploymentpostprocessing = 0;
+		};
+/* end pbxsourcesbuildphase section */
+
+/* begin pbxtargetdependency section */
+		b682889114374b77002ba48b /* pbxtargetdependency */ = {
+			isa = pbxtargetdependency;
+			target = b6df1c711434a8280029a1b1 /* websocket++ dynamic library */;
+			targetproxy = b682889014374b77002ba48b /* pbxcontaineritemproxy */;
+		};
+		b6cf18271437c3a9009295be /* pbxtargetdependency */ = {
+			isa = pbxtargetdependency;
+			target = b6df1c711434a8280029a1b1 /* websocket++ dynamic library */;
+			targetproxy = b6cf18261437c3a9009295be /* pbxcontaineritemproxy */;
+		};
+/* end pbxtargetdependency section */
+
+/* begin xcbuildconfiguration section */
+		b61a51c714dc271900456432 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				gcc_c_language_standard = gnu99;
+				gcc_dynamic_no_pic = no;
+				gcc_enable_objc_exceptions = yes;
+				gcc_optimization_level = 0;
+				gcc_preprocessor_definitions = (
+					"debug=1",
+					"$(inherited)",
+				);
+				gcc_symbols_private_extern = no;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = debug;
+		};
+		b61a51c814dc271900456432 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				debug_information_format = "dwarf-with-dsym";
+				gcc_c_language_standard = gnu99;
+				gcc_enable_objc_exceptions = yes;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = release;
+		};
+		b66388531487d73300ddae13 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				gcc_c_language_standard = gnu99;
+				gcc_dynamic_no_pic = no;
+				gcc_enable_objc_exceptions = yes;
+				gcc_optimization_level = 0;
+				gcc_preprocessor_definitions = (
+					"debug=1",
+					"$(inherited)",
+				);
+				gcc_symbols_private_extern = no;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = debug;
+		};
+		b66388541487d73300ddae13 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				debug_information_format = "dwarf-with-dsym";
+				gcc_c_language_standard = gnu99;
+				gcc_enable_objc_exceptions = yes;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = release;
+		};
+		b6732460148faeec00fc2b04 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				gcc_c_language_standard = gnu99;
+				gcc_dynamic_no_pic = no;
+				gcc_enable_objc_exceptions = yes;
+				gcc_optimization_level = 0;
+				gcc_preprocessor_definitions = (
+					"debug=1",
+					"$(inherited)",
+				);
+				gcc_symbols_private_extern = no;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = debug;
+		};
+		b6732461148faeec00fc2b04 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				debug_information_format = "dwarf-with-dsym";
+				gcc_c_language_standard = gnu99;
+				gcc_enable_objc_exceptions = yes;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = release;
+		};
+		b6732479148fb0fc00fc2b04 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				gcc_c_language_standard = gnu99;
+				gcc_dynamic_no_pic = no;
+				gcc_enable_objc_exceptions = yes;
+				gcc_optimization_level = 0;
+				gcc_preprocessor_definitions = (
+					"debug=1",
+					"$(inherited)",
+				);
+				gcc_symbols_private_extern = no;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = debug;
+		};
+		b673247a148fb0fc00fc2b04 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				debug_information_format = "dwarf-with-dsym";
+				gcc_c_language_standard = gnu99;
+				gcc_enable_objc_exceptions = yes;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = release;
+		};
+		b67324911491a16500fc2b04 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				gcc_c_language_standard = gnu99;
+				gcc_dynamic_no_pic = no;
+				gcc_enable_objc_exceptions = yes;
+				gcc_optimization_level = 0;
+				gcc_preprocessor_definitions = (
+					"debug=1",
+					"$(inherited)",
+				);
+				gcc_symbols_private_extern = no;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = debug;
+		};
+		b67324921491a16500fc2b04 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				debug_information_format = "dwarf-with-dsym";
+				gcc_c_language_standard = gnu99;
+				gcc_enable_objc_exceptions = yes;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = release;
+		};
+		b67324aa1491a7f200fc2b04 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				gcc_c_language_standard = gnu99;
+				gcc_dynamic_no_pic = no;
+				gcc_enable_objc_exceptions = yes;
+				gcc_optimization_level = 0;
+				gcc_preprocessor_definitions = (
+					"debug=1",
+					"$(inherited)",
+				);
+				gcc_symbols_private_extern = no;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = debug;
+		};
+		b67324ab1491a7f200fc2b04 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				debug_information_format = "dwarf-with-dsym";
+				gcc_c_language_standard = gnu99;
+				gcc_enable_objc_exceptions = yes;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = release;
+		};
+		b6828885143745f2002ba48b /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				gcc_c_language_standard = gnu99;
+				gcc_dynamic_no_pic = no;
+				gcc_enable_objc_exceptions = yes;
+				gcc_optimization_level = 0;
+				gcc_preprocessor_definitions = (
+					"debug=1",
+					"$(inherited)",
+				);
+				gcc_symbols_private_extern = no;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = debug;
+		};
+		b6828886143745f2002ba48b /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				debug_information_format = "dwarf-with-dsym";
+				gcc_c_language_standard = gnu99;
+				gcc_enable_objc_exceptions = yes;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = release;
+		};
+		b6cf18241437c397009295be /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				gcc_c_language_standard = gnu99;
+				gcc_dynamic_no_pic = no;
+				gcc_enable_objc_exceptions = yes;
+				gcc_optimization_level = 0;
+				gcc_preprocessor_definitions = (
+					"debug=1",
+					"$(inherited)",
+				);
+				gcc_symbols_private_extern = no;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = debug;
+		};
+		b6cf18251437c397009295be /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				debug_information_format = "dwarf-with-dsym";
+				gcc_c_language_standard = gnu99;
+				gcc_enable_objc_exceptions = yes;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = release;
+		};
+		b6df1c481434a5940029a1b1 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				archs = "$(archs_standard_32_64_bit)";
+				copy_phase_strip = no;
+				gcc_warn_about_return_type = yes;
+				gcc_warn_unused_variable = yes;
+				header_search_paths = /usr/local/include/;
+				library_search_paths = /usr/local/lib/;
+				only_active_arch = yes;
+				sdkroot = macosx;
+			};
+			name = debug;
+		};
+		b6df1c491434a5940029a1b1 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				archs = "$(archs_standard_32_64_bit)";
+				copy_phase_strip = yes;
+				gcc_warn_about_return_type = yes;
+				gcc_warn_unused_variable = yes;
+				header_search_paths = /usr/local/include/;
+				library_search_paths = /usr/local/lib/;
+				sdkroot = macosx;
+			};
+			name = release;
+		};
+		b6df1c6c1434a7a30029a1b1 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = yes;
+				archs = "$(archs_standard_32_64_bit)";
+				executable_prefix = lib;
+				gcc_c_language_standard = gnu99;
+				gcc_dynamic_no_pic = no;
+				gcc_enable_objc_exceptions = yes;
+				gcc_optimization_level = 0;
+				gcc_preprocessor_definitions = (
+					"debug=1",
+					"$(inherited)",
+				);
+				gcc_symbols_private_extern = no;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = no;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = websocketpp;
+			};
+			name = debug;
+		};
+		b6df1c6d1434a7a30029a1b1 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = yes;
+				archs = "$(archs_standard_32_64_bit)";
+				debug_information_format = "dwarf-with-dsym";
+				executable_prefix = lib;
+				gcc_c_language_standard = gnu99;
+				gcc_enable_objc_exceptions = yes;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = no;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = websocketpp;
+			};
+			name = release;
+		};
+		b6df1c741434a8280029a1b1 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				executable_prefix = lib;
+				gcc_c_language_standard = gnu99;
+				gcc_dynamic_no_pic = no;
+				gcc_enable_objc_exceptions = yes;
+				gcc_optimization_level = 0;
+				gcc_preprocessor_definitions = (
+					"debug=1",
+					"$(inherited)",
+				);
+				gcc_symbols_private_extern = no;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = no;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = websocketpp;
+			};
+			name = debug;
+		};
+		b6df1c751434a8280029a1b1 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				debug_information_format = "dwarf-with-dsym";
+				executable_prefix = lib;
+				gcc_c_language_standard = gnu99;
+				gcc_enable_objc_exceptions = yes;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = no;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = websocketpp;
+			};
+			name = release;
+		};
+		b6df1cd91435ed910029a1b1 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				clang_cxx_language_standard = "compiler-default";
+				clang_cxx_library = "compiler-default";
+				gcc_c_language_standard = gnu99;
+				gcc_dynamic_no_pic = no;
+				gcc_enable_objc_exceptions = yes;
+				gcc_optimization_level = 0;
+				gcc_preprocessor_definitions = (
+					"debug=1",
+					"$(inherited)",
+				);
+				gcc_symbols_private_extern = no;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = no;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = debug;
+		};
+		b6df1cda1435ed910029a1b1 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				clang_cxx_language_standard = "compiler-default";
+				clang_cxx_library = "compiler-default";
+				debug_information_format = "dwarf-with-dsym";
+				gcc_c_language_standard = gnu99;
+				gcc_enable_objc_exceptions = yes;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = no;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = release;
+		};
+		b6e7e77a1505532e00394909 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				gcc_c_language_standard = gnu99;
+				gcc_dynamic_no_pic = no;
+				gcc_enable_objc_exceptions = yes;
+				gcc_optimization_level = 0;
+				gcc_preprocessor_definitions = (
+					"debug=1",
+					"$(inherited)",
+				);
+				gcc_symbols_private_extern = no;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = debug;
+		};
+		b6e7e77b1505532e00394909 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				debug_information_format = "dwarf-with-dsym";
+				gcc_c_language_standard = gnu99;
+				gcc_enable_objc_exceptions = yes;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = release;
+		};
+		b6fe8d5714730aea00b32547 /* debug */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				gcc_c_language_standard = gnu99;
+				gcc_dynamic_no_pic = no;
+				gcc_enable_objc_exceptions = yes;
+				gcc_optimization_level = 0;
+				gcc_preprocessor_definitions = (
+					"debug=1",
+					"$(inherited)",
+				);
+				gcc_symbols_private_extern = no;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = debug;
+		};
+		b6fe8d5814730aea00b32547 /* release */ = {
+			isa = xcbuildconfiguration;
+			buildsettings = {
+				always_search_user_paths = no;
+				archs = "$(archs_standard_64_bit)";
+				debug_information_format = "dwarf-with-dsym";
+				gcc_c_language_standard = gnu99;
+				gcc_enable_objc_exceptions = yes;
+				gcc_version = com.apple.compilers.llvm.clang.1_0;
+				gcc_warn_64_to_32_bit_conversion = yes;
+				gcc_warn_about_missing_prototypes = yes;
+				macosx_deployment_target = 10.7;
+				product_name = "$(target_name)";
+			};
+			name = release;
+		};
+/* end xcbuildconfiguration section */
+
+/* begin xcconfigurationlist section */
+		b61a51c614dc271900456432 /* build configuration list for pbxnativetarget "concurrent_server" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				b61a51c714dc271900456432 /* debug */,
+				b61a51c814dc271900456432 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		b66388521487d73300ddae13 /* build configuration list for pbxnativetarget "echo_server_tls" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				b66388531487d73300ddae13 /* debug */,
+				b66388541487d73300ddae13 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		b673245f148faeec00fc2b04 /* build configuration list for pbxnativetarget "fuzzing_server" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				b6732460148faeec00fc2b04 /* debug */,
+				b6732461148faeec00fc2b04 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		b6732478148fb0fc00fc2b04 /* build configuration list for pbxnativetarget "fuzzing_client" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				b6732479148fb0fc00fc2b04 /* debug */,
+				b673247a148fb0fc00fc2b04 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		b67324901491a16500fc2b04 /* build configuration list for pbxnativetarget "broadcast_server" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				b67324911491a16500fc2b04 /* debug */,
+				b67324921491a16500fc2b04 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		b67324a91491a7f200fc2b04 /* build configuration list for pbxnativetarget "stress_client" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				b67324aa1491a7f200fc2b04 /* debug */,
+				b67324ab1491a7f200fc2b04 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		b6828884143745f2002ba48b /* build configuration list for pbxnativetarget "chat_client" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				b6828885143745f2002ba48b /* debug */,
+				b6828886143745f2002ba48b /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		b6cf18231437c397009295be /* build configuration list for pbxnativetarget "echo_client" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				b6cf18241437c397009295be /* debug */,
+				b6cf18251437c397009295be /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		b6df1c4a1434a5940029a1b1 /* build configuration list for pbxproject "websocketpp" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				b6df1c481434a5940029a1b1 /* debug */,
+				b6df1c491434a5940029a1b1 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		b6df1c6b1434a7a30029a1b1 /* build configuration list for pbxnativetarget "websocket++ static library" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				b6df1c6c1434a7a30029a1b1 /* debug */,
+				b6df1c6d1434a7a30029a1b1 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		b6df1c731434a8280029a1b1 /* build configuration list for pbxnativetarget "websocket++ dynamic library" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				b6df1c741434a8280029a1b1 /* debug */,
+				b6df1c751434a8280029a1b1 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		b6df1cd81435ed910029a1b1 /* build configuration list for pbxnativetarget "echo_server" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				b6df1cd91435ed910029a1b1 /* debug */,
+				b6df1cda1435ed910029a1b1 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		b6e7e77c1505532e00394909 /* build configuration list for pbxnativetarget "wsperf" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				b6e7e77a1505532e00394909 /* debug */,
+				b6e7e77b1505532e00394909 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+		b6fe8d5614730aea00b32547 /* build configuration list for pbxnativetarget "policy_test" */ = {
+			isa = xcconfigurationlist;
+			buildconfigurations = (
+				b6fe8d5714730aea00b32547 /* debug */,
+				b6fe8d5814730aea00b32547 /* release */,
+			);
+			defaultconfigurationisvisible = 0;
+			defaultconfigurationname = release;
+		};
+/* end xcconfigurationlist section */
+	};
+	rootobject = b6df1c471434a5940029a1b1 /* project object */;
+}

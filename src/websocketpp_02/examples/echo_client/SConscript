@@ -1,0 +1,21 @@
+## echo_client
+##
+
+import('env')
+import('boostlibs')
+import('wslib')
+import('platform_libs')
+
+localenv = env.clone ()
+
+sources = ["echo_client.cpp"]
+
+libs = [wslib, platform_libs] + boostlibs(['system',
+                                           'date_time',
+                                           'regex',
+                                           'thread',
+                                           'random'])
+
+prg = localenv.program('echo_client', sources, libs = libs)
+
+return('prg')

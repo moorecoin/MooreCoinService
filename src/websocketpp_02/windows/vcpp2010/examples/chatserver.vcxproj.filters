@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project toolsversion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <itemgroup>
+    <filter include="source files">
+      <uniqueidentifier>{4fc737f1-c7a5-4376-a066-2a32d752a2ff}</uniqueidentifier>
+      <extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</extensions>
+    </filter>
+    <filter include="header files">
+      <uniqueidentifier>{93995380-89bd-4b04-88eb-625fbe52ebfb}</uniqueidentifier>
+      <extensions>h;hpp;hxx;hm;inl;inc;xsd</extensions>
+    </filter>
+  </itemgroup>
+  <itemgroup>
+    <clcompile include="..\..\..\examples\chat_server\chat.cpp">
+      <filter>source files</filter>
+    </clcompile>
+    <clcompile include="..\..\..\examples\chat_server\chat_server.cpp">
+      <filter>source files</filter>
+    </clcompile>
+  </itemgroup>
+  <itemgroup>
+    <clinclude include="..\..\..\examples\chat_server\chat.hpp">
+      <filter>header files</filter>
+    </clinclude>
+  </itemgroup>
+</project>

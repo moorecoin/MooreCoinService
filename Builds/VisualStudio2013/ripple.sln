@@ -1,0 +1,28 @@
+
+microsoft visual studio solution file, format version 12.00
+# visual studio express 2013 for windows desktop
+visualstudioversion = 12.0.31101.0
+minimumvisualstudioversion = 10.0.40219.1
+project("{8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942}") = "rippled", "rippled.vcxproj", "{26b7d9ac-1a80-8ef8-6703-d061f1becb75}"
+endproject
+global
+	globalsection(solutionconfigurationplatforms) = presolution
+		debug|win32 = debug|win32
+		debug|x64 = debug|x64
+		release|win32 = release|win32
+		release|x64 = release|x64
+	endglobalsection
+	globalsection(projectconfigurationplatforms) = postsolution
+		{26b7d9ac-1a80-8ef8-6703-d061f1becb75}.debug|win32.activecfg = debug|x64
+		{26b7d9ac-1a80-8ef8-6703-d061f1becb75}.debug|win32.build.0 = debug|x64
+		{26b7d9ac-1a80-8ef8-6703-d061f1becb75}.debug|x64.activecfg = debug|x64
+		{26b7d9ac-1a80-8ef8-6703-d061f1becb75}.debug|x64.build.0 = debug|x64
+		{26b7d9ac-1a80-8ef8-6703-d061f1becb75}.release|win32.activecfg = release|x64
+		{26b7d9ac-1a80-8ef8-6703-d061f1becb75}.release|win32.build.0 = release|x64
+		{26b7d9ac-1a80-8ef8-6703-d061f1becb75}.release|x64.activecfg = release|x64
+		{26b7d9ac-1a80-8ef8-6703-d061f1becb75}.release|x64.build.0 = release|x64
+	endglobalsection
+	globalsection(solutionproperties) = presolution
+		hidesolutionnode = false
+	endglobalsection
+endglobal

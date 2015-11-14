@@ -1,0 +1,13 @@
+--- /usr/include/boost/config/compiler/clang.hpp 2013-07-20 13:17:10.000000000 -0400
++++ /usr/include/boost/config/compiler/clang.rippled.hpp 2014-03-11 16:40:51.000000000 -0400
+@@ -39,6 +39,10 @@
+ // clang supports "long long" in all compilation modes.
+ #define boost_has_long_long
+
++#if defined(__sizeof_int128__)
++#  define boost_has_int128
++#endif
++
+ //
+ // dynamic shared object (dso) and dynamic-link library (dll) support
+ //

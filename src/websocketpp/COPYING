@@ -1,0 +1,145 @@
+main library:
+
+copyright (c) 2014, peter thorson. all rights reserved.
+
+redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * neither the name of the websocket++ project nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+this software is provided by the copyright holders and contributors "as is"
+and any express or implied warranties, including, but not limited to, the
+implied warranties of merchantability and fitness for a particular purpose
+are disclaimed. in no event shall peter thorson be liable for any
+direct, indirect, incidental, special, exemplary, or consequential damages
+(including, but not limited to, procurement of substitute goods or services;
+loss of use, data, or profits; or business interruption) however caused and
+on any theory of liability, whether in contract, strict liability, or tort
+(including negligence or otherwise) arising in any way out of the use of this
+software, even if advised of the possibility of such damage.
+
+bundled libraries:
+
+****** base 64 library (base64/base64.hpp) ******
+base64.hpp is a repackaging of the base64.cpp and base64.h files into a
+single header suitable for use as a header only library. this conversion was
+done by peter thorson (webmaster@zaphoyd.com) in 2012. all modifications to
+the code are redistributed under the same license as the original, which is
+listed below.
+
+base64.cpp and base64.h
+
+copyright (c) 2004-2008 ren茅 nyffenegger
+
+this source code is provided 'as-is', without any express or implied
+warranty. in no event will the author be held liable for any damages
+arising from the use of this software.
+
+permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+1. the origin of this source code must not be misrepresented; you must not
+  claim that you wrote the original source code. if you use this source code
+  in a product, an acknowledgment in the product documentation would be
+  appreciated but is not required.
+
+2. altered source versions must be plainly marked as such, and must not be
+  misrepresented as being the original source code.
+
+3. this notice may not be removed or altered from any source distribution.
+
+ren茅 nyffenegger rene.nyffenegger@adp-gmbh.ch
+
+****** sha1 library (sha1/sha1.hpp) ******
+sha1.hpp is a repackaging of the sha1.cpp and sha1.h files from the shallsha1
+library (http://code.google.com/p/smallsha1/) into a single header suitable for
+use as a header only library. this conversion was done by peter thorson
+(webmaster@zaphoyd.com) in 2013. all modifications to the code are redistributed
+under the same license as the original, which is listed below.
+
+ copyright (c) 2011, micael hildenborg
+ all rights reserved.
+
+ redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+    * redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * neither the name of micael hildenborg nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+ this software is provided by micael hildenborg ''as is'' and any
+ express or implied warranties, including, but not limited to, the implied
+ warranties of merchantability and fitness for a particular purpose are
+ disclaimed. in no event shall micael hildenborg be liable for any
+ direct, indirect, incidental, special, exemplary, or consequential damages
+ (including, but not limited to, procurement of substitute goods or services;
+ loss of use, data, or profits; or business interruption) however caused and
+ on any theory of liability, whether in contract, strict liability, or tort
+ (including negligence or otherwise) arising in any way out of the use of this
+ software, even if advised of the possibility of such damage.
+
+****** md5 library (common/md5.hpp) ******
+md5.hpp is a reformulation of the md5.h and md5.c code from
+http://www.opensource.apple.com/source/cups/cups-59/cups/md5.c to allow it to
+function as a component of a header only library. this conversion was done by
+peter thorson (webmaster@zaphoyd.com) in 2012 for the websocket++ project. the
+changes are released under the same license as the original (listed below)
+
+copyright (c) 1999, 2002 aladdin enterprises.  all rights reserved.
+
+this software is provided 'as-is', without any express or implied
+warranty.  in no event will the authors be held liable for any damages
+arising from the use of this software.
+
+permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+1. the origin of this software must not be misrepresented; you must not
+ claim that you wrote the original software. if you use this software
+ in a product, an acknowledgment in the product documentation would be
+ appreciated but is not required.
+2. altered source versions must be plainly marked as such, and must not be
+ misrepresented as being the original software.
+3. this notice may not be removed or altered from any source distribution.
+
+l. peter deutsch
+ghost@aladdin.com
+
+****** utf8 validation logic (utf8_validation.hpp) ******
+utf8_validation.hpp is adapted from code originally written by bjoern hoehrmann
+<bjoern@hoehrmann.de>. see http://bjoern.hoehrmann.de/utf-8/decoder/dfa/ for
+details.
+
+the original license:
+
+copyright (c) 2008-2009 bjoern hoehrmann <bjoern@hoehrmann.de>
+
+permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "software"), to deal
+in the software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the software, and to permit persons to whom the software is
+furnished to do so, subject to the following conditions:
+
+the above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the software.
+
+the software is provided "as is", without warranty of any kind, express or
+implied, including but not limited to the warranties of merchantability,
+fitness for a particular purpose and noninfringement. in no event shall the
+authors or copyright holders be liable for any claim, damages or other
+liability, whether in an action of contract, tort or otherwise, arising from,
+out of or in connection with the software or the use or other dealings in the
+software.

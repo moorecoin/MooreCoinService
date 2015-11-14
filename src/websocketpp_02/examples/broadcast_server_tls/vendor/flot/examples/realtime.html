@@ -1,0 +1,83 @@
+<!doctype html public "-//w3c//dtd html 4.01 transitional//en" "http://www.w3.org/tr/html4/loose.dtd">
+<html>
+ <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>flot examples</title>
+    <link href="layout.css" rel="stylesheet" type="text/css">
+    <!--[if lte ie 8]><script language="javascript" type="text/javascript" src="../excanvas.min.js"></script><![endif]-->
+    <script language="javascript" type="text/javascript" src="../jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../jquery.flot.js"></script>
+ </head>
+    <body>
+    <h1>flot examples</h1>
+
+    <div id="placeholder" style="width:600px;height:300px;"></div>
+
+    <p>you can update a chart periodically to get a real-time effect
+    by using a timer to insert the new data in the plot and redraw it.</p>
+
+    <p>time between updates: <input id="updateinterval" type="text" value="" style="text-align: right; width:5em"> milliseconds</p>
+
+<script type="text/javascript">
+$(function () {
+    // we use an inline data source in the example, usually data would
+    // be fetched from a server
+    var data = [], totalpoints = 300;
+    function getrandomdata() {
+        if (data.length > 0)
+            data = data.slice(1);
+
+        // do a random walk
+        while (data.length < totalpoints) {
+            var prev = data.length > 0 ? data[data.length - 1] : 50;
+            var y = prev + math.random() * 10 - 5;
+            if (y < 0)
+                y = 0;
+            if (y > 100)
+                y = 100;
+            data.push(y);
+        }
+
+        // zip the generated y values with the x values
+        var res = [];
+        for (var i = 0; i < data.length; ++i)
+            res.push([i, data[i]])
+        return res;
+    }
+
+    // setup control widget
+    var updateinterval = 30;
+    $("#updateinterval").val(updateinterval).change(function () {
+        var v = $(this).val();
+        if (v && !isnan(+v)) {
+            updateinterval = +v;
+            if (updateinterval < 1)
+                updateinterval = 1;
+            if (updateinterval > 2000)
+                updateinterval = 2000;
+            $(this).val("" + updateinterval);
+        }
+    });
+
+    // setup plot
+    var options = {
+        series: { shadowsize: 0 }, // drawing is faster without shadows
+        yaxis: { min: 0, max: 100 },
+        xaxis: { show: false }
+    };
+    var plot = $.plot($("#placeholder"), [ getrandomdata() ], options);
+
+    function update() {
+        plot.setdata([ getrandomdata() ]);
+        // since the axes don't change, we don't need to call plot.setupgrid()
+        plot.draw();
+        
+        settimeout(update, updateinterval);
+    }
+
+    update();
+});
+</script>
+
+ </body>
+</html>

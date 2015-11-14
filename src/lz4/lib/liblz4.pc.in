@@ -1,0 +1,14 @@
+#   lz4 - fast lz compression algorithm
+#   copyright (c) 2011-2014, yann collet.
+#   bsd 2-clause license (http://www.opensource.org/licenses/bsd-license.php)
+
+prefix=@prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+name: lz4
+description: fast lossless compression algorithm library
+url: http://code.google.com/p/lz4/
+version: @version@
+libs: -l@libdir@ -llz4
+cflags: -i@includedir@

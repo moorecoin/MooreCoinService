@@ -1,0 +1,98 @@
+<!doctype html public "-//w3c//dtd html 4.01 transitional//en" "http://www.w3.org/tr/html4/loose.dtd">
+<html>
+ <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>flot examples</title>
+    <link href="layout.css" rel="stylesheet" type="text/css">
+    <!--[if lte ie 8]><script language="javascript" type="text/javascript" src="../excanvas.min.js"></script><![endif]-->
+    <script language="javascript" type="text/javascript" src="../jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="../jquery.flot.selection.js"></script>
+ </head>
+    <body>
+    <h1>flot examples</h1>
+
+    <div style="float:left">
+      <div id="placeholder" style="width:500px;height:300px"></div>
+    </div>
+    
+    <div id="miniature" style="float:left;margin-left:20px">
+      <div id="overview" style="width:166px;height:100px"></div>
+
+      <p id="overviewlegend" style="margin-left:10px"></p>
+    </div>
+
+    <p style="clear:left">the selection support makes it easy to
+    construct flexible zooming schemes. with a few lines of code, the
+    small overview plot to the right has been connected to the large
+    plot. try selecting a rectangle on either of them.</p>
+
+<script id="source">
+$(function () {
+    // setup plot
+    function getdata(x1, x2) {
+        var d = [];
+        for (var i = 0; i <= 100; ++i) {
+            var x = x1 + i * (x2 - x1) / 100;
+            d.push([x, math.sin(x * math.sin(x))]);
+        }
+
+        return [
+            { label: "sin(x sin(x))", data: d }
+        ];
+    }
+
+    var options = {
+        legend: { show: false },
+        series: {
+            lines: { show: true },
+            points: { show: true }
+        },
+        yaxis: { ticks: 10 },
+        selection: { mode: "xy" }
+    };
+
+    var startdata = getdata(0, 3 * math.pi);
+    
+    var plot = $.plot($("#placeholder"), startdata, options);
+
+    // setup overview
+    var overview = $.plot($("#overview"), startdata, {
+        legend: { show: true, container: $("#overviewlegend") },
+        series: {
+            lines: { show: true, linewidth: 1 },
+            shadowsize: 0
+        },
+        xaxis: { ticks: 4 },
+        yaxis: { ticks: 3, min: -2, max: 2 },
+        grid: { color: "#999" },
+        selection: { mode: "xy" }
+    });
+
+    // now connect the two
+    
+    $("#placeholder").bind("plotselected", function (event, ranges) {
+        // clamp the zooming to prevent eternal zoom
+        if (ranges.xaxis.to - ranges.xaxis.from < 0.00001)
+            ranges.xaxis.to = ranges.xaxis.from + 0.00001;
+        if (ranges.yaxis.to - ranges.yaxis.from < 0.00001)
+            ranges.yaxis.to = ranges.yaxis.from + 0.00001;
+        
+        // do the zooming
+        plot = $.plot($("#placeholder"), getdata(ranges.xaxis.from, ranges.xaxis.to),
+                      $.extend(true, {}, options, {
+                          xaxis: { min: ranges.xaxis.from, max: ranges.xaxis.to },
+                          yaxis: { min: ranges.yaxis.from, max: ranges.yaxis.to }
+                      }));
+        
+        // don't fire event on the overview to prevent eternal loop
+        overview.setselection(ranges, true);
+    });
+    $("#overview").bind("plotselected", function (event, ranges) {
+        plot.setselection(ranges);
+    });
+});
+</script>
+
+ </body>
+</html>

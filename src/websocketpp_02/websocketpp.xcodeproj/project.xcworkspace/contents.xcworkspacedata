@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<workspace
+   version = "1.0">
+   <fileref
+      location = "self:websocketpp.xcodeproj">
+   </fileref>
+</workspace>

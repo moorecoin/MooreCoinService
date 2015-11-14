@@ -1,0 +1,531 @@
+2013-02-27 version 2.5.0:
+
+  general
+  * new notion "import public" that allows a proto file to forward the content
+    it imports to its importers. for example,
+      // foo.proto
+      import public "bar.proto";
+      import "baz.proto";
+
+      // qux.proto
+      import "foo.proto";
+      // stuff defined in bar.proto may be used in this file, but stuff from
+      // baz.proto may not be used without importing it explicitly.
+    this is useful for moving proto files. to move a proto file, just leave
+    a single "import public" in the old proto file.
+  * new enum option "allow_alias" that specifies whether different symbols can
+    be assigned the same numeric value. default value is "true". setting it to
+    false causes the compiler to reject enum definitions where multiple symbols
+    have the same numeric value.
+    note: we plan to flip the default value to "false" in a future release.
+    projects using enum aliases should set the option to "true" in their .proto
+    files.
+
+  c++
+  * new generated method set_allocated_foo(type* foo) for message and string
+    fields. this method allows you to set the field to a pre-allocated object
+    and the containing message takes the ownership of that object.
+  * added setallocatedextension() and releaseextension() to extensions api.
+  * custom options are now formatted correctly when descriptors are printed in
+    text format.
+  * various speed optimizations.
+
+  java
+  * comments in proto files are now collected and put into generated code as
+    comments for corresponding classes and data members.
+  * added parser to parse directly into messages without a builder. for
+    example,
+      foo foo = foo.parser.parsefrom(input);
+    using parser is ~25% faster than using builder to parse messages.
+  * added getters/setters to access the underlying bytestring of a string field
+    directly.
+  * bytestring now supports more operations: substring(), prepend(), and
+    append(). the implementation of bytestring uses a binary tree structure
+    to support these operations efficiently.
+  * new method findinitializationerrors() that lists all missing required
+    fields.
+  * various code size and speed optimizations.
+
+  python
+  * added support for dynamic message creation. descriptordatabase,
+    descriptorpool, and messagefactory work like their c++ couterparts to
+    simplify descriptor construction from *descriptorprotos, and messagefactory
+    provides a message instance from a descriptor.
+  * added pickle support for protobuf messages.
+  * unknown fields are now preserved after parsing.
+  * fixed bug where custom options were not correctly populated. custom
+    options can be accessed now.
+  * added enumtypewrapper that provides better accessibility to enum types.
+  * added parsemessage(descriptor, bytes) to generate a new message instance
+    from a descriptor and a byte string.
+
+2011-05-01 version 2.4.1:
+
+  c++
+  * fixed the frendship problem for old compilers to make the library now gcc 3
+    compatible again.
+  * fixed vcprojects/extract_includes.bat to extract compiler/plugin.h.
+
+  java
+  * removed usages of jdk 1.6 only features to make the library now jdk 1.5
+    compatible again.
+  * fixed a bug about negative enum values.
+  * serialversionuid is now defined in generated messages for java serializing.
+  * fixed protoc to use java.lang.object, which makes "object" now a valid
+    message name again.
+
+  python
+  * experimental c++ implementation now requires c++ protobuf library installed.
+    see the readme.txt in the python directory for details.
+
+2011-02-02 version 2.4.0:
+
+  general
+  * the rpc (cc|java|py)_generic_services default value is now false instead of
+    true.
+  * custom options can have aggregate types. for example,
+      message myoption {
+        optional string comment = 1;
+        optional string author = 2;
+      }
+      extend google.protobuf.fieldoptions {
+        optional myoption myoption = 12345;
+      }
+    this option can now be set as follows:
+      message sometype {
+        optional int32 field = 1 [(myoption) = { comment:'x' author:'y' }];
+      }
+
+  c++
+  * various speed and code size optimizations.
+  * added a release_foo() method on string and message fields.
+  * fixed gzip_output_stream sub-stream handling.
+
+  java
+  * builders now maintain sub-builders for sub-messages. use getfoobuilder() to
+    get the builder for the sub-message "foo". this allows you to repeatedly
+    modify deeply-nested sub-messages without rebuilding them.
+  * builder.build() no longer invalidates the builder for generated messages
+    (you may continue to modify it and then build another message).
+  * code generator will generate efficient equals() and hashcode()
+    implementations if new option java_generate_equals_and_hash is enabled.
+    (otherwise, reflection-based implementations are used.)
+  * generated messages now implement serializable.
+  * fields with [deprecated=true] will be marked with @deprecated in java.
+  * added lazy conversion of utf-8 encoded strings to string objects to improve
+    performance.
+  * various optimizations.
+  * enum value can be accessed directly, instead of calling getnumber() on the
+    enum member.
+  * for each enum value, an integer constant is also generated with the suffix
+    _value.
+
+  python
+  * added an experimental  c++ implementation for python messages via a python
+    extension. implementation type is controlled by an environment variable
+    protocol_buffers_python_implementation (valid values: "cpp" and "python")
+    the default value is currently "python" but will be changed to "cpp" in
+    future release.
+  * improved performance on message instantiation significantly.
+    most of the work on message instantiation is done just once per message
+    class, instead of once per message instance.
+  * improved performance on text message parsing.
+  * allow add() to forward keyword arguments to the concrete class.
+      e.g. instead of
+        item = repeated_field.add()
+        item.foo = bar
+        item.baz = quux
+      you can do:
+        repeated_field.add(foo=bar, baz=quux)
+  * added a sort() interface to the basecontainer.
+  * added an extend() method to repeated composite fields.
+  * added utf8 debug string support.
+
+2010-01-08 version 2.3.0:
+
+  general
+  * parsers for repeated numeric fields now always accept both packed and
+    unpacked input.  the [packed=true] option only affects serializers.
+    therefore, it is possible to switch a field to packed format without
+    breaking backwards-compatibility -- as long as all parties are using
+    protobuf 2.3.0 or above, at least.
+  * the generic rpc service code generated by the c++, java, and python
+    generators can be disabled via file options:
+      option cc_generic_services = false;
+      option java_generic_services = false;
+      option py_generic_services = false;
+    this allows plugins to generate alternative code, possibly specific to some
+    particular rpc implementation.
+
+  protoc
+  * now supports a plugin system for code generators.  plugins can generate
+    code for new languages or inject additional code into the output of other
+    code generators.  plugins are just binaries which accept a protocol buffer
+    on stdin and write a protocol buffer to stdout, so they may be written in
+    any language.  see src/google/protobuf/compiler/plugin.proto.
+    **warning**:  plugins are experimental.  the interface may change in a
+    future version.
+  * if the output location ends in .zip or .jar, protoc will write its output
+    to a zip/jar archive instead of a directory.  for example:
+      protoc --java_out=myproto_srcs.jar --python_out=myproto.zip myproto.proto
+    currently the archive contents are not compressed, though this could change
+    in the future.
+  * inf, -inf, and nan can now be used as default values for float and double
+    fields.
+
+  c++
+  * various speed and code size optimizations.
+  * dynamicmessagefactory is now fully thread-safe.
+  * message::utf8debugstring() method is like debugstring() but avoids escaping
+    utf-8 bytes.
+  * compiled-in message types can now contain dynamic extensions, through use
+    of codedinputstream::setextensionregistry().
+  * now compiles shared libraries (dlls) by default on cygwin and mingw, to
+    match other platforms.  use --disable-shared to avoid this.
+
+  java
+  * parsedelimitedfrom() and mergedelimitedfrom() now detect eof and return
+    false/null instead of throwing an exception.
+  * fixed some initialization ordering bugs.
+  * fixes for openjdk 7.
+
+  python
+  * 10-25 times faster than 2.2.0, still pure-python.
+  * calling a mutating method on a sub-message always instantiates the message
+    in its parent even if the mutating method doesn't actually mutate anything
+    (e.g. parsing from an empty string).
+  * expanded descriptors a bit.
+
+2009-08-11 version 2.2.0:
+
+  c++
+  * lite mode:  the "optimize_for = lite_runtime" option causes the compiler
+    to generate code which only depends libprotobuf-lite, which is much smaller
+    than libprotobuf but lacks descriptors, reflection, and some other features.
+  * fixed bug where message.swap(message) was only implemented for
+    optimize_for_speed.  swap now properly implemented in both modes
+    (issue 91).
+  * added removelast and swapelements(index1, index2) to reflection
+    interface for repeated elements.
+  * added swap(message) to reflection interface.
+  * floating-point literals in generated code that are intended to be
+    single-precision now explicitly have 'f' suffix to avoid pedantic warnings
+    produced by some compilers.
+  * the [deprecated=true] option now causes the c++ code generator to generate
+    a gcc-style deprecation annotation (no-op on other compilers).
+  * google::protobuf::getenumdescriptor<somegeneratedenumtype>() returns the
+    enumdescriptor for that type -- useful for templates which cannot call
+    somegeneratedenumtype_descriptor().
+  * various optimizations and obscure bug fixes.
+
+  java
+  * lite mode:  the "optimize_for = lite_runtime" option causes the compiler
+    to generate code which only depends libprotobuf-lite, which is much smaller
+    than libprotobuf but lacks descriptors, reflection, and some other features.
+  * lots of style cleanups.
+
+  python
+  * fixed endianness bug with floats and doubles.
+  * text format parsing support.
+  * fix bug with parsing packed repeated fields in embedded messages.
+  * ability to initialize fields by passing keyword args to constructor.
+  * support iterators in extend and __setslice__ for containers.
+
+2009-05-13 version 2.1.0:
+
+  general
+  * repeated fields of primitive types (types other that string, group, and
+    nested messages) may now use the option [packed = true] to get a more
+    efficient encoding.  in the new encoding, the entire list is written
+    as a single byte blob using the "length-delimited" wire type.  within
+    this blob, the individual values are encoded the same way they would
+    be normally except without a tag before each value (thus, they are
+    tightly "packed").
+  * for each field, the generated code contains an integer constant assigned
+    to the field number.  for example, the .proto file:
+      message foo { optional int bar_baz = 123; }
+    would generate the following constants, all with the integer value 123:
+      c++:     foo::kbarbazfieldnumber
+      java:    foo.bar_baz_field_number
+      python:  foo.bar_baz_field_number
+    constants are also generated for extensions, with the same naming scheme.
+    these constants may be used as switch cases.
+  * updated bundled google test to version 1.3.0.  google test is now bundled
+    in its verbatim form as a nested autoconf package, so you can drop in any
+    other version of google test if needed.
+  * optimize_for = speed is now the default, by popular demand.  use
+    optimize_for = code_size if code size is more important in your app.
+  * it is now an error to define a default value for a repeated field.
+    previously, this was silently ignored (it had no effect on the generated
+    code).
+  * fields can now be marked deprecated like:
+      optional int32 foo = 1 [deprecated = true];
+    currently this does not have any actual effect, but in the future the code
+    generators may generate deprecation annotations in each language.
+  * cross-compiling should now be possible using the --with-protoc option to
+    configure.  see readme.txt for more info.
+
+  protoc
+  * --error_format=msvs option causes errors to be printed in visual studio
+    format, which should allow them to be clicked on in the build log to go
+    directly to the error location.
+  * the type name resolver will no longer resolve type names to fields.  for
+    example, this now works:
+      message foo {}
+      message bar {
+        optional int32 foo = 1;
+        optional foo baz = 2;
+      }
+    previously, the type of "baz" would resolve to "bar.foo", and you'd get
+    an error because bar.foo is a field, not a type.  now the type of "baz"
+    resolves to the message type foo.  this change is unlikely to make a
+    difference to anyone who follows the protocol buffers style guide.
+
+  c++
+  * several optimizations, including but not limited to:
+    - serialization, especially to flat arrays, is 10%-50% faster, possibly
+      more for small objects.
+    - several descriptor operations which previously required locking no longer
+      do.
+    - descriptors are now constructed lazily on first use, rather than at
+      process startup time.  this should save memory in programs which do not
+      use descriptors or reflection.
+    - unknownfieldset completely redesigned to be more efficient (especially in
+      terms of memory usage).
+    - various optimizations to reduce code size (though the serialization speed
+      optimizations increased code size).
+  * message interface has method parsefromboundedzerocopystream() which parses
+    a limited number of bytes from an input stream rather than parsing until
+    eof.
+  * gzipinputstream and gzipoutputstream support reading/writing gzip- or
+    zlib-compressed streams if zlib is available.
+    (google/protobuf/io/gzip_stream.h)
+  * descriptorpool::findallextensions() and corresponding
+    descriptordatabase::findallextensions() can be used to enumerate all
+    extensions of a given type.
+  * for each enum type foo, protoc will generate functions:
+      const string& foo_name(foo value);
+      bool foo_parse(const string& name, foo* result);
+    the former returns the name of the enum constant corresponding to the given
+    value while the latter finds the value corresponding to a name.
+  * repeatedfield and repeatedptrfield now have back-insertion iterators.
+  * string fields now have setters that take a char* and a size, in addition
+    to the existing ones that took char* or const string&.
+  * descriptorpool::allowunknowndependencies() may be used to tell
+    descriptorpool to create placeholder descriptors for unknown entities
+    referenced in a filedescriptorproto.  this can allow you to parse a .proto
+    file without having access to other .proto files that it imports, for
+    example.
+  * updated gtest to latest version.  the gtest package is now included as a
+    nested autoconf package, so it should be able to drop new versions into the
+    "gtest" subdirectory without modification.
+
+  java
+  * fixed bug where message.mergefrom(message) failed to merge extensions.
+  * message interface has new method tobuilder() which is equivalent to
+    newbuilderfortype().mergefrom(this).
+  * all enums now implement the protocolmessageenum interface.
+  * setting a field to null now throws nullpointerexception.
+  * fixed tendency for textformat's parsing to overflow the stack when
+    parsing large string values.  the underlying problem is with java's
+    regex implementation (which unfortunately uses recursive backtracking
+    rather than building an nfa).  worked around by making use of possesive
+    quantifiers.
+  * generated service classes now also generate pure interfaces.  for a service
+    foo, foo.interface is a pure interface containing all of the service's
+    defined methods.  foo.newreflectiveservice() can be called to wrap an
+    instance of this interface in a class that implements the generic
+    rpcservice interface, which provides reflection support that is usually
+    needed by rpc server implementations.
+  * rpc interfaces now support blocking operation in addition to non-blocking.
+    the protocol compiler generates separate blocking and non-blocking stubs
+    which operate against separate blocking and non-blocking rpc interfaces.
+    rpc implementations will have to implement the new interfaces in order to
+    support blocking mode.
+  * new i/o methods parsedelimitedfrom(), mergedelimitedfrom(), and
+    writedelimitedto() read and write "delemited" messages from/to a stream,
+    meaning that the message size precedes the data.  this way, you can write
+    multiple messages to a stream without having to worry about delimiting
+    them yourself.
+  * throw a more descriptive exception when build() is double-called.
+  * add a method to query whether codedinputstream is at the end of the input
+    stream.
+  * add a method to reset a codedinputstream's size counter; useful when
+    reading many messages with the same stream.
+  * equals() and hashcode() now account for unknown fields.
+
+  python
+  * added slicing support for repeated scalar fields. added slice retrieval and
+    removal of repeated composite fields.
+  * updated rpc interfaces to allow for blocking operation.  a client may
+    now pass none for a callback when making an rpc, in which case the
+    call will block until the response is received, and the response
+    object will be returned directly to the caller.  this interface change
+    cannot be used in practice until rpc implementations are updated to
+    implement it.
+  * changes to input_stream.py should make protobuf compatible with appengine.
+
+2008-11-25 version 2.0.3:
+
+  protoc
+  * enum values may now have custom options, using syntax similar to field
+    options.
+  * fixed bug where .proto files which use custom options but don't actually
+    define them (i.e. they import another .proto file defining the options)
+    had to explicitly import descriptor.proto.
+  * adjacent string literals in .proto files will now be concatenated, like in
+    c.
+  * if an input file is a windows absolute path (e.g. "c:\foo\bar.proto") and
+    the import path only contains "." (or contains "." but does not contain
+    the file), protoc incorrectly thought that the file was under ".", because
+    it thought that the path was relative (since it didn't start with a slash).
+    this has been fixed.
+
+  c++
+  * generated message classes now have a swap() method which efficiently swaps
+    the contents of two objects.
+  * all message classes now have a spaceused() method which returns an estimate
+    of the number of bytes of allocated memory currently owned by the object.
+    this is particularly useful when you are reusing a single message object
+    to improve performance but want to make sure it doesn't bloat up too large.
+  * new method message::serializeasstring() returns a string containing the
+    serialized data.  may be more convenient than calling
+    serializetostring(string*).
+  * in debug mode, log error messages when string-type fields are found to
+    contain bytes that are not valid utf-8.
+  * fixed bug where a message with multiple extension ranges couldn't parse
+    extensions.
+  * fixed bug where mergefrom(const message&) didn't do anything if invoked on
+    a message that contained no fields (but possibly contained extensions).
+  * fixed shortdebugstring() to not be o(n^2).  durr.
+  * fixed crash in textformat parsing if the first token in the input caused a
+    tokenization error.
+  * fixed obscure bugs in zero_copy_stream_impl.cc.
+  * added support for hp c++ on tru64.
+  * only build tests on "make check", not "make".
+  * fixed alignment issue that caused crashes when using dynamicmessage on
+    64-bit sparc machines.
+  * simplify template usage to work with msvc 2003.
+  * work around gcc 4.3.x x86_64 compiler bug that caused crashes on startup.
+    (this affected fedora 9 in particular.)
+  * now works on "solaris 10 using recent sun studio".
+
+  java
+  * new overload of mergefrom() which parses a slice of a byte array instead
+    of the whole thing.
+  * new method bytestring.asreadonlybytebuffer() does what it sounds like.
+  * improved performance of isinitialized() when optimizing for code size.
+
+  python
+  * corrected listfields() signature in message base class to match what
+    subclasses actually implement.
+  * some minor refactoring.
+  * don't pass self as first argument to superclass constructor (no longer
+    allowed in python 2.6).
+
+2008-09-29 version 2.0.2:
+
+  general
+  * license changed from apache 2.0 to new bsd.
+  * it is now possible to define custom "options", which are basically
+    annotations which may be placed on definitions in a .proto file.
+    for example, you might define a field option called "foo" like so:
+      import "google/protobuf/descriptor.proto"
+      extend google.protobuf.fieldoptions {
+        optional string foo = 12345;
+      }
+    then you annotate a field using the "foo" option:
+      message mymessage {
+        optional int32 some_field = 1 [(foo) = "bar"]
+      }
+    the value of this option is then visible via the message's
+    descriptor:
+      const fielddescriptor* field =
+        mymessage::descriptor()->findfieldbyname("some_field");
+      assert(field->options().getextension(foo) == "bar");
+    this feature has been implemented and tested in c++ and java.
+    other languages may or may not need to do extra work to support
+    custom options, depending on how they construct descriptors.
+
+  c++
+  * fixed some gcc warnings that only occur when using -pedantic.
+  * improved static initialization code, making ordering more
+    predictable among other things.
+  * textformat will no longer accept messages which contain multiple
+    instances of a singular field.  previously, the latter instance
+    would overwrite the former.
+  * now works on systems that don't have hash_map.
+
+  java
+  * print @override annotation in generated code where appropriate.
+
+  python
+  * strings now use the "unicode" type rather than the "str" type.
+    string fields may still be assigned ascii "str" values; they will
+    automatically be converted.
+  * adding a property to an object representing a repeated field now
+    raises an exception.  for example:
+      # no longer works (and never should have).
+      message.some_repeated_field.foo = 1
+
+  windows
+  * we now build static libraries rather than dlls by default on msvc.
+    see vsprojects/readme.txt for more information.
+
+2008-08-15 version 2.0.1:
+
+  protoc
+  * new flags --encode and --decode can be used to convert between protobuf text
+    format and binary format from the command-line.
+  * new flag --descriptor_set_out can be used to write filedescriptorprotos for
+    all parsed files directly into a single output file.  this is particularly
+    useful if you wish to parse .proto files from programs written in languages
+    other than c++: just run protoc as a background process and have it output
+    a filedescriptorlist, then parse that natively.
+  * improved error message when an enum value's name conflicts with another
+    symbol defined in the enum type's scope, e.g. if two enum types declared
+    in the same scope have values with the same name.  this is disallowed for
+    compatibility with c++, but this wasn't clear from the error.
+  * fixed absolute output paths on windows.
+  * allow trailing slashes in --proto_path mappings.
+
+  c++
+  * reflection objects are now per-class rather than per-instance.  to make this
+    possible, the reflection interface had to be changed such that all methods
+    take the message instance as a parameter.  this change improves performance
+    significantly in memory-bandwidth-limited use cases, since it makes the
+    message objects smaller.  note that source-incompatible interface changes
+    like this will not be made again after the library leaves beta.
+  * heuristically detect sub-messages when printing unknown fields.
+  * fix static initialization ordering bug that caused crashes at startup when
+    compiling on mac with static linking.
+  * fixed tokenizertest when compiling with -dndebug on linux.
+  * fixed incorrect definition of kint32min.
+  * fix bytes type setter to work with byte sequences with embedded nulls.
+  * other irrelevant tweaks.
+
+  java
+  * fixed unknownfieldset's parsing of varints larger than 32 bits.
+  * fixed textformat's parsing of "inf" and "nan".
+  * fixed textformat's parsing of comments.
+  * added info to java pom that will be required when we upload the
+    package to a maven repo.
+
+  python
+  * mergefrom(message) and copyfrom(message) are now implemented.
+  * serializetostring() raises an exception if the message is missing required
+    fields.
+  * code organization improvements.
+  * fixed doc comments for rpccontroller and rpcchannel, which had somehow been
+    swapped.
+  * fixed text_format_test on windows where floating-point exponents sometimes
+    contain extra zeros.
+  * fix python service callmethod() implementation.
+
+  other
+  * improved readmes.
+  * vim syntax highlighting improvements.
+
+2008-07-07 version 2.0.0:
+
+  * first public release.

@@ -1,0 +1,27 @@
+## http unit tests
+##
+
+import('env')
+import('env_cpp11')
+import('boostlibs')
+import('platform_libs')
+import('polyfill_libs')
+
+env = env.clone ()
+env_cpp11 = env_cpp11.clone ()
+
+boost_libs = boostlibs(['unit_test_framework','system'],env) + [platform_libs] + ['z']
+
+objs = env.object('extension_boost.o', ["extension.cpp"], libs = boost_libs)
+objs += env.object('permessage_deflate_boost.o', ["permessage_deflate.cpp"], libs = boost_libs)
+prgs = env.program('test_extension_boost', ["extension_boost.o"], libs = boost_libs)
+prgs += env.program('test_permessage_deflate_boost', ["permessage_deflate_boost.o"], libs = boost_libs)
+
+if env_cpp11.has_key('wspp_cpp11_enabled'):
+   boost_libs_cpp11 = boostlibs(['unit_test_framework'],env_cpp11) + [platform_libs] + [polyfill_libs] + ['z']
+   objs += env_cpp11.object('extension_stl.o', ["extension.cpp"], libs = boost_libs_cpp11)
+   objs += env_cpp11.object('permessage_deflate_stl.o', ["permessage_deflate.cpp"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_extension_stl', ["extension_stl.o"], libs = boost_libs_cpp11)
+   prgs += env_cpp11.program('test_permessage_deflate_stl', ["permessage_deflate_stl.o"], libs = boost_libs_cpp11)
+
+return('prgs')

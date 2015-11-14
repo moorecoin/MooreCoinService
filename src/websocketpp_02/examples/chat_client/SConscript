@@ -1,0 +1,21 @@
+## chat_client
+##
+
+import('env')
+import('boostlibs')
+import('wslib')
+import('platform_libs')
+
+localenv = env.clone ()
+
+sources = ["chat_client.cpp","chat_client_handler.cpp"]
+
+libs = [wslib, platform_libs] + boostlibs(['system',
+                                           'date_time',
+                                           'regex',
+                                           'thread',
+                                           'random'])
+
+prg = localenv.program('chat_client', sources, libs = libs)
+
+return('prg')

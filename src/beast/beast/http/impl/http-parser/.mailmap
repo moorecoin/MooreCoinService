@@ -1,0 +1,7 @@
+# update authors with:
+#   git log --all --reverse --format='%an <%ae>' | perl -ne 'begin{print "# authors ordered by first contribution.\n"} print unless $h{$_}; $h{$_} = 1' > authors
+ryan dahl <ry@tinyclouds.org>
+salman haq <salman.haq@asti-usa.com>
+simon zimmermann <simonz05@gmail.com>
+thomas le roux <thomas@november-eleven.fr> le roux thomas <thomas@procheo.fr>
+thomas le roux <thomas@november-eleven.fr> thomas le roux <thomas@procheo.fr>

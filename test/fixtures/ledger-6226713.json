@@ -1,0 +1,3866 @@
+{
+    "accepted": true,
+    "accountstate": [
+        {
+            "account": "re46uhbprbmwabuthcegvl4dqs3khm4fnp",
+            "balance": "113009977",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 4,
+            "previoustxnid": "ea44f2b2b152bd453158f822034feb6b6334dae4cf838113702c248aec7df9ff",
+            "previoustxnlgrseq": 5204961,
+            "sequence": 40,
+            "index": "02351577b355e0fee2d18335b26fe1b6cf533424df6e403198151dbd7e28d9a0"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "0.995734367933"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "ratarri5yvgbdthbt7rtpdmcmehh6zge2t",
+                "value": "40000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "b8bc6085a089c9de96f67e7d452f209285796836761db6dfe21bfae38591c610",
+            "previoustxnlgrseq": 6198923,
+            "index": "035e4a8d4ad8a2a96c555aed16c6d3d6e67026a659998341d2e2980393e3752b"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "0"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rdr83lqpsnjtj9coupxwf2pfehdeuocm4z",
+                "value": "150000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "0abe22d9a191da45f508e384693ccd6ca95926b07d99e1c894e255ce5401f6c0",
+            "previoustxnlgrseq": 6226014,
+            "index": "03a00cd40e296c363d33515a1f2867d62b7059e7d2da146993f8ab6a986efdfd"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "035e4a8d4ad8a2a96c555aed16c6d3d6e67026a659998341d2e2980393e3752b",
+                "aea8f9ebe0f130645d376d673a2a95695fc726541c6f4267dd2dd94722d7bf45"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "ratarri5yvgbdthbt7rtpdmcmehh6zge2t",
+            "rootindex": "03e1dbc015c67e43030b88ad52b966c4584a3a95e23aab5f54f686853e19cd69",
+            "index": "03e1dbc015c67e43030b88ad52b966c4584a3a95e23aab5f54f686853e19cd69"
+        },
+        {
+            "account": "rajrdnafcxefrq4pyw1yajmudoxttslefm",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1cc6e836ae4000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "1abbd4def52440e0a769f41b3972e6f17009f735f2233c8fb02c092aa7e05ee8",
+            "previoustxnlgrseq": 6200150,
+            "sequence": 165,
+            "takergets": "1000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "810"
+            },
+            "index": "043b696fc70c6d48a30808ce1dc45a8495a3f672fd6544113d2610310290315e"
+        },
+        {
+            "account": "rpvawrmykug1gdtcbjwgths4ynzhmgcg22",
+            "balance": "77045728291",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 14,
+            "previoustxnid": "5c3650ac38e269cb9cf56cb9a5c099defa4b299f5b19f4f79b04917ebabc2e3f",
+            "previoustxnlgrseq": 6212451,
+            "sequence": 124,
+            "index": "0796432f52d0ae3389f598ad996c0008b7edea3064f63a423e5884048ef9a4f8"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "b2490d6b802b0a5ca82c91eade4504e893b8a20e732bd16f6a0eb43f36191356",
+                "b7935b2a2140b443f557b32ca75ec71f64cad9cf630cac9d251e2b536980b98b"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rw7djmysoqzguzdyyulbh5hqxdnqikmdtc",
+            "rootindex": "09995e3ba3a62690922dcf73b705aaa63e192712d88ed83fcf15459e0dd6556a",
+            "index": "09995e3ba3a62690922dcf73b705aaa63e192712d88ed83fcf15459e0dd6556a"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "4113.600003268848"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rajrdnafcxefrq4pyw1yajmudoxttslefm",
+                "value": "1000000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "88af273e065d064a154c8d24fbc5891b2670f71814688b44c62b47daae717c77",
+            "previoustxnlgrseq": 6218862,
+            "index": "0aed9b95367d6366d950e58e0884dba139700217a105d60b3d2616625a0e2f06"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "0"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rnrudqqdbm117pzrob2br211hjrfkxk3tb",
+                "value": "200000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "f0abd2b67746e06426fda6df84ccd25dc17031dedee81c0c67330cb6037a553e",
+            "previoustxnlgrseq": 5935310,
+            "index": "0eff1d95b5e694b18575969052ddf03a0041064f9b396757dcc0cea286a8116d"
+        },
+        {
+            "account": "rhpoggskny7puahmugvafwpzq5jh8pizvq",
+            "balance": "1349953110",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 5,
+            "previoustxnid": "7b4ee05d265abecaaf9d7ea65bee6943571f03a77d1cd50ae01192f944c341ed",
+            "previoustxnlgrseq": 6226713,
+            "sequence": 4686,
+            "index": "0fcd092467a9098926161cce5331ea35dd2846ce7b98690b68d23b96505aa65f"
+        },
+        {
+            "account": "ru8axbjnwix3k3lctxtl8t8leftv88ibme",
+            "balance": "94999916",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 5,
+            "previoustxnid": "dfb708eb437c75fd9817a36a913b6134e0f3bd40b4593afabfcdd67a108dd322",
+            "previoustxnlgrseq": 5980811,
+            "sequence": 8,
+            "index": "1039df8a54d0620cae662e8940ba39b1e536df6b406b508dadd01e4751a147be"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "9991cd45ac741be86c45242cdd6bf73010c160bbde4fb45ba28326be4b3a89fd",
+                "b27436f9fc495ffe07d907e69b59bcfa4f5150babcbc5de9f5afcd00a9e99236"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "re46uhbprbmwabuthcegvl4dqs3khm4fnp",
+            "rootindex": "109471c1058e0c982e4a0d77152696fdcb0a9eef62a89f6b33c3db3cb3d91383",
+            "index": "109471c1058e0c982e4a0d77152696fdcb0a9eef62a89f6b33c3db3cb3d91383"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "185251.2635928249"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "r38mwd8s2gfevetqck8e34jyfwbjlub2nh",
+                "value": "1200000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "f845f45d1785ee124fd5e61d988d07608f159d8bd85f201fedc888efe722c933",
+            "previoustxnlgrseq": 6219200,
+            "index": "10fd64419c1f9295e2ff339db45ba2de5b20d8c2a0e45a3b3c46dbd3c8d41731"
+        },
+        {
+            "account": "rdr83lqpsnjtj9coupxwf2pfehdeuocm4z",
+            "balance": "15886743339",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 2,
+            "previoustxnid": "0abe22d9a191da45f508e384693ccd6ca95926b07d99e1c894e255ce5401f6c0",
+            "previoustxnlgrseq": 6226014,
+            "sequence": 28,
+            "index": "110776482f33d3a7d12305613167a5913c85240b6e889d6826ce5bbd07c36f3e"
+        },
+        {
+            "account": "rkl5uuycpsgcsve2yen5okfhgvi4j57mcm",
+            "balance": "601534331",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 3,
+            "previoustxnid": "ae307992af99a493c21530581bced85f8eb2b8f5045dc3819fc9107d13dfc58a",
+            "previoustxnlgrseq": 6100833,
+            "sequence": 43,
+            "index": "11c0ac881056e470829b22a67cd5b51a96dd9b08d0061f60f33bb7f489d6d12b"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "224fc7d1465450509ce761ce2ab02133f9e0c3de6f1d2c7f4290ff33457d1d2e",
+                "7051544fa7b0c129f741cb992c9cc769fcc3d605f57da808536255c7ab147742"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "r9rr643anesxnconkkuyfefzpxzuek5qzw",
+            "rootindex": "13540b3c58e7ab759d8f1e5900aace37e6b0378e1491ade83b1a54c48b39aa34",
+            "index": "13540b3c58e7ab759d8f1e5900aace37e6b0378e1491ade83b1a54c48b39aa34"
+        },
+        {
+            "account": "ruzjauwatwbs2whgynnwbcv8qvyyq8qlc3",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab053038d7ea4c68000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "3745cd467f5700fb7f22961237dcb6d17f8eee51163e329bd51c610822a4464a",
+            "previoustxnlgrseq": 6032550,
+            "sequence": 576,
+            "takergets": "100000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "1000000"
+            },
+            "index": "13833879b05dab4d7e68ee2e1f7f810ced76692be5b3f99f017c9056a8c65f05"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "75995.00000056954"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rpvawrmykug1gdtcbjwgths4ynzhmgcg22",
+                "value": "100000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "5c3650ac38e269cb9cf56cb9a5c099defa4b299f5b19f4f79b04917ebabc2e3f",
+            "previoustxnlgrseq": 6212451,
+            "index": "13cbe718a9792d410bfb2294e46477e7669379ed126079100c3365925aae1dbc"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "0"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "r3y3hh7abfis9stgcenk2kk2itorhffns6",
+                "value": "100000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "b6666ce556d4274d26629dd0495d056d075f271bdd273706903fded29d922535",
+            "previoustxnlgrseq": 6122449,
+            "index": "13e35a054213c6ca2f639631b6f0618a95081f8e958e99b86a625001eff9b3bc"
+        },
+        {
+            "account": "rajrdnafcxefrq4pyw1yajmudoxttslefm",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1ad2af5c0de000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "efa7f0203c541dd1022c99526910f90b52addada46cdead9436bee90a9615723",
+            "previoustxnlgrseq": 6220042,
+            "sequence": 172,
+            "takergets": "2000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "1510"
+            },
+            "index": "15483fa685f65e020c876d69bd01fa7ddb05a753c11b32c98494de114b7943ef"
+        },
+        {
+            "account": "racjpvglpanqgkb8nhkd1gtevva1uqwrks",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f03e871b540c000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "5517c1fd60f5e6f50c490541ccf9601083a5b0e1fbb481f606a55761ac978805",
+            "previoustxnlgrseq": 6043197,
+            "sequence": 92,
+            "takergets": "301000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "331100"
+            },
+            "index": "181402989b9e8da57d49e65310e69a63c1117b1b7d89e2a1e96492c033fd4bee"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "1b5dbda3a421462b06d53691b051031db9275baeef1276cedb07d0f29cb80279",
+                "352c69fe9817c9627073d02c4bb7cb65edb3a10b6293a2d5ba671df9e34d7a41"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "ra64fg3awummrxcvjddbyztlfgcwkw1fpc",
+            "rootindex": "19044f0d2e3bb0e22889b9eb4d64f1520f2e5e2019568ff96c8f74cc34d49b2b",
+            "index": "19044f0d2e3bb0e22889b9eb4d64f1520f2e5e2019568ff96c8f74cc34d49b2b"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "26.78615210063"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "ra64fg3awummrxcvjddbyztlfgcwkw1fpc",
+                "value": "1000000000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "a9b1a9c425a13cda3d1810454ed1e547cf6bf7768cf310dbdfce603b84c09eac",
+            "previoustxnlgrseq": 5751204,
+            "index": "1b5dbda3a421462b06d53691b051031db9275baeef1276cedb07d0f29cb80279"
+        },
+        {
+            "account": "rho8mvsessmvpkf4uiyf8ptjbgmcvx2uv1",
+            "balance": "7585323746",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 33,
+            "previoustxnid": "e9ecf535c8ae63ec174e546808052659126d73deecd8430c76b428d882fc5e90",
+            "previoustxnlgrseq": 6221033,
+            "sequence": 333,
+            "index": "1dcff62c0d68837a93a4e181374b712c44ef5b4c8d7233f7647335092d81d2d5"
+        },
+        {
+            "account": "rhtupdustwn7wpnznmjheffgqacpc5eop1",
+            "balance": "24162624472",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 3,
+            "previoustxnid": "b8fa447bc272fa1ace601f1943daabefa9a1928e53289ca846b8d581f7e89132",
+            "previoustxnlgrseq": 6130142,
+            "sequence": 16,
+            "index": "1e1df6292a8c762dce50cef74b517a972e99e4dd28585a84658f1d689ca9c07b"
+        },
+        {
+            "account": "r47glmfhjpjshd65j8tjswzjzm3jphcjdz",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0e23c9f634c000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "0f761aa689d05369fe503cddd3ea7b2922f00cf1c922d53598bc1e7a6fcd9124",
+            "previoustxnlgrseq": 5909039,
+            "sequence": 509,
+            "takergets": "10000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "39800"
+            },
+            "index": "1e9215e83cf75c0ac80abb3f434115e4992981544f009caf14caed53dfd79935"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "13cbe718a9792d410bfb2294e46477e7669379ed126079100c3365925aae1dbc",
+                "edffabc23b617eee0a9f3c9224ad574ad94c99e35f1bc68500b4bd08c0a4b5c1"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rpvawrmykug1gdtcbjwgths4ynzhmgcg22",
+            "rootindex": "1f1f2abe02f5669f13e576d57fdef8038328e5b9100a47908ed1c6d4278b58fa",
+            "index": "1f1f2abe02f5669f13e576d57fdef8038328e5b9100a47908ed1c6d4278b58fa"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "0.00000230386122"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rlqavkdgpjt2xpnif9qktpjn3agtqbc6u4",
+                "value": "0"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "a9c4228666022c95a1828310dafbcd24d7ab87a30a407a297a0a5a52e1056452",
+            "previoustxnlgrseq": 6217621,
+            "index": "1f5482cd6e2a5ccd6902aa599fe63a635a5263c5d2e59a3c5697d0dd5c760b32"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "891.057671702356"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rkx9rb3ygkmyysqfyvv3kxmruwj3aolblq",
+                "value": "110000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "a007b808b165acb9135263143ad3c47aed640d60842f25937bb8a428f433b51c",
+            "previoustxnlgrseq": 6110463,
+            "index": "20e49a1185cbb556d55edfd054162f5833abe8889e0b03247f79d1d8fa85f60a"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "3de8a735e9996a3db3093d85ac36dcef135777ef6ae3c67337f9d1481fa83bbf",
+                "c4cdcc5a64cf564982f17b71f2131a08ddbb6c9a4d041890bc6f763a1e49e05d",
+                "23578aaa82674d543d587f948b2dcd33277ab7bcfedc0e7132146d94ea9da78c",
+                "50c33c456676e0af7b69397cfee6612b59f9d294b2c7995023c2b8b748226f4a"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rp9tnsggjjgpnzugtazxazmswq8lgtkzyp",
+            "rootindex": "20f20388a770a3195330652190715d3b2261d4d27eb8fd13121f14a1397af8f6",
+            "index": "20f20388a770a3195330652190715d3b2261d4d27eb8fd13121f14a1397af8f6"
+        },
+        {
+            "account": "rnrudqqdbm117pzrob2br211hjrfkxk3tb",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f1550f7dca70000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "c2f8dc84909affa2c13d00fec41202104ed8d4159be0751071ae1939d3c96c30",
+            "previoustxnlgrseq": 5368259,
+            "sequence": 21,
+            "takergets": "200000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "1200"
+            },
+            "index": "2213b6153cf9370d3a9ec3597c5c9ab6bfa3343c4cca46ab13cd02c25eb7965a"
+        },
+        {
+            "account": "rwfdyl8lvbykru8nwkjnkiscrmznjcrbu6",
+            "balance": "1550465943",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 4,
+            "previoustxnid": "a48e3d468a91ffc4607e10f234e4206b99c189d4fd4025664cbf2b34a486f027",
+            "previoustxnlgrseq": 6192032,
+            "sequence": 354,
+            "index": "224906eabf0af39d9326101d293eafdc9f3c4cc0aaa432bd174465d2cbf482f4"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "470055.577692946"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "r9rr643anesxnconkkuyfefzpxzuek5qzw",
+                "value": "10000000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "7b4ee05d265abecaaf9d7ea65bee6943571f03a77d1cd50ae01192f944c341ed",
+            "previoustxnlgrseq": 6226713,
+            "index": "224fc7d1465450509ce761ce2ab02133f9e0c3de6f1d2c7f4290ff33457d1d2e"
+        },
+        {
+            "account": "rp9tnsggjjgpnzugtazxazmswq8lgtkzyp",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f082bd67afbc000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "92ec5fc57e64ac47af2ef0014a6bf44beabebffc4abecdceb85cd00799c21bab",
+            "previoustxnlgrseq": 5421886,
+            "sequence": 48,
+            "takergets": "1000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "2300"
+            },
+            "index": "23578aaa82674d543d587f948b2dcd33277ab7bcfedc0e7132146d94ea9da78c"
+        },
+        {
+            "account": "r3y3hh7abfis9stgcenk2kk2itorhffns6",
+            "balance": "78726465020",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 58,
+            "previoustxnid": "b62b6225de36d1d63a831621f0de13920dd3dfd88ed3eab4a2aefaf15ec730ef",
+            "previoustxnlgrseq": 6226618,
+            "sequence": 1569,
+            "index": "24d275236a95e6b6c8a165d93191d27dd60068268e33cda141b7a52c2f3d167c"
+        },
+        {
+            "account": "rlqavkdgpjt2xpnif9qktpjn3agtqbc6u4",
+            "balance": "846122113272",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 17,
+            "previoustxnid": "6f8b6bb82d46b92c70ad1d1fec160d974c383ccdeb0342ea97c465dda356b096",
+            "previoustxnlgrseq": 6226256,
+            "sequence": 7744,
+            "index": "25d041859903879486d4bcc81a1abab604547b2454378e16e34a9d659062d635"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "0"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rpnewut1d3tkmetq8tu6nspgeke8owj9kn",
+                "value": "10000000000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "782a10f2d7f4b9c0bcb0469a41e8c1dfbe30456f7ac7f731a420895c28c35aa2",
+            "previoustxnlgrseq": 5670964,
+            "index": "25de74d76dc8ac60511d87ea9ebe12f01240532cefda4006ffb1329e1af19ad0"
+        },
+        {
+            "account": "ruqwwjbvpbbeq6coaojkegh8hdwdwyserb",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1ae3f7244e1000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "3f20c5a8b1937151f73766db14d61537646324f4cdec5e1fcd4fe7012ea60657",
+            "previoustxnlgrseq": 6225785,
+            "sequence": 1209,
+            "takergets": "180000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "136242"
+            },
+            "index": "26b697285e56d3e89c7fa172314359bd607ab22aed7124c239443fe0dae7e162"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "d67c2598a92b64c2b4d785c9222363b55597cf4480c4a2f1930a0586ea117a5a",
+                "82f0b686571941a10925823d930fc2c1197904d250f282e0496b6a85d3d9b5b6",
+                "26b697285e56d3e89c7fa172314359bd607ab22aed7124c239443fe0dae7e162"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "ruqwwjbvpbbeq6coaojkegh8hdwdwyserb",
+            "rootindex": "26bb986f7c536283e1a39043a6265b063c2573c529411fd0e13cc3fc0fbc03b6",
+            "index": "26bb986f7c536283e1a39043a6265b063c2573c529411fd0e13cc3fc0fbc03b6"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "300c6d4fcf7ea0f7f144623370ae7670f85b0433a8dfd5fa91576426ba13b6e3",
+                "75373db421a31947a0533dccfbf70bd6d5e6b70f14d178ef6d114892156c44b5",
+                "a12a9c28748191a8c3b8b386873c26cec6e3bed4a5d3cdbc6f378fdd631b5696"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rm3x3qsr8icjtgpaf52dozhbt2bzsxjqym",
+            "rootindex": "29c277077947e4dde7da1eea5cc5066bdd083058540e4396d6bd28ab66110eef",
+            "index": "29c277077947e4dde7da1eea5cc5066bdd083058540e4396d6bd28ab66110eef"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "64.98758259435"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rm3x3qsr8icjtgpaf52dozhbt2bzsxjqym",
+                "value": "0"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "b30bdeec83796b5b205e32f75cf45e309b61f2e7a9b1c34280c62f3de9ec1629",
+            "previoustxnlgrseq": 6226493,
+            "index": "300c6d4fcf7ea0f7f144623370ae7670f85b0433a8dfd5fa91576426ba13b6e3"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "7cd8fa0b1c81934df8f5fefd39323d993a7fa0a1e6d71ce8e49071d7b53f0772",
+                "63a89da746dbcff5466f2003bdfc1cae8c0b15a240f912e780ee84c12bf13554"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rqb6b8gzn9btynhbs4wimqeoeqw8unae5",
+            "rootindex": "30b801cc7101c8dcae29d84b9161168c7d6b4f1c68a17c5aeb424a20f15a05e0",
+            "index": "30b801cc7101c8dcae29d84b9161168c7d6b4f1c68a17c5aeb424a20f15a05e0"
+        },
+        {
+            "account": "ra64fg3awummrxcvjddbyztlfgcwkw1fpc",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0e90eda3944000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "8775dc272e3868143b07152c2282729859aea363ea8bbb45e3c64297c73303cc",
+            "previoustxnlgrseq": 5351037,
+            "sequence": 96,
+            "takergets": "10000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "41000"
+            },
+            "index": "352c69fe9817c9627073d02c4bb7cb65edb3a10b6293a2d5ba671df9e34d7a41"
+        },
+        {
+            "account": "rajrdnafcxefrq4pyw1yajmudoxttslefm",
+            "balance": "29394016799",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 29,
+            "previoustxnid": "efa7f0203c541dd1022c99526910f90b52addada46cdead9436bee90a9615723",
+            "previoustxnlgrseq": 6220042,
+            "sequence": 173,
+            "index": "382c319316783f5cf97a1bf22a6b6737605abe6aebcb44a683d03028356b7761"
+        },
+        {
+            "account": "rukpukd5mekvnrpcvbebsqe1m9isamvx5m",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f05af3107a40000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "b9c87aab15d4dc0d9b759813f4e6dc5a6e811d4b28cc0f78c3477496d4ec58fa",
+            "previoustxnlgrseq": 5853405,
+            "sequence": 34,
+            "takergets": "8000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "12800"
+            },
+            "index": "3d9ff34f845cbf920116593e8c7c7492f1a1b549ff966bb5d54d6de1d8320721"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "-144.79"
+            },
+            "flags": 131072,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rp9tnsggjjgpnzugtazxazmswq8lgtkzyp",
+                "value": "30000"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "7e4b8af96bfb00dabc77a094b89e5544f6ba99072b6ebb3d3eea0aa04903ffd4",
+            "previoustxnlgrseq": 5361580,
+            "index": "3de8a735e9996a3db3093d85ac36dcef135777ef6ae3c67337f9d1481fa83bbf"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "d043b6b526f5b9fbc7c2de1bc2d59291a0c59cb7906153cf0e7dc2f6c80d00c8",
+                "e2f373ff3803ffeb2f3ebb805ae20a00a16e7a32e6f51ea49aea47d4b851aac5"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rhpoggskny7puahmugvafwpzq5jh8pizvq",
+            "rootindex": "3ecb504e9c83754902e289261e414bb82c052e022faf5638c1ae63da20adcda6",
+            "index": "3ecb504e9c83754902e289261e414bb82c052e022faf5638c1ae63da20adcda6"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "6745.37422329"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "r34iswvnkxqzvzqpb8zeuuwt7dsjqhdaju",
+                "value": "500000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "da541b97b45cf0af3cd7272cea1f1429e818f8e5b0a3d52cdcdc935e81078e11",
+            "previoustxnlgrseq": 5685594,
+            "index": "3ee0e409f23d45bf8a95bcda14afff2326877e07c7a40f10f5108298beba2a3a"
+        },
+        {
+            "account": "rpw8wvwyx1szbykjvxt9a7rtaypgula11b",
+            "balance": "99999976",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 2,
+            "previoustxnid": "ea390c127c668344377505a805d4350b795df697e351dd9153066b5cf4acf48b",
+            "previoustxnlgrseq": 5894710,
+            "sequence": 3,
+            "index": "3feaef608925363eddb9d6be283845ef2cffa6338a37ffb1f6012acf98c7366f"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "3ee0e409f23d45bf8a95bcda14afff2326877e07c7a40f10f5108298beba2a3a",
+                "428c78ce704a4a86a44345475efc3eed9344d75da2adc9962e0018b64941364b"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "r34iswvnkxqzvzqpb8zeuuwt7dsjqhdaju",
+            "rootindex": "4009722c122388ee25e20b5c5e13de8f8c565767e8d6a6a0fed82489b6bd2cec",
+            "index": "4009722c122388ee25e20b5c5e13de8f8c565767e8d6a6a0fed82489b6bd2cec"
+        },
+        {
+            "account": "r34iswvnkxqzvzqpb8zeuuwt7dsjqhdaju",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f138a388a43c000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "d086b75a27ae18a2322767b216e3cd968ff817de8b4758e0e82f469b66e9c7b5",
+            "previoustxnlgrseq": 5659522,
+            "sequence": 44,
+            "takergets": "500000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "2750"
+            },
+            "index": "428c78ce704a4a86a44345475efc3eed9344d75da2adc9962e0018b64941364b"
+        },
+        {
+            "account": "ruxxgx1dzgrezyj644jsmxxrkefdmphu75",
+            "balance": "584551302793",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 4,
+            "previoustxnid": "7b4ee05d265abecaaf9d7ea65bee6943571f03a77d1cd50ae01192f944c341ed",
+            "previoustxnlgrseq": 6226713,
+            "sequence": 333,
+            "index": "43b677ca52a4f76abf0f77700426cd9a7de1303a4b0eee2bfeba4f1b0e782c97"
+        },
+        {
+            "account": "rngnbgfn7ct4bhbhjpnopy12r66a4rmmaa",
+            "balance": "1038043423",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 8,
+            "previoustxnid": "b38382bba925b434306ded6928cc634c35eaaeabf3c9c2aa0790590541a1b663",
+            "previoustxnlgrseq": 6213507,
+            "sequence": 33,
+            "index": "43e3beb6c7d2a94422c622c8b28d1283ad78336440a8d73c3edf51058ab7f35f"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "86543c222523a608a63b9168171e66cb5df4dfd94da8c35ba111739f5908de95",
+                "13833879b05dab4d7e68ee2e1f7f810ced76692be5b3f99f017c9056a8c65f05",
+                "6f3119c29e3d423b9ccda9377ebca770ecffbc674e5f3809bc2851915293022d",
+                "91f178d98c547b5976faceab5686a3d55ea0e0071db4fb50d6e0c65dd62c0a32"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "ruzjauwatwbs2whgynnwbcv8qvyyq8qlc3",
+            "rootindex": "440ba6821e167c66ab321fed84a87a1562f7dbaaa034512e6083e3a58e0fc75c",
+            "index": "440ba6821e167c66ab321fed84a87a1562f7dbaaa034512e6083e3a58e0fc75c"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "0.0050732"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "ra284e11q432pmnokjy9wc77xn8gusqvyc",
+                "value": "100000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "34304e0706ce538adbdcf441086ff80aa8ff5485a4a5c702521e50cc5c7a3218",
+            "previoustxnlgrseq": 5468714,
+            "index": "4628c6b90fdccd23e451176b826391d115cbca5a5e30218e1d83c0d447a21538"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "13e35a054213c6ca2f639631b6f0618a95081f8e958e99b86a625001eff9b3bc",
+                "81721b602049f4a05b7d01208fbddca4183b1bee6a3540e694e3d71b81057a27",
+                "95d87b2d2138ab924a9665ddf2b4c9e8cc4749d2f9ca94741435e8e2ae99675e",
+                "b7352cf1a28793675f07c559bd330181cb6669e6a71da971eba8a16c342323e7"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "r3y3hh7abfis9stgcenk2kk2itorhffns6",
+            "rootindex": "4879d0ed72a2953f0b386714f83d243be50efbc57458c330fc8d6de236dc82aa",
+            "index": "4879d0ed72a2953f0b386714f83d243be50efbc57458c330fc8d6de236dc82aa"
+        },
+        {
+            "account": "rg1jxrtt7vqxwrt4cnasy1kcj8xztmavcy",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab054038d7ea4c68000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "094d0d774070e030d1d8ffc6e3d4c7b066fbf760d024c768836799bb17789863",
+            "previoustxnlgrseq": 5720276,
+            "sequence": 55,
+            "takergets": "1500000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "150000000"
+            },
+            "index": "489b73ac921003479a0cc9725db0249b15663a25af29ef6fe737d3bff02f0fad"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "ce0eda775d377bdcc77b6f85da9540eab77f44d4ae2b12fcc86810545b759cfa",
+                "d043b6b526f5b9fbc7c2de1bc2d59291a0c59cb7906153cf0e7dc2f6c80d00c8",
+                "ae39b7daf9c3c9e5e1c0c6a758f41d22f81b5ce2d44c128f0ecd949b56d67804"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "razqqkzjrdb4uxfpwf5nepeg3wmkmwgcxa",
+            "rootindex": "494660ea99cf2fe02c1d8235791bd46f80d84253d413a5c67af7e276e9c7404f",
+            "index": "494660ea99cf2fe02c1d8235791bd46f80d84253d413a5c67af7e276e9c7404f"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "8782f28ac73a79162357eb1fb38e0aa5f55c066f0f2acc774bbf095b21e07e64",
+                "f37871ad76189305b0ba6a652a69c4207c384da95336418a1a474d938e768bee",
+                "d770fb84e4ed16b67c925f7bad094e52d48297d6375bac0a8f30539badbac36f",
+                "f984915b0302ce07e061bc46c82574c37e49b6bf138c5af092f779f0ee75c3ff"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rhsxr2aaddyckx5izctebt4padxv6iwdxb",
+            "rootindex": "49da34d0ccdb7af9a1b5751ecdc647d6379033b0126d645cd16395e302239bae",
+            "index": "49da34d0ccdb7af9a1b5751ecdc647d6379033b0126d645cd16395e302239bae"
+        },
+        {
+            "account": "rnrudqqdbm117pzrob2br211hjrfkxk3tb",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f1550f7dca70000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "f7d79d86ccdbf624c4c7c8ab4d5b7b0a46e5aab05671dd57aa408a4da41e0241",
+            "previoustxnlgrseq": 5368283,
+            "sequence": 23,
+            "takergets": "200000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "1200"
+            },
+            "index": "4f68db8a9e94eb3cd6979892e338288200c0cc370e1ca6aa9fe685d616c5c774"
+        },
+        {
+            "account": "r47glmfhjpjshd65j8tjswzjzm3jphcjdz",
+            "balance": "82717045395",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 181,
+            "previoustxnid": "93db04343a4ff129ca0d09fdfb44d44ee131804abd5810619fdb12e0ff9662f6",
+            "previoustxnlgrseq": 6219155,
+            "sequence": 1030,
+            "index": "4fdd40c1cc2e764b83beec16908fca2cb4967de8006d116434d01f443c466a86"
+        },
+        {
+            "account": "rp9tnsggjjgpnzugtazxazmswq8lgtkzyp",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0aa87bee538000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "14f38411c2eca1dc1a2fc355a23c8e1c0867c6b2481bcdc44596cc2301bc0798",
+            "previoustxnlgrseq": 5421892,
+            "sequence": 49,
+            "takergets": "500000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "1500"
+            },
+            "index": "50c33c456676e0af7b69397cfee6612b59f9d294b2c7995023c2b8b748226f4a"
+        },
+        {
+            "account": "ra64fg3awummrxcvjddbyztlfgcwkw1fpc",
+            "balance": "27307741032",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 4,
+            "previoustxnid": "a9b1a9c425a13cda3d1810454ed1e547cf6bf7768cf310dbdfce603b84c09eac",
+            "previoustxnlgrseq": 5751204,
+            "sequence": 152,
+            "index": "50e94ee08f753e63506dace319b46f6599027f7c3b47ea0d8f46f248b1888abf"
+        },
+        {
+            "account": "ruzjauwatwbs2whgynnwbcv8qvyyq8qlc3",
+            "balance": "275259084999",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 6,
+            "previoustxnid": "dd718391b19612cdd6a458f75ac84c8e33951258b16bf8b2b09ca18daca3e17b",
+            "previoustxnlgrseq": 6184455,
+            "sequence": 582,
+            "index": "583fc610667f7ca7664e83f4c7b5c99649f9ca077b5d3e47d5b8c3be8593af61"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "a58f531945492c5270c9d364632996c152e12516ec235ee7df1133876e23bba0",
+                "eb7c3a1cd0db012ad336262ce4e47113f0e59d0f44e18359b9bd788dbd426b7e"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "ru8axbjnwix3k3lctxtl8t8leftv88ibme",
+            "rootindex": "59809c2c5b7cbed5bcf67f92880a3353ba3722518850e4afe09ae5e7b6c88dd6",
+            "index": "59809c2c5b7cbed5bcf67f92880a3353ba3722518850e4afe09ae5e7b6c88dd6"
+        },
+        {
+            "account": "rkx9rb3ygkmyysqfyvv3kxmruwj3aolblq",
+            "balance": "3871722324",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 51,
+            "previoustxnid": "091d205e27907336c1e00b56b4de3fbc6fbdfeb7f1b5a8b9e3595ae544908836",
+            "previoustxnlgrseq": 6202077,
+            "sequence": 543,
+            "index": "5b1942ba4779c6cf7156b470e3a41f54d8fffc28b7a503625263e2fa5b6648db"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "e55db8fb9bec6d16123ee8be8434f09035ac7dd2d90a3450a1f7400dfeb214b8",
+                "c46fa7924251f67dadc69d6fcb71d4ba2167be7ea0615078e466fab236d88bf6",
+                "ac579b09eb6b609dbaab2ccf4ae3f59b2d1f56072a4b0e63001621877e7adea0"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rngnbgfn7ct4bhbhjpnopy12r66a4rmmaa",
+            "rootindex": "5bba82b535f457c5c353b337d394ae664a31176b010cfe947353109d6e7a1e18",
+            "index": "5bba82b535f457c5c353b337d394ae664a31176b010cfe947353109d6e7a1e18"
+        },
+        {
+            "account": "rho8mvsessmvpkf4uiyf8ptjbgmcvx2uv1",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f071afd498d0000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "97a7ca33d1b35988fa5700db5d2ae2052cc9a9f25fae841a809ace4f3564a2f7",
+            "previoustxnlgrseq": 6218795,
+            "sequence": 326,
+            "takergets": "1000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "2000"
+            },
+            "index": "5cde229b1ddc6e52de881f7df00942c838df5ad12afd6e2780936e823cd02005"
+        },
+        {
+            "exchangerate": "5c11c37937e08000",
+            "flags": 0,
+            "indexes": ["b27436f9fc495ffe07d907e69b59bcfa4f5150babcbc5de9f5afcd00a9e99236"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "5eb7785286cb89d3b705046bfa0edb1082e1116cd9ea35885c11c37937e08000",
+            "takergetscurrency": "000000000000000000000000434e590000000000",
+            "takergetsissuer": "a034782e2dbac4fb82b601cd50421e8ef24f3a00",
+            "takerpayscurrency": "0000000000000000000000000000000000000000",
+            "takerpaysissuer": "0000000000000000000000000000000000000000",
+            "index": "5eb7785286cb89d3b705046bfa0edb1082e1116cd9ea35885c11c37937e08000"
+        },
+        {
+            "account": "r47glmfhjpjshd65j8tjswzjzm3jphcjdz",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f11b1489afb4000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "116e342ae6f42d6ac2da595512b28cbc6dee5cb7850bd88d590a2d0a48d40dd6",
+            "previoustxnlgrseq": 5909046,
+            "sequence": 510,
+            "takergets": "10000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "49800"
+            },
+            "index": "61a9a18eaf404fc100a4fbc813dba1f9c0b80ab0dc29790bf7ea3b438bda0249"
+        },
+        {
+            "account": "rqb6b8gzn9btynhbs4wimqeoeqw8unae5",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f038d7ea4c68000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "41fe05d555fff2a1f79896a7169c90e8323228cf58a46b26425adacdc6d3c57a",
+            "previoustxnlgrseq": 6129535,
+            "sequence": 529,
+            "takergets": "1000000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "1000000"
+            },
+            "index": "63a89da746dbcff5466f2003bdfc1cae8c0b15a240f912e780ee84c12bf13554"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "f59533169eac6639fb94220a952c8459ffcfcf0a1bdc80d7a5ad26df30cd5757",
+                "5cde229b1ddc6e52de881f7df00942c838df5ad12afd6e2780936e823cd02005",
+                "7fb16a6516304f196127f10acb771829f45480bc368cb8dbf89266e04e3ae1fd",
+                "6e45279f78a5092b5f92c314c1bf4d23936426e0ea724e433992654a80f5db6b"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rho8mvsessmvpkf4uiyf8ptjbgmcvx2uv1",
+            "rootindex": "63d0c4b9b699058abe346c9a0e15283cdf877b7b692f0d2251c6d0c3ac6d409a",
+            "index": "63d0c4b9b699058abe346c9a0e15283cdf877b7b692f0d2251c6d0c3ac6d409a"
+        },
+        {
+            "account": "rprzczn3gpxxmrzqmr98twvsh63xathub7",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab050038d7ea4c68000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "e244ad4f7be62435a7ac5648577d0a242dad02eba94223ec2688c835de122634",
+            "previoustxnlgrseq": 5293960,
+            "sequence": 472,
+            "takergets": "1000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "10000"
+            },
+            "index": "665c464568a1f581501591a6ed36e39b78381679aa7f4b667cdefe5e347855db"
+        },
+        {
+            "account": "rkl5uuycpsgcsve2yen5okfhgvi4j57mcm",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab054038d7ea4c68000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "ca01715f17d67dd1277b5c4c7fff63ad6f37038cbabff2108dbf2909186789ec",
+            "previoustxnlgrseq": 6099909,
+            "sequence": 41,
+            "takergets": "50000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "5000000"
+            },
+            "index": "670ecd9a17639a02c6161f3cc8638c22170e504f8e04b6619f9146b24f117262"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "25de74d76dc8ac60511d87ea9ebe12f01240532cefda4006ffb1329e1af19ad0",
+                "a946b2416e147206fc3a19504693390ddbdb976f1801ba35ad685448224c83fe"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rpnewut1d3tkmetq8tu6nspgeke8owj9kn",
+            "rootindex": "67c9145705ec06456086c57916581c5870007b0b43f98c423e81312b3fbf6dbd",
+            "index": "67c9145705ec06456086c57916581c5870007b0b43f98c423e81312b3fbf6dbd"
+        },
+        {
+            "account": "rpw8wvwyx1szbykjvxt9a7rtaypgula11b",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f03df5966ce2000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "ea390c127c668344377505a805d4350b795df697e351dd9153066b5cf4acf48b",
+            "previoustxnlgrseq": 5894710,
+            "sequence": 2,
+            "takergets": "50000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "54.5"
+            },
+            "index": "6b79a8d89c4e369336d21eca23a724a5b1e30dbe2344f66141444165fbe1270f"
+        },
+        {
+            "account": "rho8mvsessmvpkf4uiyf8ptjbgmcvx2uv1",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0aa87bee538000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "cbc6953ae1013b05b2d2db6a9f81033982c4a8464e4c279377532d1c5b844462",
+            "previoustxnlgrseq": 6218811,
+            "sequence": 328,
+            "takergets": "1000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "3000"
+            },
+            "index": "6e45279f78a5092b5f92c314c1bf4d23936426e0ea724e433992654a80f5db6b"
+        },
+        {
+            "account": "ruzjauwatwbs2whgynnwbcv8qvyyq8qlc3",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab054038d7ea4c68000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "b5fde2288d56eebbef5d6fdeeeb402a72fe5450c03ec977ba12c4620d975bbe2",
+            "previoustxnlgrseq": 6032562,
+            "sequence": 577,
+            "takergets": "1000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "100000000"
+            },
+            "index": "6f3119c29e3d423b9ccda9377ebca770ecffbc674e5f3809bc2851915293022d"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "ae39b7daf9c3c9e5e1c0c6a758f41d22f81b5ce2d44c128f0ecd949b56d67804",
+                "9991cd45ac741be86c45242cdd6bf73010c160bbde4fb45ba28326be4b3a89fd"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "recnylqd7lxpqttrg3cxgzck1c3tdkuuwb",
+            "rootindex": "70247feb2aa9a21868a05a1adb6d4d10c9e425c95827718bf66d2cc7ac37781d",
+            "index": "70247feb2aa9a21868a05a1adb6d4d10c9e425c95827718bf66d2cc7ac37781d"
+        },
+        {
+            "account": "r9rr643anesxnconkkuyfefzpxzuek5qzw",
+            "bookdirectory": "92466f5377c34c5ea957034339321e217a23fa4e27a31d475b050f939563b2b0",
+            "booknode": "0000000000000000",
+            "flags": 0,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "7b4ee05d265abecaaf9d7ea65bee6943571f03a77d1cd50ae01192f944c341ed",
+            "previoustxnlgrseq": 6226713,
+            "sequence": 41,
+            "takergets": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "34501.48722737"
+            },
+            "takerpays": "49147417635",
+            "index": "7051544fa7b0c129f741cb992c9cc769fcc3d605f57da808536255c7ab147742"
+        },
+        {
+            "exchangerate": "4d0df90aebe6d000",
+            "flags": 0,
+            "indexes": ["c5c0d61ba32c097ddce6c381e1dec33b36d6bf4c3b5cfcb1174352bc036ea121"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "7254404df6b7fbffef34dc38867a7e7de610b513997b78804d0df90aebe6d000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "000000000000000000000000434e590000000000",
+            "takerpaysissuer": "41c8be2c0a6aa17471b9f6d0af92aab1c94d5a25",
+            "index": "7254404df6b7fbffef34dc38867a7e7de610b513997b78804d0df90aebe6d000"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "33.9184096710748"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rwonczt4erkiepb3yvcviuxvsxgjupfngh",
+                "value": "1000000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "0827d5700ba798ab3b248c57c1bf59eab18b2b47958b547a8d31fed8bfc49d82",
+            "previoustxnlgrseq": 6181555,
+            "index": "7280eded4e1fa80c6e5f86d07a70f0e704b1b637f994dc3152fcc7248f5dab6b"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "1662388.253747577"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "racjpvglpanqgkb8nhkd1gtevva1uqwrks",
+                "value": "10000000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "0a8fa410e853bf178c24782ceef2490a7b7bdd02448db09f86eb5b3b75afc1bc",
+            "previoustxnlgrseq": 6217622,
+            "index": "73db3ff0d87377b82d7946fa4b1fdb1fb5dd92d3c664666ce5b49a2922761caf"
+        },
+        {
+            "account": "rg1jxrtt7vqxwrt4cnasy1kcj8xztmavcy",
+            "balance": "1914107398",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 3,
+            "previoustxnid": "c639afaf2cad8be6e8e9a471bf8ae238cf54c90f8a534590a5ae7045076a4af9",
+            "previoustxnlgrseq": 6086248,
+            "sequence": 58,
+            "index": "7466a777b614bfa3b73f4f4172c6801861aa9c362a7d9dbf63ae2f717df8ba5a"
+        },
+        {
+            "account": "rke2tx794t8aoqe25avwkwvki1igxjpbui",
+            "balance": "19499064732",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 6,
+            "previoustxnid": "7847f6b456138678879c06b11b1a040fd800f2a930a9e4ac37483cbee74fb9f6",
+            "previoustxnlgrseq": 6168034,
+            "sequence": 132,
+            "index": "74afa3df3cb2bcd7cbf402957332b0ba0b02bff35e7a4e34cb457121addeb796"
+        },
+        {
+            "account": "rm3x3qsr8icjtgpaf52dozhbt2bzsxjqym",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1999c9b1822a51",
+            "booknode": "0000000000000000",
+            "flags": 0,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "50ab41c744c8f6ddad77543bf4dbd27705749157d2640ff99bec2935f8b0e73f",
+            "previoustxnlgrseq": 6226664,
+            "sequence": 44671,
+            "takergets": "1804060700",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "1300"
+            },
+            "index": "75373db421a31947a0533dccfbf70bd6d5e6b70f14d178ef6d114892156c44b5"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "0"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rprzczn3gpxxmrzqmr98twvsh63xathub7",
+                "value": "1000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "d297c64c03b9d67f2efed22786e6d01409590f43051ccf46e13920d387a50f9b",
+            "previoustxnlgrseq": 5284307,
+            "index": "7548edd4ee8582725a58ecb6d7e70a5ded5e05a8a3bb9c2bf8062742cb9b8225"
+        },
+        {
+            "account": "r47glmfhjpjshd65j8tjswzjzm3jphcjdz",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f08cf8bff0b0000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "c55d7b4dbf25d85d7f73fcdcece50d25f1ca9ffbc0c08e2fbec87748a8417ae1",
+            "previoustxnlgrseq": 5909024,
+            "sequence": 507,
+            "takergets": "10000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "24800"
+            },
+            "index": "7a599e3da6a3e67e86ce80b10ea8b3c5c395a6e457c6802d9f51909ba15bb98b"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "20e49a1185cbb556d55edfd054162f5833abe8889e0b03247f79d1d8fa85f60a",
+                "7efcc8ee289c60db11f776d5b6dc86cde231b8d8ae8a77d75952c59693b42760"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rkx9rb3ygkmyysqfyvv3kxmruwj3aolblq",
+            "rootindex": "7b8e28304b2493fdfe5f3c8a1070008a96e13e71c1ae22ebd83e40b95a64c1d3",
+            "index": "7b8e28304b2493fdfe5f3c8a1070008a96e13e71c1ae22ebd83e40b95a64c1d3"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "606.215249584"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rqb6b8gzn9btynhbs4wimqeoeqw8unae5",
+                "value": "1000000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "c02241ec013815c87fb902ec8ca5567fb9b6347ae5556a63a5caa7691c3d4c2d",
+            "previoustxnlgrseq": 6193047,
+            "index": "7cd8fa0b1c81934df8f5fefd39323d993a7fa0a1e6d71ce8e49071d7b53f0772"
+        },
+        {
+            "account": "rhtupdustwn7wpnznmjheffgqacpc5eop1",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab0502386f01bb51c00",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "1c003624afd8951c581f68ac6dc439ec88dab4bc7c3a5cc58a6e163d23a74202",
+            "previoustxnlgrseq": 6096454,
+            "sequence": 13,
+            "takergets": "5000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "499999.5"
+            },
+            "index": "7d76318c279034b7ace1231f16bf345df8fcf6ec40e99e17091ad56b19867ae3"
+        },
+        {
+            "account": "rajrdnafcxefrq4pyw1yajmudoxttslefm",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1ff973cafa8000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "8913f8fa5c9b313bc248c04d6cafd404c9c4ca66adcb24724abcc0dbea424822",
+            "previoustxnlgrseq": 6200392,
+            "sequence": 167,
+            "takergets": "2000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "1800"
+            },
+            "index": "7d7874a4a96eb03a227365eaba10c637681bccdfcde4adb6b73b4cb7f1fd1142"
+        },
+        {
+            "account": "rhsxr2aaddyckx5izctebt4padxv6iwdxb",
+            "balance": "27987195720",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 7,
+            "previoustxnid": "474a1c0b4b28be23c7d472c14c0c33e7b774cf946528a6b97afd4e10f50a324c",
+            "previoustxnlgrseq": 6224257,
+            "sequence": 294,
+            "index": "7e7ebe111cb117c19f55cb87a1166d3235d32605ad29f5eff795d84962fe4d5a"
+        },
+        {
+            "account": "rkx9rb3ygkmyysqfyvv3kxmruwj3aolblq",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab051038d7ea4c68000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "9a55be44192acf0481cf285f9116a298ca45df0893b06c43a463a119558e7680",
+            "previoustxnlgrseq": 5885228,
+            "sequence": 359,
+            "takergets": "1000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "100000"
+            },
+            "index": "7efcc8ee289c60db11f776d5b6dc86cde231b8d8ae8a77d75952c59693b42760"
+        },
+        {
+            "account": "rho8mvsessmvpkf4uiyf8ptjbgmcvx2uv1",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f038d7ea4c68000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "e1969fbc9ca4bc4d40cbd7dbd7430d757565cd8621b79d623d216cfca9e079d6",
+            "previoustxnlgrseq": 6218803,
+            "sequence": 327,
+            "takergets": "1000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "1000"
+            },
+            "index": "7fb16a6516304f196127f10acb771829f45480bc368cb8dbf89266e04e3ae1fd"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "03a00cd40e296c363d33515a1f2867d62b7059e7d2da146993f8ab6a986efdfd",
+                "f56f107800df0ab585bc31684011dadd77c9a2516a2e47901edcb0d9a1a0d5e0"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rdr83lqpsnjtj9coupxwf2pfehdeuocm4z",
+            "rootindex": "80d03b23034f453458c82e5db54bbb6502dc5ab160730900f42ef085f435e0ef",
+            "index": "80d03b23034f453458c82e5db54bbb6502dc5ab160730900f42ef085f435e0ef"
+        },
+        {
+            "account": "r38mwd8s2gfevetqck8e34jyfwbjlub2nh",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab0572386f26f286980",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "d3711277c4631a7ebdb26174f750ac497ce4373ebec6e850191a334fcb3bd26c",
+            "previoustxnlgrseq": 6040077,
+            "sequence": 379,
+            "takergets": "10000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "9999999990000"
+            },
+            "index": "814e0164b20ade0618011d698e1e78106ac43ff000a55c3cc976f4f917262182"
+        },
+        {
+            "account": "r3y3hh7abfis9stgcenk2kk2itorhffns6",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f03e871b5391ee0",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "f150b1c3020d737eb5f85929dbfdb3d35c610b37360662d474627bcfc5a55f76",
+            "previoustxnlgrseq": 6091011,
+            "sequence": 1050,
+            "takergets": "20000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "21999.99999"
+            },
+            "index": "81721b602049f4a05b7d01208fbddca4183b1bee6a3540e694e3d71b81057a27"
+        },
+        {
+            "account": "ruqwwjbvpbbeq6coaojkegh8hdwdwyserb",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1af627c1335000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "8365072e3453f38e6782bbb98d991af5c1c3445480feb8096725f62842349ec5",
+            "previoustxnlgrseq": 6219342,
+            "sequence": 1166,
+            "takergets": "150000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "113835"
+            },
+            "index": "82f0b686571941a10925823d930fc2c1197904d250f282e0496b6a85d3d9b5b6"
+        },
+        {
+            "account": "r47glmfhjpjshd65j8tjswzjzm3jphcjdz",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0a964b516e4000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "1d1c9ca6c7432d3f6ec520de130cc1f156c3e732bf11173b6ebd9fc0865ed485",
+            "previoustxnlgrseq": 5909028,
+            "sequence": 508,
+            "takergets": "10000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "29800"
+            },
+            "index": "8476df4803ecf5db945da2fc41cec6dfb6d50b829e8577267699920525ddbd5b"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "0"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "ruzjauwatwbs2whgynnwbcv8qvyyq8qlc3",
+                "value": "500000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "8fa939835832f9d7564128e2d34cac97543edfaafe8c369a237c4692401491c4",
+            "previoustxnlgrseq": 5969968,
+            "index": "86543c222523a608a63b9168171e66cb5df4dfd94da8c35ba111739f5908de95"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "8e12e77b98570c4d5a9cbbb296a526068eb47acbb34fb81f56ee05514d687d55",
+                "489b73ac921003479a0cc9725db0249b15663a25af29ef6fe737d3bff02f0fad"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rg1jxrtt7vqxwrt4cnasy1kcj8xztmavcy",
+            "rootindex": "86c3b827468223d6f49386643d141a747bcde0c863bf46002dffe2174e0ab2f6",
+            "index": "86c3b827468223d6f49386643d141a747bcde0c863bf46002dffe2174e0ab2f6"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "8060.67354263549"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rhsxr2aaddyckx5izctebt4padxv6iwdxb",
+                "value": "1000000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "474a1c0b4b28be23c7d472c14c0c33e7b774cf946528a6b97afd4e10f50a324c",
+            "previoustxnlgrseq": 6224257,
+            "index": "8782f28ac73a79162357eb1fb38e0aa5f55c066f0f2acc774bbf095b21e07e64"
+        },
+        {
+            "account": "rnrudqqdbm117pzrob2br211hjrfkxk3tb",
+            "balance": "396135019885",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 4,
+            "previoustxnid": "f0abd2b67746e06426fda6df84ccd25dc17031dedee81c0c67330cb6037a553e",
+            "previoustxnlgrseq": 5935310,
+            "sequence": 60,
+            "index": "87ccb134d4aad9bd28308ee263f89fe0889c60097e6ab0425cd7f21a222f1b87"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "3000.000000097762"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rwfdyl8lvbykru8nwkjnkiscrmznjcrbu6",
+                "value": "10000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "ca4af74074da98195310591220ffa9536f13c7030e909366dd9553b8bc1a48a7",
+            "previoustxnlgrseq": 6060610,
+            "index": "886dfeec874f4ed640da896fee1c8d690f34d478f84c51877af326e431753f16"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "7548edd4ee8582725a58ecb6d7e70a5ded5e05a8a3bb9c2bf8062742cb9b8225",
+                "665c464568a1f581501591a6ed36e39b78381679aa7f4b667cdefe5e347855db",
+                "d70db4444e22fc2fb6087b24897f7ab63d05e60c1cffe764072d84463dd5c8a0"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rprzczn3gpxxmrzqmr98twvsh63xathub7",
+            "rootindex": "88b553f99c55e23bba1f3f8079271c38264d861fc518022f195f89c1f2ccc108",
+            "index": "88b553f99c55e23bba1f3f8079271c38264d861fc518022f195f89c1f2ccc108"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "0"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rpw8wvwyx1szbykjvxt9a7rtaypgula11b",
+                "value": "100000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "c3f1e0c57a24595344acfd2c6a633f4f375b52ff49b90dec6863693aa9aff738",
+            "previoustxnlgrseq": 5894665,
+            "index": "8bf4d2fb788ef310c2b52498dc38dca195cdafa7c608b48efba2cacc96988d3a"
+        },
+        {
+            "account": "ra284e11q432pmnokjy9wc77xn8gusqvyc",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f071afd498d0000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "1936c067ca71ed1f2c8c058817dd4cd831ca7be8e921525323b30b30218c00fb",
+            "previoustxnlgrseq": 6122985,
+            "sequence": 75,
+            "takergets": "500000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "1000"
+            },
+            "index": "8c3b2102834932190981192cc03ca723abb0bfaa1ca2881d16a6ff47c8a75159"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "0"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rg1jxrtt7vqxwrt4cnasy1kcj8xztmavcy",
+                "value": "30000000000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "ffb583afd8b424cf0de05ccf9934935356998d186bfb2fc7497bc90da7932688",
+            "previoustxnlgrseq": 5720244,
+            "index": "8e12e77b98570c4d5a9cbbb296a526068eb47acbb34fb81f56ee05514d687d55"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "886dfeec874f4ed640da896fee1c8d690f34d478f84c51877af326e431753f16",
+                "dd9129c14e714e872d366ae7386874e02ddde12fafc43cb4a1fd6782e25b55a2"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rwfdyl8lvbykru8nwkjnkiscrmznjcrbu6",
+            "rootindex": "906da47dc58f59ebdab48e91b8c0b25ddfe52877bd8196e670d5dd96149439f2",
+            "index": "906da47dc58f59ebdab48e91b8c0b25ddfe52877bd8196e670d5dd96149439f2"
+        },
+        {
+            "account": "ruzjauwatwbs2whgynnwbcv8qvyyq8qlc3",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab056038d7ea4c68000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "6cbb344cfbcc0ea1f3de27ca9f955d3065ea5a930093888e41060449bd80a74e",
+            "previoustxnlgrseq": 6032581,
+            "sequence": 578,
+            "takergets": "2000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "20000000000"
+            },
+            "index": "91f178d98c547b5976faceab5686a3d55ea0e0071db4fb50d6e0c65dd62c0a32"
+        },
+        {
+            "exchangerate": "5b050f939563b2b0",
+            "flags": 0,
+            "indexes": ["7051544fa7b0c129f741cb992c9cc769fcc3d605f57da808536255c7ab147742"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "92466f5377c34c5ea957034339321e217a23fa4e27a31d475b050f939563b2b0",
+            "takergetscurrency": "0000000000000000000000004a50590000000000",
+            "takergetsissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "takerpayscurrency": "0000000000000000000000000000000000000000",
+            "takerpaysissuer": "0000000000000000000000000000000000000000",
+            "index": "92466f5377c34c5ea957034339321e217a23fa4e27a31d475b050f939563b2b0"
+        },
+        {
+            "account": "r38mwd8s2gfevetqck8e34jyfwbjlub2nh",
+            "balance": "650402873648",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 35,
+            "previoustxnid": "129c8ec2c115ca794d443cc0ea17593fe4497a134d01543999c6df2feda44df8",
+            "previoustxnlgrseq": 6224477,
+            "sequence": 723,
+            "index": "9436b21b69807f45c69f8d45981e1d59fe3be95ecae56da6625ba661e07eb9fa"
+        },
+        {
+            "account": "rpnewut1d3tkmetq8tu6nspgeke8owj9kn",
+            "balance": "61304248589",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 2,
+            "previoustxnid": "3b245fd46c9cf5102ae8a6236de12bb0327e2f19e4bef74950cf32e522a8e9a5",
+            "previoustxnlgrseq": 6092921,
+            "sequence": 16,
+            "index": "9459567cfcf1a561761a3deeed489638aa9ec4d66ad4f730d5a59a3f4b904485"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "0"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rkl5uuycpsgcsve2yen5okfhgvi4j57mcm",
+                "value": "500000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "5b70ed270612ce2d8fccacf9516cfd81f4e51f680ca0ae8bfa03dbdd327e686e",
+            "previoustxnlgrseq": 6100690,
+            "index": "95d79d06ad590c176743857c5fa02ead10c714e21bc7c6799efcd6ecde68e148"
+        },
+        {
+            "account": "r3y3hh7abfis9stgcenk2kk2itorhffns6",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab05011c37937d8dee0",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "8f717c3f4df084d600c1d594983fd292f66fc7b29de9de2b3101c0cb5a6b2988",
+            "previoustxnlgrseq": 6123065,
+            "sequence": 1103,
+            "takergets": "20000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "999999.9999"
+            },
+            "index": "95d87b2d2138ab924a9665ddf2b4c9e8cc4749d2f9ca94741435e8e2ae99675e"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "e88430b715dfd7b2d62a24f002657558407eb429568257bbf942c1fd0e6c3cd3",
+                "3d9ff34f845cbf920116593e8c7c7492f1a1b549ff966bb5d54d6de1d8320721",
+                "a967c6187eca7bcc94bfd904a52284c9c331400ff0448b449686f9dfcdc5c5be"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rukpukd5mekvnrpcvbebsqe1m9isamvx5m",
+            "rootindex": "996e9baa2da36d592be2fe131e30cfef998475f7c657a55477333fb0e9b75132",
+            "index": "996e9baa2da36d592be2fe131e30cfef998475f7c657a55477333fb0e9b75132"
+        },
+        {
+            "balance": {
+                "currency": "cny",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "260.5529101001182"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "cny",
+                "issuer": "recnylqd7lxpqttrg3cxgzck1c3tdkuuwb",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "cny",
+                "issuer": "re46uhbprbmwabuthcegvl4dqs3khm4fnp",
+                "value": "50000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "ea44f2b2b152bd453158f822034feb6b6334dae4cf838113702c248aec7df9ff",
+            "previoustxnlgrseq": 5204961,
+            "index": "9991cd45ac741be86c45242cdd6bf73010c160bbde4fb45ba28326be4b3a89fd"
+        },
+        {
+            "account": "rwonczt4erkiepb3yvcviuxvsxgjupfngh",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f04cbd15e726000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "45c6552573fb7fc8aa0d83f9b13becf82e1ab9fc45c0f45c74efdb2ad26687c4",
+            "previoustxnlgrseq": 6020760,
+            "sequence": 16,
+            "takergets": "4000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "5400"
+            },
+            "index": "9f9dabe91a4bdee0b743753a30207d4d3ae4bd5ca94201a04062079c3f42fea4"
+        },
+        {
+            "account": "rm3x3qsr8icjtgpaf52dozhbt2bzsxjqym",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1a2de143bfdd2b",
+            "booknode": "0000000000000000",
+            "flags": 0,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "e535a11ddc4cd6516d5c336993175c715c96dcef4a923d710715b7679b76d94a",
+            "previoustxnlgrseq": 6226513,
+            "sequence": 44627,
+            "takergets": "1764196200",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "1300"
+            },
+            "index": "a12a9c28748191a8c3b8b386873c26cec6e3bed4a5d3cdbc6f378fdd631b5696"
+        },
+        {
+            "account": "rajrdnafcxefrq4pyw1yajmudoxttslefm",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1e8da789118000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "ed4be68bec02efca2093c963f39c1b9e10dbe0fc8525998e0a5de60a0b9bfc5b",
+            "previoustxnlgrseq": 6200156,
+            "sequence": 166,
+            "takergets": "1000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "860"
+            },
+            "index": "a20b9c6b254c8ad6c301f21ad0e98a523b0f394f45cb498205c11ff90fc05824"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "6.27500000000001"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "ru8axbjnwix3k3lctxtl8t8leftv88ibme",
+                "value": "0"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "5ea36e5e0bbcfdcd27c5c6b637d759638654412e0e14d5925adc0a5246d5b9e8",
+            "previoustxnlgrseq": 5871532,
+            "index": "a58f531945492c5270c9d364632996c152e12516ec235ee7df1133876e23bba0"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "7280eded4e1fa80c6e5f86d07a70f0e704b1b637f994dc3152fcc7248f5dab6b",
+                "9f9dabe91a4bdee0b743753a30207d4d3ae4bd5ca94201a04062079c3f42fea4"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rwonczt4erkiepb3yvcviuxvsxgjupfngh",
+            "rootindex": "a5f17a6148ac6a5559261cb4076fbd7daffd140a8f216134502aa47405e2d91b",
+            "index": "a5f17a6148ac6a5559261cb4076fbd7daffd140a8f216134502aa47405e2d91b"
+        },
+        {
+            "account": "rmaz5znk73nynul4foavaxdreczckg3va6",
+            "balance": "126876546",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 1,
+            "previoustxnid": "0a4045fd93ab9f90ea70d7eb847380b77108a686bb6ecf63a31758fd235bdff3",
+            "previoustxnlgrseq": 6226211,
+            "sequence": 489,
+            "index": "a5f37c05fbed611f326e48e6f0d14c6bbac664ce14acf4fcc0e959fd60330716"
+        },
+        {
+            "account": "rlqavkdgpjt2xpnif9qktpjn3agtqbc6u4",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1ae4dff8f32000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "b8e1d67d4d32c77b7f9b06fe51491d9e359f07d752ecd0c4ff88d08d972bdb06",
+            "previoustxnlgrseq": 6224905,
+            "sequence": 7740,
+            "takergets": "2000000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "1514000"
+            },
+            "index": "a6ad2af00f8e45c44f00e7ac5f0d9619a0d91cb26959e654aada3f8095311949"
+        },
+        {
+            "account": "rkl5uuycpsgcsve2yen5okfhgvi4j57mcm",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab052071afd498d0000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "ae307992af99a493c21530581bced85f8eb2b8f5045dc3819fc9107d13dfc58a",
+            "previoustxnlgrseq": 6100833,
+            "sequence": 42,
+            "takergets": "100000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "200000"
+            },
+            "index": "a8386f14133cc2ed2a44977209f791f1537f5612af205f506f6ec9a2aebf56d1"
+        },
+        {
+            "account": "r9rr643anesxnconkkuyfefzpxzuek5qzw",
+            "balance": "929877732754",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 5,
+            "previoustxnid": "7b4ee05d265abecaaf9d7ea65bee6943571f03a77d1cd50ae01192f944c341ed",
+            "previoustxnlgrseq": 6226713,
+            "sequence": 42,
+            "index": "a88f72e46968af5c3e8017793039b56dd0d12085cc0dc8809423991772feb0c2"
+        },
+        {
+            "account": "rpnewut1d3tkmetq8tu6nspgeke8owj9kn",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f06502c0dc41000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "4fd5704c041f9517e9f96117b900024543188541148183614585f2693cfc6cb0",
+            "previoustxnlgrseq": 5691507,
+            "sequence": 15,
+            "takergets": "30000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "53310"
+            },
+            "index": "a946b2416e147206fc3a19504693390ddbdb976f1801ba35ad685448224c83fe"
+        },
+        {
+            "account": "rukpukd5mekvnrpcvbebsqe1m9isamvx5m",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f04281bda632000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "604ba63201838ed9ace56c2529d1d416163f9af32afbdfcdab1929481340746f",
+            "previoustxnlgrseq": 5913165,
+            "sequence": 45,
+            "takergets": "10000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "11700"
+            },
+            "index": "a967c6187eca7bcc94bfd904a52284c9c331400ff0448b449686f9dfcdc5c5be"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "ae15437df9b98e2db40b6c06c313adf45b9e38b700a4c3462afb61dbc5ffafb8",
+                "7d76318c279034b7ace1231f16bf345df8fcf6ec40e99e17091ad56b19867ae3"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rhtupdustwn7wpnznmjheffgqacpc5eop1",
+            "rootindex": "aa823f672b8fe1254f55411ab338b2fc7f2c812e09347ed2f27fb7f804b74654",
+            "index": "aa823f672b8fe1254f55411ab338b2fc7f2c812e09347ed2f27fb7f804b74654"
+        },
+        {
+            "account": "rngnbgfn7ct4bhbhjpnopy12r66a4rmmaa",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f22d10c4ecc8000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "86ec4c57765777a2557da123cae1c2c8be8be3fbf1893ffc1049b6c93043ffd6",
+            "previoustxnlgrseq": 5928241,
+            "sequence": 27,
+            "takergets": "150000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "1470"
+            },
+            "index": "ac579b09eb6b609dbaab2ccf4ae3f59b2d1f56072a4b0e63001621877e7adea0"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "1f5482cd6e2a5ccd6902aa599fe63a635a5263c5d2e59a3c5697d0dd5c760b32",
+                "a6ad2af00f8e45c44f00e7ac5f0d9619a0d91cb26959e654aada3f8095311949"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rlqavkdgpjt2xpnif9qktpjn3agtqbc6u4",
+            "rootindex": "acd18a96b451994a3dbfcd3744e4d796943bfe5ebd82ae2e62682608f615dc7b",
+            "index": "acd18a96b451994a3dbfcd3744e4d796943bfe5ebd82ae2e62682608f615dc7b"
+        },
+        {
+            "account": "rwonczt4erkiepb3yvcviuxvsxgjupfngh",
+            "balance": "71397725290",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 4,
+            "previoustxnid": "0827d5700ba798ab3b248c57c1bf59eab18b2b47958b547a8d31fed8bfc49d82",
+            "previoustxnlgrseq": 6181555,
+            "sequence": 30,
+            "index": "adb0eb1e453657bd55c05f487888a2bc2d71623e1887f751770648b39d271b97"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "2058.500001172999"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rhtupdustwn7wpnznmjheffgqacpc5eop1",
+                "value": "50000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "b8fa447bc272fa1ace601f1943daabefa9a1928e53289ca846b8d581f7e89132",
+            "previoustxnlgrseq": 6130142,
+            "index": "ae15437df9b98e2db40b6c06c313adf45b9e38b700a4c3462afb61dbc5ffafb8"
+        },
+        {
+            "account": "rukpukd5mekvnrpcvbebsqe1m9isamvx5m",
+            "balance": "19762621460",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 5,
+            "previoustxnid": "0ad853fc456dc4d8d807764bcb21de3ad6e94a4dd4ab8c01214075699f6509cd",
+            "previoustxnlgrseq": 6183335,
+            "sequence": 50,
+            "index": "ae17db7081b9ce22eec1e5ca080d7ec96c0683d0fe32a2c8c93e99ab9559e8f3"
+        },
+        {
+            "balance": {
+                "currency": "cny",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "-292.7422499377242"
+            },
+            "flags": 131072,
+            "highlimit": {
+                "currency": "cny",
+                "issuer": "recnylqd7lxpqttrg3cxgzck1c3tdkuuwb",
+                "value": "3012"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "cny",
+                "issuer": "razqqkzjrdb4uxfpwf5nepeg3wmkmwgcxa",
+                "value": "0"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "4240a0d061602f2dd5924243365a6cb35efdd8b2991810c609648770e9b374a4",
+            "previoustxnlgrseq": 6218734,
+            "index": "ae39b7daf9c3c9e5e1c0c6a758f41d22f81b5ce2d44c128f0ecd949b56d67804"
+        },
+        {
+            "account": "ratarri5yvgbdthbt7rtpdmcmehh6zge2t",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1bb60f053f8000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "831cf6c924f7a7e509d0d41aa2c3ee7d174b622d311d8dd4194d2bf6580014eb",
+            "previoustxnlgrseq": 6200265,
+            "sequence": 125,
+            "takergets": "9100000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "7098"
+            },
+            "index": "aea8f9ebe0f130645d376d673a2a95695fc726541c6f4267dd2dd94722d7bf45"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "176594.1099885048"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rw7djmysoqzguzdyyulbh5hqxdnqikmdtc",
+                "value": "100000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "2f99153b1e3979aab6f4c82b1e700102f65426ab9cfedb62e3b12e15a0a97e38",
+            "previoustxnlgrseq": 6226460,
+            "index": "b2490d6b802b0a5ca82c91eade4504e893b8a20e732bd16f6a0eb43f36191356"
+        },
+        {
+            "account": "re46uhbprbmwabuthcegvl4dqs3khm4fnp",
+            "bookdirectory": "5eb7785286cb89d3b705046bfa0edb1082e1116cd9ea35885c11c37937e08000",
+            "booknode": "0000000000000000",
+            "flags": 0,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "ea44f2b2b152bd453158f822034feb6b6334dae4cf838113702c248aec7df9ff",
+            "previoustxnlgrseq": 5204961,
+            "sequence": 7,
+            "takergets": {
+                "currency": "cny",
+                "issuer": "recnylqd7lxpqttrg3cxgzck1c3tdkuuwb",
+                "value": "24.65999991311782"
+            },
+            "takerpays": "1232999987",
+            "index": "b27436f9fc495ffe07d907e69b59bcfa4f5150babcbc5de9f5afcd00a9e99236"
+        },
+        {
+            "account": "ra284e11q432pmnokjy9wc77xn8gusqvyc",
+            "balance": "526898859",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 7,
+            "previoustxnid": "972b7e0b2c10896874f1669fbf87caf1d40936f6cfaebb20c7412864a36cd796",
+            "previoustxnlgrseq": 6203295,
+            "sequence": 87,
+            "index": "b62382ac9103b1b0ba4b7a27392ce0dd1aecb65415ff2cef6f7ad84bb32ed3d7"
+        },
+        {
+            "account": "r3y3hh7abfis9stgcenk2kk2itorhffns6",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f05543df724a9ea",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "c0bffbce8b8556957b6a5e2845b2c6550e201826befd765c6b397e8c151f8665",
+            "previoustxnlgrseq": 6091042,
+            "sequence": 1053,
+            "takergets": "30000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "44999.99999"
+            },
+            "index": "b7352cf1a28793675f07c559bd330181cb6669e6a71da971eba8a16c342323e7"
+        },
+        {
+            "account": "rw7djmysoqzguzdyyulbh5hqxdnqikmdtc",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f039696f3392000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "61f049742c05cc472a7857840477b826c74de61796bd0b7a235a15f9be2b0b1c",
+            "previoustxnlgrseq": 5990006,
+            "sequence": 514,
+            "takergets": "37974000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "38353.74"
+            },
+            "index": "b7935b2a2140b443f557b32ca75ec71f64cad9cf630cac9d251e2b536980b98b"
+        },
+        {
+            "exchangerate": "4e1999c9b1822a51",
+            "flags": 0,
+            "indexes": ["75373db421a31947a0533dccfbf70bd6d5e6b70f14d178ef6d114892156c44b5"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1999c9b1822a51",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1999c9b1822a51"
+        },
+        {
+            "exchangerate": "4e1a1f7606e0bc3c",
+            "flags": 0,
+            "indexes": ["f984915b0302ce07e061bc46c82574c37e49b6bf138c5af092f779f0ee75c3ff"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1a1f7606e0bc3c",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1a1f7606e0bc3c"
+        },
+        {
+            "exchangerate": "4e1a2de143bfdd2b",
+            "flags": 0,
+            "indexes": ["a12a9c28748191a8c3b8b386873c26cec6e3bed4a5d3cdbc6f378fdd631b5696"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1a2de143bfdd2b",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1a2de143bfdd2b"
+        },
+        {
+            "exchangerate": "4e1ad2af5c0de000",
+            "flags": 0,
+            "indexes": ["15483fa685f65e020c876d69bd01fa7ddb05a753c11b32c98494de114b7943ef"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1ad2af5c0de000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1ad2af5c0de000"
+        },
+        {
+            "exchangerate": "4e1ae3f7244e1000",
+            "flags": 0,
+            "indexes": ["26b697285e56d3e89c7fa172314359bd607ab22aed7124c239443fe0dae7e162"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1ae3f7244e1000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1ae3f7244e1000"
+        },
+        {
+            "exchangerate": "4e1ae4dff8f32000",
+            "flags": 0,
+            "indexes": ["a6ad2af00f8e45c44f00e7ac5f0d9619a0d91cb26959e654aada3f8095311949"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1ae4dff8f32000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1ae4dff8f32000"
+        },
+        {
+            "exchangerate": "4e1aea1c83351f08",
+            "flags": 0,
+            "indexes": ["d770fb84e4ed16b67c925f7bad094e52d48297d6375bac0a8f30539badbac36f"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1aea1c83351f08",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1aea1c83351f08"
+        },
+        {
+            "exchangerate": "4e1af627c1335000",
+            "flags": 0,
+            "indexes": ["82f0b686571941a10925823d930fc2c1197904d250f282e0496b6a85d3d9b5b6"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1af627c1335000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1af627c1335000"
+        },
+        {
+            "exchangerate": "4e1bacf6b6cce000",
+            "flags": 0,
+            "indexes": ["dfdb7e0ec2f3fdd188747cb63eae1facdd46ab4e6a2dcf97ad61e0a178656420"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1bacf6b6cce000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1bacf6b6cce000"
+        },
+        {
+            "exchangerate": "4e1bb60f053f8000",
+            "flags": 0,
+            "indexes": ["aea8f9ebe0f130645d376d673a2a95695fc726541c6f4267dd2dd94722d7bf45"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1bb60f053f8000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1bb60f053f8000"
+        },
+        {
+            "exchangerate": "4e1bf960279e0408",
+            "flags": 0,
+            "indexes": ["f37871ad76189305b0ba6a652a69c4207c384da95336418a1a474d938e768bee"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1bf960279e0408",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1bf960279e0408"
+        },
+        {
+            "exchangerate": "4e1cc6e836ae4000",
+            "flags": 0,
+            "indexes": ["043b696fc70c6d48a30808ce1dc45a8495a3f672fd6544113d2610310290315e"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1cc6e836ae4000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1cc6e836ae4000"
+        },
+        {
+            "exchangerate": "4e1e8da789118000",
+            "flags": 0,
+            "indexes": ["a20b9c6b254c8ad6c301f21ad0e98a523b0f394f45cb498205c11ff90fc05824"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1e8da789118000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1e8da789118000"
+        },
+        {
+            "exchangerate": "4e1ff973cafa8000",
+            "flags": 0,
+            "indexes": ["7d7874a4a96eb03a227365eaba10c637681bccdfcde4adb6b73b4cb7f1fd1142"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1ff973cafa8000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1ff973cafa8000"
+        },
+        {
+            "exchangerate": "4e2386f26f5cdb64",
+            "flags": 0,
+            "indexes": ["f56f107800df0ab585bc31684011dadd77c9a2516a2e47901edcb0d9a1a0d5e0"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e2386f26f5cdb64",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e2386f26f5cdb64"
+        },
+        {
+            "exchangerate": "4f038d7ea4c68000",
+            "flags": 0,
+            "indexes": [
+                "63a89da746dbcff5466f2003bdfc1cae8c0b15a240f912e780ee84c12bf13554",
+                "7fb16a6516304f196127f10acb771829f45480bc368cb8dbf89266e04e3ae1fd"
+            ],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f038d7ea4c68000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f038d7ea4c68000"
+        },
+        {
+            "exchangerate": "4f039696f3392000",
+            "flags": 0,
+            "indexes": ["b7935b2a2140b443f557b32ca75ec71f64cad9cf630cac9d251e2b536980b98b"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f039696f3392000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f039696f3392000"
+        },
+        {
+            "exchangerate": "4f03a8c7901e6000",
+            "flags": 0,
+            "indexes": ["ce398d77f49eb6b6c995539f6b6f48660660ba4c7c08ae5f633bb2a493e62c06"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f03a8c7901e6000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f03a8c7901e6000"
+        },
+        {
+            "exchangerate": "4f03df5966ce2000",
+            "flags": 0,
+            "indexes": ["6b79a8d89c4e369336d21eca23a724a5b1e30dbe2344f66141444165fbe1270f"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f03df5966ce2000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f03df5966ce2000"
+        },
+        {
+            "exchangerate": "4f03e871b5391ee0",
+            "flags": 0,
+            "indexes": ["81721b602049f4a05b7d01208fbddca4183b1bee6a3540e694e3d71b81057a27"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f03e871b5391ee0",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f03e871b5391ee0"
+        },
+        {
+            "exchangerate": "4f03e871b540c000",
+            "flags": 0,
+            "indexes": [
+                "181402989b9e8da57d49e65310e69a63c1117b1b7d89e2a1e96492c033fd4bee",
+                "d9ec3e44a4235f4b89bcb8c34bf39850a01449bbb4f70722a5e03fb71ef4ea57"
+            ],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f03e871b540c000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f03e871b540c000"
+        },
+        {
+            "exchangerate": "4f04281bda632000",
+            "flags": 0,
+            "indexes": ["a967c6187eca7bcc94bfd904a52284c9c331400ff0448b449686f9dfcdc5c5be"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f04281bda632000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f04281bda632000"
+        },
+        {
+            "exchangerate": "4f04cbd15e726000",
+            "flags": 0,
+            "indexes": ["9f9dabe91a4bdee0b743753a30207d4d3ae4bd5ca94201a04062079c3f42fea4"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f04cbd15e726000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f04cbd15e726000"
+        },
+        {
+            "exchangerate": "4f04f94ae6af8000",
+            "flags": 0,
+            "indexes": ["eb7c3a1cd0db012ad336262ce4e47113f0e59d0f44e18359b9bd788dbd426b7e"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f04f94ae6af8000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f04f94ae6af8000"
+        },
+        {
+            "exchangerate": "4f05543df724a9ea",
+            "flags": 0,
+            "indexes": ["b7352cf1a28793675f07c559bd330181cb6669e6a71da971eba8a16c342323e7"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f05543df724a9ea",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f05543df724a9ea"
+        },
+        {
+            "exchangerate": "4f05af3107a40000",
+            "flags": 0,
+            "indexes": ["3d9ff34f845cbf920116593e8c7c7492f1a1b549ff966bb5d54d6de1d8320721"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f05af3107a40000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f05af3107a40000"
+        },
+        {
+            "exchangerate": "4f0649ce3d40a000",
+            "flags": 0,
+            "indexes": ["c46fa7924251f67dadc69d6fcb71d4ba2167be7ea0615078e466fab236d88bf6"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0649ce3d40a000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0649ce3d40a000"
+        },
+        {
+            "exchangerate": "4f06502c0dc41000",
+            "flags": 0,
+            "indexes": ["a946b2416e147206fc3a19504693390ddbdb976f1801ba35ad685448224c83fe"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f06502c0dc41000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f06502c0dc41000"
+        },
+        {
+            "exchangerate": "4f071afd498d0000",
+            "flags": 0,
+            "indexes": [
+                "8c3b2102834932190981192cc03ca723abb0bfaa1ca2881d16a6ff47c8a75159",
+                "5cde229b1ddc6e52de881f7df00942c838df5ad12afd6e2780936e823cd02005"
+            ],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f071afd498d0000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f071afd498d0000"
+        },
+        {
+            "exchangerate": "4f07a25028a59c00",
+            "flags": 0,
+            "indexes": ["d70db4444e22fc2fb6087b24897f7ab63d05e60c1cffe764072d84463dd5c8a0"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f07a25028a59c00",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f07a25028a59c00"
+        },
+        {
+            "exchangerate": "4f07d0e36a818000",
+            "flags": 0,
+            "indexes": ["c4cdcc5a64cf564982f17b71f2131a08ddbb6c9a4d041890bc6f763a1e49e05d"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f07d0e36a818000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f07d0e36a818000"
+        },
+        {
+            "exchangerate": "4f082bd67afbc000",
+            "flags": 0,
+            "indexes": ["23578aaa82674d543d587f948b2dcd33277ab7bcfedc0e7132146d94ea9da78c"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f082bd67afbc000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f082bd67afbc000"
+        },
+        {
+            "exchangerate": "4f08cf8bff0b0000",
+            "flags": 0,
+            "indexes": ["7a599e3da6a3e67e86ce80b10ea8b3c5c395a6e457c6802d9f51909ba15bb98b"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f08cf8bff0b0000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f08cf8bff0b0000"
+        },
+        {
+            "exchangerate": "4f0a964b516e4000",
+            "flags": 0,
+            "indexes": ["8476df4803ecf5db945da2fc41cec6dfb6d50b829e8577267699920525ddbd5b"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0a964b516e4000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0a964b516e4000"
+        },
+        {
+            "exchangerate": "4f0aa87bee538000",
+            "flags": 0,
+            "indexes": [
+                "50c33c456676e0af7b69397cfee6612b59f9d294b2c7995023c2b8b748226f4a",
+                "6e45279f78a5092b5f92c314c1bf4d23936426e0ea724e433992654a80f5db6b"
+            ],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0aa87bee538000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0aa87bee538000"
+        },
+        {
+            "exchangerate": "4f0c5d0aa3d18000",
+            "flags": 0,
+            "indexes": ["bd619f6d141e357f21e05a20ab14f180409dfb3190f638c2f3f8358af84fbfd0"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0c5d0aa3d18000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0c5d0aa3d18000"
+        },
+        {
+            "exchangerate": "4f0e23c9f634c000",
+            "flags": 0,
+            "indexes": ["1e9215e83cf75c0ac80abb3f434115e4992981544f009caf14caed53dfd79935"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0e23c9f634c000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0e23c9f634c000"
+        },
+        {
+            "exchangerate": "4f0e90eda3944000",
+            "flags": 0,
+            "indexes": ["352c69fe9817c9627073d02c4bb7cb65edb3a10b6293a2d5ba671df9e34d7a41"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0e90eda3944000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0e90eda3944000"
+        },
+        {
+            "exchangerate": "4f11b1489afb4000",
+            "flags": 0,
+            "indexes": ["61a9a18eaf404fc100a4fbc813dba1f9c0b80ab0dc29790bf7ea3b438bda0249"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f11b1489afb4000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f11b1489afb4000"
+        },
+        {
+            "exchangerate": "4f138a388a43c000",
+            "flags": 0,
+            "indexes": ["428c78ce704a4a86a44345475efc3eed9344d75da2adc9962e0018b64941364b"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f138a388a43c000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f138a388a43c000"
+        },
+        {
+            "exchangerate": "4f1550f7dca70000",
+            "flags": 0,
+            "indexes": [
+                "2213b6153cf9370d3a9ec3597c5c9ab6bfa3343c4cca46ab13cd02c25eb7965a",
+                "4f68db8a9e94eb3cd6979892e338288200c0cc370e1ca6aa9fe685d616c5c774"
+            ],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f1550f7dca70000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f1550f7dca70000"
+        },
+        {
+            "exchangerate": "4f22d10c4ecc8000",
+            "flags": 0,
+            "indexes": ["ac579b09eb6b609dbaab2ccf4ae3f59b2d1f56072a4b0e63001621877e7adea0"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f22d10c4ecc8000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f22d10c4ecc8000"
+        },
+        {
+            "exchangerate": "50038d7ea4c68000",
+            "flags": 0,
+            "indexes": ["665c464568a1f581501591a6ed36e39b78381679aa7f4b667cdefe5e347855db"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab050038d7ea4c68000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab050038d7ea4c68000"
+        },
+        {
+            "exchangerate": "5011c37937d8dee0",
+            "flags": 0,
+            "indexes": ["95d87b2d2138ab924a9665ddf2b4c9e8cc4749d2f9ca94741435e8e2ae99675e"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab05011c37937d8dee0",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab05011c37937d8dee0"
+        },
+        {
+            "exchangerate": "502386f01bb51c00",
+            "flags": 0,
+            "indexes": ["7d76318c279034b7ace1231f16bf345df8fcf6ec40e99e17091ad56b19867ae3"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab0502386f01bb51c00",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab0502386f01bb51c00"
+        },
+        {
+            "exchangerate": "51038d7ea4c68000",
+            "flags": 0,
+            "indexes": ["7efcc8ee289c60db11f776d5b6dc86cde231b8d8ae8a77d75952c59693b42760"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab051038d7ea4c68000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab051038d7ea4c68000"
+        },
+        {
+            "exchangerate": "51071afd498d0000",
+            "flags": 0,
+            "indexes": ["edffabc23b617eee0a9f3c9224ad574ad94c99e35f1bc68500b4bd08c0a4b5c1"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab051071afd498d0000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab051071afd498d0000"
+        },
+        {
+            "exchangerate": "52071afd498d0000",
+            "flags": 0,
+            "indexes": ["a8386f14133cc2ed2a44977209f791f1537f5612af205f506f6ec9a2aebf56d1"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab052071afd498d0000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab052071afd498d0000"
+        },
+        {
+            "exchangerate": "521a4a42c3568000",
+            "flags": 0,
+            "indexes": ["eea663b7bd24612b8103830279e62392ed83f1564196331ea1d364cc1187f8e3"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab0521a4a42c3568000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab0521a4a42c3568000"
+        },
+        {
+            "exchangerate": "53038d7ea4c68000",
+            "flags": 0,
+            "indexes": [
+                "13833879b05dab4d7e68ee2e1f7f810ced76692be5b3f99f017c9056a8c65f05",
+                "dd9129c14e714e872d366ae7386874e02ddde12fafc43cb4a1fd6782e25b55a2"
+            ],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab053038d7ea4c68000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab053038d7ea4c68000"
+        },
+        {
+            "exchangerate": "53071afd498d0000",
+            "flags": 0,
+            "indexes": ["eac21abb5ee92f88c9fe210f5df00b96f1eda1892dbdd98eef64ff12130d73b8"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab053071afd498d0000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab053071afd498d0000"
+        },
+        {
+            "exchangerate": "54038d7ea4c68000",
+            "flags": 0,
+            "indexes": [
+                "489b73ac921003479a0cc9725db0249b15663a25af29ef6fe737d3bff02f0fad",
+                "6f3119c29e3d423b9ccda9377ebca770ecffbc674e5f3809bc2851915293022d",
+                "670ecd9a17639a02c6161f3cc8638c22170e504f8e04b6619f9146b24f117262"
+            ],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab054038d7ea4c68000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab054038d7ea4c68000"
+        },
+        {
+            "exchangerate": "56038d7ea4c68000",
+            "flags": 0,
+            "indexes": ["91f178d98c547b5976faceab5686a3d55ea0e0071db4fb50d6e0c65dd62c0a32"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab056038d7ea4c68000",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab056038d7ea4c68000"
+        },
+        {
+            "exchangerate": "572386f26f286980",
+            "flags": 0,
+            "indexes": ["814e0164b20ade0618011d698e1e78106ac43ff000a55c3cc976f4f917262182"],
+            "ledgerentrytype": "directorynode",
+            "rootindex": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab0572386f26f286980",
+            "takergetscurrency": "0000000000000000000000000000000000000000",
+            "takergetsissuer": "0000000000000000000000000000000000000000",
+            "takerpayscurrency": "0000000000000000000000004a50590000000000",
+            "takerpaysissuer": "e5c92828261dbaac933b6309c6f5c72af020afd4",
+            "index": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab0572386f26f286980"
+        },
+        {
+            "account": "rqb6b8gzn9btynhbs4wimqeoeqw8unae5",
+            "balance": "52926947549",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 9,
+            "previoustxnid": "b05ccfea9993a64e63bec6e091a4f944219675cc83680b4e0f62a80ba819d4f1",
+            "previoustxnlgrseq": 6220958,
+            "sequence": 540,
+            "index": "bd3c577b91b0a927b7e6509ecc4f00b828c6690071d7e505db6e67be2508a4b1"
+        },
+        {
+            "account": "r47glmfhjpjshd65j8tjswzjzm3jphcjdz",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0c5d0aa3d18000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "68d48b5e0c1a96e531460e2937a1fcd224d69bb264f8113a7637765369e669ce",
+            "previoustxnlgrseq": 5964819,
+            "sequence": 609,
+            "takergets": "10000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "34800"
+            },
+            "index": "bd619f6d141e357f21e05a20ab14f180409dfb3190f638c2f3f8358af84fbfd0"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "2.8599251461938"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rke2tx794t8aoqe25avwkwvki1igxjpbui",
+                "value": "100000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "04b49faed92c8e181d83601dee3e3b2075116dee040c3ecc366f210d275e8920",
+            "previoustxnlgrseq": 6114147,
+            "index": "bda23c732cce9c0febc31d6f60ce781d949d7e67264af02e59e0752160cba6b5"
+        },
+        {
+            "account": "rngnbgfn7ct4bhbhjpnopy12r66a4rmmaa",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f0649ce3d40a000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "573ab62b77c2888339b4a10c1af175420e05131c7dc18378b4ad2b56e2a37ed5",
+            "previoustxnlgrseq": 5928315,
+            "sequence": 28,
+            "takergets": "395000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "699.15"
+            },
+            "index": "c46fa7924251f67dadc69d6fcb71d4ba2167be7ea0615078e466fab236d88bf6"
+        },
+        {
+            "account": "rp9tnsggjjgpnzugtazxazmswq8lgtkzyp",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f07d0e36a818000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "f03f5ba8c7a1914fee3c778bc3651d35106dbb7180103afb9ff5bce758d8e4be",
+            "previoustxnlgrseq": 5421881,
+            "sequence": 47,
+            "takergets": "1000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "2200"
+            },
+            "index": "c4cdcc5a64cf564982f17b71f2131a08ddbb6c9a4d041890bc6f763a1e49e05d"
+        },
+        {
+            "account": "r34iswvnkxqzvzqpb8zeuuwt7dsjqhdaju",
+            "balance": "5465847287",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 13,
+            "previoustxnid": "9c77c302968777182ff7062474400d0b648770af6632a840a5cc02bf9c24f87e",
+            "previoustxnlgrseq": 6079073,
+            "sequence": 51,
+            "index": "c4d0b9e929b282f0ec5d95317a322fd73b69d81c37870f3163d18edde60b208b"
+        },
+        {
+            "account": "ruxxgx1dzgrezyj644jsmxxrkefdmphu75",
+            "bookdirectory": "7254404df6b7fbffef34dc38867a7e7de610b513997b78804d0df90aebe6d000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "7b4ee05d265abecaaf9d7ea65bee6943571f03a77d1cd50ae01192f944c341ed",
+            "previoustxnlgrseq": 6226713,
+            "sequence": 332,
+            "takergets": "80085788757",
+            "takerpays": {
+                "currency": "cny",
+                "issuer": "razqqkzjrdb4uxfpwf5nepeg3wmkmwgcxa",
+                "value": "3149.774071895922"
+            },
+            "index": "c5c0d61ba32c097ddce6c381e1dec33b36d6bf4c3b5cfcb1174352bc036ea121"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "73db3ff0d87377b82d7946fa4b1fdb1fb5dd92d3c664666ce5b49a2922761caf",
+                "181402989b9e8da57d49e65310e69a63c1117b1b7d89e2a1e96492c033fd4bee"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "racjpvglpanqgkb8nhkd1gtevva1uqwrks",
+            "rootindex": "cdf3b24eaeb907165b3146f2dc449447aa055433bbde5bf46d1d40186aeec67e",
+            "index": "cdf3b24eaeb907165b3146f2dc449447aa055433bbde5bf46d1d40186aeec67e"
+        },
+        {
+            "balance": {
+                "currency": "cny",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "-8683.393920324141"
+            },
+            "flags": 2228224,
+            "highlimit": {
+                "currency": "cny",
+                "issuer": "ruxxgx1dzgrezyj644jsmxxrkefdmphu75",
+                "value": "50000"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "cny",
+                "issuer": "razqqkzjrdb4uxfpwf5nepeg3wmkmwgcxa",
+                "value": "0"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "7b4ee05d265abecaaf9d7ea65bee6943571f03a77d1cd50ae01192f944c341ed",
+            "previoustxnlgrseq": 6226713,
+            "index": "ce0eda775d377bdcc77b6f85da9540eab77f44d4ae2b12fcc86810545b759cfa"
+        },
+        {
+            "account": "r38mwd8s2gfevetqck8e34jyfwbjlub2nh",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f03a8c7901e6000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "923ff7190e32d147b68cab603a4ae0d7243a52ac8d67fd2fffa894dcea0c9c13",
+            "previoustxnlgrseq": 5981342,
+            "sequence": 222,
+            "takergets": "1000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "1030"
+            },
+            "index": "ce398d77f49eb6b6c995539f6b6f48660660ba4c7c08ae5f633bb2a493e62c06"
+        },
+        {
+            "account": "ratarri5yvgbdthbt7rtpdmcmehh6zge2t",
+            "balance": "9197315729",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 2,
+            "previoustxnid": "831cf6c924f7a7e509d0d41aa2c3ee7d174b622d311d8dd4194d2bf6580014eb",
+            "previoustxnlgrseq": 6200265,
+            "sequence": 126,
+            "index": "ce3daf0dbcefc32ac06f28027af9f93e47bac333e575ec97e11f2ff6b6e505d2"
+        },
+        {
+            "balance": {
+                "currency": "cny",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "-31.2365570758485"
+            },
+            "flags": 2228224,
+            "highlimit": {
+                "currency": "cny",
+                "issuer": "rhpoggskny7puahmugvafwpzq5jh8pizvq",
+                "value": "200000"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "cny",
+                "issuer": "razqqkzjrdb4uxfpwf5nepeg3wmkmwgcxa",
+                "value": "0"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "7b4ee05d265abecaaf9d7ea65bee6943571f03a77d1cd50ae01192f944c341ed",
+            "previoustxnlgrseq": 6226713,
+            "index": "d043b6b526f5b9fbc7c2de1bc2d59291a0c59cb7906153cf0e7dc2f6c80d00c8"
+        },
+        {
+            "account": "rprzczn3gpxxmrzqmr98twvsh63xathub7",
+            "balance": "1741748232",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 24,
+            "previoustxnid": "ae90b6ed7c1ca8446ff474e2e1845407484d5295d02058c6d83eb605e52e1bb9",
+            "previoustxnlgrseq": 6095561,
+            "sequence": 670,
+            "index": "d2b91c0e88f8199a8de78c51a69c5f619c2a5c470abea9db622093348f65ddf7"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "0aed9b95367d6366d950e58e0884dba139700217a105d60b3d2616625a0e2f06",
+                "dfdb7e0ec2f3fdd188747cb63eae1facdd46ab4e6a2dcf97ad61e0a178656420",
+                "7d7874a4a96eb03a227365eaba10c637681bccdfcde4adb6b73b4cb7f1fd1142",
+                "043b696fc70c6d48a30808ce1dc45a8495a3f672fd6544113d2610310290315e",
+                "a20b9c6b254c8ad6c301f21ad0e98a523b0f394f45cb498205c11ff90fc05824",
+                "15483fa685f65e020c876d69bd01fa7ddb05a753c11b32c98494de114b7943ef"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rajrdnafcxefrq4pyw1yajmudoxttslefm",
+            "rootindex": "d5ba82a7e30da85bf2f00dbdf078b506666c0b3adff546077a84707544e22010",
+            "index": "d5ba82a7e30da85bf2f00dbdf078b506666c0b3adff546077a84707544e22010"
+        },
+        {
+            "account": "rw7djmysoqzguzdyyulbh5hqxdnqikmdtc",
+            "balance": "118983668175",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 11,
+            "previoustxnid": "c6a3d0bb56c1e94874930a49136caeffb4d768333602e365bebab13fa940c752",
+            "previoustxnlgrseq": 6226097,
+            "sequence": 614,
+            "index": "d5cf81eb5a80d4378161b7525b5caf9c74535fe91fadb3504fe9ea79b706c3d2"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "246635.0669598848"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "ruqwwjbvpbbeq6coaojkegh8hdwdwyserb",
+                "value": "0"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "eb3296b9d1451629f17cc0c0b2c3a8c3f0a68b981019b7a3aa5bf11fdac79e5a",
+            "previoustxnlgrseq": 6225565,
+            "index": "d67c2598a92b64c2b4d785c9222363b55597cf4480c4a2f1930a0586ea117a5a"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "10fd64419c1f9295e2ff339db45ba2de5b20d8c2a0e45a3b3c46dbd3c8d41731",
+                "814e0164b20ade0618011d698e1e78106ac43ff000a55c3cc976f4f917262182",
+                "ce398d77f49eb6b6c995539f6b6f48660660ba4c7c08ae5f633bb2a493e62c06"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "r38mwd8s2gfevetqck8e34jyfwbjlub2nh",
+            "rootindex": "d6a5db367f231f2a707a5886718c55cab8be2808b94af19b6e9049185e00d073",
+            "index": "d6a5db367f231f2a707a5886718c55cab8be2808b94af19b6e9049185e00d073"
+        },
+        {
+            "account": "rhqtzhk6nwabtj1srdgakaju6kegpdwily",
+            "balance": "2000666792",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 2,
+            "previoustxnid": "f4b1b237715c92be7de9d7fd1736a88d571fcef632f8196dfe05a9b6aafbd2a2",
+            "previoustxnlgrseq": 6088179,
+            "sequence": 3,
+            "index": "d70a3113a9f3264f0d3fab748be86f3bcf16e28bcd2ca79ef32e2aeb4d2f9c7c"
+        },
+        {
+            "account": "rprzczn3gpxxmrzqmr98twvsh63xathub7",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f07a25028a59c00",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "fdd813bbc931b030aa4293a527f154f464b569c0589650d26ede2d278f69d820",
+            "previoustxnlgrseq": 5362941,
+            "sequence": 477,
+            "takergets": "100000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "214.879"
+            },
+            "index": "d70db4444e22fc2fb6087b24897f7ab63d05e60c1cffe764072d84463dd5c8a0"
+        },
+        {
+            "account": "rhsxr2aaddyckx5izctebt4padxv6iwdxb",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1aea1c83351f08",
+            "booknode": "0000000000000000",
+            "flags": 0,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "da4356b2dde054f0653f4240b73babb28ce49135023308670e1addd07582792e",
+            "previoustxnlgrseq": 6221082,
+            "sequence": 291,
+            "takergets": "13200000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "10000"
+            },
+            "index": "d770fb84e4ed16b67c925f7bad094e52d48297d6375bac0a8f30539badbac36f"
+        },
+        {
+            "account": "razqqkzjrdb4uxfpwf5nepeg3wmkmwgcxa",
+            "balance": "3329219182",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 0,
+            "previoustxnid": "ef8860a3032ae9ef7cc9a973b6872cebe1596391f7d69385212ab234629cf420",
+            "previoustxnlgrseq": 6226290,
+            "sequence": 333,
+            "index": "d9a4529146ab12abd244ccc0ed0523cf5c6ba97043999ab27c1d4eb567929069"
+        },
+        {
+            "account": "rke2tx794t8aoqe25avwkwvki1igxjpbui",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f03e871b540c000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "3dd6735c464ccf483dba50183005dd1a49c5dae068c5dc022caa40ef58247bf4",
+            "previoustxnlgrseq": 6132338,
+            "sequence": 131,
+            "takergets": "19000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "20900"
+            },
+            "index": "d9ec3e44a4235f4b89bcb8c34bf39850a01449bbb4f70722a5e03fb71ef4ea57"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "7cd8fa0b1c81934df8f5fefd39323d993a7fa0a1e6d71ce8e49071d7b53f0772",
+                "73db3ff0d87377b82d7946fa4b1fdb1fb5dd92d3c664666ce5b49a2922761caf",
+                "20e49a1185cbb556d55edfd054162f5833abe8889e0b03247f79d1d8fa85f60a",
+                "ae15437df9b98e2db40b6c06c313adf45b9e38b700a4c3462afb61dbc5ffafb8",
+                "b2490d6b802b0a5ca82c91eade4504e893b8a20e732bd16f6a0eb43f36191356",
+                "7548edd4ee8582725a58ecb6d7e70a5ded5e05a8a3bb9c2bf8062742cb9b8225",
+                "13e35a054213c6ca2f639631b6f0618a95081f8e958e99b86a625001eff9b3bc",
+                "3de8a735e9996a3db3093d85ac36dcef135777ef6ae3c67337f9d1481fa83bbf",
+                "e2f373ff3803ffeb2f3ebb805ae20a00a16e7a32e6f51ea49aea47d4b851aac5",
+                "86543c222523a608a63b9168171e66cb5df4dfd94da8c35ba111739f5908de95",
+                "1b5dbda3a421462b06d53691b051031db9275baeef1276cedb07d0f29cb80279",
+                "3ee0e409f23d45bf8a95bcda14afff2326877e07c7a40f10f5108298beba2a3a",
+                "e55db8fb9bec6d16123ee8be8434f09035ac7dd2d90a3450a1f7400dfeb214b8",
+                "03a00cd40e296c363d33515a1f2867d62b7059e7d2da146993f8ab6a986efdfd",
+                "4628c6b90fdccd23e451176b826391d115cbca5a5e30218e1d83c0d447a21538",
+                "0eff1d95b5e694b18575969052ddf03a0041064f9b396757dcc0cea286a8116d",
+                "13cbe718a9792d410bfb2294e46477e7669379ed126079100c3365925aae1dbc",
+                "035e4a8d4ad8a2a96c555aed16c6d3d6e67026a659998341d2e2980393e3752b",
+                "f3ab294f8d27e388a172458cbdbc9d00fb5909cf20b35e97753ce8e927ae5b6b",
+                "e88430b715dfd7b2d62a24f002657558407eb429568257bbf942c1fd0e6c3cd3",
+                "1f5482cd6e2a5ccd6902aa599fe63a635a5263c5d2e59a3c5697d0dd5c760b32",
+                "d67c2598a92b64c2b4d785c9222363b55597cf4480c4a2f1930a0586ea117a5a",
+                "300c6d4fcf7ea0f7f144623370ae7670f85b0433a8dfd5fa91576426ba13b6e3",
+                "224fc7d1465450509ce761ce2ab02133f9e0c3de6f1d2c7f4290ff33457d1d2e",
+                "f59533169eac6639fb94220a952c8459ffcfcf0a1bdc80d7a5ad26df30cd5757",
+                "a58f531945492c5270c9d364632996c152e12516ec235ee7df1133876e23bba0",
+                "bda23c732cce9c0febc31d6f60ce781d949d7e67264af02e59e0752160cba6b5",
+                "10fd64419c1f9295e2ff339db45ba2de5b20d8c2a0e45a3b3c46dbd3c8d41731",
+                "25de74d76dc8ac60511d87ea9ebe12f01240532cefda4006ffb1329e1af19ad0",
+                "0aed9b95367d6366d950e58e0884dba139700217a105d60b3d2616625a0e2f06",
+                "e315f11e126e041ec24aea0ebc62dca4b39ac7f1a08854843c0e0f7bfe2fe086",
+                "95d79d06ad590c176743857c5fa02ead10c714e21bc7c6799efcd6ecde68e148",
+                "8bf4d2fb788ef310c2b52498dc38dca195cdafa7c608b48efba2cacc96988d3a",
+                "8782f28ac73a79162357eb1fb38e0aa5f55c066f0f2acc774bbf095b21e07e64",
+                "886dfeec874f4ed640da896fee1c8d690f34d478f84c51877af326e431753f16",
+                "7280eded4e1fa80c6e5f86d07a70f0e704b1b637f994dc3152fcc7248f5dab6b",
+                "8e12e77b98570c4d5a9cbbb296a526068eb47acbb34fb81f56ee05514d687d55"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rmaz5znk73nynul4foavaxdreczckg3va6",
+            "rootindex": "dd8763f37822a3129919da194dc31d9a9fa5bea547e233b32e4573f0e60d46d3",
+            "index": "dd8763f37822a3129919da194dc31d9a9fa5bea547e233b32e4573f0e60d46d3"
+        },
+        {
+            "account": "rwfdyl8lvbykru8nwkjnkiscrmznjcrbu6",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab053038d7ea4c68000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "472f2591748f8bfbd8f2185a2875ab67c07f21ec5a7114a87d3f5fadde61b3c8",
+            "previoustxnlgrseq": 6060770,
+            "sequence": 339,
+            "takergets": "12000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "120000000"
+            },
+            "index": "dd9129c14e714e872d366ae7386874e02ddde12fafc43cb4a1fd6782e25b55a2"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "ce0eda775d377bdcc77b6f85da9540eab77f44d4ae2b12fcc86810545b759cfa",
+                "c5c0d61ba32c097ddce6c381e1dec33b36d6bf4c3b5cfcb1174352bc036ea121"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "ruxxgx1dzgrezyj644jsmxxrkefdmphu75",
+            "rootindex": "df601bd8ac2be88a2856b08ff830bdbfa24ba810c3e7e0421bab018f1f202492",
+            "index": "df601bd8ac2be88a2856b08ff830bdbfa24ba810c3e7e0421bab018f1f202492"
+        },
+        {
+            "account": "rajrdnafcxefrq4pyw1yajmudoxttslefm",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1bacf6b6cce000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "591aaf22552d9c6f18551dfad48cfcd5999aca997109f60c9d8eb4b09969d73a",
+            "previoustxnlgrseq": 6217765,
+            "sequence": 169,
+            "takergets": "3000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "2337"
+            },
+            "index": "dfdb7e0ec2f3fdd188747cb63eae1facdd46ab4e6a2dcf97ad61e0a178656420"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "729117.2080619572"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rhpoggskny7puahmugvafwpzq5jh8pizvq",
+                "value": "1000000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "7b4ee05d265abecaaf9d7ea65bee6943571f03a77d1cd50ae01192f944c341ed",
+            "previoustxnlgrseq": 6226713,
+            "index": "e2f373ff3803ffeb2f3ebb805ae20a00a16e7a32e6f51ea49aea47d4b851aac5"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "f3ab294f8d27e388a172458cbdbc9d00fb5909cf20b35e97753ce8e927ae5b6b",
+                "bd619f6d141e357f21e05a20ab14f180409dfb3190f638c2f3f8358af84fbfd0",
+                "7a599e3da6a3e67e86ce80b10ea8b3c5c395a6e457c6802d9f51909ba15bb98b",
+                "8476df4803ecf5db945da2fc41cec6dfb6d50b829e8577267699920525ddbd5b",
+                "1e9215e83cf75c0ac80abb3f434115e4992981544f009caf14caed53dfd79935",
+                "61a9a18eaf404fc100a4fbc813dba1f9c0b80ab0dc29790bf7ea3b438bda0249"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "r47glmfhjpjshd65j8tjswzjzm3jphcjdz",
+            "rootindex": "e2f685d85f7147c15fe3cf2fcd1e98b33321a81dad65f9b40cf78f0c50ecf9c2",
+            "index": "e2f685d85f7147c15fe3cf2fcd1e98b33321a81dad65f9b40cf78f0c50ecf9c2"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "0"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rhqtzhk6nwabtj1srdgakaju6kegpdwily",
+                "value": "100000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "8437c82132958ba0f5cabc2660f6ede3a17d346ba2c2c66c4a2a63940b475028",
+            "previoustxnlgrseq": 6037169,
+            "index": "e315f11e126e041ec24aea0ebc62dca4b39ac7f1a08854843c0e0f7bfe2fe086"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "734.8351996792"
+            },
+            "flags": 65536,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rngnbgfn7ct4bhbhjpnopy12r66a4rmmaa",
+                "value": "0"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "b38382bba925b434306ded6928cc634c35eaaeabf3c9c2aa0790590541a1b663",
+            "previoustxnlgrseq": 6213507,
+            "index": "e55db8fb9bec6d16123ee8be8434f09035ac7dd2d90a3450a1f7400dfeb214b8"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "0"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rukpukd5mekvnrpcvbebsqe1m9isamvx5m",
+                "value": "30000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "ee7e64699b17ea029e1a97e01e4d999e11f30508e3c76692bc96a385489731fb",
+            "previoustxnlgrseq": 5912520,
+            "index": "e88430b715dfd7b2d62a24f002657558407eb429568257bbf942c1fd0e6c3cd3"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "95d79d06ad590c176743857c5fa02ead10c714e21bc7c6799efcd6ecde68e148",
+                "670ecd9a17639a02c6161f3cc8638c22170e504f8e04b6619f9146b24f117262",
+                "a8386f14133cc2ed2a44977209f791f1537f5612af205f506f6ec9a2aebf56d1"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rkl5uuycpsgcsve2yen5okfhgvi4j57mcm",
+            "rootindex": "e8ec275f1868780d9ab340abc92ad04f2c32a28ad4844adc5a922f32b7cd5711",
+            "index": "e8ec275f1868780d9ab340abc92ad04f2c32a28ad4844adc5a922f32b7cd5711"
+        },
+        {
+            "account": "rnrudqqdbm117pzrob2br211hjrfkxk3tb",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab053071afd498d0000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "c224bb8b0520ac4a95f91a336a9737b93d51b36a64575111bba127a3048e2406",
+            "previoustxnlgrseq": 5888108,
+            "sequence": 55,
+            "takergets": "20000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "400000000"
+            },
+            "index": "eac21abb5ee92f88c9fe210f5df00b96f1eda1892dbdd98eef64ff12130d73b8"
+        },
+        {
+            "account": "ru8axbjnwix3k3lctxtl8t8leftv88ibme",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04f04f94ae6af8000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "9b2d8c0057682122e2c1a0a010d342483bacd8031abe32c5219228feb9749011",
+            "previoustxnlgrseq": 5977360,
+            "sequence": 6,
+            "takergets": "5000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "7"
+            },
+            "index": "eb7c3a1cd0db012ad336262ce4e47113f0e59d0f44e18359b9bd788dbd426b7e"
+        },
+        {
+            "account": "ruqwwjbvpbbeq6coaojkegh8hdwdwyserb",
+            "balance": "188214736897",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 98,
+            "previoustxnid": "3f20c5a8b1937151f73766db14d61537646324f4cdec5e1fcd4fe7012ea60657",
+            "previoustxnlgrseq": 6225785,
+            "sequence": 1210,
+            "index": "edbabafeb654b744dc3a2016ad9dbb982b066ae0f066770f7a5772ffc7ec7a01"
+        },
+        {
+            "account": "rpvawrmykug1gdtcbjwgths4ynzhmgcg22",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab051071afd498d0000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "75cd28a43e6126730fdceeeb1f7c61dc16cef16c94ed350602ce82c61b74ce75",
+            "previoustxnlgrseq": 6158962,
+            "sequence": 110,
+            "takergets": "1000000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "200000"
+            },
+            "index": "edffabc23b617eee0a9f3c9224ad574ad94c99e35f1bc68500b4bd08c0a4b5c1"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "8bf4d2fb788ef310c2b52498dc38dca195cdafa7c608b48efba2cacc96988d3a",
+                "6b79a8d89c4e369336d21eca23a724a5b1e30dbe2344f66141444165fbe1270f"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rpw8wvwyx1szbykjvxt9a7rtaypgula11b",
+            "rootindex": "ee48c14546b7c612b21de35a68bb789c408873c80e9618276509b5d57999f68e",
+            "index": "ee48c14546b7c612b21de35a68bb789c408873c80e9618276509b5d57999f68e"
+        },
+        {
+            "account": "rhqtzhk6nwabtj1srdgakaju6kegpdwily",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab0521a4a42c3568000",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "392941c246612fb2e39a739af2cd9ca579887603abb0e133363f7e463dd41197",
+            "previoustxnlgrseq": 6037294,
+            "sequence": 2,
+            "takergets": "1800000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "13320000"
+            },
+            "index": "eea663b7bd24612b8103830279e62392ed83f1564196331ea1d364cc1187f8e3"
+        },
+        {
+            "account": "rp9tnsggjjgpnzugtazxazmswq8lgtkzyp",
+            "balance": "5450015202",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 7,
+            "previoustxnid": "14f38411c2eca1dc1a2fc355a23c8e1c0867c6b2481bcdc44596cc2301bc0798",
+            "previoustxnlgrseq": 5421892,
+            "sequence": 50,
+            "index": "efd3fa07aa23e6e31044d892b96edd04f9b44c74d560052d23b6ea1f50576f11"
+        },
+        {
+            "account": "rm3x3qsr8icjtgpaf52dozhbt2bzsxjqym",
+            "balance": "47155126935",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 76,
+            "previoustxnid": "1d60d1f0674a73fe6f7cb00b4b37091485efd0f722581ac42e73808f5ef1a78e",
+            "previoustxnlgrseq": 6226680,
+            "sequence": 44678,
+            "index": "f13be615eddc53504c862d741b0e1dd42b90af5c2c4fb1f077b5c2c0bc0f41eb"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "e315f11e126e041ec24aea0ebc62dca4b39ac7f1a08854843c0e0f7bfe2fe086",
+                "eea663b7bd24612b8103830279e62392ed83f1564196331ea1d364cc1187f8e3"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rhqtzhk6nwabtj1srdgakaju6kegpdwily",
+            "rootindex": "f2788cac79254b13457f8fcc5cf1e6e14fcb2bc59338cea51a87378718ef0f3e",
+            "index": "f2788cac79254b13457f8fcc5cf1e6e14fcb2bc59338cea51a87378718ef0f3e"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "bda23c732cce9c0febc31d6f60ce781d949d7e67264af02e59e0752160cba6b5",
+                "d9ec3e44a4235f4b89bcb8c34bf39850a01449bbb4f70722a5e03fb71ef4ea57"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rke2tx794t8aoqe25avwkwvki1igxjpbui",
+            "rootindex": "f32472fb2bda436b0509dc0658d495d9abc117492c8fdfc88baaee4e628ac19f",
+            "index": "f32472fb2bda436b0509dc0658d495d9abc117492c8fdfc88baaee4e628ac19f"
+        },
+        {
+            "account": "rhsxr2aaddyckx5izctebt4padxv6iwdxb",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1bf960279e0408",
+            "booknode": "0000000000000000",
+            "flags": 0,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "d789142820ed0a9d9e3910cb4d45f77c65f6491ac8669348e977ab455445a5cb",
+            "previoustxnlgrseq": 6198642,
+            "sequence": 277,
+            "takergets": "12700000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "10000"
+            },
+            "index": "f37871ad76189305b0ba6a652a69c4207c384da95336418a1a474d938e768bee"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "-22000.25001382842"
+            },
+            "flags": 2228224,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "r47glmfhjpjshd65j8tjswzjzm3jphcjdz",
+                "value": "25000"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "7915ca40239d2a29bdafe3e538d03c986774dfb76256c9576265813348b806d6",
+            "previoustxnlgrseq": 6022612,
+            "index": "f3ab294f8d27e388a172458cbdbc9d00fb5909cf20b35e97753ce8e927ae5b6b"
+        },
+        {
+            "account": "rdr83lqpsnjtj9coupxwf2pfehdeuocm4z",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e2386f26f5cdb64",
+            "booknode": "0000000000000000",
+            "flags": 131072,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "76f1fc27e8a46430aa13c80179079941314b745e78ab229272e57f58d4a5ce4f",
+            "previoustxnlgrseq": 6179747,
+            "sequence": 23,
+            "takergets": "15237000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "15236.99999"
+            },
+            "index": "f56f107800df0ab585bc31684011dadd77c9a2516a2e47901edcb0d9a1a0d5e0"
+        },
+        {
+            "balance": {
+                "currency": "jpy",
+                "issuer": "rrrrrrrrrrrrrrrrrrrrbzbvji",
+                "value": "7140.000001580002"
+            },
+            "flags": 1114112,
+            "highlimit": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "0"
+            },
+            "highnode": "0000000000000000",
+            "ledgerentrytype": "ripplestate",
+            "lowlimit": {
+                "currency": "jpy",
+                "issuer": "rho8mvsessmvpkf4uiyf8ptjbgmcvx2uv1",
+                "value": "1000000"
+            },
+            "lownode": "0000000000000000",
+            "previoustxnid": "e9ecf535c8ae63ec174e546808052659126d73deecd8430c76b428d882fc5e90",
+            "previoustxnlgrseq": 6221033,
+            "index": "f59533169eac6639fb94220a952c8459ffcfcf0a1bdc80d7a5ad26df30cd5757"
+        },
+        {
+            "account": "rhsxr2aaddyckx5izctebt4padxv6iwdxb",
+            "bookdirectory": "bcf012c63e83daf510c7b6b27fe1045cf913b0cf94049ab04e1a1f7606e0bc3c",
+            "booknode": "0000000000000000",
+            "flags": 0,
+            "ledgerentrytype": "offer",
+            "ownernode": "0000000000000000",
+            "previoustxnid": "c0e5ce0cdcad33e9f9d179336e10473e2c1186e52ed5fd2676699fe736d42d8e",
+            "previoustxnlgrseq": 6221097,
+            "sequence": 292,
+            "takergets": "6800000000",
+            "takerpays": {
+                "currency": "jpy",
+                "issuer": "rmaz5znk73nynul4foavaxdreczckg3va6",
+                "value": "5000"
+            },
+            "index": "f984915b0302ce07e061bc46c82574c37e49b6bf138c5af092f779f0ee75c3ff"
+        },
+        {
+            "account": "racjpvglpanqgkb8nhkd1gtevva1uqwrks",
+            "balance": "5117962383026",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 3,
+            "previoustxnid": "96cb1d70009b4fb614dda58e9a00b67208bad4ab534862b475329c812a53f3a8",
+            "previoustxnlgrseq": 6221359,
+            "sequence": 141,
+            "index": "fbb0b2d07aafb7e1c5371307a77830bd60c3e832aad793e6c29a939859ec410e"
+        },
+        {
+            "account": "recnylqd7lxpqttrg3cxgzck1c3tdkuuwb",
+            "balance": "99965683",
+            "flags": 0,
+            "ledgerentrytype": "accountroot",
+            "ownercount": 3,
+            "previoustxnid": "89a5c8f3277b3edf092ede574ebc101a395730dc42e3b0f32e628fbcdf93644b",
+            "previoustxnlgrseq": 3636220,
+            "sequence": 378,
+            "index": "fc8bed166f71fe4e547ca588c6580c2521aa5c5432db2c268717af9e483b39f5"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "4628c6b90fdccd23e451176b826391d115cbca5a5e30218e1d83c0d447a21538",
+                "8c3b2102834932190981192cc03ca723abb0bfaa1ca2881d16a6ff47c8a75159"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "ra284e11q432pmnokjy9wc77xn8gusqvyc",
+            "rootindex": "fdc4dbb9edd7fb2c612e13256124c3b2a79db0d27f34f90154d8094da40a7780",
+            "index": "fdc4dbb9edd7fb2c612e13256124c3b2a79db0d27f34f90154d8094da40a7780"
+        },
+        {
+            "flags": 0,
+            "indexes": [
+                "0eff1d95b5e694b18575969052ddf03a0041064f9b396757dcc0cea286a8116d",
+                "4f68db8a9e94eb3cd6979892e338288200c0cc370e1ca6aa9fe685d616c5c774",
+                "2213b6153cf9370d3a9ec3597c5c9ab6bfa3343c4cca46ab13cd02c25eb7965a",
+                "eac21abb5ee92f88c9fe210f5df00b96f1eda1892dbdd98eef64ff12130d73b8"
+            ],
+            "ledgerentrytype": "directorynode",
+            "owner": "rnrudqqdbm117pzrob2br211hjrfkxk3tb",
+            "rootindex": "ff821221cd4f45e00f7262244ff6fd971d1cbba4741aa031a3865b2e8574b5ff",
+            "index": "ff821221cd4f45e00f7262244ff6fd971d1cbba4741aa031a3865b2e8574b5ff"
+        }
+    ],
+    "account_hash": "e4506440ff330bb4c85b3025a18ec329032e09dda0768e6b63e2676a2d869cd1",
+    "close_time": 451530870,
+    "close_time_human": "2014-apr-23 01:14:30",
+    "close_time_resolution": 10,
+    "closed": true,
+    "hash": "04665adef09db9ac5f8e140309badf7b711838108ce5d3574466dd14d9033da4",
+    "ledger_hash": "04665adef09db9ac5f8e140309badf7b711838108ce5d3574466dd14d9033da4",
+    "ledger_index": "6226713",
+    "parent_hash": "3992a93eeba15d876aeda421f501ebe64f512c96aa7ff15f9eb83c39aff245e1",
+    "seqnum": "6226713",
+    "totalcoins": "99999995008771466",
+    "total_coins": "99999995008771466",
+    "transaction_hash": "5f6baa14cc721d715ed25a1c35720a7a32e052f1d6c10ac61690718e9399a2bb",
+    "transactions": []
+}

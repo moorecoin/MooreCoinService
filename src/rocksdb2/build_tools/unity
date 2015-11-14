@@ -1,0 +1,78 @@
+#!/bin/sh
+#
+# create the unity file
+#
+
+output=$1
+if test -z "$output"; then
+  echo "usage: $0 <output-filename>" >&2
+  exit 1
+fi
+
+# delete existing file, if it exists
+rm -f "$output"
+touch "$output"
+
+# detect os
+if test -z "$target_os"; then
+    target_os=`uname -s`
+fi
+
+# generic port files (working on all platform by #ifdef) go directly in /port
+generic_port_files=`cd "$rocksdb_root"; find port -name '*.cc' | tr "\n" " "`
+
+# on gcc, we pick libc's memcmp over gcc's memcmp via -fno-builtin-memcmp
+case "$target_os" in
+    darwin)
+        # port_files=port/darwin/darwin_specific.cc
+        ;;
+    ios)
+        ;;
+    linux)
+        # port_files=port/linux/linux_specific.cc
+        ;;
+    sunos)
+        # port_files=port/sunos/sunos_specific.cc
+        ;;
+    freebsd)
+        # port_files=port/freebsd/freebsd_specific.cc
+        ;;
+    netbsd)
+        # port_files=port/netbsd/netbsd_specific.cc
+        ;;
+    openbsd)
+        # port_files=port/openbsd/openbsd_specific.cc
+        ;;
+    dragonfly)
+        # port_files=port/dragonfly/dragonfly_specific.cc
+        ;;
+    os_android_crosscompile)
+        # port_files=port/android/android.cc
+        ;;
+    *)
+        echo "unknown platform!" >&2
+        exit 1
+esac
+
+# we want to make a list of all cc files within util, db, table, and helpers
+# except for the test and benchmark files. by default, find will output a list
+# of all files matching either rule, so we need to append -print to make the
+# prune take effect.
+dirs="util db table utilities"
+
+set -f # temporarily disable globbing so that our patterns arent expanded
+prune_test="-name *test*.cc -prune"
+prune_bench="-name *bench*.cc -prune"
+portable_files=`cd "$rocksdb_root"; find $dirs $prune_test -o $prune_bench -o -name '*.cc' -print | sort`
+portable_cpp=`cd "$rocksdb_root"; find $dirs $prune_test -o $prune_bench -o -name '*.cpp' -print | sort`
+set +f # re-enable globbing
+
+# the sources consist of the portable files, plus the platform-specific port
+# file.
+for source_file in $portable_files $generic_port_files $port_files $portable_cpp
+do
+	echo "#include <$source_file>" >> "$output"
+done
+
+echo "int main(int argc, char** argv){ return 0; }" >> "$output"
+

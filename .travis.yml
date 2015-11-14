@@ -1,0 +1,63 @@
+language: cpp
+compiler:
+  - clang
+  - gcc
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq python-software-properties
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo add-apt-repository -y ppa:afrank/boost
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq g++-4.8
+  - sudo apt-get install -qq libboost1.57-all-dev
+  - sudo apt-get install -qq mlocate
+  - sudo updatedb
+  - sudo locate libboost | grep /lib | grep -e ".a$"
+  - sudo apt-get install -qq protobuf-compiler libprotobuf-dev libssl-dev exuberant-ctags
+  # we need gcc >= 4.8 for some c++11 features
+  - sudo apt-get install -qq gcc-4.8
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
+  - sudo update-alternatives --set gcc /usr/bin/gcc-4.8
+  # stuff is gold. nuff said ;)
+  - sudo apt-get -y install binutils-gold
+  # we can get a backtrace if the guy crashes
+  - sudo apt-get -y install gdb
+  # what versions are we actually running?
+  - g++ -v
+  - clang -v
+  # avoid `spurious errors` caused by ~/.npm permission issues
+  # does it already exist? who owns? what permissions?
+  - ls -lah ~/.npm || mkdir ~/.npm
+  # make sure we own it
+  - sudo chown -r $user ~/.npm
+
+script:
+  # set so any failing command will abort the build
+  - set -e
+  # $cc will be either `clang` or `gcc` (if only we could do -j12 ;)
+  - scons $cc.debug
+  # we can be sure we're using the build/$cc.debug variant (-f so never err)
+  - rm -f build/rippled 
+  - export rippled_path="$pwd/build/$cc.debug/rippled"
+  # see what we've actually built
+  - ldd $rippled_path
+  # run unittests (under gdb)
+  - | # create gdb script
+    echo "set env malloc_check_=3" > script.gdb 
+    echo "run" >> script.gdb
+    echo "backtrace full" >> script.gdb 
+    # gdb --help
+  - cat script.gdb | gdb --ex 'set print thread-events off' --return-child-result --args $rippled_path --unittest
+  - npm install
+  # use build/(gcc|clang).debug/rippled
+  - |
+    echo "exports.default_server_config = {\"rippled_path\" : \"$rippled_path\"};" > test/config.js
+
+  # run integration tests
+  - npm test
+notifications:
+  email:
+    false
+  irc:
+    channels:
+      - "chat.freenode.net#ripple-dev"

@@ -1,0 +1,184 @@
+// copyright 2005 and onwards google inc.
+//
+// redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are
+// met:
+//
+//     * redistributions of source code must retain the above copyright
+// notice, this list of conditions and the following disclaimer.
+//     * redistributions in binary form must reproduce the above
+// copyright notice, this list of conditions and the following disclaimer
+// in the documentation and/or other materials provided with the
+// distribution.
+//     * neither the name of google inc. nor the names of its
+// contributors may be used to endorse or promote products derived from
+// this software without specific prior written permission.
+//
+// this software is provided by the copyright holders and contributors
+// "as is" and any express or implied warranties, including, but not
+// limited to, the implied warranties of merchantability and fitness for
+// a particular purpose are disclaimed. in no event shall the copyright
+// owner or contributors be liable for any direct, indirect, incidental,
+// special, exemplary, or consequential damages (including, but not
+// limited to, procurement of substitute goods or services; loss of use,
+// data, or profits; or business interruption) however caused and on any
+// theory of liability, whether in contract, strict liability, or tort
+// (including negligence or otherwise) arising in any way out of the use
+// of this software, even if advised of the possibility of such damage.
+//
+// a light-weight compression algorithm.  it is designed for speed of
+// compression and decompression, rather than for the utmost in space
+// savings.
+//
+// for getting better compression ratios when you are compressing data
+// with long repeated sequences or compressing data that is similar to
+// other data, while still compressing fast, you might look at first
+// using bmdiff and then compressing the output of bmdiff with
+// snappy.
+
+#ifndef util_snappy_snappy_h__
+#define util_snappy_snappy_h__
+
+#include <stddef.h>
+#include <string>
+
+#include "snappy-stubs-public.h"
+
+namespace snappy {
+  class source;
+  class sink;
+
+  // ------------------------------------------------------------------------
+  // generic compression/decompression routines.
+  // ------------------------------------------------------------------------
+
+  // compress the bytes read from "*source" and append to "*sink". return the
+  // number of bytes written.
+  size_t compress(source* source, sink* sink);
+
+  // find the uncompressed length of the given stream, as given by the header.
+  // note that the true length could deviate from this; the stream could e.g.
+  // be truncated.
+  //
+  // also note that this leaves "*source" in a state that is unsuitable for
+  // further operations, such as rawuncompress(). you will need to rewind
+  // or recreate the source yourself before attempting any further calls.
+  bool getuncompressedlength(source* source, uint32* result);
+
+  // ------------------------------------------------------------------------
+  // higher-level string based routines (should be sufficient for most users)
+  // ------------------------------------------------------------------------
+
+  // sets "*output" to the compressed version of "input[0,input_length-1]".
+  // original contents of *output are lost.
+  //
+  // requires: "input[]" is not an alias of "*output".
+  size_t compress(const char* input, size_t input_length, string* output);
+
+  // decompresses "compressed[0,compressed_length-1]" to "*uncompressed".
+  // original contents of "*uncompressed" are lost.
+  //
+  // requires: "compressed[]" is not an alias of "*uncompressed".
+  //
+  // returns false if the message is corrupted and could not be decompressed
+  bool uncompress(const char* compressed, size_t compressed_length,
+                  string* uncompressed);
+
+
+  // ------------------------------------------------------------------------
+  // lower-level character array based routines.  may be useful for
+  // efficiency reasons in certain circumstances.
+  // ------------------------------------------------------------------------
+
+  // requires: "compressed" must point to an area of memory that is at
+  // least "maxcompressedlength(input_length)" bytes in length.
+  //
+  // takes the data stored in "input[0..input_length]" and stores
+  // it in the array pointed to by "compressed".
+  //
+  // "*compressed_length" is set to the length of the compressed output.
+  //
+  // example:
+  //    char* output = new char[snappy::maxcompressedlength(input_length)];
+  //    size_t output_length;
+  //    rawcompress(input, input_length, output, &output_length);
+  //    ... process(output, output_length) ...
+  //    delete [] output;
+  void rawcompress(const char* input,
+                   size_t input_length,
+                   char* compressed,
+                   size_t* compressed_length);
+
+  // given data in "compressed[0..compressed_length-1]" generated by
+  // calling the snappy::compress routine, this routine
+  // stores the uncompressed data to
+  //    uncompressed[0..getuncompressedlength(compressed)-1]
+  // returns false if the message is corrupted and could not be decrypted
+  bool rawuncompress(const char* compressed, size_t compressed_length,
+                     char* uncompressed);
+
+  // given data from the byte source 'compressed' generated by calling
+  // the snappy::compress routine, this routine stores the uncompressed
+  // data to
+  //    uncompressed[0..getuncompressedlength(compressed,compressed_length)-1]
+  // returns false if the message is corrupted and could not be decrypted
+  bool rawuncompress(source* compressed, char* uncompressed);
+
+  // given data in "compressed[0..compressed_length-1]" generated by
+  // calling the snappy::compress routine, this routine
+  // stores the uncompressed data to the iovec "iov". the number of physical
+  // buffers in "iov" is given by iov_cnt and their cumulative size
+  // must be at least getuncompressedlength(compressed). the individual buffers
+  // in "iov" must not overlap with each other.
+  //
+  // returns false if the message is corrupted and could not be decrypted
+  bool rawuncompresstoiovec(const char* compressed, size_t compressed_length,
+                            const struct iovec* iov, size_t iov_cnt);
+
+  // given data from the byte source 'compressed' generated by calling
+  // the snappy::compress routine, this routine stores the uncompressed
+  // data to the iovec "iov". the number of physical
+  // buffers in "iov" is given by iov_cnt and their cumulative size
+  // must be at least getuncompressedlength(compressed). the individual buffers
+  // in "iov" must not overlap with each other.
+  //
+  // returns false if the message is corrupted and could not be decrypted
+  bool rawuncompresstoiovec(source* compressed, const struct iovec* iov,
+                            size_t iov_cnt);
+
+  // returns the maximal size of the compressed representation of
+  // input data that is "source_bytes" bytes in length;
+  size_t maxcompressedlength(size_t source_bytes);
+
+  // requires: "compressed[]" was produced by rawcompress() or compress()
+  // returns true and stores the length of the uncompressed data in
+  // *result normally.  returns false on parsing error.
+  // this operation takes o(1) time.
+  bool getuncompressedlength(const char* compressed, size_t compressed_length,
+                             size_t* result);
+
+  // returns true iff the contents of "compressed[]" can be uncompressed
+  // successfully.  does not return the uncompressed data.  takes
+  // time proportional to compressed_length, but is usually at least
+  // a factor of four faster than actual decompression.
+  bool isvalidcompressedbuffer(const char* compressed,
+                               size_t compressed_length);
+
+  // the size of a compression block. note that many parts of the compression
+  // code assumes that kblocksize <= 65536; in particular, the hash table
+  // can only store 16-bit offsets, and emitcopy() also assumes the offset
+  // is 65535 bytes or less. note also that if you change this, it will
+  // affect the framing format (see framing_format.txt).
+  //
+  // note that there might be older data around that is compressed with larger
+  // block sizes, so the decompression code should not rely on the
+  // non-existence of long backreferences.
+  static const int kblocklog = 16;
+  static const size_t kblocksize = 1 << kblocklog;
+
+  static const int kmaxhashtablebits = 14;
+  static const size_t kmaxhashtablesize = 1 << kmaxhashtablebits;
+}  // end namespace snappy
+
+
+#endif  // util_snappy_snappy_h__

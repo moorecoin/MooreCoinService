@@ -1,0 +1,7 @@
+# - config file for the websocketpp package
+# it defines the following variables
+#  websocketpp_found - indicates that the module was found
+#  websocketpp_include_dir - include directories
+
+set(websocketpp_found true)
+set(websocketpp_include_dir "@install_include_dir@")

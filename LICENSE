@@ -1,0 +1,77 @@
+the accompanying files under various copyrights.
+
+copyright (c) 2012, 2013, 2014 ripple labs inc.
+
+permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+the software is provided "as is" and the author disclaims all warranties
+with regard to this software including all implied warranties of
+merchantability and fitness. in no event shall the author be liable for
+any special, direct, indirect, or consequential damages or any damages
+whatsoever resulting from loss of use, data or profits, whether in an
+action of contract, negligence or other tortious action, arising out of
+or in connection with the use or performance of this software.
+
+the accompanying files incorporate work covered by the following copyright
+and previous license notice:
+
+copyright (c) 2011 arthur britto, david schwartz, jed mccaleb,
+vinnie falco, bob way, eric lombrozo, nikolaos d. bougalis, howard hinnant
+
+some code from raw material software, ltd., provided under the terms of the
+  isc license. see the corresponding source files for more details.
+  copyright (c) 2013 - raw material software ltd.
+  please visit http://www.juce.com
+
+some code from asio examples:
+// copyright (c) 2003-2011 christopher m. kohlhoff (chris at kohlhoff dot com)
+//
+// distributed under the boost software license, version 1.0. (see accompanying
+// file license_1_0.txt or copy at http://www.boost.org/license_1_0.txt)
+
+some code from bitcoin:
+// copyright (c) 2009-2010 satoshi nakamoto
+// copyright (c) 2011 the bitcoin developers
+// distributed under the mit/x11 software license, see the accompanying
+// file license.txt or http://www.opensource.org/licenses/mit-license.php.
+
+some code from tom wu:
+this software is covered under the following copyright:
+
+/*
+ * copyright (c) 2003-2005  tom wu
+ * all rights reserved.
+ *
+ * permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "software"), to deal in the software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the software, and to
+ * permit persons to whom the software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * the above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the software.
+ *
+ * the software is provided "as-is" and without warranty of any kind, 
+ * express, implied or otherwise, including without limitation, any 
+ * warranty of merchantability or fitness for a particular purpose.  
+ *
+ * in no event shall tom wu be liable for any special, incidental,
+ * indirect or consequential damages of any kind, or any damages whatsoever
+ * resulting from loss of use, data or profits, whether or not advised of
+ * the possibility of damage, and on any theory of liability, arising out
+ * of or in connection with the use or performance of this software.
+ *
+ * in addition, the following condition applies:
+ *
+ * all redistributions must retain an intact copy of this copyright notice
+ * and disclaimer.
+ */
+
+address all questions regarding this license to:
+
+  tom wu
+  tjw@cs.stanford.edu

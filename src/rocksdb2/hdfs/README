@@ -1,0 +1,23 @@
+this directory contains the hdfs extensions needed to make rocksdb store
+files in hdfs.
+
+it has been compiled and testing against cdh 4.4 (2.0.0+1475-1.cdh4.4.0.p0.23~precise-cdh4.4.0).
+
+the configuration assumes that packages libhdfs0, libhdfs0-dev are 
+installed which basically means that hdfs.h is in /usr/include and libhdfs in /usr/lib
+
+the env_hdfs.h file defines the rocksdb objects that are needed to talk to an
+underlying filesystem. 
+
+if you want to compile rocksdb with hdfs support, please set the following
+enviroment variables appropriately (also defined in setup.sh for convenience)
+   use_hdfs=1
+   java_home=/usr/local/jdk-6u22-64
+   ld_library_path=$ld_library_path:/usr/local/jdk-6u22-64/jre/lib/amd64/server:/usr/local/jdk-6u22-64/jre/lib/amd64/:./snappy/libs
+   make clean all db_bench
+
+to run dbbench,
+  set classpath to include your hadoop distribution
+  db_bench --hdfs="hdfs://hbaseudbperf001.snc1.moorecoin.com:9000"
+
+

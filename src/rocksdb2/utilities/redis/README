@@ -1,0 +1,14 @@
+this folder defines a redis-style interface for rocksdb.
+right now it is written as a simple tag-on in the rocksdb::redislists class.
+it implements redis lists, and supports only the "non-blocking operations".
+
+internally, the set of lists are stored in a rocksdb database, mapping keys to
+values. each "value" is the list itself, storing a sequence of "elements".
+each element is stored as a 32-bit-integer, followed by a sequence of bytes.
+the 32-bit-integer represents the length of the element (that is, the number
+of bytes that follow). and then that many bytes follow.
+
+
+note: this readme file may be old. see the actual redis_lists.cc file for
+definitive details on the implementation. there should be a header at the top
+of that file, explaining a bit of the implementation details.

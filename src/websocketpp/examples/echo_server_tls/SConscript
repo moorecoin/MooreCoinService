@@ -1,0 +1,24 @@
+## main development example
+##
+
+import('env')
+import('env_cpp11')
+import('boostlibs')
+import('platform_libs')
+import('polyfill_libs')
+import('tls_libs')
+
+env = env.clone ()
+env_cpp11 = env_cpp11.clone ()
+
+prgs = []
+
+# if a c++11 environment is available build using that, otherwise use boost
+if env_cpp11.has_key('wspp_cpp11_enabled'):
+   all_libs = boostlibs(['system'],env_cpp11) + [platform_libs] + [polyfill_libs] + [tls_libs]
+   prgs += env_cpp11.program('echo_server_tls', ["echo_server_tls.cpp"], libs = all_libs)
+else:
+   all_libs = boostlibs(['system'],env) + [platform_libs] + [polyfill_libs] + [tls_libs]
+   prgs += env.program('echo_server_tls', ["echo_server_tls.cpp"], libs = all_libs)
+
+return('prgs')

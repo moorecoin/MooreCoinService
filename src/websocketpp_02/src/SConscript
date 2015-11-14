@@ -1,0 +1,20 @@
+## websocket++ library
+##
+
+import('env')
+
+localenv = env.clone ()
+
+sources = ["base64/base64.cpp",
+           "md5/md5.c",
+           "messages/data.cpp",
+           "network_utilities.cpp",
+           "processors/hybi_header.cpp",
+           "processors/hybi_util.cpp",
+           "sha1/sha1.cpp",
+           "uri.cpp"]
+
+static_lib = localenv.staticlibrary('websocketpp', sources)
+shared_lib = none # localenv.sharedlibrary('websocketpp', sources)
+
+return('static_lib', 'shared_lib')

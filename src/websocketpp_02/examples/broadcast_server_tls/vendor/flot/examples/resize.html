@@ -1,0 +1,61 @@
+<!doctype html public "-//w3c//dtd html 4.01 transitional//en" "http://www.w3.org/tr/html4/loose.dtd">
+<html>
+ <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>flot examples</title>
+    <link href="layout.css" rel="stylesheet" type="text/css">
+    <!--[if lte ie 8]><script language="javascript" type="text/javascript" src="../excanvas.min.js"></script><![endif]-->
+    <script language="javascript" type="text/javascript" src="../jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="../jquery.flot.resize.js"></script>
+    <style type="text/css">
+    html, body {
+        height: 100%; /* make the percentage height on placeholder work */
+    }
+    .message {
+        padding-left: 50px;
+        font-size: smaller;
+    }
+    </style>
+ </head>
+ <body>
+    <h1>flot examples</h1>
+
+    <div id="placeholder" style="width:80%;height:40%;"></div>
+
+    <p class="message"></p>
+
+    <p>sometimes it makes more sense to just let the plot take up the
+    available space. in that case, we need to redraw the plot each
+    time the placeholder changes its size. if you include the resize
+    plugin, this is handled automatically.</p>
+
+    <p>try resizing the window.</p>
+
+
+<script type="text/javascript">
+$(function () {
+    var d1 = [];
+    for (var i = 0; i < 14; i += 0.5)
+        d1.push([i, math.sin(i)]);
+
+    var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]];
+    var d3 = [[0, 12], [7, 12], null, [7, 2.5], [12, 2.5]];
+
+    var placeholder = $("#placeholder");
+    
+    var plot = $.plot(placeholder, [d1, d2, d3]);
+    
+    // the plugin includes a jquery plugin for adding resize events to
+    // any element, let's just add a callback so we can display the
+    // placeholder size
+    placeholder.resize(function () {
+        $(".message").text("placeholder is now "
+                           + $(this).width() + "x" + $(this).height()
+                           + " pixels");
+    });
+});
+</script>
+
+ </body>
+</html>

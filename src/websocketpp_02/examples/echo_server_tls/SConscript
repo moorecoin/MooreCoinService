@@ -1,0 +1,21 @@
+## echo_server_tls
+##
+
+import('env')
+import('boostlibs')
+import('wslib')
+import('platform_libs')
+import('tls_libs')
+
+localenv = env.clone ()
+
+sources = ["echo_server_tls.cpp"]
+
+libs = [wslib, platform_libs, tls_libs] + boostlibs(['system',
+                                                     'date_time',
+                                                     'regex',
+                                                     'thread'])
+
+prg = localenv.program('echo_server_tls', sources, libs = libs)
+
+return('prg')

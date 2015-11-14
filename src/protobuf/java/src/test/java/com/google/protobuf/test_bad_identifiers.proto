@@ -1,0 +1,108 @@
+// protocol buffers - google's data interchange format
+// copyright 2008 google inc.  all rights reserved.
+// http://code.google.com/p/protobuf/
+//
+// redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are
+// met:
+//
+//     * redistributions of source code must retain the above copyright
+// notice, this list of conditions and the following disclaimer.
+//     * redistributions in binary form must reproduce the above
+// copyright notice, this list of conditions and the following disclaimer
+// in the documentation and/or other materials provided with the
+// distribution.
+//     * neither the name of google inc. nor the names of its
+// contributors may be used to endorse or promote products derived from
+// this software without specific prior written permission.
+//
+// this software is provided by the copyright holders and contributors
+// "as is" and any express or implied warranties, including, but not
+// limited to, the implied warranties of merchantability and fitness for
+// a particular purpose are disclaimed. in no event shall the copyright
+// owner or contributors be liable for any direct, indirect, incidental,
+// special, exemplary, or consequential damages (including, but not
+// limited to, procurement of substitute goods or services; loss of use,
+// data, or profits; or business interruption) however caused and on any
+// theory of liability, whether in contract, strict liability, or tort
+// (including negligence or otherwise) arising in any way out of the use
+// of this software, even if advised of the possibility of such damage.
+
+// author: jonp@google.com (jon perlow)
+
+// this file tests that various identifiers work as field and type names even
+// though the same identifiers are used internally by the java code generator.
+
+
+// some generic_services option(s) added automatically.
+// see:  http://go/proto2-generic-services-default
+option java_generic_services = true;   // auto-added
+
+package io_protocol_tests;
+
+option java_package = "com.google.protobuf";
+option java_outer_classname = "testbadidentifiersproto";
+
+message testmessage {
+}
+
+message descriptor {
+  option no_standard_descriptor_accessor = true;
+  optional string descriptor = 1;
+  message nesteddescriptor {
+    option no_standard_descriptor_accessor = true;
+    optional string descriptor = 1;
+  }
+  optional nesteddescriptor nested_descriptor = 2;
+}
+
+message parser {
+  enum parserenum {
+    parser = 1;
+  }
+  optional parserenum parser = 1;
+}
+
+message deprecated {
+  enum testenum {
+    foo = 1;
+  }
+
+  optional int32 field1 = 1 [deprecated=true];
+  optional testenum field2 = 2 [deprecated=true];
+  optional testmessage field3 = 3 [deprecated=true];
+}
+
+message override {
+  optional int32 override = 1;
+}
+
+message object {
+  optional int32 object = 1;
+  optional string string_object = 2;
+}
+
+message string {
+  optional string string = 1;
+}
+
+message integer {
+  optional int32 integer = 1;
+}
+
+message long {
+  optional int32 long = 1;
+}
+
+message float {
+  optional float float = 1;
+}
+
+message double {
+  optional double double = 1;
+}
+
+service testconflictingmethodnames {
+  rpc override(testmessage) returns (testmessage);
+}
+
